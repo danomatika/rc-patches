@@ -1,0 +1,23 @@
+#N canvas 293 235 587 300 10;
+#X obj 55 256 print abc;
+#X obj 265 265 print def;
+#X floatatom 55 203 5 0 0 0 - - -;
+#X floatatom 265 210 5 0 0 0 - - -;
+#X obj 55 229 s-tr-node bob abc;
+#X obj 450 13 s-totalrecall bob;
+#X obj 265 236 s-tr-node bob def;
+#X msg 24 181 pants test yo yo;
+#X msg 228 182 rinky dink;
+#X text 14 10 The argument is a 'group name' for all common events
+to be stored in the same file. Start by clicking the 'store' toggle
+and then enter numbers into the [s-tr-node]s below. Un-click 'store'
+and then click 'recall' to re-play the events you entered. Save and
+load will save the event list to a file to play them back exactly later.
+Each [s-tr-node] can have it's own receiver name \, which is the second
+argument.;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;

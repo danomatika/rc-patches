@@ -1,0 +1,10 @@
+#N canvas 214 203 299 154 10;
+#X obj 13 43 inlet;
+#X obj 13 96 outlet;
+#X obj 106 50 samplerate~;
+#X obj 106 29 loadbang;
+#X obj 13 70 expr $f2 / $f1;
+#X connect 0 0 4 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;

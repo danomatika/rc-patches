@@ -1,0 +1,20 @@
+#N canvas 123 58 505 316 10;
+#X obj 71 118 perk-bassdrum;
+#X msg 70 42 bang;
+#X obj 72 256 dac~;
+#X text 121 70 control/modulation inputs;
+#X obj 291 72 bng 15 250 50 0 readme-mod reiuweyuiyttytytyty readme-modulation
+17 7 0 14 -261682 -1 -258113;
+#X text 128 101 v;
+#X text 128 98 |;
+#X text 128 88 |;
+#X text 183 101 v;
+#X text 183 98 |;
+#X text 183 88 |;
+#X text 244 101 v;
+#X text 244 98 |;
+#X text 244 88 |;
+#X text 102 42 bang message to hit the instrument;
+#X connect 0 0 2 0;
+#X connect 0 0 2 1;
+#X connect 1 0 0 0;

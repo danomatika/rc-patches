@@ -1,0 +1,22 @@
+#N canvas 76 271 691 367 10;
+#X obj 95 162 mix.out_~;
+#X obj 188 59 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X floatatom 185 79 5 0 0 0 - - -;
+#X floatatom 421 79 5 0 127 0 - - -;
+#X text 68 -74 Description: A reverb that adds more character than
+reverb.;
+#X text 463 82 0 to 127;
+#X obj 124 19 adc~;
+#X text 68 -55 Comment: Taken from Andy Farnell's work.;
+#X text 189 40 size;
+#X text 437 58 wetness;
+#X obj 127 106 fx.body.resonance~ 63;
+#X text 279 110 Argument 1 determines initial wetness (defaults to
+63).;
+#X connect 1 0 2 0;
+#X connect 2 0 10 1;
+#X connect 3 0 10 2;
+#X connect 6 0 10 0;
+#X connect 10 0 0 0;
+#X connect 10 0 0 1;

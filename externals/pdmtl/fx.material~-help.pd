@@ -1,0 +1,21 @@
+#N canvas 681 491 450 300 10;
+#X obj 91 53 adc~;
+#X obj 77 150 mix.out_~;
+#X text 308 156 metal;
+#X text 312 140 glass 2;
+#X text 304 78 wood;
+#X text 307 94 plastic;
+#X text 306 109 china;
+#X text 307 123 glass 1;
+#X text 305 61 cardboard;
+#X obj 281 67 vradio 15 1 0 7 empty empty empty 0 -6 0 8 -262144 -1
+-1 6;
+#X floatatom 185 73 5 0 0 0 - - -;
+#X obj 75 96 fx.material~;
+#X text 30 24 Comment: Taken from Andy Farnell's work.;
+#X text 30 2 Description: Filtering by material type.;
+#X connect 0 0 11 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 1;
+#X connect 11 0 1 0;
+#X connect 11 0 1 1;

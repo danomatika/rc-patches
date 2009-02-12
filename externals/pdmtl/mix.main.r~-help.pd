@@ -1,0 +1,5 @@
+#N canvas 19 105 450 300 10;
+#X obj 263 136 mix.main.r~;
+#X obj 54 134 mix.main~;
+#X text 32 19 Description: Receives the stereo signals of all mix.main~
+abstractions linked to the same top patch.;

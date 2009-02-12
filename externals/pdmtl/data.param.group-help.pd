@@ -1,0 +1,41 @@
+#N canvas 610 355 607 559 10;
+#X obj 111 84 loadbang;
+#X obj 111 113 dollarg;
+#X text 172 127 data.param.group's outlet outputs a list of non @rguments.
+;
+#X text 171 101 1st inlet: auto route to data.param abstractions;
+#X text 39 44 Must be used with data.param. Must be connected to a
+loadbang and a dollarg as illustrated in the example.;
+#X obj 55 225 medias/data.param.template @id zebra;
+#X text 276 223 <- peek inside here;
+#X text 40 182 A data.group's id is set thought it's parent's @id argument.
+;
+#X text 47 17 Description: Groups various data.params;
+#X text 34 265 When not used inside an abstraction \, you must give
+data.param.group an id (a name) and connect it to a loadbang as so:
+;
+#X obj 192 300 loadbang;
+#X text 36 364 When used inside an abstraction do not give data.param.group
+an argument UNLESS you are building a special abstraction that has
+a default ID like so:;
+#X obj 152 419 loadbang;
+#X obj 152 448 dollarg;
+#X obj 44 155 data.param.group;
+#X obj 363 421 loadbang;
+#X obj 363 450 dollarg;
+#X text 173 503 If two groups have the same default name and this not
+changed with a @id message one of them will have it's name appended
+with a number.;
+#X obj 69 326 data.param.group name;
+#X obj 67 479 data.param.group default_name;
+#X obj 278 481 data.param.group default_name;
+#X connect 0 0 1 0;
+#X connect 1 0 14 1;
+#X connect 1 1 14 2;
+#X connect 10 0 18 2;
+#X connect 12 0 13 0;
+#X connect 13 0 19 1;
+#X connect 13 1 19 2;
+#X connect 15 0 16 0;
+#X connect 16 0 20 1;
+#X connect 16 1 20 2;

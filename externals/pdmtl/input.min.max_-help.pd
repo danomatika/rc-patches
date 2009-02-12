@@ -1,0 +1,15 @@
+#N canvas 1576 452 610 407 10;
+#X obj 135 233 print A;
+#X obj 391 239 print B;
+#X text 241 50 Description: Set a minimum and maximum value.;
+#X text 242 69 Argument_1: Sets the minimum value.;
+#X text 240 86 Argument_2: Sets the maximum value.;
+#X msg 151 125 50 360;
+#X text 243 107 Inlet_1: Sets the min max value.;
+#X msg 219 133 0 1;
+#X obj 391 168 input.min.max_ 100 200;
+#X obj 135 159 input.min.max_ 0 1;
+#X connect 5 0 9 0;
+#X connect 7 0 9 0;
+#X connect 8 0 1 0;
+#X connect 9 0 0 0;

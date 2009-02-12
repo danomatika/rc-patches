@@ -1,0 +1,12 @@
+#N canvas 11 44 630 381 10;
+#X obj 62 16 inlet;
+#X obj 62 91 data.param.group;
+#X obj 135 20 loadbang;
+#X obj 135 49 dollarg;
+#X obj 32 184 data.param param1 0 0 127;
+#X obj 33 225 data.param param2 text;
+#X obj 31 273 data.param param3 lin exp log lin;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 1;
+#X connect 3 1 1 2;

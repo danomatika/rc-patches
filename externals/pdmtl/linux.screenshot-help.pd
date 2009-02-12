@@ -1,0 +1,10 @@
+#N canvas 566 584 386 177 10;
+#X symbolatom 58 107 30 0 0 2 name_of_the_file+.png - -;
+#X obj 58 69 savepanel;
+#X obj 57 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 58 125 linux.screenshot;
+#X text 17 16 Description: taking a screenshot;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

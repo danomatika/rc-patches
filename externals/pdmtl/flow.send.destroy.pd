@@ -1,0 +1,10 @@
+#N canvas 0 0 450 300 10;
+#X obj 78 223 destroysend;
+#X obj 252 70 inlet;
+#X obj 78 74 inlet;
+#X obj 297 137 loadbang;
+#X obj 297 171 dollarg;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 1;

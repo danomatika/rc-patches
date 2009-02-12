@@ -1,0 +1,20 @@
+#N canvas 156 259 579 375 10;
+#X obj 131 238 synth.blip~;
+#X obj 128 291 mix.out_~;
+#X msg 138 165 60;
+#X obj 242 184 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 11200 1;
+#X floatatom 252 207 5 0 0 0 - - -;
+#X text 128 107 Useful for percussion;
+#X text 130 44 Description: Self scaling time/amplitude blips without
+redundancy.;
+#X text 132 78 Comment: By ajf2006.;
+#X msg 83 171 40;
+#X msg 182 167 76;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 1;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;

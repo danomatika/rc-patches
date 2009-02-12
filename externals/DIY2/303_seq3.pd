@@ -1,0 +1,309 @@
+#N canvas 135 100 980 565 10;
+#X obj 101 119 cnv 15 180 207 empty empty empty 20 12 0 14 -245630
+-66577 0;
+#X obj 420 218 table \$0-accents 16;
+#X obj 420 260 table \$0-notes 16;
+#X obj 420 280 table \$0-noteons 16;
+#X obj 420 301 table \$0-octaves 16;
+#X obj 104 133 vradio 8 1 0 12 \$0-note-0 \$0-noter-0 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 114 133 vradio 8 1 0 12 \$0-note-1 \$0-noter-1 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 124 133 vradio 8 1 0 12 \$0-note-2 \$0-noter-2 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 134 133 vradio 8 1 0 12 \$0-note-3 \$0-noter-3 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 144 133 vradio 8 1 0 12 \$0-note-4 \$0-noter-4 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 154 133 vradio 8 1 0 12 \$0-note-5 \$0-noter-5 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 164 133 vradio 8 1 0 12 \$0-note-6 \$0-noter-6 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 174 133 vradio 8 1 0 12 \$0-note-7 \$0-noter-7 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 184 133 vradio 8 1 0 12 \$0-note-8 \$0-noter-8 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 194 133 vradio 8 1 0 12 \$0-note-9 \$0-noter-9 empty 0 -8 0
+10 -233017 -233017 -262144 0;
+#X obj 204 133 vradio 8 1 0 12 \$0-note-10 \$0-noter-10 empty 0 -8
+0 10 -233017 -233017 -262144 0;
+#X obj 214 133 vradio 8 1 0 12 \$0-note-11 \$0-noter-11 empty 0 -8
+0 10 -233017 -233017 -262144 0;
+#X obj 224 133 vradio 8 1 0 12 \$0-note-12 \$0-noter-12 empty 0 -8
+0 10 -233017 -233017 -262144 0;
+#X obj 234 133 vradio 8 1 0 12 \$0-note-13 \$0-noter-13 empty 0 -8
+0 10 -233017 -233017 -262144 0;
+#X obj 244 133 vradio 8 1 0 12 \$0-note-14 \$0-noter-14 empty 0 -8
+0 10 -233017 -233017 -262144 0;
+#X obj 254 133 vradio 8 1 0 12 \$0-note-15 \$0-noter-15 empty 0 -8
+0 10 -233017 -233017 -262144 0;
+#X obj 104 287 tgl 8 0 \$0-glide-0 \$0-glider-0 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 114 287 tgl 8 0 \$0-glide-1 \$0-glider-1 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 124 287 tgl 8 0 \$0-glide-2 \$0-glider-2 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 134 287 tgl 8 0 \$0-glide-3 \$0-glider-3 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 144 287 tgl 8 0 \$0-glide-4 \$0-glider-4 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 154 287 tgl 8 0 \$0-glide-5 \$0-glider-5 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 164 287 tgl 8 0 \$0-glide-6 \$0-glider-6 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 174 287 tgl 8 0 \$0-glide-7 \$0-glider-7 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 184 287 tgl 8 0 \$0-glide-8 \$0-glider-8 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 194 287 tgl 8 0 \$0-glide-9 \$0-glider-9 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 204 287 tgl 8 0 \$0-glide-10 \$0-glider-10 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 214 287 tgl 8 0 \$0-glide-11 \$0-glider-11 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 224 287 tgl 8 0 \$0-glide-12 \$0-glider-12 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 234 287 tgl 8 0 \$0-glide-13 \$0-glider-13 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 244 287 tgl 8 0 \$0-glide-14 \$0-glider-14 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 104 230 tgl 8 0 \$0-accent-0 \$0-accentr-0 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 114 230 tgl 8 0 \$0-accent-1 \$0-accentr-1 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 124 230 tgl 8 0 \$0-accent-2 \$0-accentr-2 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 134 230 tgl 8 0 \$0-accent-3 \$0-accentr-3 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 144 230 tgl 8 0 \$0-accent-4 \$0-accentr-4 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 154 230 tgl 8 0 \$0-accent-5 \$0-accentr-5 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 164 230 tgl 8 0 \$0-accent-6 \$0-accentr-6 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 174 230 tgl 8 0 \$0-accent-7 \$0-accentr-7 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 184 230 tgl 8 0 \$0-accent-8 \$0-accentr-8 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 194 230 tgl 8 0 \$0-accent-9 \$0-accentr-9 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 204 230 tgl 8 0 \$0-accent-10 \$0-accentr-10 empty 17 7 0 10
+-262144 -262144 -262144 0 1;
+#X obj 214 230 tgl 8 0 \$0-accent-11 \$0-accentr-11 empty 17 7 0 10
+-262144 -262144 -262144 0 1;
+#X obj 224 230 tgl 8 0 \$0-accent-12 \$0-accentr-12 empty 17 7 0 10
+-262144 -262144 -262144 0 1;
+#X obj 234 230 tgl 8 0 \$0-accent-13 \$0-accentr-13 empty 17 7 0 10
+-262144 -262144 -262144 0 1;
+#X obj 244 230 tgl 8 0 \$0-accent-14 \$0-accentr-14 empty 17 7 0 10
+-262144 -262144 -262144 0 1;
+#X obj 254 230 tgl 8 0 \$0-accent-15 \$0-accentr-15 empty 17 7 0 10
+-262144 -262144 -262144 0 1;
+#X obj 104 251 vradio 8 1 0 3 \$0-octave-0 \$0-octaver-0 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 114 251 vradio 8 1 0 3 \$0-octave-1 \$0-octaver-1 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 124 251 vradio 8 1 0 3 \$0-octave-2 \$0-octaver-2 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 134 251 vradio 8 1 0 3 \$0-octave-3 \$0-octaver-3 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 144 251 vradio 8 1 0 3 \$0-octave-4 \$0-octaver-4 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 154 251 vradio 8 1 0 3 \$0-octave-5 \$0-octaver-5 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 164 251 vradio 8 1 0 3 \$0-octave-6 \$0-octaver-6 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 174 251 vradio 8 1 0 3 \$0-octave-7 \$0-octaver-7 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 184 251 vradio 8 1 0 3 \$0-octave-8 \$0-octaver-8 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 194 251 vradio 8 1 0 3 \$0-octave-9 \$0-octaver-9 empty 0 -8
+0 10 -262144 -66577 -1 2;
+#X obj 204 251 vradio 8 1 0 3 \$0-octave-10 \$0-octaver-10 empty 0
+-8 0 10 -262144 -66577 -1 2;
+#X obj 214 251 vradio 8 1 0 3 \$0-octave-11 \$0-octaver-11 empty 0
+-8 0 10 -262144 -66577 -1 2;
+#X obj 224 251 vradio 8 1 0 3 \$0-octave-12 \$0-octaver-12 empty 0
+-8 0 10 -262144 -66577 -1 2;
+#X obj 234 251 vradio 8 1 0 3 \$0-octave-13 \$0-octaver-13 empty 0
+-8 0 10 -262144 -66577 -1 2;
+#X obj 244 251 vradio 8 1 0 3 \$0-octave-14 \$0-octaver-14 empty 0
+-8 0 10 -262144 -66577 -1 2;
+#X obj 254 251 vradio 8 1 0 3 \$0-octave-15 \$0-octaver-15 empty 0
+-8 0 10 -262144 -66577 -1 2;
+#X obj 416 369 loadbang;
+#X msg 418 392 bang;
+#X obj 417 418 s \$0-loadbang1;
+#X obj 265 133 bng 10 250 50 0 \$0-notesclear iueyriuytreiuyuuyyuyyuyyyyr
+empty 17 7 0 10 -228856 -1 -1;
+#X obj 267 230 bng 10 250 50 0 \$0-accentclear iueyriuytreiuyuuyyuyyuyyyyr
+empty 17 7 0 10 -228856 -1 -1;
+#X obj 266 258 bng 10 250 50 0 \$0-octaveclear iueyriuytreiuyuuyyuyyuyyyyr
+empty 17 7 0 10 -228856 -1 -1;
+#X obj 266 286 bng 10 250 50 0 \$0-glideclear iueyriuytreiuyuuyyuyyuyyyyr
+empty 17 7 0 10 -228856 -1 -1;
+#X obj 232 121 bng 10 250 50 0 \$0-allclear iueyriuytreiuyuuyyuyyuyyyyr
+all -20 7 0 10 -228856 -1 -1;
+#X text 245 118 clear;
+#X obj 472 369 r \$0-allclear;
+#X obj 715 45 expr 15000/$f1;
+#X obj 713 65 s \$0-notetime;
+#N canvas 417 141 720 491 sequence-it 0;
+#X obj 293 117 tabread \$0-accents;
+#X obj 127 307 tabread \$0-noteons;
+#X obj 163 158 tabread \$0-octaves;
+#X obj 141 242 tabread \$0-notes;
+#X obj 184 132 tabread \$0-glides;
+#X obj 162 220 * 12;
+#X obj 188 328 +;
+#X obj 133 11 inlet;
+#X obj 256 297 sel 0 1;
+#X obj 173 374 f;
+#X obj 129 350 sel 1;
+#X obj 93 394 s \$0-trigger;
+#X obj 184 90 - 1;
+#X obj 299 142 + 1;
+#X obj 412 203 f;
+#X obj 413 161 r \$0-trigger;
+#X obj 163 180 - 2;
+#X obj 162 199 abs;
+#X obj 245 356 f 1;
+#X obj 283 353 f 500;
+#X obj 307 286 r \$0-notetime;
+#X obj 141 263 - 12;
+#X obj 143 285 abs;
+#X obj 102 328 t f f;
+#X obj 101 370 sel 1;
+#X obj 415 233 spigot;
+#X obj 299 191 - 1;
+#X obj 299 212 abs;
+#X obj 184 68 sel 0;
+#X msg 244 201 0;
+#X obj 479 249 tabread \$0-halves;
+#X obj 425 334 pack 0 0;
+#X obj 134 44 t f f f f f f;
+#X obj 479 271 sel 0 1;
+#X msg 480 293 1;
+#X msg 506 292 0.5;
+#X obj 190 433 pack 0 0 0 0;
+#X obj 186 462 outlet accent/notelength/pitch/time;
+#X connect 0 0 13 0;
+#X connect 1 0 23 0;
+#X connect 2 0 16 0;
+#X connect 3 0 21 0;
+#X connect 4 0 8 0;
+#X connect 4 0 26 0;
+#X connect 5 0 6 1;
+#X connect 6 0 9 1;
+#X connect 7 0 32 0;
+#X connect 8 0 18 0;
+#X connect 8 1 19 0;
+#X connect 9 0 36 2;
+#X connect 10 0 9 0;
+#X connect 12 0 4 0;
+#X connect 13 0 14 1;
+#X connect 14 0 25 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 5 0;
+#X connect 18 0 36 3;
+#X connect 19 0 36 3;
+#X connect 20 0 19 1;
+#X connect 21 0 22 0;
+#X connect 22 0 6 0;
+#X connect 23 0 24 0;
+#X connect 23 1 10 0;
+#X connect 24 0 11 0;
+#X connect 25 0 31 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 1;
+#X connect 28 0 29 0;
+#X connect 28 1 12 0;
+#X connect 29 0 8 0;
+#X connect 29 0 26 0;
+#X connect 30 0 33 0;
+#X connect 31 0 36 0;
+#X connect 32 0 1 0;
+#X connect 32 1 3 0;
+#X connect 32 2 2 0;
+#X connect 32 3 28 0;
+#X connect 32 4 0 0;
+#X connect 32 5 30 0;
+#X connect 33 0 34 0;
+#X connect 33 1 35 0;
+#X connect 34 0 31 1;
+#X connect 35 0 31 1;
+#X connect 36 0 37 0;
+#X restore 355 83 pd sequence-it;
+#X obj 355 15 inlet position(0-15);
+#X obj 713 20 inlet bpm;
+#X text 102 234 accent;
+#X text 103 271 octave;
+#X text 104 292 glide;
+#X obj 420 239 table \$0-glides 15;
+#X obj 612 210 303_seqcell \$0 \$1 0;
+#X obj 104 308 tgl 8 0 \$0-half-0 \$0-halfr-0 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 114 308 tgl 8 0 \$0-half-1 \$0-halfr-1 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 124 308 tgl 8 0 \$0-half-2 \$0-halfr-2 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 134 308 tgl 8 0 \$0-half-3 \$0-halfr-3 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 144 308 tgl 8 0 \$0-half-4 \$0-halfr-4 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 154 308 tgl 8 0 \$0-half-5 \$0-halfr-5 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 164 308 tgl 8 0 \$0-half-6 \$0-halfr-6 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 174 308 tgl 8 0 \$0-half-7 \$0-halfr-7 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 184 308 tgl 8 0 \$0-half-8 \$0-halfr-8 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 194 308 tgl 8 0 \$0-half-9 \$0-halfr-9 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 204 308 tgl 8 0 \$0-half-10 \$0-halfr-10 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 214 308 tgl 8 0 \$0-half-11 \$0-halfr-11 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 224 308 tgl 8 0 \$0-half-12 \$0-halfr-12 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 234 308 tgl 8 0 \$0-half-13 \$0-halfr-13 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 244 308 tgl 8 0 \$0-half-14 \$0-halfr-14 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 254 308 tgl 8 0 \$0-half-15 \$0-halfr-15 empty 17 7 0 10 -262144
+-262144 -262144 0 1;
+#X obj 266 307 bng 10 250 50 0 \$0-halfclear iueyriuytreiuyuuyyuyyuyyyyr
+empty 17 7 0 10 -228856 -1 -1;
+#X obj 421 322 table \$0-halves 16;
+#X obj 762 211 303_seqcell \$0 \$1 8;
+#X obj 612 232 303_seqcell \$0 \$1 1;
+#X obj 612 255 303_seqcell \$0 \$1 2;
+#X obj 612 277 303_seqcell \$0 \$1 3;
+#X obj 611 299 303_seqcell \$0 \$1 4;
+#X obj 611 321 303_seqcell \$0 \$1 5;
+#X obj 611 344 303_seqcell \$0 \$1 6;
+#X obj 611 366 303_seqcell \$0 \$1 7;
+#X obj 762 233 303_seqcell \$0 \$1 9;
+#X obj 762 256 303_seqcell \$0 \$1 10;
+#X obj 762 278 303_seqcell \$0 \$1 11;
+#X obj 761 301 303_seqcell \$0 \$1 12;
+#X obj 761 322 303_seqcell \$0 \$1 13;
+#X obj 761 344 303_seqcell \$0 \$1 14;
+#X obj 761 366 303_seqcell \$0 \$1 15;
+#X text 102 313 halfnote;
+#X obj 355 130 outlet accent/notelength/pitch/time(packed);
+#X msg 356 158 1 1 7 1;
+#X text 418 158 no accent \, full note \, pitch 7 \, glide off;
+#X msg 356 178 2 0.5 15 500;
+#X text 439 179 accent \, half note \, pitch 15 \, glide on;
+#X text 328 157 eg;
+#X connect 68 0 69 0;
+#X connect 69 0 70 0;
+#X connect 77 0 69 0;
+#X connect 78 0 79 0;
+#X connect 80 0 122 0;
+#X connect 81 0 80 0;
+#X connect 82 0 78 0;
+#X coords 0 -1 1 1 182 230 1 100 100;

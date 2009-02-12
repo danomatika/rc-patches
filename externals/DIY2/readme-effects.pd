@@ -1,0 +1,53 @@
+#N canvas 178 71 943 618 10;
+#X obj 280 590 dac~;
+#X text 248 257 control/modulation inputs;
+#X text 255 287 v;
+#X text 255 284 |;
+#X text 255 274 |;
+#X text 310 287 v;
+#X text 310 284 |;
+#X text 310 274 |;
+#X text 371 287 v;
+#X text 371 284 |;
+#X text 371 274 |;
+#X obj 198 301 mono-pitchshifter;
+#X obj 218 490 st-pureverb4;
+#X msg 170 92 bang;
+#X obj 86 106 metro 250;
+#X obj 88 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 194 384 st-flanger;
+#X obj 170 115 perk-clap;
+#X text 151 12 Effects can be modulated just like synths and percussion
+modules. Mono effects have one inlet~/outlet~ \, stereo effects have
+2 Quite simple really :);
+#X obj 671 69 mono-EQ13;
+#X text 668 153 simple 13 band eq \, with no modulation;
+#X obj 667 186 mono-buffery;
+#X text 679 273 buffer override clone \,;
+#X text 678 288 right click for help file;
+#X text 526 444 mono-AMtremolo \, mono-vibrato;
+#X text 413 340 resets phase;
+#X text 526 464 st-AMtremolo \, st-vibrato \, st-flanger \, st-phaser
+;
+#X obj 527 413 cnv 15 240 25 empty empty modules_with_an_extra_inlet
+10 12 0 14 -233017 -66577 0;
+#X obj 671 27 cnv 15 110 25 empty empty non-standard 5 12 0 14 -233017
+-66577 0;
+#X text 526 498 the above modules all have one extra inlet on the far
+right to reset their phase. this can be either a bang \, or a float
+value between 0 and 1 for the reset phase.;
+#X msg 417 379 bang;
+#X msg 412 357 0.25;
+#X connect 11 0 16 0;
+#X connect 11 0 16 1;
+#X connect 12 0 0 0;
+#X connect 12 1 0 1;
+#X connect 13 0 17 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X connect 16 0 12 0;
+#X connect 16 1 12 1;
+#X connect 17 0 11 0;
+#X connect 30 0 16 5;
+#X connect 31 0 16 5;

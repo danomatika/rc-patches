@@ -1,0 +1,25 @@
+#N canvas 622 121 450 300 10;
+#X obj 282 20 s-loader;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array beat 1.88434e+06 float 2;
+#X coords 0 1 1.88434e+06 -1 50 25 1;
+#X restore 382 110 graph;
+#X obj 316 195 s-metro time;
+#X obj 98 16 r time/tick;
+#X obj 98 38 mod 128;
+#X obj 98 212 s-ezdac~ out;
+#X obj 98 141 s-samplepiece~ andy beat;
+#X msg 98 59 \; andy/position \$1 \; andy/shot bang \;;
+#X msg 98 118 \$1 127;
+#X obj 28 12 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 9200 1;
+#X text 158 -3 looad a sample loop into this array first;
+#X obj 316 130 loadbang;
+#X msg 316 152 \; time/startstop 1 \;;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 6 0 5 0;
+#X connect 6 0 5 1;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 11 0 12 0;

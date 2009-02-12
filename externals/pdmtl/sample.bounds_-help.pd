@@ -1,0 +1,30 @@
+#N struct 3737preview float x float y float p float h;
+#N canvas 175 75 792 472 10;
+#X text -90 19 Description: Graphical version of sample.bounds.;
+#X text 239 181 * Click and drag the horizontal slider sideways \,
+up and down to change a samples start and length bounds.;
+#X text 239 218 * The center section display from left to right: start
+\, length and frames. The first two are editable.;
+#X text 242 256 * The bottom section sets the start or length to fractions
+of the total file.;
+#X obj -87 326 sample.bounds_;
+#X text -90 36 Flags: gui sample_id;
+#X obj -87 149 file.path.top;
+#X obj -87 89 loadbang;
+#X obj -87 212 sample.display_;
+#X text -90 54 Version: 2007-06-12;
+#X msg -87 122 medias/sounds/loop0.wav;
+#X obj -87 174 sample.filer;
+#X msg 88 123 medias/sounds/loop2.wav;
+#X text 242 289 * The loop section controls the loop points (displayed
+as a green and orange bars in smaple.display_).;
+#X text -90 391 The greyed number boxes indicate that the actual stored
+and sent value is divided by 100 So \, if a grey box display 50 \,
+the actual value is 0.5. This is done to simplify the user input of
+values in decimal ranges.;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 4 0;
+#X connect 10 0 6 0;
+#X connect 11 0 8 0;
+#X connect 12 0 6 0;

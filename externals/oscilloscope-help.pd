@@ -1,0 +1,16 @@
+#N canvas 0 0 544 405 12;
+#X obj 158 106 osc~ 440;
+#X msg 26 49 \; pd dsp \$1;
+#X obj 26 21 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+;
+#X text 50 18 <- turn on the audio;
+#X obj 159 157 oscilloscope;
+#X text 300 122 | on/off v;
+#X text 80 148 signal ->;
+#X text 333 277 <- reset sliders;
+#X text 332 223 <- set vertical range;
+#X text 221 303 | set vertical range;
+#X text 26 373 (prefer to click on the slider rather then "slide" it)
+;
+#X connect 0 0 4 0;
+#X connect 2 0 1 0;

@@ -1,0 +1,13 @@
+#N canvas 217 455 455 327 10;
+#X obj 107 156 synth.wind~;
+#X obj 93 252 mix.out_~;
+#X floatatom 107 127 5 0 0 0 - - -;
+#X obj 110 96 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 35 12 Comment: Taken from Andy Farnell's work.;
+#X text 37 -16 Description: Generates a wind sound.;
+#X text 245 96 (0-127);
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;

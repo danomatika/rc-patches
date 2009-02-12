@@ -1,0 +1,6 @@
+#N canvas 654 455 450 300 10;
+#X obj 62 181 shell;
+#X msg 62 160 import -window root \$1;
+#X obj 62 138 inlet;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

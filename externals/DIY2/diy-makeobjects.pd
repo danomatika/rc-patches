@@ -1,0 +1,985 @@
+#N canvas 31 271 1199 428 10;
+#X obj 8 54 bng 15 250 50 0 \$0-eee-lfosig ewtewennnnnnnnnnnn LFO 18
+9 0 13 -262144 -1 -1;
+#X obj 8 74 bng 15 250 50 0 \$0-eee-adsrsig ewtewennnnnnnnnnnn ADSR
+18 9 0 13 -262144 -1 -1;
+#X obj 8 114 bng 15 250 50 0 \$0-eee-lfo ewtewennnnnnnnnnnn LFO 18
+9 0 13 -262144 -1 -1;
+#X obj 8 134 bng 15 250 50 0 \$0-eee-adsr ewtewennnnnnnnnnnn ADSR 18
+9 0 13 -262144 -1 -1;
+#X text 7 38 signal~;
+#X text 8 98 control;
+#X obj 6 -4 cnv 15 100 20 empty empty envelopes 5 10 0 14 -1 -262144
+0;
+#X obj 7 155 cnv 15 100 20 empty empty percussion 5 10 0 14 -1 -262144
+0;
+#X obj 8 198 bng 15 250 50 0 \$0-perk-bassdrum ewtewennnnnnnnnnnn bassdrum
+18 9 0 13 -262144 -1 -1;
+#X obj 8 218 bng 15 250 50 0 \$0-perk-hihat ewtewennnnnnnnnnnn hihat
+18 9 0 13 -262144 -1 -1;
+#X obj 8 238 bng 15 250 50 0 \$0-perk-snare ewtewennnnnnnnnnnn snare
+18 9 0 13 -262144 -1 -1;
+#X obj 8 378 bng 15 250 50 0 \$0-perk-bell ewtewennnnnnnnnnnn bell
+18 9 0 13 -262144 -1 -1;
+#X obj 8 258 bng 15 250 50 0 \$0-perk-clap ewtewennnnnnnnnnnn clap
+18 9 0 13 -262144 -1 -1;
+#X obj 8 278 bng 15 250 50 0 \$0-perk-andyhat ewtewennnnnnnnnnnn andyhat
+18 9 0 13 -262144 -1 -1;
+#X obj 8 298 bng 15 250 50 0 \$0-perk-cowbell ewtewennnnnnnnnnnn cowbell
+18 9 0 13 -262144 -1 -1;
+#X obj 8 318 bng 15 250 50 0 \$0-perk-lowtom ewtewennnnnnnnnnnn low_tom
+18 9 0 13 -262144 -1 -1;
+#X obj 8 338 bng 15 250 50 0 \$0-perk-hightom ewtewennnnnnnnnnnn high_tom
+18 9 0 13 -262144 -1 -1;
+#X obj 8 358 bng 15 250 50 0 \$0-perk-gunshot ewtewennnnnnnnnnnn gunshot
+18 9 0 13 -262144 -1 -1;
+#X obj 8 398 bng 15 250 50 0 \$0-perk-cymbal ewtewennnnnnnnnnnn cymbal
+18 9 0 13 -262144 -1 -1;
+#X obj 150 -3 cnv 15 130 20 empty empty synth-waveforms 5 10 0 14 -1
+-262144 0;
+#X obj 150 40 bng 15 250 50 0 \$0-syn-rain ewtewennnnnnnnnnnn rain
+18 9 0 13 -262144 -1 -1;
+#X obj 150 60 bng 15 250 50 0 \$0-syn-cranks ewtewennnnnnnnnnnn cranks
+18 9 0 13 -262144 -1 -1;
+#X obj 150 80 bng 15 250 50 0 \$0-syn-classicsynth ewtewennnnnnnnnnnn
+classicsynth 18 9 0 13 -262144 -1 -1;
+#X obj 150 100 bng 15 250 50 0 \$0-syn-bellsynth ewtewennnnnnnnnnnn
+bellsynth 18 9 0 13 -262144 -1 -1;
+#X obj 150 120 bng 15 250 50 0 \$0-syn-detunedOsc ewtewennnnnnnnnnnn
+detunedOsc 18 9 0 13 -262144 -1 -1;
+#X obj 150 140 bng 15 250 50 0 \$0-syn-cz10 ewtewennnnnnnnnnnn cz10
+18 9 0 13 -262144 -1 -1;
+#X obj 150 160 bng 15 250 50 0 \$0-syn-wind ewtewennnnnnnnnnnn wind
+18 9 0 13 -262144 -1 -1;
+#X obj 150 180 bng 15 250 50 0 \$0-syn-16waveforms ewtewennnnnnnnnnnn
+16waveforms 18 9 0 13 -262144 -1 -1;
+#X obj 150 200 bng 15 250 50 0 \$0-syn-sinesumOsc ewtewennnnnnnnnnnn
+sinesumOsc 18 9 0 13 -262144 -1 -1;
+#X obj 150 240 bng 15 250 50 0 \$0-syn-simpleFM ewtewennnnnnnnnnnn
+simpleFM 18 9 0 13 -262144 -1 -1;
+#X obj 150 260 bng 15 250 50 0 \$0-syn-oxygen ewtewennnnnnnnnnnn oxygen
+18 9 0 13 -262144 -1 -1;
+#X obj 150 280 bng 15 250 50 0 \$0-syn-stringsynth ewtewennnnnnnnnnnn
+stringsynth 18 9 0 13 -262144 -1 -1;
+#X obj 150 300 bng 15 250 50 0 \$0-syn-xfm ewtewennnnnnnnnnnn xfm 18
+9 0 13 -262144 -1 -1;
+#X obj 150 220 bng 15 250 50 0 \$0-syn-detuned3Osc ewtewennnnnnnnnnnn
+detuned3Osc 18 9 0 13 -262144 -1 -1;
+#X obj 296 -6 cnv 15 105 20 empty empty mono-effects 5 10 0 14 -1 -262144
+0;
+#X obj 296 16 bng 15 250 50 0 \$0-mono-pitchshifter ewtewennnnnnnnnnnn
+pitchshifter 18 9 0 13 -262144 -1 -1;
+#X obj 296 36 bng 15 250 50 0 \$0-mono-wetfilter ewtewennnnnnnnnnnn
+wetfilter 18 9 0 13 -262144 -1 -1;
+#X obj 296 56 bng 15 250 50 0 \$0-mono-bitcrusher ewtewennnnnnnnnnnn
+bitcrusher 18 9 0 13 -262144 -1 -1;
+#X obj 296 76 bng 15 250 50 0 \$0-mono-material ewtewennnnnnnnnnnn
+material 18 9 0 13 -262144 -1 -1;
+#X obj 296 96 bng 15 250 50 0 \$0-mono-bodyresonance ewtewennnnnnnnnnnn
+bodyresonance 18 9 0 13 -262144 -1 -1;
+#X obj 296 176 bng 15 250 50 0 \$0-mono-combfilter ewtewennnnnnnnnnnn
+combfilter 18 9 0 13 -262144 -1 -1;
+#X obj 296 296 bng 15 250 50 0 \$0-mono-vibrato ewtewennnnnnnnnnnn
+vibrato 18 9 0 13 -261234 -1 -1;
+#X obj 296 136 bng 15 250 50 0 \$0-mono-shaper ewtewennnnnnnnnnnn shaper
+18 9 0 13 -262144 -1 -1;
+#X obj 296 316 bng 15 250 50 0 \$0-mono-AMtremolo ewtewennnnnnnnnnnn
+AMtremolo 18 9 0 13 -261234 -1 -1;
+#X obj 296 196 bng 15 250 50 0 \$0-mono-4tap ewtewennnnnnnnnnnn 4tap
+18 9 0 13 -262144 -1 -1;
+#X obj 296 216 bng 15 250 50 0 \$0-mono-delay ewtewennnnnnnnnnnn delay
+18 9 0 13 -262144 -1 -1;
+#X obj 296 236 bng 15 250 50 0 \$0-mono-delayfb ewtewennnnnnnnnnnn
+delayfb 18 9 0 13 -262144 -1 -1;
+#X obj 296 276 bng 15 250 50 0 \$0-mono-buffery ewtewennnnnnnnnnnn
+buffery 18 9 0 13 -204800 -1 -1;
+#X obj 425 15 bng 15 250 50 0 \$0-mono-lowpass ewtewennnnnnnnnnnn lowpass
+18 9 0 13 -262144 -1 -1;
+#X obj 425 35 bng 15 250 50 0 \$0-mono-vcf ewtewennnnnnnnnnnn vcf 18
+9 0 13 -262144 -1 -1;
+#X obj 425 55 bng 15 250 50 0 \$0-mono-vcf2pole ewtewennnnnnnnnnnn
+vcf2pole 18 9 0 13 -262144 -1 -1;
+#X obj 425 75 bng 15 250 50 0 \$0-mono-peakfilter ewtewennnnnnnnnnnn
+peakfilter 18 9 0 13 -262144 -1 -1;
+#X obj 425 95 bng 15 250 50 0 \$0-mono-highpass ewtewennnnnnnnnnnn
+highpass 18 9 0 13 -262144 -1 -1;
+#X obj 296 116 bng 15 250 50 0 \$0-mono-wavedistort ewtewennnnnnnnnnnn
+wavedistort 18 9 0 13 -262144 -1 -1;
+#X obj 425 115 bng 15 250 50 0 \$0-mono-EQ3 ewtewennnnnnnnnnnn EQ3
+18 9 0 13 -262144 -1 -1;
+#X obj 425 135 bng 15 250 50 0 \$0-mono-EQ7 ewtewennnnnnnnnnnn EQ7
+18 9 0 13 -262144 -1 -1;
+#X obj 425 155 bng 15 250 50 0 \$0-mono-EQ13 ewtewennnnnnnnnnnn EQ13
+18 9 0 13 -204800 -1 -1;
+#X obj 425 175 bng 15 250 50 0 \$0-mono-compressor ewtewennnnnnnnnnnn
+compressor 18 9 0 13 -262144 -1 -1;
+#X obj 425 195 bng 15 250 50 0 \$0-mono-limiter ewtewennnnnnnnnnnn
+limiter 18 9 0 13 -262144 -1 -1;
+#X obj 425 215 bng 15 250 50 0 \$0-mono-FFTreverb ewtewennnnnnnnnnnn
+FFTreverb 18 9 0 13 -262144 -1 -1;
+#X obj 425 235 bng 15 250 50 0 \$0-mono-FFTnoisereduce ewtewennnnnnnnnnnn
+FFTnoisereduce 18 9 0 13 -262144 -1 -1;
+#X obj 425 255 bng 15 250 50 0 \$0-mono-pureverb ewtewennnnnnnnnnnn
+pureverb 18 9 0 13 -262144 -1 -1;
+#X obj 425 275 bng 15 250 50 0 \$0-mono-pureverb4 ewtewennnnnnnnnnnn
+pureverb4 18 9 0 13 -262144 -1 -1;
+#X obj 566 21 bng 15 250 50 0 \$0-st-pitchshifter ewtewennnnnnnnnnnn
+pitchshifter 18 9 0 13 -262144 -1 -1;
+#X obj 566 41 bng 15 250 50 0 \$0-st-wetfilter ewtewennnnnnnnnnnn wetfilter
+18 9 0 13 -262144 -1 -1;
+#X obj 566 61 bng 15 250 50 0 \$0-st-bitcrusher ewtewennnnnnnnnnnn
+bitcrusher 18 9 0 13 -262144 -1 -1;
+#X obj 566 81 bng 15 250 50 0 \$0-st-material ewtewennnnnnnnnnnn material
+18 9 0 13 -262144 -1 -1;
+#X obj 566 101 bng 15 250 50 0 \$0-st-bodyresonance ewtewennnnnnnnnnnn
+bodyresonance 18 9 0 13 -262144 -1 -1;
+#X obj 566 181 bng 15 250 50 0 \$0-st-combfilter ewtewennnnnnnnnnnn
+combfilter 18 9 0 13 -262144 -1 -1;
+#X obj 566 361 bng 15 250 50 0 \$0-st-vibrato ewtewennnnnnnnnnnn vibrato
+18 9 0 13 -261234 -1 -1;
+#X obj 566 161 bng 15 250 50 0 \$0-st-shaper ewtewennnnnnnnnnnn shaper
+18 9 0 13 -262144 -1 -1;
+#X obj 566 341 bng 15 250 50 0 \$0-st-AMtremolo ewtewennnnnnnnnnnn
+AMtremolo 18 9 0 13 -261234 -1 -1;
+#X obj 566 201 bng 15 250 50 0 \$0-st-4tap ewtewennnnnnnnnnnn 4tap
+18 9 0 13 -262144 -1 -1;
+#X obj 566 221 bng 15 250 50 0 \$0-st-delay ewtewennnnnnnnnnnn delay
+18 9 0 13 -262144 -1 -1;
+#X obj 566 241 bng 15 250 50 0 \$0-st-delayfb ewtewennnnnnnnnnnn delayfb
+18 9 0 13 -262144 -1 -1;
+#X obj 566 281 bng 15 250 50 0 \$0-st-buffery ewtewennnnnnnnnnnn buffery
+18 9 0 13 -204800 -1 -1;
+#X obj 701 22 bng 15 250 50 0 \$0-st-lowpass ewtewennnnnnnnnnnn lowpass
+18 9 0 13 -262144 -1 -1;
+#X obj 701 62 bng 15 250 50 0 \$0-st-vcf ewtewennnnnnnnnnnn vcf 18
+9 0 13 -262144 -1 -1;
+#X obj 701 82 bng 15 250 50 0 \$0-st-vcf2pole ewtewennnnnnnnnnnn vcf2pole
+18 9 0 13 -262144 -1 -1;
+#X obj 701 102 bng 15 250 50 0 \$0-st-peakfilter ewtewennnnnnnnnnnn
+peakfilter 18 9 0 13 -262144 -1 -1;
+#X obj 701 122 bng 15 250 50 0 \$0-st-highpass ewtewennnnnnnnnnnn highpass
+18 9 0 13 -262144 -1 -1;
+#X obj 566 121 bng 15 250 50 0 \$0-st-wavedistort ewtewennnnnnnnnnnn
+wavedistort 18 9 0 13 -262144 -1 -1;
+#X obj 701 142 bng 15 250 50 0 \$0-st-EQ3 ewtewennnnnnnnnnnn EQ3 18
+9 0 13 -262144 -1 -1;
+#X obj 701 162 bng 15 250 50 0 \$0-st-EQ7 ewtewennnnnnnnnnnn EQ7 18
+9 0 13 -262144 -1 -1;
+#X obj 701 182 bng 15 250 50 0 \$0-st-EQ13 ewtewennnnnnnnnnnn EQ13
+18 9 0 13 -204800 -1 -1;
+#X obj 701 202 bng 15 250 50 0 \$0-st-compressor ewtewennnnnnnnnnnn
+compressor 18 9 0 13 -262144 -1 -1;
+#X obj 701 222 bng 15 250 50 0 \$0-st-limiter ewtewennnnnnnnnnnn limiter
+18 9 0 13 -262144 -1 -1;
+#X obj 701 242 bng 15 250 50 0 \$0-st-FFTreverb ewtewennnnnnnnnnnn
+FFTreverb 18 9 0 13 -262144 -1 -1;
+#X obj 701 262 bng 15 250 50 0 \$0-st-FFTnoisereduce ewtewennnnnnnnnnnn
+FFTnoisereduce 18 9 0 13 -262144 -1 -1;
+#X obj 701 282 bng 15 250 50 0 \$0-st-pureverb ewtewennnnnnnnnnnn pureverb
+18 9 0 13 -262144 -1 -1;
+#X obj 701 302 bng 15 250 50 0 \$0-st-pureverb4 ewtewennnnnnnnnnnn
+pureverb4 18 9 0 13 -262144 -1 -1;
+#X obj 565 -3 cnv 15 130 20 empty empty stereo-effects 5 10 0 14 -1
+-262144 0;
+#N canvas 49 261 826 247 code 0;
+#N canvas 0 22 896 655 makestuff2 0;
+#X obj 11 55 s \$0-make;
+#X obj 12 126 s \$0-make;
+#X obj 11 197 s \$0-make;
+#X obj 12 268 s \$0-make;
+#X obj 14 338 s \$0-make;
+#X obj 15 409 s \$0-make;
+#X obj 14 480 s \$0-make;
+#X obj 15 551 s \$0-make;
+#X obj 214 56 s \$0-make;
+#X obj 215 127 s \$0-make;
+#X obj 214 198 s \$0-make;
+#X obj 215 269 s \$0-make;
+#X obj 217 339 s \$0-make;
+#X obj 218 410 s \$0-make;
+#X obj 217 481 s \$0-make;
+#X obj 418 54 s \$0-make;
+#X obj 419 125 s \$0-make;
+#X obj 418 196 s \$0-make;
+#X obj 419 267 s \$0-make;
+#X obj 421 337 s \$0-make;
+#X obj 422 408 s \$0-make;
+#X obj 421 479 s \$0-make;
+#X obj 422 550 s \$0-make;
+#X obj 621 55 s \$0-make;
+#X obj 622 126 s \$0-make;
+#X obj 621 197 s \$0-make;
+#X obj 622 268 s \$0-make;
+#X obj 8 7 r \$0-mono-pitchshifter;
+#X obj 9 33 symbol mono-pitchshifter;
+#X obj 9 78 r \$0-mono-wetfilter;
+#X obj 10 104 symbol mono-wetfilter;
+#X obj 8 149 r \$0-mono-bitcrusher;
+#X obj 9 175 symbol mono-bitcrusher;
+#X obj 9 220 r \$0-mono-material;
+#X obj 10 246 symbol mono-material;
+#X obj 11 289 r \$0-mono-bodyresonance;
+#X obj 12 316 symbol mono-bodyresonance;
+#X obj 12 361 r \$0-mono-wavedistort;
+#X obj 13 387 symbol mono-wavedistort;
+#X obj 11 432 r \$0-mono-combfilter;
+#X obj 12 458 symbol mono-combfilter;
+#X obj 12 502 r \$0-mono-vibrato;
+#X obj 13 529 symbol mono-vibrato;
+#X obj 212 34 symbol mono-shaper;
+#X obj 211 7 r \$0-mono-shaper;
+#X obj 212 151 r \$0-mono-4tap;
+#X obj 212 176 symbol mono-4tap;
+#X obj 212 221 r \$0-mono-delay;
+#X obj 212 247 symbol mono-delay;
+#X obj 214 291 r \$0-mono-delayfb;
+#X obj 215 317 symbol mono-delayfb;
+#X obj 215 362 r \$0-mono-buffery;
+#X obj 216 388 symbol mono-buffery;
+#X obj 214 433 r \$0-mono-lowpass;
+#X obj 215 459 symbol mono-lowpass;
+#X obj 219 620 s \$0-make;
+#X obj 216 572 r \$0-mono-vcf;
+#X obj 217 599 symbol mono-vcf;
+#X obj 416 6 r \$0-mono-vcf2pole;
+#X obj 416 33 symbol mono-vcf2pole;
+#X obj 416 77 r \$0-mono-peakfilter;
+#X obj 417 102 symbol mono-peakfilter;
+#X obj 415 148 r \$0-mono-highpass;
+#X obj 416 174 symbol mono-highpass;
+#X obj 416 219 r \$0-mono-EQ3;
+#X obj 417 245 symbol mono-EQ3;
+#X obj 418 289 r \$0-mono-EQ7;
+#X obj 419 315 symbol mono-EQ7;
+#X obj 419 360 r \$0-mono-EQ13;
+#X obj 420 386 symbol mono-EQ13;
+#X obj 418 431 r \$0-mono-compressor;
+#X obj 419 457 symbol mono-compressor;
+#X obj 419 528 symbol mono-limiter;
+#X obj 419 501 r \$0-mono-limiter;
+#X obj 618 7 r \$0-mono-FFTreverb;
+#X obj 619 33 symbol mono-FFTreverb;
+#X obj 619 78 r \$0-mono-FFTnoisereduce;
+#X obj 620 104 symbol mono-FFTnoisereduce;
+#X obj 618 148 r \$0-mono-pureverb;
+#X obj 619 175 symbol mono-pureverb;
+#X obj 619 220 r \$0-mono-pureverb4;
+#X obj 620 246 symbol mono-pureverb4;
+#X obj 626 347 s \$0-make;
+#X obj 623 299 r \$0-mono-ugurphase;
+#X obj 624 324 symbol mono-ugurphase;
+#X obj 219 550 s \$0-make;
+#X obj 216 503 r \$0-mono-res_lowpass;
+#X obj 216 529 symbol mono-res_lowpass;
+#X obj 212 79 r \$0-mono-AMtremolo;
+#X obj 214 105 symbol mono-AMtremolo;
+#X obj 628 418 s \$0-make;
+#X obj 625 368 r \$0-mono-specdelay;
+#X obj 626 395 symbol mono-specdelay;
+#X connect 27 0 28 0;
+#X connect 28 0 0 0;
+#X connect 29 0 30 0;
+#X connect 30 0 1 0;
+#X connect 31 0 32 0;
+#X connect 32 0 2 0;
+#X connect 33 0 34 0;
+#X connect 34 0 3 0;
+#X connect 35 0 36 0;
+#X connect 36 0 4 0;
+#X connect 37 0 38 0;
+#X connect 38 0 5 0;
+#X connect 39 0 40 0;
+#X connect 40 0 6 0;
+#X connect 41 0 42 0;
+#X connect 42 0 7 0;
+#X connect 43 0 8 0;
+#X connect 44 0 43 0;
+#X connect 45 0 46 0;
+#X connect 46 0 10 0;
+#X connect 47 0 48 0;
+#X connect 48 0 11 0;
+#X connect 49 0 50 0;
+#X connect 50 0 12 0;
+#X connect 51 0 52 0;
+#X connect 52 0 13 0;
+#X connect 53 0 54 0;
+#X connect 54 0 14 0;
+#X connect 56 0 57 0;
+#X connect 57 0 55 0;
+#X connect 58 0 59 0;
+#X connect 59 0 15 0;
+#X connect 60 0 61 0;
+#X connect 61 0 16 0;
+#X connect 62 0 63 0;
+#X connect 63 0 17 0;
+#X connect 64 0 65 0;
+#X connect 65 0 18 0;
+#X connect 66 0 67 0;
+#X connect 67 0 19 0;
+#X connect 68 0 69 0;
+#X connect 69 0 20 0;
+#X connect 70 0 71 0;
+#X connect 71 0 21 0;
+#X connect 72 0 22 0;
+#X connect 73 0 72 0;
+#X connect 74 0 75 0;
+#X connect 75 0 23 0;
+#X connect 76 0 77 0;
+#X connect 77 0 24 0;
+#X connect 78 0 79 0;
+#X connect 79 0 25 0;
+#X connect 80 0 81 0;
+#X connect 81 0 26 0;
+#X connect 83 0 84 0;
+#X connect 84 0 82 0;
+#X connect 86 0 87 0;
+#X connect 87 0 85 0;
+#X connect 88 0 89 0;
+#X connect 89 0 9 0;
+#X connect 91 0 92 0;
+#X connect 92 0 90 0;
+#X restore 41 65 pd makestuff2;
+#N canvas 0 22 894 648 makestuff3 0;
+#X obj 11 55 s \$0-make;
+#X obj 12 126 s \$0-make;
+#X obj 11 197 s \$0-make;
+#X obj 12 268 s \$0-make;
+#X obj 14 338 s \$0-make;
+#X obj 15 409 s \$0-make;
+#X obj 14 480 s \$0-make;
+#X obj 15 551 s \$0-make;
+#X obj 214 56 s \$0-make;
+#X obj 215 127 s \$0-make;
+#X obj 214 198 s \$0-make;
+#X obj 215 269 s \$0-make;
+#X obj 217 339 s \$0-make;
+#X obj 218 410 s \$0-make;
+#X obj 217 481 s \$0-make;
+#X obj 418 54 s \$0-make;
+#X obj 419 125 s \$0-make;
+#X obj 418 196 s \$0-make;
+#X obj 419 267 s \$0-make;
+#X obj 421 337 s \$0-make;
+#X obj 422 408 s \$0-make;
+#X obj 421 479 s \$0-make;
+#X obj 422 550 s \$0-make;
+#X obj 621 55 s \$0-make;
+#X obj 622 126 s \$0-make;
+#X obj 621 197 s \$0-make;
+#X obj 622 268 s \$0-make;
+#X obj 8 7 r \$0-st-pitchshifter;
+#X obj 9 33 symbol st-pitchshifter;
+#X obj 9 78 r \$0-st-wetfilter;
+#X obj 10 104 symbol st-wetfilter;
+#X obj 8 149 r \$0-st-bitcrusher;
+#X obj 9 175 symbol st-bitcrusher;
+#X obj 9 220 r \$0-st-material;
+#X obj 10 246 symbol st-material;
+#X obj 11 289 r \$0-st-bodyresonance;
+#X obj 12 316 symbol st-bodyresonance;
+#X obj 12 361 r \$0-st-wavedistort;
+#X obj 13 387 symbol st-wavedistort;
+#X obj 11 432 r \$0-st-combfilter;
+#X obj 12 458 symbol st-combfilter;
+#X obj 12 502 r \$0-st-vibrato;
+#X obj 13 529 symbol st-vibrato;
+#X obj 212 34 symbol st-shaper;
+#X obj 211 7 r \$0-st-shaper;
+#X obj 212 151 r \$0-st-4tap;
+#X obj 212 176 symbol st-4tap;
+#X obj 212 221 r \$0-st-delay;
+#X obj 212 247 symbol st-delay;
+#X obj 214 291 r \$0-st-delayfb;
+#X obj 215 317 symbol st-delayfb;
+#X obj 215 362 r \$0-st-buffery;
+#X obj 216 388 symbol st-buffery;
+#X obj 214 433 r \$0-st-lowpass;
+#X obj 215 459 symbol st-lowpass;
+#X obj 222 622 s \$0-make;
+#X obj 219 574 r \$0-st-vcf;
+#X obj 220 601 symbol st-vcf;
+#X obj 416 6 r \$0-st-vcf2pole;
+#X obj 416 33 symbol st-vcf2pole;
+#X obj 416 77 r \$0-st-peakfilter;
+#X obj 417 102 symbol st-peakfilter;
+#X obj 415 148 r \$0-st-highpass;
+#X obj 416 174 symbol st-highpass;
+#X obj 416 219 r \$0-st-EQ3;
+#X obj 417 245 symbol st-EQ3;
+#X obj 418 289 r \$0-st-EQ7;
+#X obj 419 315 symbol st-EQ7;
+#X obj 419 360 r \$0-st-EQ13;
+#X obj 420 386 symbol st-EQ13;
+#X obj 418 431 r \$0-st-compressor;
+#X obj 419 457 symbol st-compressor;
+#X obj 419 528 symbol st-limiter;
+#X obj 419 501 r \$0-st-limiter;
+#X obj 618 7 r \$0-st-FFTreverb;
+#X obj 619 33 symbol st-FFTreverb;
+#X obj 619 78 r \$0-st-FFTnoisereduce;
+#X obj 620 104 symbol st-FFTnoisereduce;
+#X obj 618 148 r \$0-st-pureverb;
+#X obj 619 175 symbol st-pureverb;
+#X obj 619 220 r \$0-st-pureverb4;
+#X obj 620 246 symbol st-pureverb4;
+#X obj 624 343 s \$0-make;
+#X obj 621 295 r \$0-st-ugurphase;
+#X obj 622 321 symbol st-ugurphase;
+#X obj 219 550 s \$0-make;
+#X obj 216 504 r \$0-st-res_lowpass;
+#X obj 216 529 symbol st-res_lowpass;
+#X obj 633 416 s \$0-make;
+#X obj 626 376 r \$0-st-flanger;
+#X obj 630 396 symbol st-flanger;
+#X obj 624 500 s \$0-make;
+#X obj 621 452 r \$0-st-phaser;
+#X obj 621 478 symbol st-phaser;
+#X obj 213 104 symbol st-AMtremolo;
+#X obj 212 79 r \$0-st-AMtremolo;
+#X obj 631 576 s \$0-make;
+#X obj 628 527 r \$0-st-stereoxpand;
+#X obj 628 554 symbol st-stereoxpand;
+#X obj 427 620 s \$0-make;
+#X obj 422 579 r \$0-st-specdelay;
+#X obj 422 600 symbol st-specdelay;
+#X connect 27 0 28 0;
+#X connect 28 0 0 0;
+#X connect 29 0 30 0;
+#X connect 30 0 1 0;
+#X connect 31 0 32 0;
+#X connect 32 0 2 0;
+#X connect 33 0 34 0;
+#X connect 34 0 3 0;
+#X connect 35 0 36 0;
+#X connect 36 0 4 0;
+#X connect 37 0 38 0;
+#X connect 38 0 5 0;
+#X connect 39 0 40 0;
+#X connect 40 0 6 0;
+#X connect 41 0 42 0;
+#X connect 42 0 7 0;
+#X connect 43 0 8 0;
+#X connect 44 0 43 0;
+#X connect 45 0 46 0;
+#X connect 46 0 10 0;
+#X connect 47 0 48 0;
+#X connect 48 0 11 0;
+#X connect 49 0 50 0;
+#X connect 50 0 12 0;
+#X connect 51 0 52 0;
+#X connect 52 0 13 0;
+#X connect 53 0 54 0;
+#X connect 54 0 14 0;
+#X connect 56 0 57 0;
+#X connect 57 0 55 0;
+#X connect 58 0 59 0;
+#X connect 59 0 15 0;
+#X connect 60 0 61 0;
+#X connect 61 0 16 0;
+#X connect 62 0 63 0;
+#X connect 63 0 17 0;
+#X connect 64 0 65 0;
+#X connect 65 0 18 0;
+#X connect 66 0 67 0;
+#X connect 67 0 19 0;
+#X connect 68 0 69 0;
+#X connect 69 0 20 0;
+#X connect 70 0 71 0;
+#X connect 71 0 21 0;
+#X connect 72 0 22 0;
+#X connect 73 0 72 0;
+#X connect 74 0 75 0;
+#X connect 75 0 23 0;
+#X connect 76 0 77 0;
+#X connect 77 0 24 0;
+#X connect 78 0 79 0;
+#X connect 79 0 25 0;
+#X connect 80 0 81 0;
+#X connect 81 0 26 0;
+#X connect 83 0 84 0;
+#X connect 84 0 82 0;
+#X connect 86 0 87 0;
+#X connect 87 0 85 0;
+#X connect 89 0 90 0;
+#X connect 90 0 88 0;
+#X connect 92 0 93 0;
+#X connect 93 0 91 0;
+#X connect 94 0 9 0;
+#X connect 95 0 94 0;
+#X connect 97 0 98 0;
+#X connect 98 0 96 0;
+#X connect 100 0 101 0;
+#X connect 101 0 99 0;
+#X restore 41 85 pd makestuff3;
+#N canvas 111 31 854 629 makestuff1 0;
+#X obj 12 45 r \$0-eee-lfosig;
+#X obj 12 68 symbol eee-lfo~;
+#X obj 13 91 s \$0-make;
+#X obj 14 167 s \$0-make;
+#X obj 13 121 r \$0-eee-adsrsig;
+#X obj 13 144 symbol eee-adsr~;
+#X obj 11 261 s \$0-make;
+#X obj 12 337 s \$0-make;
+#X obj 9 215 r \$0-eee-lfo;
+#X obj 10 238 symbol eee-lfo;
+#X obj 11 291 r \$0-eee-adsr;
+#X obj 11 314 symbol eee-adsr;
+#X obj 158 56 s \$0-make;
+#X obj 156 10 r \$0-perk-bassdrum;
+#X obj 157 33 symbol perk-bassdrum;
+#X obj 159 122 s \$0-make;
+#X obj 159 190 s \$0-make;
+#X obj 160 256 s \$0-make;
+#X obj 160 325 s \$0-make;
+#X obj 161 391 s \$0-make;
+#X obj 161 459 s \$0-make;
+#X obj 162 525 s \$0-make;
+#X obj 285 54 s \$0-make;
+#X obj 286 120 s \$0-make;
+#X obj 286 188 s \$0-make;
+#X obj 157 77 r \$0-perk-hihat;
+#X obj 157 99 symbol perk-hihat;
+#X obj 157 143 r \$0-perk-snare;
+#X obj 158 168 symbol perk-snare;
+#X obj 158 210 r \$0-perk-clap;
+#X obj 159 233 symbol perk-clap;
+#X obj 158 279 r \$0-perk-andyhat;
+#X obj 159 302 symbol perk-andyhat;
+#X obj 158 345 r \$0-perk-cowbell;
+#X obj 160 368 symbol perk-cowbell;
+#X obj 161 436 symbol perk-lowtom;
+#X obj 159 413 r \$0-perk-lowtom;
+#X obj 161 479 r \$0-perk-hightom;
+#X obj 161 503 symbol perk-hightom;
+#X obj 283 8 r \$0-perk-gunshot;
+#X obj 284 31 symbol perk-gunshot;
+#X obj 284 74 r \$0-perk-bell;
+#X obj 285 97 symbol perk-bell;
+#X obj 284 141 r \$0-perk-cymbal;
+#X obj 285 165 symbol perk-cymbal;
+#X obj 430 53 s \$0-make;
+#X obj 428 122 s \$0-make;
+#X obj 430 189 s \$0-make;
+#X obj 428 258 s \$0-make;
+#X obj 430 325 s \$0-make;
+#X obj 428 394 s \$0-make;
+#X obj 430 461 s \$0-make;
+#X obj 612 51 s \$0-make;
+#X obj 610 120 s \$0-make;
+#X obj 612 187 s \$0-make;
+#X obj 610 256 s \$0-make;
+#X obj 612 323 s \$0-make;
+#X obj 610 392 s \$0-make;
+#X obj 612 459 s \$0-make;
+#X obj 427 6 r \$0-syn-rain;
+#X obj 428 31 symbol syn-rain;
+#X obj 425 76 r \$0-syn-cranks;
+#X obj 426 100 symbol syn-cranks;
+#X obj 426 143 r \$0-syn-classicsynth;
+#X obj 428 168 symbol syn-classicsynth;
+#X obj 425 212 r \$0-syn-bellsynth;
+#X obj 426 236 symbol syn-bellsynth;
+#X obj 427 279 r \$0-syn-detunedOsc;
+#X obj 428 303 symbol syn-detunedOsc;
+#X obj 425 348 r \$0-syn-cz10;
+#X obj 426 372 symbol syn-cz10;
+#X obj 427 415 r \$0-syn-wind;
+#X obj 428 439 symbol syn-wind;
+#X obj 609 4 r \$0-syn-16waveforms;
+#X obj 610 29 symbol syn-16waveforms;
+#X obj 607 73 r \$0-syn-sinesumOsc;
+#X obj 608 98 symbol syn-sinesumOsc;
+#X obj 609 140 r \$0-syn-simpleFM;
+#X obj 610 165 symbol syn-simpleFM;
+#X obj 607 208 r \$0-syn-oxygen;
+#X obj 608 234 symbol syn-oxygen;
+#X obj 609 277 r \$0-syn-stringsynth;
+#X obj 610 301 symbol syn-stringsynth;
+#X obj 607 346 r \$0-syn-xfm;
+#X obj 608 370 symbol syn-xfm;
+#X obj 609 413 r \$0-syn-detuned3Osc;
+#X obj 610 437 symbol syn-detuned3Osc;
+#X obj 436 531 s \$0-make;
+#X obj 433 485 r \$0-syn-ugurphase;
+#X obj 434 509 symbol syn-ugurphase;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 25 0 26 0;
+#X connect 26 0 15 0;
+#X connect 27 0 28 0;
+#X connect 28 0 16 0;
+#X connect 29 0 30 0;
+#X connect 30 0 17 0;
+#X connect 31 0 32 0;
+#X connect 32 0 18 0;
+#X connect 33 0 34 0;
+#X connect 34 0 19 0;
+#X connect 35 0 20 0;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 38 0 21 0;
+#X connect 39 0 40 0;
+#X connect 40 0 22 0;
+#X connect 41 0 42 0;
+#X connect 42 0 23 0;
+#X connect 43 0 44 0;
+#X connect 44 0 24 0;
+#X connect 59 0 60 0;
+#X connect 60 0 45 0;
+#X connect 61 0 62 0;
+#X connect 62 0 46 0;
+#X connect 63 0 64 0;
+#X connect 64 0 47 0;
+#X connect 65 0 66 0;
+#X connect 66 0 48 0;
+#X connect 67 0 68 0;
+#X connect 68 0 49 0;
+#X connect 69 0 70 0;
+#X connect 70 0 50 0;
+#X connect 71 0 72 0;
+#X connect 72 0 51 0;
+#X connect 73 0 74 0;
+#X connect 74 0 52 0;
+#X connect 75 0 76 0;
+#X connect 76 0 53 0;
+#X connect 77 0 78 0;
+#X connect 78 0 54 0;
+#X connect 79 0 80 0;
+#X connect 80 0 55 0;
+#X connect 81 0 82 0;
+#X connect 82 0 56 0;
+#X connect 83 0 84 0;
+#X connect 84 0 57 0;
+#X connect 85 0 86 0;
+#X connect 86 0 58 0;
+#X connect 88 0 89 0;
+#X connect 89 0 87 0;
+#X restore 41 44 pd makestuff1;
+#X obj 175 6 r \$0-make;
+#X obj 172 77 makefilename pd-%d-creator;
+#X obj 171 55 f \$0;
+#X obj 175 30 t b a;
+#X obj 174 100 pack s s;
+#N canvas 0 22 1032 604 makestuff4 0;
+#X obj 44 69 s \$0-make;
+#X obj 40 22 r \$0-diy-slider;
+#X obj 157 69 s \$0-make;
+#X obj 153 22 r \$0-diy-toggle;
+#X obj 41 46 symbol diy-slider;
+#X obj 154 46 symbol diy-toggle;
+#X obj 274 71 s \$0-make;
+#X obj 270 24 r \$0-diy-spigot;
+#X obj 270 48 symbol diy-spigot;
+#X obj 53 120 r \$0-diy-metro;
+#X obj 55 168 s \$0-make;
+#X obj 52 144 symbol diy-metro;
+#X obj 192 172 s \$0-make;
+#X obj 188 125 r \$0-diy-spigot~;
+#X obj 188 149 symbol diy-spigot~;
+#X obj 38 369 makefilename pd-%d-creator;
+#X obj 37 347 f \$0;
+#X obj 41 322 t b a;
+#X obj 40 392 pack s s;
+#X obj 77 305 s \$0-make;
+#X obj 42 283 t a a;
+#X obj 403 160 s \$0-make;
+#X obj 321 372 makefilename pd-%d-creator;
+#X obj 320 350 f \$0;
+#X obj 324 325 t b a;
+#X obj 325 286 t a a;
+#X obj 176 454 t b a;
+#X obj 398 112 r \$0-808_globaltext;
+#X obj 399 138 symbol 808_globaltext;
+#X obj 321 236 r \$0-808_local;
+#X obj 320 260 symbol 808_local;
+#X obj 40 240 r \$0-808_global;
+#X obj 39 260 symbol 808_global;
+#X obj 537 159 s \$0-make;
+#X obj 532 110 r \$0-808_localtext;
+#X obj 533 137 symbol 808_localtext;
+#X obj 179 558 s pd-savedata;
+#X obj 323 395 pack s s s;
+#X obj 385 333 s \$0-make;
+#X msg 179 535 obj 10 10 inlet \, msg 10 40 \, connect 0 0 1 0 \, vis
+0;
+#X msg 213 487 \; \$1 obj 40 105 pd savedata \; \$1 text 130 95 <-connect
+these objects;
+#X connect 1 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 17 1 18 1;
+#X connect 18 0 26 0;
+#X connect 20 0 17 0;
+#X connect 20 1 19 0;
+#X connect 22 0 37 0;
+#X connect 23 0 22 0;
+#X connect 24 0 23 0;
+#X connect 24 1 37 1;
+#X connect 25 0 24 0;
+#X connect 25 1 38 0;
+#X connect 26 0 39 0;
+#X connect 26 1 40 0;
+#X connect 27 0 28 0;
+#X connect 28 0 21 0;
+#X connect 29 0 30 0;
+#X connect 30 0 25 0;
+#X connect 31 0 32 0;
+#X connect 32 0 20 0;
+#X connect 34 0 35 0;
+#X connect 35 0 33 0;
+#X connect 37 0 26 0;
+#X connect 39 0 36 0;
+#X restore 42 109 pd makestuff4;
+#N canvas 0 22 823 463 makestuff5 0;
+#X obj 44 69 s \$0-make;
+#X obj 42 143 s \$0-make;
+#X obj 215 68 s \$0-make;
+#X obj 213 142 s \$0-make;
+#X obj 386 68 s \$0-make;
+#X obj 384 142 s \$0-make;
+#X obj 557 67 s \$0-make;
+#X obj 555 141 s \$0-make;
+#X obj 696 70 s \$0-make;
+#X obj 694 144 s \$0-make;
+#X obj 40 22 r \$0-smp-play1;
+#X obj 41 46 symbol smp-play1;
+#X obj 38 96 r \$0-smp-play2;
+#X obj 39 121 symbol smp-play2;
+#X obj 211 21 r \$0-smp-transpose1;
+#X obj 211 45 symbol smp-transpose1;
+#X obj 208 92 r \$0-smp-transpose2;
+#X obj 210 119 symbol smp-transpose2;
+#X obj 381 21 r \$0-smp-timestretch1;
+#X obj 383 45 symbol smp-timestretch1;
+#X obj 380 94 r \$0-smp-timestretch2;
+#X obj 381 119 symbol smp-timestretch2;
+#X obj 553 20 r \$0-smp-pvoc1;
+#X obj 554 44 symbol smp-pvoc1;
+#X obj 551 93 r \$0-smp-pvoc2;
+#X obj 552 118 symbol smp-pvoc2;
+#X obj 692 23 r \$0-smp-beatvoc1;
+#X obj 693 46 symbol smp-beatvoc1;
+#X obj 690 97 r \$0-smp-beatvoc2;
+#X obj 691 121 symbol smp-beatvoc2;
+#X obj 47 210 r \$0-303_TB;
+#X obj 50 255 s \$0-make;
+#X obj 47 233 symbol 303_TB;
+#X obj 145 253 s \$0-make;
+#X obj 141 207 r \$0-303_seq;
+#X obj 142 231 symbol 303_seq;
+#X obj 242 253 s \$0-make;
+#X obj 238 206 r \$0-303_synth;
+#X obj 238 231 symbol 303_synth;
+#X obj 348 254 s \$0-make;
+#X obj 343 206 r \$0-303_trig;
+#X obj 344 230 symbol 303_trig;
+#X obj 456 251 s \$0-make;
+#X obj 451 202 r \$0-303_withdac;
+#X obj 452 226 symbol 303_withdac;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
+#X connect 13 0 1 0;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X connect 16 0 17 0;
+#X connect 17 0 3 0;
+#X connect 18 0 19 0;
+#X connect 19 0 4 0;
+#X connect 20 0 21 0;
+#X connect 21 0 5 0;
+#X connect 22 0 23 0;
+#X connect 23 0 6 0;
+#X connect 24 0 25 0;
+#X connect 25 0 7 0;
+#X connect 26 0 27 0;
+#X connect 27 0 8 0;
+#X connect 28 0 29 0;
+#X connect 29 0 9 0;
+#X connect 30 0 32 0;
+#X connect 32 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 33 0;
+#X connect 37 0 38 0;
+#X connect 38 0 36 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X restore 41 133 pd makestuff5;
+#N canvas 0 22 566 516 readme-files 0;
+#X obj 51 139 r readme-mod;
+#X msg 21 438 \; pd open \$1 \$2;
+#X obj 71 396 getdir;
+#X obj 21 416 pack s s;
+#X obj 21 397 symbol;
+#X obj 20 372 t a b;
+#X msg 109 365 symbol readme-envelopes.pd;
+#X msg 80 267 symbol readme-effects.pd;
+#X msg 98 320 symbol readme-perk.pd;
+#X msg 50 162 symbol readme-modulation.pd;
+#X msg 65 213 symbol readme-synth.pd;
+#X obj 25 81 r readme-patchwerk;
+#X msg 25 105 symbol readme-patchwerk.pd;
+#X obj 66 189 r readme-synth;
+#X obj 80 244 r readme-effects;
+#X obj 99 294 r readme-perk;
+#X obj 110 344 r readme-envelopes;
+#X msg 16 52 symbol readme-samplers.pd;
+#X obj 16 27 r readme-samplers;
+#X obj 189 429 r readme-808state;
+#X msg 187 449 symbol readme-state-saving.pd;
+#X connect 0 0 9 0;
+#X connect 2 0 3 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 1 2 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 5 0;
+#X connect 11 0 12 0;
+#X connect 12 0 5 0;
+#X connect 13 0 10 0;
+#X connect 14 0 7 0;
+#X connect 15 0 8 0;
+#X connect 16 0 6 0;
+#X connect 17 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 20 0;
+#X connect 20 0 5 0;
+#X restore 42 172 pd readme-files;
+#X msg 175 120 \; \$1 obj 40 40 \$2 /key \, loadbang \, editmode 1
+;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 6 1 7 1;
+#X connect 7 0 11 0;
+#X restore 699 362 pd code;
+#X obj 150 320 bng 15 250 50 0 \$0-syn-ugurphase ewtewennnnnnnnnnnn
+ugurphase 18 9 0 13 -262144 -1 -1;
+#X obj 296 156 bng 15 250 50 0 \$0-mono-ugurphase ewtewennnnnnnnnnnn
+ugurphase 18 9 0 13 -262144 -1 -1;
+#X obj 566 141 bng 15 250 50 0 \$0-st-ugurphase ewtewennnnnnnnnnnn
+ugurphase 18 9 0 13 -262144 -1 -1;
+#X obj 841 -2 cnv 15 90 20 empty empty patch-werk 5 10 0 14 -1 -262144
+0;
+#X obj 841 64 bng 15 250 50 0 \$0-diy-slider ewtewennnnnnnnnnnn slider
+18 9 0 13 -262144 -1 -1;
+#X obj 841 84 bng 15 250 50 0 \$0-diy-toggle ewtewennnnnnnnnnnn toggle
+18 9 0 13 -262144 -1 -1;
+#X obj 841 104 bng 15 250 50 0 \$0-diy-spigot ewtewennnnnnnnnnnn spigot
+18 9 0 13 -262144 -1 -1;
+#X obj 841 44 bng 15 250 50 0 \$0-diy-metro ewtewennnnnnnnnnnn metro
+18 9 0 13 -262144 -1 -1;
+#X obj 841 124 bng 15 250 50 0 \$0-diy-spigot~ ewtewennnnnnnnnnnn spigot~
+18 9 0 13 -262144 -1 -1;
+#X obj 1159 33 vradio 20 1 0 18 empty empty empty 0 -6 0 10 -262144
+-1 -1 0;
+#X obj 998 -1 cnv 15 80 20 empty empty samplers 5 10 0 14 -1 -262144
+0;
+#X obj 997 44 bng 15 250 50 0 \$0-smp-play1 ewtewennnnnnnnnnnn play(mono)
+18 9 0 13 -262144 -1 -1;
+#X obj 997 145 bng 15 250 50 0 \$0-smp-play2 ewtewennnnnnnnnnnn play(stereo)
+18 9 0 13 -262144 -1 -1;
+#X obj 997 64 bng 15 250 50 0 \$0-smp-transpose1 ewtewennnnnnnnnnnn
+transpose(m) 18 9 0 13 -262144 -1 -1;
+#X obj 997 165 bng 15 250 50 0 \$0-smp-transpose2 ewtewennnnnnnnnnnn
+transpose(st) 18 9 0 13 -262144 -1 -1;
+#X obj 997 84 bng 15 250 50 0 \$0-smp-timestretch1 ewtewennnnnnnnnnnn
+timestretch(m) 18 9 0 13 -262144 -1 -1;
+#X obj 997 185 bng 15 250 50 0 \$0-smp-timestretch2 ewtewennnnnnnnnnnn
+timestretch(st) 18 9 0 13 -262144 -1 -1;
+#X obj 997 104 bng 15 250 50 0 \$0-smp-pvoc1 ewtewennnnnnnnnnnn phase-vocoder(m)
+18 9 0 13 -262144 -1 -1;
+#X obj 997 205 bng 15 250 50 0 \$0-smp-pvoc2 ewtewennnnnnnnnnnn phase-vocoder(st)
+18 9 0 13 -262144 -1 -1;
+#X obj 997 124 bng 15 250 50 0 \$0-smp-beatvoc1 ewtewennnnnnnnnnnn
+beat-vocoder(m) 18 9 0 13 -262144 -1 -1;
+#X obj 997 225 bng 15 250 50 0 \$0-smp-beatvoc2 ewtewennnnnnnnnnnn
+beat-vocoder(st) 18 9 0 13 -262144 -1 -1;
+#X obj 841 224 bng 15 250 50 0 \$0-808_global ewtewennnnnnnnnnnn 808_global
+18 9 0 13 -262144 -1 -1;
+#X obj 701 42 bng 15 250 50 0 \$0-st-res_lowpass ewtewennnnnnnnnnnn
+res_lowpass 18 9 0 13 -262144 -1 -1;
+#X obj 566 301 bng 15 250 50 0 \$0-st-flanger ewtewennnnnnnnnnnn flanger
+18 9 0 13 -261234 -1 -1;
+#X obj 566 321 bng 15 250 50 0 \$0-st-phaser ewtewennnnnnnnnnnn phaser
+18 9 0 13 -261234 -1 -1;
+#X obj 167 370 cnv 15 17 17 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 168 371 cnv 15 15 15 empty empty non-standard-interface 20 8
+0 14 -204800 -66577 0;
+#X obj 167 391 cnv 15 17 17 empty empty empty 20 12 0 14 -1 -66577
+0;
+#X obj 168 392 cnv 15 15 15 empty empty bang(or_value)to_right_inlet_resets_phase
+20 8 0 14 -261234 -66577 0;
+#X obj 701 322 bng 15 250 50 0 \$0-st-stereoxpand ewtewennnnnnnnnnnn
+stereoxpand 18 9 0 13 -262144 -1 -1;
+#X obj 566 261 bng 15 250 50 0 \$0-st-specdelay ewtewennnnnnnnnnnn
+specdelay 18 9 0 13 -262144 -1 -1;
+#X obj 296 256 bng 15 250 50 0 \$0-mono-specdelay ewtewennnnnnnnnnnn
+specdelay 18 9 0 13 -262144 -1 -1;
+#X obj 9 22 bng 15 250 50 0 readme-envelopes wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X obj 8 179 bng 15 250 50 0 readme-perk wuyriuewyuiyerwiiiiiioio readme
+17 7 0 14 -261682 -1 -258113;
+#N canvas 512 45 619 702 \$0-creator 1;
+#X coords 0 0 1 1 323 230 0;
+#X restore 699 383 pd \$0-creator;
+#X obj 150 21 bng 15 250 50 0 readme-synth wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X obj 406 -4 bng 15 250 50 0 readme-effects wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X obj 700 -1 bng 15 250 50 0 readme-effects wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X obj 841 25 bng 15 250 50 0 readme-patchwerk wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X text 1000 347 this radio is just a scale;
+#X text 1000 361 to line bangs up neatly :);
+#X obj 999 24 bng 15 250 50 0 readme-samplers wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X obj 841 204 bng 15 250 50 0 \$0-808_local ewtewennnnnnnnnnnn 808_local
+18 9 0 13 -262144 -1 -1;
+#X obj 841 264 bng 15 250 50 0 \$0-808_globaltext ewtewennnnnnnnnnnn
+808_globaltext 18 9 0 13 -262144 -1 -1;
+#X obj 841 244 bng 15 250 50 0 \$0-808_localtext ewtewennnnnnnnnnnn
+808_localtext 18 9 0 13 -262144 -1 -1;
+#X obj 842 159 cnv 15 145 20 empty empty 808_state(saving) 5 10 0 14
+-1 -262144 0;
+#X obj 842 184 bng 15 250 50 0 readme-808state wuyriuewyuiyerwiiiiiioio
+readme 17 7 0 14 -261682 -1 -258113;
+#X obj 842 290 cnv 15 100 20 empty empty bonus_TB303 5 10 0 14 -1 -262144
+0;
+#X obj 842 332 bng 15 250 50 0 \$0-303_TB ewtewennnnnnnnnnnn 303_TB
+18 9 0 13 -262144 -1 -1;
+#X obj 842 352 bng 15 250 50 0 \$0-303_seq ewtewennnnnnnnnnnn 303_seq
+18 9 0 13 -262144 -1 -1;
+#X obj 842 372 bng 15 250 50 0 \$0-303_synth ewtewennnnnnnnnnnn 303_synth
+18 9 0 13 -262144 -1 -1;
+#X obj 842 392 bng 15 250 50 0 \$0-303_trig ewtewennnnnnnnnnnn 303_trig
+18 9 0 13 -262144 -1 -1;
+#X obj 842 312 bng 15 250 50 0 \$0-303_withdac ewtewennnnnnnnnnnn 303_withdac
+18 9 0 13 -262144 -1 -1;

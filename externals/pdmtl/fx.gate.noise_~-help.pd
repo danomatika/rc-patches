@@ -1,0 +1,11 @@
+#N canvas 329 231 472 244 10;
+#X obj 26 170 mix.out_~;
+#X text 22 15 a noise gate (cut off volume above threshold). useful
+for removing noise from an incoming signal or making breakbeat.;
+#X obj 26 85 fx.gate.noise_~;
+#X obj 25 58 adc~ 1;
+#X obj 328 61 adc~ 2;
+#X connect 2 0 0 0;
+#X connect 2 1 0 1;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;

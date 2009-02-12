@@ -1,0 +1,11 @@
+#N canvas 561 272 339 264 10;
+#X text 17 13 d-808brain;
+#X text 18 25 ----------;
+#X text 15 62 'brains' behind the other d-808 abstractions;
+#X text 17 115 see;
+#X obj 52 116 d-808cb~;
+#X obj 118 116 d-808hh~;
+#X text 227 152 part of dlib;
+#X text 134 179 copyright damian stewart 2008;
+#X text 105 193 damian@frey.co.nz | www.frey.co.nz;
+#X text 16 218 released under the GNU General Public License v3+;

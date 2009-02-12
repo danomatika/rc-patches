@@ -1,0 +1,36 @@
+#N canvas 145 49 661 547 10;
+#X obj 6 22 bng 14 250 50 0 \$0-save empty save 17 7 0 14 -128992 -66577
+-1;
+#X obj 6 40 bng 14 250 50 0 \$0-load empty load 17 7 0 14 -128992 -1
+-1;
+#X obj 273 171 r \$0-load;
+#X text 341 172 if the load button is pressed;
+#X obj 442 321 r SSSAD_ADMIN;
+#X obj 442 376 route persist;
+#X obj 442 346 list trim;
+#X obj 442 432 list trim;
+#X msg 96 239 save;
+#X obj 118 444 s SSSAD_ADMIN;
+#X obj 442 408 list prepend add SSSAD;
+#X msg 140 404 set \, addsemi;
+#X msg 96 472 add SSSAD_ADMIN set;
+#X obj 96 215 r \$0-save;
+#X obj 96 262 t b a b b b;
+#X obj 168 287 s SSSAD_SAVE;
+#X text 180 32 original patch by frank barknecht (sssad);
+#X obj 232 511 outlet;
+#X connect 2 0 17 0;
+#X connect 4 0 6 0;
+#X connect 5 0 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 17 0;
+#X connect 8 0 14 0;
+#X connect 10 0 7 0;
+#X connect 11 0 17 0;
+#X connect 12 0 17 0;
+#X connect 13 0 8 0;
+#X connect 14 0 12 0;
+#X connect 14 1 9 0;
+#X connect 14 2 11 0;
+#X connect 14 4 15 0;
+#X coords 0 -1 1 1 85 60 1 0 0;

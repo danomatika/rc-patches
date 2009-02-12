@@ -1,0 +1,6 @@
+All note sounds from freesound: 
+
+note0.wav -> 41345_ivanbailey_2.wav @ http://freesound.iua.upf.edu/
+note1.wav -> 35277_linse_thumbpiano_lowC_1.wav @ http://freesound.iua.upf.edu/
+note2.wav -> 41332_jenslinell_Bb_1_okt.wav @ http://freesound.iua.upf.edu/
+

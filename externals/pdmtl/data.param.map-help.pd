@@ -1,0 +1,18 @@
+#N canvas 397 125 673 371 10;
+#X text 23 62 Does not work with get \, dump or dump.format;
+#X obj 111 180 data.param.map param_name;
+#X msg 111 136 store key value;
+#X msg 59 139 key;
+#X text 26 27 Description: A collection of key and value pairs that
+can be saved and restored (with data.param.save and data.param.load).
+;
+#X obj 111 213 print;
+#X text 209 233 Outlet 2 bangs when data.param.save requests the map
+data.;
+#X text 210 249 Outlet 3 bangs when data.param.load is about to load
+data.;
+#X text 208 266 Outlet 4 bangs when data.param.load has finished loading
+the data.;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;

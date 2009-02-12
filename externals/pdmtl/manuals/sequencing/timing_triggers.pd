@@ -1,0 +1,32 @@
+#N canvas 0 0 703 518 10;
+#X msg 42 103 trigger onbeat;
+#X msg 135 302 tigger onloop;
+#X msg 96 197 tigger onevent;
+#X msg 149 399 tigger follow;
+#X text 34 29 There are many ways of triggering and synchronizing seq.timing.slave
+enabled abstractions to seq.timing.master. Here are the available four
+modes (each mode is always prepended by the trigger message):;
+#X obj 42 469 outlet;
+#X text 156 145 That means that the abstraction can start playing on
+each beat (every 24 steps).;
+#X text 208 241 If you set seq.timing.slave's events/beat to 4 \, the
+abstraction can start playing at any quarter beat.;
+#X text 240 346 If you set seq.timing.slave's length to 16 events and
+the events/beat to 4 \, the abstraction can start playing every 4 beats.
+;
+#X text 156 103 Next time you press play \, the abstraction will start
+playing from event 0 (restarts the pattern) once it receives a new
+beat.;
+#X text 207 194 Next time you press play \, the abstraction will start
+playing from event 0 (restarts the pattern) once it receives a new
+event.;
+#X text 240 301 Next time you press play \, the abstraction will start
+playing from event 0 (restarts the pattern) once it receives a loop
+start.;
+#X text 254 400 The abstraction will start playing immediatly the next
+time you press play. It will try to match seq.timing.master's current
+event (does not restart the pattern).;
+#X connect 0 0 5 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;

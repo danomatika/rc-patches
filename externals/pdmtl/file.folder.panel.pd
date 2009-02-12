@@ -1,0 +1,9 @@
+#N canvas 566 195 567 413 10;
+#X declare -stdpath extra/tof;
+#X obj 39 54 inlet;
+#X obj 38 198 outlet;
+#X text 16 9 Sends the pathname of a directory on bang;
+#X obj 37 131 folderpanel;
+#X obj 186 81 declare -stdpath extra/tof;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;

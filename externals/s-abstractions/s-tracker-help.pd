@@ -1,0 +1,14 @@
+#N canvas 85 72 444 473 10;
+#X obj 278 26 sssad/datastore;
+#N canvas 4 20 605 663 datastore 0;
+#X obj 10 10 r SSSADDATA;
+#X msg 10 30 \; SSSAD track/sequence 60 0 60 0 0 0 48 48 48 60 0 0
+0 0 0 65 \; SSSAD_ADMIN set \;;
+#X connect 0 0 1 0;
+#X restore 278 92 pd datastore;
+#X obj 155 26 r track/value;
+#X floatatom 155 49 5 0 0 0 - - -;
+#X obj 277 120 s-metro time;
+#X obj 7 78 s-tracker track 16 4 time/tick;
+#X text 8 1 Args: name length ticks-per-section timer-ticker;
+#X connect 2 0 3 0;

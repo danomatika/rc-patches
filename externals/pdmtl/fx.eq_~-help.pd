@@ -1,0 +1,14 @@
+#N canvas 101 135 361 329 10;
+#X text 54 56 Description: A graphical equalizer.;
+#X obj 52 88 noise~;
+#X obj 50 218 mix.out_~;
+#X obj 255 88 noise~;
+#X obj 52 109 *~ 0.5;
+#X obj 256 109 *~ 0.5;
+#X obj 51 133 fx.eq_~;
+#X connect 1 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
+#X connect 6 1 2 1;

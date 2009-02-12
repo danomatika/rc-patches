@@ -1,0 +1,13 @@
+#N canvas 191 58 494 491 10;
+#X obj 280 431 outlet~;
+#X obj 292 50 inlet bpm;
+#X obj 79 55 inlet position(0->15);
+#X obj 283 122 303_synth3 \$1/synth;
+#X obj 101 122 303_seq3 \$1/seq;
+#X obj 387 34 inlet params;
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X coords 0 -1 1 1 321 257 1 100 100;

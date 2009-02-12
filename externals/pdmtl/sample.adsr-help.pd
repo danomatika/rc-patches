@@ -1,0 +1,28 @@
+#N canvas 497 12 742 524 10;
+#X obj 143 103 file.path.top;
+#X msg 103 14 medias/sounds/loop0.wav;
+#X msg 282 14 medias/sounds/loop1.wav;
+#X msg 461 13 medias/sounds/loop2.wav;
+#X floatatom 117 340 5 0 0 0 - - -;
+#X floatatom 161 341 5 0 0 0 - - -;
+#X floatatom 213 339 5 0 0 0 - - -;
+#X floatatom 263 337 5 0 0 0 - - -;
+#X floatatom 344 344 5 0 0 0 - - -;
+#X text 289 238 Controls the gain (g \, 0-1.27) \, attack (a \, ms)
+\, decay (d \, ms) \, sustain (s \, 0-1.27) and release (r \, ms) of
+a sample.;
+#X msg 217 195 1 10 0 1 100;
+#X text 313 192 gain attack decay sustain release;
+#X obj 144 244 sample.adsr;
+#X obj 145 134 sample.filer;
+#X connect 0 0 13 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 10 0 12 1;
+#X connect 12 1 4 0;
+#X connect 12 2 5 0;
+#X connect 12 3 6 0;
+#X connect 12 4 7 0;
+#X connect 12 5 8 0;
+#X connect 13 0 12 0;

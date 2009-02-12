@@ -1,0 +1,16 @@
+#N canvas 0 0 450 300 10;
+#X obj 136 198 2d.ratio;
+#X msg 99 98 640 480;
+#X msg 184 104 320 240;
+#X msg 248 132 256 256;
+#X obj 119 262 print;
+#X text 29 12 Description: Returns the ratio of two values between
+each other.;
+#X obj 189 238 /;
+#X floatatom 189 267 5 0 0 0 - - -;
+#X connect 0 0 4 0;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 6 0 7 0;

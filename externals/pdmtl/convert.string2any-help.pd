@@ -1,0 +1,13 @@
+#N canvas 1484 407 450 300 10;
+#X obj 76 198 convert.string2any;
+#X msg 46 70 97 32 98 32 99;
+#X msg 61 92 97 0 98 0 99;
+#X msg 76 118 StringThing 97;
+#X text 157 73 lists of floats are converted to pd messages.;
+#X text 178 114 ... selector is ignored ...;
+#X obj 76 242 print MSG;
+#X text 38 25 Description: convert lists of floats to pd messages;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
