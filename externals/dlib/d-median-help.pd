@@ -1,0 +1,35 @@
+#N canvas 422 311 385 403 10;
+#X msg 32 210 insert \$1;
+#X obj 32 181 random 50;
+#X msg 100 210 clear;
+#X floatatom 32 275 5 0 0 0 - - -;
+#X msg 147 210 size 8;
+#X obj 32 157 metro 100;
+#X obj 32 133 loadbang;
+#X obj 247 134 adc~;
+#X obj 247 178 env~;
+#X floatatom 247 253 5 0 0 0 - - -;
+#X obj 247 221 d-median 128;
+#X text 21 10 d-median;
+#X text 21 20 --------;
+#X text 16 71 creation argument or 'size' message sets history buffer
+;
+#X text 267 302 part of dlib;
+#X text 56 368 released under the GNU General Public License v3+;
+#X text 174 329 copyright damian stewart 2008;
+#X text 145 343 damian@frey.co.nz | www.frey.co.nz;
+#X text 17 43 calculates the median of the previous n values seen.
+;
+#X text 16 82 size (default 32).;
+#X obj 32 243 d-median;
+#X connect 0 0 20 0;
+#X connect 1 0 0 0;
+#X connect 2 0 20 0;
+#X connect 4 0 20 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 20 0 3 0;

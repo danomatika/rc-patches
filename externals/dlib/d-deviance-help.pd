@@ -1,0 +1,15 @@
+#N canvas 186 284 401 233 10;
+#X text 13 6 d-deviance;
+#X text 14 14 ----------;
+#X text 12 35 Calculate deviance factor from a rest position.;
+#X floatatom 27 90 5 0 0 0 - - -;
+#X obj 27 122 d-deviance;
+#X text 233 126 part of dlib;
+#X text 22 192 released under the GNU General Public License v3+;
+#X text 111 167 damian@frey.co.nz | www.frey.co.nz;
+#X text 112 153 copyright damian stewart 2006-2008;
+#X floatatom 27 156 5 0 0 0 - - -;
+#X text 12 56 First argument (if any) is passed to internal d-lpf object.
+;
+#X connect 3 0 4 0;
+#X connect 4 0 9 0;

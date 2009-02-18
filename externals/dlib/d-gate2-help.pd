@@ -1,0 +1,35 @@
+#N canvas 547 372 403 367 10;
+#X obj 58 203 d-gate2;
+#X floatatom 45 137 5 0 0 0 - - -;
+#X obj 102 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 41 243 5 0 0 0 - - -;
+#X floatatom 100 240 5 0 0 0 - - -;
+#X symbolatom 197 241 10 0 0 0 - - -;
+#X symbolatom 267 241 10 0 0 0 - - -;
+#X obj 218 203 d-gate2;
+#X obj 281 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 196 139 symbol hello;
+#X msg 223 158 symbol goodbye;
+#X text 24 12 d-gate2;
+#X text 25 23 -------;
+#X text 25 46 a two-outlet gate. right inlet or creation argument sets
+outlet gate: 0=left \, 1=right.;
+#X text 24 85 works with all kinds of messages;
+#X text 47 117 floats;
+#X text 214 116 symbols;
+#X text 287 272 part of dlib;
+#X text 76 338 released under the GNU General Public License v3+;
+#X text 194 299 copyright damian stewart 2008;
+#X text 165 313 damian@frey.co.nz | www.frey.co.nz;
+#X text 344 115 etc.;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 7 0 5 0;
+#X connect 7 1 6 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 0;
+#X connect 10 0 7 0;

@@ -1,0 +1,52 @@
+#N canvas 0 22 438 424 10;
+#X symbolatom 157 241 10 0 0 0 - - -;
+#X symbolatom 227 241 10 0 0 0 - - -;
+#X msg 196 139 symbol hello;
+#X msg 223 158 symbol goodbye;
+#X text 25 23 -------;
+#X text 24 85 works with all kinds of messages;
+#X text 214 116 symbols;
+#X text 327 322 part of dlib;
+#X text 116 388 released under the GNU General Public License v3+;
+#X text 234 349 copyright damian stewart 2008;
+#X text 205 363 damian@frey.co.nz | www.frey.co.nz;
+#X text 24 12 d-gate5;
+#X obj 76 180 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144 -1
+-1 4;
+#X obj 36 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 56 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 76 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 96 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 116 242 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 43 140 bang;
+#X obj 58 203 d-gate5 2;
+#X text 25 46 a five-outlet gate. right inlet or creation argument
+sets outlet gate \, 0 = far left \, 4 = far right;
+#X symbolatom 297 241 10 0 0 0 - - -;
+#X symbolatom 277 261 10 0 0 0 - - -;
+#X symbolatom 207 261 10 0 0 0 - - -;
+#X text 49 120 bangs;
+#X text 344 115 floats \, etc.;
+#X obj 246 180 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 218 203 d-gate5 0;
+#X connect 2 0 27 0;
+#X connect 3 0 27 0;
+#X connect 12 0 19 1;
+#X connect 18 0 19 0;
+#X connect 19 0 13 0;
+#X connect 19 1 14 0;
+#X connect 19 2 15 0;
+#X connect 19 3 16 0;
+#X connect 19 4 17 0;
+#X connect 26 0 27 1;
+#X connect 27 0 0 0;
+#X connect 27 1 23 0;
+#X connect 27 2 1 0;
+#X connect 27 3 22 0;
+#X connect 27 4 21 0;

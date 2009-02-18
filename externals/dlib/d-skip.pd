@@ -1,0 +1,9 @@
+#N canvas 0 22 454 304 10;
+#X obj 54 30 inlet;
+#X obj 51 72 sel \$1;
+#X obj 57 113 outlet;
+#X obj 113 34 inlet;
+#X text 140 69 skip the given value;
+#X connect 0 0 1 0;
+#X connect 1 1 2 0;
+#X connect 3 0 1 1;

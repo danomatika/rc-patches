@@ -1,0 +1,57 @@
+#N canvas 211 100 536 797 10;
+#X obj 34 34 rc-midimetro metro;
+#X obj 100 176 rc-drumseq16 ds;
+#X obj 16 317 r metro/midi;
+#X obj 16 348 rc-notein 7;
+#X obj 16 405 route 60 61;
+#X floatatom 91 380 5 0 0 0 - - -;
+#X obj 16 377 pack f f;
+#X obj 132 417 spigot;
+#X obj 186 371 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 110 153 5 0 0 0 - - -;
+#X obj 212 356 route 2;
+#X obj 213 414 spigot;
+#X obj 209 390 inv;
+#X obj 404 476 rc-sssad;
+#N canvas 0 0 450 300 state 0;
+#X obj 35 22 inlet;
+#X msg 35 49 \; SSSAD kick/tune 0.5 \; SSSAD kick/decay 0.5 \; SSSAD
+kick/tone 0.5 \; SSSAD kick/amp 0.5 \; SSSAD kickc/pan 0.5 \; SSSAD
+kickc/mute 0 \; SSSAD kickc/amp 87 \; SSSAD snrc/pan 0.5 \; SSSAD snrc/mute
+0 \; SSSAD snrc/amp 84 \; SSSAD snare/snappy 0.5 \; SSSAD snare/tune
+0.5 \; SSSAD snare/tone 0.5 \; SSSAD testmetro/eofstop 1 \; SSSAD testmetro/bpm
+120 \; SSSAD testmetro/ticksperbeat 4 \; SSSAD ds/sequences 4_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0-3_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0-2_0_0_0_0_127_0_0_0_0_0_0_0_127_0_0_0-1_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0
+\; SSSAD_ADMIN set \;;
+#X connect 0 0 1 0;
+#X restore 404 537 pd state;
+#X obj 212 447 rc-808snare~ snare;
+#X obj 213 600 rc-chan~ snrc;
+#X obj 15 601 rc-chan~ kickc;
+#X obj 16 448 rc-808bass~ kick;
+#X msg 34 6 load /home/dano/midimetro-test.midi;
+#X obj 263 86 r metro/reset;
+#X msg 261 118 1;
+#X obj 261 145 s metro/startstop;
+#X connect 0 1 1 0;
+#X connect 0 1 9 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 3 0 5 0;
+#X connect 3 1 6 1;
+#X connect 4 0 18 0;
+#X connect 4 1 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 15 0;
+#X connect 8 0 7 1;
+#X connect 8 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 15 0;
+#X connect 12 0 11 1;
+#X connect 13 0 14 0;
+#X connect 15 0 16 0;
+#X connect 18 0 17 0;
+#X connect 19 0 0 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;

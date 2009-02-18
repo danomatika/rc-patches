@@ -1,0 +1,17 @@
+#N canvas 322 414 418 299 10;
+#X obj 28 28 inlet~;
+#X obj 28 159 outlet~;
+#X obj 97 77 d-biquadcalc-lowpass \$1 \$2;
+#X obj 127 27 inlet;
+#X obj 197 28 inlet;
+#X text 233 202 part of dlib;
+#X text 22 268 released under the GNU General Public License v3+;
+#X text 111 243 damian@frey.co.nz | www.frey.co.nz;
+#X text 112 229 copyright damian stewart 2006-2008;
+#X text 125 131 resonant lowpass based on [d-biquad~];
+#X obj 28 131 d-biquad~ \$3;
+#X connect 0 0 10 0;
+#X connect 2 0 10 1;
+#X connect 3 0 2 0;
+#X connect 4 0 2 1;
+#X connect 10 0 1 0;

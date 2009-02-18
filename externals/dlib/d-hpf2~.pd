@@ -1,0 +1,18 @@
+#N canvas 0 0 418 244 10;
+#X obj 40 28 inlet~;
+#X obj 180 27 inlet;
+#X obj 41 158 outlet~;
+#X text 176 142 right inlet is frequency;
+#X text 174 127 2 pole hpf;
+#X obj 41 100 hip~ \$1;
+#X obj 42 124 hip~ \$1;
+#X obj 175 52 loadbang;
+#X msg 162 76 5;
+#X connect 0 0 5 0;
+#X connect 1 0 5 1;
+#X connect 1 0 6 1;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 1;
+#X connect 8 0 6 1;

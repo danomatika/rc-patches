@@ -1,0 +1,41 @@
+#N canvas 646 213 397 419 10;
+#X obj 61 343 dac~;
+#X obj 58 234 adc~;
+#X obj 111 167 tgl 30 0 empty empty empty 17 7 0 10 -4034 -1 -1 1 1
+;
+#X obj 111 212 sel 1 0;
+#X msg 111 235 bang;
+#X msg 148 235 stop;
+#X obj 191 167 tgl 30 0 empty empty empty 17 7 0 10 -258113 -1 -1 0
+1;
+#X obj 191 212 sel 1 0;
+#X msg 191 235 rec;
+#X msg 228 235 stoprec;
+#X text 15 8 d-5loop~;
+#X text 15 23 --------;
+#X text 20 49 Record up to 5 variable-length buffers of audio (max
+2000ms) \, and play them back gaplessly.;
+#X obj 95 293 d-5loop~;
+#X text 101 144 play;
+#X text 185 145 record;
+#X text 247 312 part of dlib;
+#X text 36 378 released under the GNU General Public License v3+;
+#X text 154 339 copyright damian stewart 2008;
+#X text 125 353 damian@frey.co.nz | www.frey.co.nz;
+#X text 19 97 see also;
+#X obj 78 96 d-5loop2~;
+#X obj 177 96 d-5loop3~;
+#X connect 1 0 13 0;
+#X connect 1 1 13 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 4 0 13 1;
+#X connect 5 0 13 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 8 0 13 1;
+#X connect 9 0 13 1;
+#X connect 13 0 0 1;
+#X connect 13 0 0 0;

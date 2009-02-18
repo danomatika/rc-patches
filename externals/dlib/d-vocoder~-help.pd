@@ -1,0 +1,30 @@
+#N canvas 555 183 443 427 10;
+#X obj 116 302 dac~;
+#X obj 160 201 adc~;
+#X obj 127 250 d-vocoder~ 30;
+#X obj 215 159 vsl 10 64 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1700 1;
+#X msg 215 231 squelch \$1;
+#X text 14 11 d-vocoder~;
+#X text 15 20 ----------;
+#X text 13 49 Basic vocoder ('timbre stamp') based on Pd help patch
+3.audio.examples/I09.timbre.stamp.pd.;
+#X text 13 85 Left inlet is base vocoder sound \, middle inlet is audio
+to vocode \, right inlet is control. Control accepts 'squelch <n>'
+messages.;
+#X text 15 130 Creation argument sets initial squelch (default 30).
+;
+#X text 238 312 part of dlib;
+#X text 27 378 released under the GNU General Public License v3+;
+#X text 145 339 copyright damian stewart 2008;
+#X text 116 353 damian@frey.co.nz | www.frey.co.nz;
+#X obj 22 209 phasor~ 150;
+#X obj 25 184 phasor~ 200;
+#X connect 1 0 2 1;
+#X connect 1 1 2 1;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 4 0;
+#X connect 4 0 2 2;
+#X connect 14 0 2 0;
+#X connect 15 0 2 0;

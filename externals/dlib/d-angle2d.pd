@@ -1,0 +1,10 @@
+#N canvas 154 218 454 304 10;
+#X obj 42 29 inlet;
+#X obj 41 94 atan2;
+#X obj 41 63 unpack;
+#X obj 42 126 outlet;
+#X text 116 67 calculate angle of 2d vector;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;

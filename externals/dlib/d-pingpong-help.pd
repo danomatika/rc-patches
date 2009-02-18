@@ -1,0 +1,33 @@
+#N canvas 119 23 401 377 10;
+#X obj 23 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 46 263 5 0 0 0 - - -;
+#X obj 46 188 metro 500;
+#X obj 46 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 135 172 5 0 0 0 - - -;
+#X floatatom 177 172 5 0 0 0 - - -;
+#X obj 91 264 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 56 235 d-pingpong 0 4;
+#X text 17 9 d-pingpong;
+#X text 17 22 ----------;
+#X text 18 47 Move between an upper and a lower limit \, ping-pong
+style.;
+#X text 17 73 Middle inlet/1st creation argument sets lower limit.
+Right inlet/2nd creation argument sets upper limit.;
+#X text 243 272 part of dlib;
+#X text 32 338 released under the GNU General Public License v3+;
+#X text 121 313 damian@frey.co.nz | www.frey.co.nz;
+#X text 122 299 copyright damian stewart 2006-2008;
+#X msg 70 168 reset;
+#X text 17 115 Bang left inlet to outlet next number in the sequence.
+'reset' resets sequence to the lower limit.;
+#X connect 0 0 7 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 1;
+#X connect 5 0 7 2;
+#X connect 7 0 1 0;
+#X connect 7 0 6 0;
+#X connect 16 0 7 0;

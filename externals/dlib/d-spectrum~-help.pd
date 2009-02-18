@@ -1,0 +1,24 @@
+#N canvas 18 65 380 532 10;
+#X text 277 412 part of dlib;
+#X text 56 478 released under the GNU General Public License v3+;
+#X text 145 453 damian@frey.co.nz | www.frey.co.nz;
+#X text 176 438 copyright damian stewart 2008;
+#X text 18 359 Note: this is based on Pd's *very* inefficient (as at
+Pd 0.40.3) built-in array rendering \, and should not be used when
+CPU usage is an issue.;
+#X text 19 -1 d-spectrum~;
+#X text 19 9 -----------;
+#X obj 40 130 adc~;
+#X text 20 36 Provides a very basic spectrum analysis plot.;
+#X obj 182 133 noise~;
+#X obj 40 181 d-spectrum~ 1 1;
+#X obj 182 181 d-spectrum~ 0.05;
+#X obj 275 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 19 64 First argument is amplitude scaling factor (default 1)
+\, second argument is plot period (ms). If plot period is unspecified
+\, manually bang the right inlet to plot.;
+#X connect 7 0 10 0;
+#X connect 7 1 10 0;
+#X connect 9 0 11 0;
+#X connect 12 0 11 1;

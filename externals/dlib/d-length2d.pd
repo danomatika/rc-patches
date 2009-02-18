@@ -1,0 +1,16 @@
+#N canvas 227 362 454 304 10;
+#X obj 27 15 inlet;
+#X obj 28 44 unpack;
+#X obj 29 104 +;
+#X obj 29 136 sqrt;
+#X obj 29 166 outlet;
+#X text 165 61 2d length;
+#X obj 28 74 d-sq;
+#X obj 61 74 d-sq;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 1 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 1;

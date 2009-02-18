@@ -1,0 +1,48 @@
+#N canvas 518 115 396 580 10;
+#X floatatom 53 239 5 0 0 0 - - -;
+#X msg 53 168 1;
+#X msg 24 168 0.1;
+#X msg 156 168 0.9;
+#X msg 188 168 0.99;
+#X msg 122 168 0.5;
+#X text 12 -96 d-energypump;
+#X text 12 -84 ------------;
+#X text 6 -60 A kind of a fast-attack slow-release low-pass filter
+\, implemented using a stored 'energy' value that decays over time.
+;
+#X text 6 95 A 'steal' message immediately steals the given amount
+of energy from the system and outputs the new energy \, or 0 if there
+is nothing left.;
+#X text 273 372 part of dlib;
+#X text 62 438 released under the GNU General Public License v3+;
+#X text 151 413 damian@frey.co.nz | www.frey.co.nz;
+#X text 152 399 copyright damian stewart 2006-2008;
+#X floatatom 50 389 5 0 0 0 - - -;
+#X msg 50 318 1;
+#X msg 21 318 0.1;
+#X msg 99 318 steal 0.5;
+#X obj 50 360 d-energypump 0.8 500;
+#X obj 53 209 d-energypump;
+#X text 5 31 Every 100ms (change this by second creation argument)
+\, the stored value (current_value) is reduced to (decay_percent *
+current_value) and output. decay_percent is set by the first creation
+argument or right inlet \, and defaults to 0.9.;
+#X text 15 147 add energy;
+#X text 122 148 set decay_percent;
+#X text 93 236 current energy level;
+#X text 98 299 steal 0.5 units of energy;
+#X text 15 299 add energy;
+#X text 4 274 With decay_percent set to 0.8 and update period as 500ms:
+;
+#X text 5 -8 Each float input immediately adds on that much 'energy'
+to the stored value \, which is constantly output.;
+#X connect 1 0 19 0;
+#X connect 2 0 19 0;
+#X connect 3 0 19 1;
+#X connect 4 0 19 1;
+#X connect 5 0 19 1;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 0;
+#X connect 19 0 0 0;

@@ -1,0 +1,25 @@
+#N canvas 0 22 450 300 10;
+#X obj 58 115 d-not;
+#X obj 58 145 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 58 89 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 118 116 d-not;
+#X floatatom 118 147 5 0 0 0 - - -;
+#X msg 110 92 1;
+#X msg 140 92 0;
+#X text 272 182 part of dlib;
+#X text 56 248 released under the GNU General Public License v3+;
+#X text 174 209 copyright damian stewart 2008;
+#X text 145 223 damian@frey.co.nz | www.frey.co.nz;
+#X text 52 19 d-not;
+#X text 52 29 -----;
+#X text 55 51 binary invert for float input;
+#X text 196 101 for 0 input \, outputs 1;
+#X text 193 117 for 1 input \, outputs 0;
+#X text 188 144 no action on any other input;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;

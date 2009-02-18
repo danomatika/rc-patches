@@ -1,0 +1,12 @@
+#N canvas 605 239 470 320 10;
+#X obj 45 28 inlet;
+#X obj 45 125 /;
+#X msg 45 96 1;
+#X obj 44 152 outlet;
+#X text 110 51 output = 1/input;
+#X obj 44 68 t b a;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 5 0 2 0;
+#X connect 5 1 1 1;

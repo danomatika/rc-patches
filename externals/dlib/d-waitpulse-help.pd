@@ -1,0 +1,32 @@
+#N canvas 541 302 379 327 10;
+#X obj 16 130 metro 2000;
+#X obj 16 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 16 110 loadbang;
+#X obj 52 229 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 81 229 print;
+#X msg 142 129 symbol thing;
+#X floatatom 167 152 5 0 0 0 - - -;
+#X obj 127 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 251 55;
+#X text 36 9 d-waitpulse;
+#X text 34 21 -----------;
+#X text 30 48 Wait for a pulse on the left inlet before sending out
+whatever was put in the right inlet.;
+#X obj 81 186 d-waitpulse;
+#X msg 166 106 list 1 2 3;
+#X text 257 208 part of dlib;
+#X text 46 274 released under the GNU General Public License v3+;
+#X text 164 235 copyright damian stewart 2008;
+#X text 135 249 damian@frey.co.nz | www.frey.co.nz;
+#X connect 0 0 1 0;
+#X connect 0 0 12 0;
+#X connect 2 0 0 0;
+#X connect 5 0 12 1;
+#X connect 6 0 12 1;
+#X connect 7 0 12 1;
+#X connect 12 0 4 0;
+#X connect 12 0 3 0;
+#X connect 13 0 12 1;

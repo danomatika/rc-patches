@@ -1,0 +1,35 @@
+#N canvas 531 281 364 385 10;
+#X text 235 253 part of dlib;
+#X text 24 319 released under the GNU General Public License v3+;
+#X text 142 280 copyright damian stewart 2008;
+#X text 113 294 damian@frey.co.nz | www.frey.co.nz;
+#X obj 25 214 dac~;
+#X obj 74 251 d-808brain;
+#X text 11 9 --------;
+#X text 19 252 requires;
+#X obj 236 199 s 808-tuning;
+#X obj 236 129 vsl 15 64 0.9 1.1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 800 1;
+#X floatatom 273 179 5 0 0 0 - - -;
+#X msg 236 107 1;
+#X obj 236 83 loadbang;
+#X text 13 -5 d-808hh~;
+#X text 10 40 analog modelling 808 open- and closed-hihat simulator
+;
+#X obj 25 174 d-808hh~;
+#X msg 24 90 bang;
+#X msg 60 90 bang;
+#X obj 111 93 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3200 1;
+#X text 19 71 CH;
+#X text 59 72 OH;
+#X text 100 72 OH decay time;
+#X connect 9 0 8 0;
+#X connect 9 0 10 0;
+#X connect 11 0 9 0;
+#X connect 12 0 11 0;
+#X connect 15 0 4 0;
+#X connect 15 1 4 1;
+#X connect 16 0 15 0;
+#X connect 17 0 15 1;
+#X connect 18 0 15 2;

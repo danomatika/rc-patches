@@ -1,0 +1,40 @@
+#N canvas 89 76 404 373 10;
+#X obj 51 237 d-808cy~;
+#X obj 58 324 d-808brain;
+#X text -1 322 requires;
+#X text 127 324 to be loaded somewhere global;
+#X obj 184 123 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6300 1;
+#X obj 117 123 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 106 102 decay;
+#X text 174 102 tone;
+#X obj 261 123 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2000 1;
+#X text 250 102 gain;
+#X msg 116 192 decay \$1;
+#X msg 184 194 tone \$1;
+#X msg 257 194 gain \$1;
+#X obj 50 275 dac~;
+#X obj 10 146 metro 500;
+#X obj 49 124 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 43 175 trigger;
+#X obj 10 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 1 8 d-808cy~;
+#X text 0 23 --------;
+#X text 2 44 A TR808-style cymbal. Send 'trigger' to trigger. Set parameters
+with decay \, tone \, and gain messages as shown here.;
+#X connect 0 0 13 0;
+#X connect 0 0 13 1;
+#X connect 4 0 11 0;
+#X connect 5 0 10 0;
+#X connect 8 0 12 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 17 0 14 0;

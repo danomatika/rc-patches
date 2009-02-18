@@ -1,0 +1,13 @@
+#N canvas 330 133 339 230 10;
+#X text 17 9 d--;
+#X text 16 20 ---;
+#X floatatom 34 74 5 0 0 0 - - -;
+#X obj 34 104 d--;
+#X floatatom 34 135 5 0 0 0 - - -;
+#X text 227 132 part of dlib;
+#X text 16 198 released under the GNU General Public License v3+;
+#X text 134 159 copyright damian stewart 2008;
+#X text 105 173 damian@frey.co.nz | www.frey.co.nz;
+#X text 15 45 returns x*-1.;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

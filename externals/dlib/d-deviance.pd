@@ -1,0 +1,15 @@
+#N canvas 290 313 450 300 10;
+#X obj 38 24 inlet;
+#X obj 38 256 outlet;
+#X obj 38 169 -;
+#X obj 38 204 abs;
+#X text 323 192 part of dlib;
+#X text 112 258 released under the GNU General Public License v3+;
+#X text 201 233 damian@frey.co.nz | www.frey.co.nz;
+#X text 202 219 copyright damian stewart 2006-2008;
+#X obj 97 102 d-lpf \$1;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 8 0 2 1;

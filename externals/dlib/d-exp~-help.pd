@@ -1,0 +1,25 @@
+#N canvas 3 22 468 343 10;
+#X obj 67 178 sig~;
+#X obj 67 40 vsl 15 128 0 4.60517 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 102 178 5 0 0 0 - - -;
+#X obj 67 232 snapshot~;
+#X obj 24 208 del 2;
+#X msg 24 186 bang;
+#X floatatom 67 259 5 0 0 0 - - -;
+#X text 179 42 -------;
+#X text 327 232 part of dlib;
+#X text 116 298 released under the GNU General Public License v3+;
+#X text 234 259 copyright damian stewart 2008;
+#X text 180 31 d-exp~;
+#X obj 67 203 d-exp~;
+#X text 156 111 efficient signal-rate exp~ using table lookup;
+#X text 154 139 Only works for input range 0..ln(100);
+#X connect 0 0 12 0;
+#X connect 1 0 2 0;
+#X connect 1 0 0 0;
+#X connect 1 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 12 0 3 0;

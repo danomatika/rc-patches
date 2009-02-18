@@ -1,0 +1,40 @@
+#N canvas 494 221 482 478 10;
+#X text 21 14 d-wrap;
+#X text 20 27 ------;
+#X text 23 111 Use for example to restrict an angle to the range -PI
+\, PI:;
+#X floatatom 29 141 5 0 0 0 - - -;
+#X floatatom 29 198 5 0 0 0 - - -;
+#X floatatom 287 181 5 0 0 0 - - -;
+#X floatatom 287 258 5 0 0 0 - - -;
+#X obj 287 205 / 100;
+#X text 281 160 Default limits are (0 \, 1):;
+#X floatatom 27 372 5 0 0 0 - - -;
+#X floatatom 27 428 5 0 0 0 - - -;
+#X obj 27 401 d-wrap;
+#X floatatom 65 372 5 0 0 0 - - -;
+#X floatatom 105 372 5 0 0 0 - - -;
+#X text 12 267 Middle inlet sets lower limit;
+#X text 12 282 Right inlet sets upper limit;
+#X text 13 300 Warning: there are *NO* checks on limits;
+#X text 13 316 It's up to you to ensure that lower limit < upper limit.
+Failing to do so will result in an infinite loop / stack overflow situation.
+;
+#X obj 29 167 d-wrap -3.14159 3.14159;
+#X obj 287 231 d-wrap;
+#X text 357 382 part of dlib;
+#X text 136 448 released under the GNU General Public License v3+;
+#X text 225 423 damian@frey.co.nz | www.frey.co.nz;
+#X text 256 408 copyright damian stewart 2008;
+#X text 21 57 Restrict values between a given upper and lower limit.
+Values < lower or >= upper will be wrapped so that they fall within
+it.;
+#X connect 3 0 18 0;
+#X connect 5 0 7 0;
+#X connect 7 0 19 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 1;
+#X connect 13 0 11 2;
+#X connect 18 0 4 0;
+#X connect 19 0 6 0;

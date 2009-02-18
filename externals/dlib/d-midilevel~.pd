@@ -1,0 +1,15 @@
+#N canvas 137 165 466 316 10;
+#X obj 43 17 inlet~;
+#X obj 60 75 / 100;
+#X obj 61 122 line~;
+#X msg 60 99 \$1 10;
+#X obj 42 154 *~;
+#X obj 60 50 s-midictl \$1;
+#X obj 42 193 outlet~;
+#X text 162 93 \$1 = control channel;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;

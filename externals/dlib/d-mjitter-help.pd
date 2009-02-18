@@ -1,0 +1,33 @@
+#N canvas 212 106 382 404 10;
+#X text 15 12 d-mjitter;
+#X text 14 25 ---------;
+#X msg 20 197 24;
+#X msg 55 197 50;
+#X floatatom 36 266 10 0 0 0 - - -;
+#X text 12 98 Ie \, MIDI note 24 will be offset by a different amount
+to MIDI note 25 \, _but_ the offset for 24 will stay the same over
+time.;
+#X floatatom 300 199 5 0 0 0 - - -;
+#X msg 120 197 37.42;
+#X msg 89 197 37;
+#X floatatom 219 201 5 0 0 0 - - -;
+#X floatatom 219 271 5 0 0 0 - - -;
+#X text 14 48 Add a random offset to each input MIDI note (or any number
+with a range of 0-127) that stays consistent for each note over time.
+;
+#X text 284 294 part of dlib;
+#X text 66 358 released under the GNU General Public License v3+;
+#X text 155 333 damian@frey.co.nz | www.frey.co.nz;
+#X text 185 319 copyright damian stewart 2008;
+#X obj 36 235 d-mjitter;
+#X text 13 150 Right inlet or creation argument sets offset range \,
+in MIDI notes (default 0.15).;
+#X obj 219 237 d-mjitter 0.01;
+#X connect 2 0 16 0;
+#X connect 3 0 16 0;
+#X connect 6 0 18 1;
+#X connect 7 0 16 0;
+#X connect 8 0 16 0;
+#X connect 9 0 18 0;
+#X connect 16 0 4 0;
+#X connect 18 0 10 0;

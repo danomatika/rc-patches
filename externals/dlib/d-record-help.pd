@@ -1,0 +1,51 @@
+#N canvas 385 22 704 365 10;
+#X floatatom 389 169 5 0 0 0 - - -;
+#X msg 22 77 record;
+#X msg 106 77 stop;
+#X msg 69 77 play;
+#X msg 375 109 hello 1 2.5;
+#X obj 148 232 d-record unique-symbol;
+#X text 19 12 d-record is a performance recorder based on qlist.;
+#X text 297 227 unique-symbol must be unique for each instance of d-record.
+;
+#X text 296 240 this symbol gets written to the text file as well.
+;
+#X text 356 90 add messages. delta-time is stored between messages.
+;
+#X text 152 110 set relative playback speed;
+#X msg 28 176 save;
+#X msg 28 198 load;
+#X msg 183 192 dump;
+#X text 218 191 to console;
+#X text 411 288 part of dlib \, copyright damian stewart 2007-8;
+#X text 409 331 distributed under the terms of the GNU GPL v3+;
+#X text 443 302 damian@frey.co.nz http://www.frey.co.nz;
+#X text 383 153 to test: press 'record' \, then send numbers using
+;
+#X text 428 166 this number box.;
+#X text 390 193 press 'stop' \, then 'play' to play back messages.
+;
+#X msg 152 126 speed 1;
+#X msg 166 146 speed 0.25;
+#X msg 207 126 speed 4;
+#X obj 142 292 r unique-symbol;
+#X obj 142 314 print received;
+#X msg 380 128 37;
+#X text 27 52 transport controls. record erases previous data.;
+#X text 19 20 --------;
+#X obj 148 258 print done;
+#X text 216 256 bangs when done;
+#X connect 0 0 5 1;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 5 0 29 0;
+#X connect 11 0 5 0;
+#X connect 12 0 5 0;
+#X connect 13 0 5 0;
+#X connect 21 0 5 0;
+#X connect 22 0 5 0;
+#X connect 23 0 5 0;
+#X connect 24 0 25 0;
+#X connect 26 0 5 1;

@@ -1,0 +1,28 @@
+#N canvas 507 166 398 518 10;
+#X obj 56 156 random 10000;
+#X obj 56 182 / 10000;
+#X obj 56 107 loadbang;
+#X obj 56 132 metro 50;
+#X text 14 13 d-graph;
+#X text 14 23 -------;
+#X text 277 412 part of dlib;
+#X text 56 478 released under the GNU General Public License v3+;
+#X text 145 453 damian@frey.co.nz | www.frey.co.nz;
+#X text 176 438 copyright damian stewart 2008;
+#X obj 56 207 d-graph;
+#X text 18 359 Note: this is based on Pd's *very* inefficient (as at
+Pd 0.40.3) built-in array rendering \, and should not be used when
+CPU usage is an issue.;
+#X text 13 43 Graph incoming floats. Range is specified with the first
+two creation arguments (default 0..1). Number of points to plot is
+the third creation argument (default 100) \, or set by 'resize <n>'
+message.;
+#X msg 258 174 resize 49;
+#X obj 216 206 d-graph -100 100;
+#X floatatom 216 175 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 13 0 14 0;
+#X connect 15 0 14 0;

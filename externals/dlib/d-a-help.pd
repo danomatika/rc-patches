@@ -1,0 +1,42 @@
+#N canvas 133 115 379 438 10;
+#X obj 99 205 d-a;
+#X obj 99 237 route float symbol list;
+#X obj 233 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 189 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 144 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 99 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 99 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 181 134 5 0 0 0 - - -;
+#X floatatom 42 134 5 0 0 0 - - -;
+#X obj 54 237 print;
+#X msg 41 156 symbol leftsym;
+#X msg 181 156 symbol rightsym;
+#X msg 179 108 list right inlet list;
+#X msg 42 107 list left inlet list;
+#X text 20 5 d-a;
+#X text 19 18 ---;
+#X text 257 328 part of dlib;
+#X text 46 394 released under the GNU General Public License v3+;
+#X text 164 355 copyright damian stewart 2008;
+#X text 135 369 damian@frey.co.nz | www.frey.co.nz;
+#X text 27 297 No creation arguments.;
+#X text 17 42 Store anything. Left inlet hot \, right inlet cold. Symbols
+and lists must be preceded by 'symbol' / 'list' keywords.;
+#X connect 0 0 1 0;
+#X connect 0 0 9 0;
+#X connect 1 0 5 0;
+#X connect 1 1 4 0;
+#X connect 1 2 3 0;
+#X connect 1 3 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;
+#X connect 8 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 1;
+#X connect 12 0 0 1;
+#X connect 13 0 0 0;

@@ -1,0 +1,17 @@
+#N canvas 497 302 458 308 10;
+#X obj 32 121 pow;
+#X obj 62 82 / 40;
+#X obj 32 58 t b a;
+#X msg 32 84 10;
+#X obj 32 190 outlet;
+#X text 132 143 'A' function for d-biquadcalc-*;
+#X obj 32 13 inlet;
+#X obj 32 36 d-default \$1 1;
+#X text 159 106 #define e_A(g) (pow(10 \, (g/40)));
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 2 1 1 0;
+#X connect 3 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;

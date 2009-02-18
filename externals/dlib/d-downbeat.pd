@@ -1,0 +1,16 @@
+#N canvas 0 0 458 308 10;
+#X obj 106 30 inlet;
+#X obj 48 206 outlet;
+#X obj 48 71 r n4-1;
+#X obj 48 138 sel 0;
+#X msg 136 83 0;
+#X obj 48 167 t b b;
+#X text 61 10 1 = bang on next downbeat;
+#X obj 48 107 spigot \$0;
+#X connect 0 0 7 1;
+#X connect 2 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 7 1;
+#X connect 5 0 1 0;
+#X connect 5 1 4 0;
+#X connect 7 0 3 0;

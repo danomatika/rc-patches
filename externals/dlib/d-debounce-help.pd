@@ -1,0 +1,29 @@
+#N canvas 224 113 406 409 10;
+#X floatatom 40 231 5 0 0 0 - - -;
+#X floatatom 40 301 5 0 0 0 - - -;
+#X floatatom 96 231 5 0 0 0 - - -;
+#X text 297 282 part of dlib;
+#X text 86 348 released under the GNU General Public License v3+;
+#X text 204 309 copyright damian stewart 2008;
+#X text 175 323 damian@frey.co.nz | www.frey.co.nz;
+#X obj 193 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 81 212 block time (ms);
+#X text 189 213 turn on/off easy relax mode;
+#X obj 40 263 d-debounce 200;
+#X text 23 -6 d-debounce;
+#X text 23 8 ----------;
+#X text 22 154 Hovewer \, if easy relax mode is on (second creation
+argument is 1 or 1 sent to right inlet) \, just block for a strict
+50ms then unblock - don't wait for 50ms of clear time.;
+#X text 22 56 If easy relax mode is off (the default) \, let the first
+message through \, then block until there has been a 'clear time' of
+default 50ms (set with first creation argument or middle inlet) before
+letting the next message through. ie \, wait until there have been
+no messages for 50ms before allowing the next message through.;
+#X text 22 26 Like an electronic debounce circuit.;
+#X text 18 210 messages;
+#X connect 0 0 10 0;
+#X connect 2 0 10 1;
+#X connect 7 0 10 2;
+#X connect 10 0 1 0;

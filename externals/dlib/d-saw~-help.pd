@@ -1,0 +1,29 @@
+#N canvas 67 242 362 344 10;
+#X text 22 13 d-saw~;
+#X text 21 25 ------;
+#X obj 50 163 line~;
+#X obj 50 268 dac~;
+#X msg 50 114 440;
+#X msg 80 114 0;
+#X obj 119 114 hsl 128 15 10 10000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 7400 1;
+#X obj 50 193 d-saw~;
+#X text 243 242 part of dlib;
+#X text 32 308 released under the GNU General Public License v3+;
+#X text 121 283 damian@frey.co.nz | www.frey.co.nz;
+#X text 122 269 copyright damian stewart 2006-2008;
+#X msg 50 138 \$1 20;
+#X text 62 89 oscillator frequency;
+#X floatatom 128 138 5 0 0 0 - - -;
+#X obj 50 232 *~ 0.1;
+#X text 13 49 Sawtooth oscillator. Unfortunately does not support a
+creation argument for frequency.;
+#X connect 2 0 7 0;
+#X connect 4 0 12 0;
+#X connect 5 0 12 0;
+#X connect 6 0 12 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 12 0 2 0;
+#X connect 15 0 3 0;
+#X connect 15 0 3 1;

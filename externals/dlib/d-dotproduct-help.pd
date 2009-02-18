@@ -1,0 +1,22 @@
+#N canvas 127 376 377 341 10;
+#X text 16 15 d-dotproduct;
+#X text 17 30 ------------;
+#X msg 203 152 0 0 1;
+#X obj 78 189 d-dotproduct 0 1 0;
+#X msg 23 151 0 1 0;
+#X msg 64 151 0 0 1;
+#X msg 110 151 0 0.5 0.5;
+#X floatatom 48 219 5 0 0 0 - - -;
+#X text 15 99 Creation argumnts or right inlet specify the reference
+vector.;
+#X text 14 53 Calculate the dot product (aka the cosine of the angle)
+between the incoming 3D vector and a reference 3D vector.;
+#X text 263 232 part of dlib;
+#X text 42 298 released under the GNU General Public License v3+;
+#X text 131 273 damian@frey.co.nz | www.frey.co.nz;
+#X text 162 259 copyright damian stewart 2008;
+#X connect 2 0 3 1;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;

@@ -1,5 +1,5 @@
 #N canvas 1282 21 318 190 10;
-#N canvas 684 48 832 454 audio 0;
+#N canvas 719 679 832 454 audio 0;
 #N canvas 0 0 450 300 gate 0;
 #X obj 68 42 inlet;
 #X obj 157 45 inlet;
@@ -16,7 +16,7 @@
 #X obj 77 216 + 1;
 #X obj 193 46 catch~ left;
 #X obj 340 50 catch~ right;
-#X obj 251 166 dac~;
+#X obj 243 156 dac~;
 #X text 206 12 audio from performance patch;
 #X obj 340 76 hip~ 5;
 #X obj 193 71 hip~ 5;
@@ -305,7 +305,7 @@
 #X connect 10 0 9 0;
 #X connect 13 0 5 0;
 #X restore 35 355 pd rec_flash;
-#X obj 248 390 rc-record_mp3~;
+#X obj 256 388 rc-record_mp3~;
 #X obj 152 390 rc-record~;
 #N canvas 0 0 450 300 toggle 0;
 #X obj 55 188 s \$0-auto;
@@ -437,14 +437,14 @@
 #X connect 1 0 0 0;
 #X connect 2 0 7 0;
 #X connect 3 0 6 0;
-#X connect 6 0 4 1;
 #X connect 6 0 20 1;
+#X connect 6 0 4 1;
 #X connect 6 0 25 2;
 #X connect 6 0 26 2;
-#X connect 7 0 4 0;
 #X connect 7 0 20 0;
-#X connect 7 0 25 1;
+#X connect 7 0 4 0;
 #X connect 7 0 26 1;
+#X connect 7 0 25 1;
 #X connect 10 0 1 0;
 #X connect 13 0 14 0;
 #X connect 14 0 24 0;
@@ -470,8 +470,8 @@
 #X obj 176 75 openpanel;
 #X obj 1 16 cnv 15 160 118 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 5 33 tgl 30 0 empty \$0-play play -1 -6 0 10 -24198 -24198 -1
-0 1;
+#X obj 5 33 tgl 30 0 empty \$0-play play -1 -6 0 10 -225271 -24198
+-1 0 1;
 #X obj 108 48 bng 15 250 50 0 empty empty load -4 -6 0 10 -203904 -1
 -1;
 #X obj 75 43 bng 20 250 50 0 \$0-next empty next -1 -6 0 10 -261682
@@ -481,7 +481,7 @@
 #X obj 287 65 sel 32;
 #X text 314 37 manual cue via spacebar;
 #X obj 287 95 spigot;
-#X obj 145 19 tgl 10 0 empty empty space -28 4 0 8 -261234 -1 -1 0
+#X obj 145 19 tgl 10 0 empty empty space -28 4 0 8 -261234 -1 -1 1
 1;
 #N canvas 1086 78 443 474 playlist 0;
 #X text 220 427 patchname out;

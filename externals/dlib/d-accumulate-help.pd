@@ -1,0 +1,37 @@
+#N canvas 217 351 467 392 10;
+#X obj 32 182 env~;
+#X obj 32 153 adc~;
+#X floatatom 32 298 5 0 0 0 - - -;
+#X text 346 285 part of dlib;
+#X text 135 351 released under the GNU General Public License v3+;
+#X text 253 312 copyright damian stewart 2008;
+#X text 224 326 damian@frey.co.nz | www.frey.co.nz;
+#X text 19 5 d-accumulate;
+#X text 18 17 ------------;
+#X msg 101 171 st 1;
+#X msg 183 171 lt 20;
+#X msg 158 220 blocksize 128;
+#X text 155 202 block size \, in samples - used to calculate time;
+#X obj 32 266 d-accumulate 0.5 5;
+#X text 260 215 (or set 3rd creation argument);
+#X text 81 150 shortterm (s);
+#X text 181 151 longterm (s);
+#X text 17 42 Compare short term median with long term median. 1st
+outlet gives absolute difference \, 2nd outlet gives short-term:long-term
+ratio \, 3rd outlet is short-term raw \, 3rd outlet is long-term raw.
+;
+#X text 17 109 Here we compare the output of env~ over the last 0.5s
+with the average over the last 5s.;
+#X floatatom 74 294 5 0 0 0 - - -;
+#X floatatom 110 295 5 0 0 0 - - -;
+#X floatatom 145 295 5 0 0 0 - - -;
+#X connect 0 0 13 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 0;
+#X connect 11 0 13 0;
+#X connect 13 0 2 0;
+#X connect 13 1 19 0;
+#X connect 13 2 20 0;
+#X connect 13 3 21 0;

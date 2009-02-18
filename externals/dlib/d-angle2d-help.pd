@@ -1,0 +1,21 @@
+#N canvas 686 166 359 311 10;
+#X obj 55 143 d-angle2d;
+#X text 19 14 d-angle2d;
+#X text 19 30 ---------;
+#X floatatom 55 177 5 0 0 0 - - -;
+#X msg 25 102 0 1;
+#X text 19 55 Assume input is a 2D vector and calculate its angle relative
+to (0 \, 1) using atan2.;
+#X msg 55 102 0.8 20;
+#X msg 105 102 0.5 0.5;
+#X msg 160 102 -1 -1;
+#X text 95 177 angle in radians;
+#X text 247 212 part of dlib;
+#X text 36 278 released under the GNU General Public License v3+;
+#X text 154 239 copyright damian stewart 2008;
+#X text 125 253 damian@frey.co.nz | www.frey.co.nz;
+#X connect 0 0 3 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;

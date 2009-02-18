@@ -1,0 +1,22 @@
+#N canvas 375 384 326 299 10;
+#X floatatom 59 81 5 0 0 0 - - -;
+#X obj 59 128 d-osc 1 20;
+#X text 18 8 d-osc;
+#X text 19 16 -----;
+#X text 15 34 Message-rate LFO.;
+#X msg 116 83 20;
+#X msg 147 83 100;
+#X obj 69 161 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5362 1;
+#X floatatom 27 159 5 0 0 0 - - -;
+#X text 15 62 frequency (Hz);
+#X text 116 63 output period (ms) (default 100);
+#X text 223 202 part of dlib;
+#X text 12 268 released under the GNU General Public License v3+;
+#X text 101 243 damian@frey.co.nz | www.frey.co.nz;
+#X text 102 229 copyright damian stewart 2006-2008;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 0 8 0;
+#X connect 5 0 1 1;
+#X connect 6 0 1 1;

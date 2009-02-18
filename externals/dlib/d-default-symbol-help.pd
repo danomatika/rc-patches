@@ -1,0 +1,42 @@
+#N canvas 0 22 412 514 10;
+#X text 14 57 values are output on load.;
+#X text 14 83 inlet just passes values straight through.;
+#X text 14 242 here we instantiate d-default-example with and without
+arguments:;
+#X text 306 404 part of dlib;
+#X text 95 470 released under the GNU General Public License v3+;
+#X text 184 445 damian@frey.co.nz | www.frey.co.nz;
+#X text 184 431 copyright damian stewart 2006-2008;
+#X text 16 187 in the first example above \, if the first creation
+argument to this patch (\$1) is not specified \, 6 is output. if it
+is specified \, then the specified number it is output instead.;
+#X text 17 7 d-default-symbol;
+#X text 16 19 ----------------;
+#X text 15 45 provides default values for unspecified symbol arguments.
+;
+#X text 110 109 this is duplicated in d-default-symbol-example;
+#X obj 201 135 d-default-symbol \$2 other;
+#X obj 24 135 d-default-symbol \$1 thiser;
+#X symbolatom 70 163 10 0 0 0 - - -;
+#X msg 24 107 hello;
+#X obj 24 162 outlet;
+#X obj 201 161 outlet;
+#X obj 20 289 d-default-symbol-example;
+#X symbolatom 20 318 10 0 0 0 - - -;
+#X symbolatom 105 318 10 0 0 0 - - -;
+#X obj 181 290 d-default-symbol-example wotsit;
+#X obj 21 366 d-default-symbol-example thingy hoosit;
+#X symbolatom 181 318 10 0 0 0 - - -;
+#X symbolatom 304 318 10 0 0 0 - - -;
+#X symbolatom 21 388 10 0 0 0 - - -;
+#X symbolatom 194 388 10 0 0 0 - - -;
+#X connect 12 0 17 0;
+#X connect 13 0 14 0;
+#X connect 13 0 16 0;
+#X connect 15 0 13 0;
+#X connect 18 0 19 0;
+#X connect 18 1 20 0;
+#X connect 21 0 23 0;
+#X connect 21 1 24 0;
+#X connect 22 0 25 0;
+#X connect 22 1 26 0;

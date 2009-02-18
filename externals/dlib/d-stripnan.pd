@@ -1,0 +1,7 @@
+#N canvas 449 292 345 170 10;
+#X obj 21 19 inlet;
+#X obj 21 120 outlet;
+#X obj 21 50 expr if(isnan($f1) \, 0 \, $f1);
+#X text 98 98 converts nan to 0;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

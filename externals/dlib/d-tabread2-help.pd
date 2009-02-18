@@ -1,0 +1,49 @@
+#N canvas 99 238 437 456 10;
+#X text 12 9 d-tabread2;
+#X text 12 24 ----------;
+#X text 10 54 Like tabread but with linear interpolation for non-integer
+indices.;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array \$0-table 8 float 1;
+#A 0 -0.485717 -1.00001 0.942863 0.628575 -0.314288 -0.685719 -0.857148
+-0.88572;
+#X coords 0 1 7 -1 100 70 1;
+#X restore 49 232 graph;
+#X obj 190 207 d-tabread2 \$0-table;
+#X obj 51 186 hsl 100 15 0 7 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 190 232 vsl 15 70 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1774 1;
+#X floatatom 11 185 5 0 0 0 - - -;
+#X floatatom 222 231 5 0 0 0 - - -;
+#X text 48 166 table index;
+#X text 212 257 value at given index;
+#X obj 310 142 symbol \$0-table2;
+#X msg 310 163 set \$1;
+#X obj 310 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-table2 8 float 1;
+#A 0 0.97141 -0.800008 -0.942832 -0.885689 -0.485709 0.0285711 0.828563
+0.914276;
+#X coords 0 1 7 -1 100 70 1;
+#X restore 49 322 graph;
+#X msg 190 163 set \$1;
+#X obj 190 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 181 98 'set' message to set table;
+#X obj 190 142 symbol \$0-table;
+#X text 334 354 part of dlib;
+#X text 116 418 released under the GNU General Public License v3+;
+#X text 205 393 damian@frey.co.nz | www.frey.co.nz;
+#X text 235 379 copyright damian stewart 2008;
+#X connect 4 0 6 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 5 0 7 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X connect 13 0 11 0;
+#X connect 15 0 4 0;
+#X connect 16 0 18 0;
+#X connect 18 0 15 0;

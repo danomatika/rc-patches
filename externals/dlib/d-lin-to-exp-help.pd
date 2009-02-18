@@ -1,0 +1,10 @@
+#N canvas 341 106 342 210 10;
+#X text 226 12 part of dlib;
+#X text 15 78 released under the GNU General Public License v3+;
+#X text 133 39 copyright damian stewart 2008;
+#X text 104 53 damian@frey.co.nz | www.frey.co.nz;
+#X obj 70 -38 d-lin-to-exp~;
+#X text 17 -80 d-lin-to-exp;
+#X text 16 -68 ------------;
+#X text 158 -38 but runs at message rate.;
+#X text 17 -38 Same as;

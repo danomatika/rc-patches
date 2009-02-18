@@ -1,0 +1,46 @@
+#N canvas 576 169 542 397 10;
+#X msg 12 99 1;
+#X msg 43 99 0;
+#X obj 178 336 *~;
+#X obj 176 372 dac~;
+#X obj 212 283 phasor~ 220;
+#X obj 72 205 vsl 10 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6300 1;
+#X obj 45 283 d-adsr~ 1 10 150 60 300;
+#X obj 99 205 vsl 10 64 10 1000 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 126 205 vsl 10 64 10 1000 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3705 1;
+#X obj 153 205 vsl 10 64 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3780 1;
+#X obj 180 205 vsl 10 64 10 1000 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1845 1;
+#X obj 72 177 unpack f f f f f;
+#X msg 72 154 1 10 150 60 300;
+#X obj 72 130 loadbang;
+#X text 203 221 peak level \, attack \, decay \, sustain (percent)
+\, release;
+#X text 79 100 on/off;
+#X text 16 9 d-adsr~;
+#X text 14 21 -------;
+#X text 15 47 ADSR envelope \, adapted from the adsr.pd abstraction
+in the Pd documentation.;
+#X text 206 197 all times are in ms;
+#X connect 0 0 6 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 2 1;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
+#X connect 7 0 6 2;
+#X connect 8 0 6 3;
+#X connect 9 0 6 4;
+#X connect 10 0 6 5;
+#X connect 11 0 5 0;
+#X connect 11 1 7 0;
+#X connect 11 2 8 0;
+#X connect 11 3 9 0;
+#X connect 11 4 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;

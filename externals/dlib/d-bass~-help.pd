@@ -1,0 +1,80 @@
+#N canvas 508 169 486 491 10;
+#X obj 65 405 dac~;
+#X obj 105 191 vsl 10 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 105 268 cutoff \$1;
+#X obj 175 191 vsl 10 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 304 191 vsl 10 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 241 191 vsl 10 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 175 268 res \$1;
+#X msg 304 268 envmod \$1;
+#X msg 241 268 decay \$1;
+#X text 91 171 Cutoff;
+#X text 164 171 Resonance;
+#X text 299 171 Env mod;
+#X text 232 172 Decay;
+#X text 21 10 d-bass~;
+#X text 21 18 -------;
+#X text 18 42 TB303-inspired bass synth.;
+#X obj 25 235 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#N canvas 0 22 450 300 makenotes 0;
+#X obj 35 111 int;
+#X obj 35 207 makenote;
+#X obj 35 136 pack i i;
+#X obj 35 244 outlet;
+#X obj 80 244 outlet;
+#X obj 35 26 inlet;
+#X obj 141 89 d-random 40 80;
+#X obj 35 63 metro 250;
+#X msg 35 168 \$1 \$2 200;
+#X obj 35 88 d-random 30 54;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 1 4 0;
+#X connect 2 0 8 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 1;
+#X connect 7 0 6 0;
+#X connect 7 0 9 0;
+#X connect 8 0 1 0;
+#X connect 9 0 0 0;
+#X restore 25 268 pd makenotes;
+#X text 287 392 part of dlib;
+#X text 66 458 released under the GNU General Public License v3+;
+#X text 184 419 copyright damian stewart 2008;
+#X text 153 433 damian@frey.co.nz | www.frey.co.nz;
+#X text 12 214 start playing;
+#X obj 65 366 *~ 0.5;
+#X obj 375 191 vsl 10 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 366 172 Release;
+#X msg 375 268 release \$1;
+#X text 16 132 Creation arguments are [cutoff] [res] [decay] [envmod]
+[release] \, all optional \, expressed as 0..1.;
+#X obj 65 339 d-bass~;
+#X msg 223 311 dumpargs;
+#X text 16 69 Takes messages to control LPF cutoff frequency \, resonance
+\, envelope modulation amount \, and decay as demonstrated. Values
+are 0..1. send in 'dumpargs' to print out creation arguments for current
+settings.;
+#X connect 1 0 2 0;
+#X connect 2 0 28 2;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 28 2;
+#X connect 7 0 28 2;
+#X connect 8 0 28 2;
+#X connect 16 0 17 0;
+#X connect 17 0 28 0;
+#X connect 17 1 28 1;
+#X connect 23 0 0 0;
+#X connect 23 0 0 1;
+#X connect 24 0 26 0;
+#X connect 26 0 28 2;
+#X connect 28 0 23 0;
+#X connect 29 0 28 2;

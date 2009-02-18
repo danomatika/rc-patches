@@ -1,0 +1,20 @@
+#N canvas 676 290 388 347 10;
+#X obj 46 215 d-angvel;
+#X text 14 11 d-angvel;
+#X text 14 22 --------;
+#X text 16 46 Computes instantaneous angular velocity from continuous
+incoming angles.;
+#X floatatom 46 242 5 0 0 0 - - -;
+#X obj 31 159 hsl 128 15 0 15 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 236 1;
+#X floatatom 63 186 5 0 0 0 - - -;
+#X text 287 232 part of dlib;
+#X text 66 298 released under the GNU General Public License v3+;
+#X text 155 273 damian@frey.co.nz | www.frey.co.nz;
+#X text 156 258 copyright damian stewart 2007-2008;
+#X text 16 91 Assume the input is a constant stream of current angle
+samples \, and calculate an angular velocity taking time between samples
+into account.;
+#X connect 0 0 4 0;
+#X connect 5 0 6 0;
+#X connect 5 0 0 0;

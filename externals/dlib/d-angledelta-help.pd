@@ -1,0 +1,21 @@
+#N canvas 702 134 386 421 10;
+#X floatatom 94 55 5 0 0 0 - - -;
+#X floatatom 163 55 5 0 0 0 - - -;
+#X obj 94 80 d-angledelta;
+#X text 287 252 part of dlib;
+#X text 66 318 released under the GNU General Public License v3+;
+#X text 155 293 damian@frey.co.nz | www.frey.co.nz;
+#X text 186 278 copyright damian stewart 2008;
+#X text 21 -52 d-angledelta;
+#X text 21 -39 ------------;
+#X text 17 -19 Calculate the smallest angle between the two input angles
+(expressed in radians).;
+#X msg 31 55 0.3 -2.5;
+#X floatatom 107 106 5 0 0 0 - - -;
+#X text 17 21 Accepts floats or pairs of floats.;
+#X obj 94 131 d-graph 0 3.14159;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 11 0;
+#X connect 2 0 13 0;
+#X connect 10 0 2 0;

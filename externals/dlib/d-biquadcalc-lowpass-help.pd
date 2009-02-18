@@ -1,0 +1,36 @@
+#N canvas 189 183 394 410 10;
+#X obj 104 229 d-biquadcalc-lowpass;
+#X obj 194 134 vsl 10 64 1 600 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1300 1;
+#X obj 104 134 vsl 10 64 50 11025 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3100 1;
+#X obj 194 206 t b a;
+#X obj 25 229 phasor~ 50;
+#X obj 25 254 d-biquad~;
+#X obj 25 278 *~ 0.1;
+#X obj 25 310 dac~;
+#X text 11 6 d-biquadcalc-lowpass;
+#X text 12 21 --------------------;
+#X text 13 47 Pure Pd implementation of the [lowpass] object from ggee.
+;
+#X text 45 114 cutoff frequency;
+#X text 184 114 bandwidth (100 = 1 octave);
+#X floatatom 119 185 5 0 0 0 - - -;
+#X floatatom 209 185 5 0 0 0 - - -;
+#X text 14 72 Generates parameters for [biquad~] that produce a resonant
+lowpass filter.;
+#X text 283 292 part of dlib;
+#X text 72 358 released under the GNU General Public License v3+;
+#X text 161 333 damian@frey.co.nz | www.frey.co.nz;
+#X text 162 319 copyright damian stewart 2006-2008;
+#X connect 0 0 5 1;
+#X connect 1 0 3 0;
+#X connect 1 0 14 0;
+#X connect 2 0 0 0;
+#X connect 2 0 13 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;

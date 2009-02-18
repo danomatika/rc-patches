@@ -1,0 +1,13 @@
+#N canvas 183 734 454 319 10;
+#X obj 60 57 inlet~;
+#X obj 107 117 hsl 70 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 108 152 hsl 70 15 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X text 106 128 time;
+#X text 111 162 dry/wet;
+#X obj 61 193 d-reverb~;
+#X connect 0 0 5 0;
+#X connect 1 0 5 1;
+#X connect 2 0 5 2;
+#X coords 0 -1 1 1 85 85 1 100 100;

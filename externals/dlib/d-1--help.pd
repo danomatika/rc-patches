@@ -1,0 +1,15 @@
+#N canvas 244 375 336 265 10;
+#X obj 28 136 d-1-;
+#X obj 28 110 / 100;
+#X floatatom 28 168 5 0 0 0 - - -;
+#X floatatom 28 83 5 0 0 0 - - -;
+#X text 14 8 d-1-;
+#X text 13 22 ----;
+#X text 12 46 calculates 1-x;
+#X text 217 162 part of dlib;
+#X text 6 228 released under the GNU General Public License v3+;
+#X text 124 189 copyright damian stewart 2008;
+#X text 95 203 damian@frey.co.nz | www.frey.co.nz;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;

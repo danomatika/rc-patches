@@ -1,0 +1,17 @@
+#N canvas 0 22 454 304 10;
+#X obj 98 24 inlet;
+#X obj 98 158 outlet;
+#X obj 124 86 i;
+#X obj 101 123 -;
+#X obj 103 60 t a a;
+#X text 206 39 input: float;
+#X text 203 64 output: fractional part;
+#X text 257 182 part of dlib;
+#X text 36 248 released under the GNU General Public License v3+;
+#X text 125 223 damian@frey.co.nz | www.frey.co.nz;
+#X text 124 210 copyright damian stewart 2006-2008;
+#X connect 0 0 4 0;
+#X connect 2 0 3 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 4 1 2 0;

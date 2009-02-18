@@ -1,0 +1,35 @@
+#N canvas 0 22 396 390 10;
+#X obj 194 154 vsl 10 64 1 600 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 104 154 vsl 10 64 50 11025 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 194 226 t b a;
+#X obj 25 239 phasor~ 50;
+#X obj 25 288 *~ 0.1;
+#X obj 25 320 dac~;
+#X text 45 134 cutoff frequency;
+#X text 184 134 bandwidth (100 = 1 octave);
+#X floatatom 119 205 5 0 0 0 - - -;
+#X floatatom 209 205 5 0 0 0 - - -;
+#X text 283 282 part of dlib;
+#X text 72 348 released under the GNU General Public License v3+;
+#X text 161 323 damian@frey.co.nz | www.frey.co.nz;
+#X text 162 309 copyright damian stewart 2006-2008;
+#X obj 25 264 d-bqlpf~ 500 50;
+#X text 11 6 d-bqlpf~;
+#X text 12 20 --------;
+#X text 13 47 Wraps a [d-biquad~] and [d-biquadcalc-lowpass] - purely
+for convenience.;
+#X text 11 87 See also;
+#X obj 70 86 d-biquad~;
+#X obj 151 86 d-biquadcalc-lowpass;
+#X connect 0 0 2 0;
+#X connect 0 0 9 0;
+#X connect 1 0 8 0;
+#X connect 1 0 14 1;
+#X connect 2 0 14 1;
+#X connect 2 1 14 2;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 14 0 4 0;

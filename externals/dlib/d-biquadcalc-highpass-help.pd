@@ -1,0 +1,38 @@
+#N canvas 374 286 399 403 10;
+#X obj 194 134 vsl 10 64 1 600 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2700 1;
+#X obj 104 134 vsl 10 64 50 15000 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4900 1;
+#X obj 194 206 t b a;
+#X obj 25 254 d-biquad~;
+#X obj 25 278 *~ 0.1;
+#X obj 25 310 dac~;
+#X text 45 114 cutoff frequency;
+#X text 184 114 bandwidth (100 = 1 octave);
+#X floatatom 119 185 5 0 0 0 - - -;
+#X floatatom 209 185 5 0 0 0 - - -;
+#X text 283 292 part of dlib;
+#X text 72 358 released under the GNU General Public License v3+;
+#X text 161 333 damian@frey.co.nz | www.frey.co.nz;
+#X text 162 319 copyright damian stewart 2006-2008;
+#X obj 104 229 d-biquadcalc-highpass;
+#X obj 25 229 d-saw~;
+#X text 13 47 Pure Pd implementation of the [highpass] object from
+ggee.;
+#X text 14 72 Generates parameters for [biquad~] that produce a resonant
+highpass filter.;
+#X obj 25 203 sig~ 200;
+#X text 11 6 d-biquadcalc-highpass;
+#X text 12 21 ---------------------;
+#X connect 0 0 2 0;
+#X connect 0 0 9 0;
+#X connect 1 0 8 0;
+#X connect 1 0 14 0;
+#X connect 2 0 14 0;
+#X connect 2 1 14 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;
+#X connect 14 0 3 1;
+#X connect 15 0 3 0;
+#X connect 18 0 15 0;

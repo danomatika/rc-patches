@@ -1,0 +1,23 @@
+#N canvas 0 22 450 300 10;
+#X text 11 29 ------------;
+#X text 257 202 part of dlib;
+#X text 36 268 released under the GNU General Public License v3+;
+#X text 125 243 damian@frey.co.nz | www.frey.co.nz;
+#X text 156 228 copyright damian stewart 2008;
+#X floatatom 36 97 5 0 0 0 - - -;
+#X msg 111 116 -100 100;
+#X text 217 96 set new output range;
+#X text 90 95 set new input range;
+#X text 13 16 d-remap-log;
+#X text 12 53 Logarithmic remapping of input range to output range.
+;
+#X msg 230 117 0 1;
+#X msg 187 116 1 10;
+#X obj -34 156 d-graph 1 10;
+#X obj 36 142 d-remap-log 5 10 0 200;
+#X floatatom 83 167 5 0 0 0 - - -;
+#X connect 5 0 14 0;
+#X connect 6 0 14 1;
+#X connect 12 0 14 2;
+#X connect 14 0 13 0;
+#X connect 14 0 15 0;

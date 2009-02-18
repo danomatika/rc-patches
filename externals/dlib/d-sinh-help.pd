@@ -1,0 +1,13 @@
+#N canvas 67 142 327 281 10;
+#X obj 30 130 d-sinh;
+#X floatatom 30 171 5 0 0 0 - - -;
+#X floatatom 30 86 5 0 0 0 - - -;
+#X text 24 15 d-sinh;
+#X text 22 26 ------;
+#X text 21 50 Calculates sinx(x) using two exp calls.;
+#X text 217 162 part of dlib;
+#X text 6 228 released under the GNU General Public License v3+;
+#X text 124 189 copyright damian stewart 2008;
+#X text 95 203 damian@frey.co.nz | www.frey.co.nz;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;

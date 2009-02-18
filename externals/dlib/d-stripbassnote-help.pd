@@ -1,0 +1,52 @@
+#N canvas 321 97 422 646 10;
+#X obj 47 337 d-stripbassnote;
+#X floatatom 57 359 5 0 0 0 - - -;
+#X text 30 93 On the first MIDI noteon received \, latch to that pitch.
+;
+#X text 29 121 Until that pitch's noteoff message is received \, let
+subsequent note pitches through \, but don't send velocities.;
+#X text 30 163 When a noteoff message for the latched pitch is received
+\, send a noteoff message for the last pitch received.;
+#X obj 47 288 makenote;
+#X obj 116 288 makenote;
+#X obj 47 450 *~;
+#X obj 47 387 mtof;
+#X obj 47 472 dac~;
+#X obj 47 407 phasor~;
+#X obj 134 391 / 127;
+#X floatatom 144 359 5 0 0 0 - - -;
+#X obj 134 418 d-smooth~ 1000;
+#X obj 47 428 *~ 0.1;
+#X msg 116 261 32 50 100;
+#X msg 183 261 20 80 200;
+#X msg 23 237 44 100 10000;
+#X text 34 215 1 Trigger long-duration (10s) note.;
+#X text 123 242 2 Trigger short notes.;
+#X text 30 15 d-stripbassnote;
+#X text 30 28 ---------------;
+#X text 29 55 Allows to control a bass note's pitch without retriggering
+the envelope \, a la the TB303 sequencer.;
+#X text 283 542 part of dlib;
+#X text 72 608 released under the GNU General Public License v3+;
+#X text 161 583 damian@frey.co.nz | www.frey.co.nz;
+#X text 162 569 copyright damian stewart 2006-2008;
+#X text 31 504 Notice how velocity 0 (noteoff) only comes out once
+the first (long) note has finished playing.;
+#X connect 0 0 1 0;
+#X connect 0 0 8 0;
+#X connect 0 1 11 0;
+#X connect 0 1 12 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;
+#X connect 6 0 0 0;
+#X connect 6 1 0 1;
+#X connect 7 0 9 0;
+#X connect 7 0 9 1;
+#X connect 8 0 10 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 13 0 7 1;
+#X connect 14 0 7 0;
+#X connect 15 0 6 0;
+#X connect 16 0 6 0;
+#X connect 17 0 5 0;

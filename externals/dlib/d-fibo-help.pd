@@ -1,0 +1,22 @@
+#N canvas 326 235 431 326 10;
+#X obj 40 191 d-fibo;
+#X floatatom 40 226 5 0 0 0 - - -;
+#X obj 40 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 58 165 5 0 0 0 - - -;
+#X text 31 18 d-fibo;
+#X text 31 32 ------;
+#X text 28 55 Generate Fibonacci numbers.;
+#X text 98 165 Output the nth Fibonacci number (0-based index).;
+#X msg 56 133 0;
+#X text 86 133 Output the first Fibonacci number.;
+#X text 268 225 part of dlib;
+#X text 57 291 released under the GNU General Public License v3+;
+#X text 175 252 copyright damian stewart 2008;
+#X text 146 266 damian@frey.co.nz | www.frey.co.nz;
+#X text 65 93 Output the next Fibonacci number in the sequence \, starting
+at 1;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 8 0 0 0;

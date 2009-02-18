@@ -1,0 +1,35 @@
+#N canvas 342 259 432 360 10;
+#X obj 21 170 d-random-sq;
+#X obj 21 140 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 21 195 5 0 0 0 - - -;
+#X text 10 13 d-random-sq;
+#X text 10 25 -----------;
+#X text 287 242 part of dlib;
+#X text 76 308 released under the GNU General Public License v3+;
+#X text 194 269 copyright damian stewart 2008;
+#X text 165 283 damian@frey.co.nz | www.frey.co.nz;
+#X obj 111 140 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 111 195 5 0 0 0 - - -;
+#X obj 111 169 d-random-sq 20 30;
+#X obj 231 140 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 231 195 5 0 0 0 - - -;
+#X obj 231 169 d-random-sq 20 30;
+#X floatatom 280 139 5 0 0 0 - - -;
+#X floatatom 330 139 5 0 0 0 - - -;
+#X text 246 121 lower limit;
+#X text 328 120 upper limit;
+#X text 22 48 output a random number between \$1 and \$2 (default 0..1)
+\, with square probability distribution: in other words \, low numbers
+have a higher probability than higher numbers \, with a distribution
+that looks like an inverted square curve.;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 2;

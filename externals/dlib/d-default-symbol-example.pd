@@ -1,0 +1,18 @@
+#N canvas 661 116 398 315 10;
+#X text 277 202 part of dlib;
+#X text 66 268 released under the GNU General Public License v3+;
+#X text 184 229 copyright damian stewart 2008;
+#X text 155 243 damian@frey.co.nz | www.frey.co.nz;
+#X text 17 7 d-default-symbol;
+#X text 16 19 ----------------;
+#X text 22 65 exmample for d-default-symbol-help.pd;
+#X obj 201 135 d-default-symbol \$2 other;
+#X obj 24 135 d-default-symbol \$1 thiser;
+#X symbolatom 70 163 10 0 0 0 - - -;
+#X msg 24 107 hello;
+#X obj 24 162 outlet;
+#X obj 201 161 outlet;
+#X connect 7 0 12 0;
+#X connect 8 0 9 0;
+#X connect 8 0 11 0;
+#X connect 10 0 8 0;

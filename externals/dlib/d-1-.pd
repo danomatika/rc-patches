@@ -1,0 +1,13 @@
+#N canvas 46 27 354 269 10;
+#X obj 43 22 inlet;
+#X obj 43 108 -;
+#X obj 43 163 outlet;
+#X text 135 53 calculates 1-inlet;
+#X text 227 152 part of dlib;
+#X text 16 218 released under the GNU General Public License v3+;
+#X text 134 179 copyright damian stewart 2008;
+#X text 105 193 damian@frey.co.nz | www.frey.co.nz;
+#X msg 43 80 1 \$1;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 8 0 1 0;

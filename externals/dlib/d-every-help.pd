@@ -1,0 +1,51 @@
+#N canvas 755 152 367 441 10;
+#X obj 31 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 91 255 5 0 0 0 - - -;
+#N canvas 0 22 450 300 counter 0;
+#X obj 50 141 f 0;
+#X obj 76 141 + 1;
+#X obj 50 90 inlet;
+#X obj 50 181 outlet;
+#X obj 50 120 metro 1000;
+#X connect 0 0 3 0;
+#X connect 0 0 1 0;
+#X connect 1 0 0 1;
+#X connect 2 0 4 0;
+#X connect 4 0 0 0;
+#X restore 31 169 pd counter;
+#X floatatom 31 186 5 0 0 0 - - -;
+#X obj 68 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 130 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 179 147 3;
+#X msg 185 168 1;
+#X msg 216 159 10;
+#X text 18 7 d-every;
+#X text 17 18 -------;
+#X text 15 63 First creation argument or right inlet sets n. Second
+creation argument sets initial offset.;
+#X msg 102 141 reset;
+#X text 14 39 Passes through every nth message \, blocks all the rest.
+;
+#X obj 102 211 d-every 3;
+#X text 227 322 part of dlib;
+#X text 16 388 released under the GNU General Public License v3+;
+#X text 134 349 copyright damian stewart 2008;
+#X text 105 363 damian@frey.co.nz | www.frey.co.nz;
+#X text 15 99 Send in 'reset [o]' message to restart the count. Optional
+'o' sets new offset.;
+#X text 21 291 See also;
+#X text 136 292 .;
+#X obj 80 292 d-every2;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 14 0;
+#X connect 4 0 14 0;
+#X connect 6 0 14 1;
+#X connect 7 0 14 1;
+#X connect 8 0 14 1;
+#X connect 12 0 14 0;
+#X connect 14 0 1 0;
+#X connect 14 0 5 0;

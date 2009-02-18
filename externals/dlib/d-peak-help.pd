@@ -1,0 +1,13 @@
+#N canvas 75 140 324 228 10;
+#X obj 32 133 d-peak;
+#X text 20 6 d-peak;
+#X text 22 17 ------;
+#X text 15 37 Remember peak \, gradually falling off;
+#X floatatom 33 98 5 0 0 0 - - -;
+#X floatatom 31 164 5 0 0 0 - - -;
+#X text 223 122 part of dlib;
+#X text 12 188 released under the GNU General Public License v3+;
+#X text 101 163 damian@frey.co.nz | www.frey.co.nz;
+#X text 102 149 copyright damian stewart 2006-2008;
+#X connect 0 0 5 0;
+#X connect 4 0 0 0;

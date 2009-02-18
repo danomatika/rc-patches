@@ -1,0 +1,15 @@
+#N canvas 0 22 414 240 10;
+#X obj 40 28 inlet~;
+#X obj 41 158 outlet~;
+#X obj 40 61 lop~ 22050;
+#X obj 41 85 lop~ 22050;
+#X text 176 98 3 pole lpf;
+#X text 178 113 right inlet is frequency;
+#X obj 177 34 d-default \$1 22050;
+#X obj 176 9 inlet;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 6 0 2 1;
+#X connect 6 0 3 1;
+#X connect 7 0 6 0;
