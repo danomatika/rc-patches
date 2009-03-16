@@ -1,8 +1,8 @@
-#N canvas 832 347 500 441 10;
+#N canvas 832 347 521 459 10;
 #X obj 32 110 inlet~;
 #X floatatom 33 189 5 0 0 0 - - -;
 #X obj 36 402 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3677 1;
+-1 -1 1949 1;
 #X floatatom 59 326 5 0 0 0 - - -;
 #X obj 62 353 spigot;
 #X obj 198 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -23,13 +23,17 @@
 #X obj 325 161 moses;
 #X obj 175 27 inlet;
 #X obj 175 50 route calibrate;
-#X obj 5 21 bng 15 250 50 0 empty empty calibrate 20 8 0 10 -262144
+#X obj 5 21 bng 15 250 50 0 empty empty calibrate 20 8 0 10 -191407
 -1 -1;
-#X obj 268 350 loadbang;
+#X obj 288 350 loadbang;
 #X obj 269 375 f \$1;
 #X obj 268 398 sel 0;
 #X obj 311 44 loadbang;
 #X obj 311 70 delay 500;
+#X msg 256 123 1;
+#X obj 215 318 spigot;
+#X msg 305 426 0;
+#X msg 271 420 1;
 #X connect 0 0 14 0;
 #X connect 0 0 17 0;
 #X connect 1 0 2 0;
@@ -58,7 +62,13 @@
 #X connect 22 0 9 0;
 #X connect 23 0 24 0;
 #X connect 24 0 25 0;
-#X connect 25 1 13 1;
+#X connect 25 0 31 0;
+#X connect 25 1 30 0;
+#X connect 25 1 13 0;
 #X connect 26 0 27 0;
-#X connect 27 0 10 0;
+#X connect 27 0 28 0;
+#X connect 28 0 29 0;
+#X connect 29 0 4 1;
+#X connect 30 0 29 1;
+#X connect 31 0 29 1;
 #X coords 0 -1 1 1 80 40 1 0 0;

@@ -1,4 +1,4 @@
-#N canvas 282 359 535 388 10;
+#N canvas 1040 378 535 388 10;
 #X obj 16 304 outlet~;
 #N canvas 257 212 459 426 mix 0;
 #X obj 348 304 *~;
@@ -92,7 +92,7 @@
 #X restore 397 345 pd state_saving;
 #X obj 458 233 s \$0-onoff;
 #X text 190 55 Creation args: name;
-#X obj 1 16 cnv 15 148 110 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 1 16 cnv 15 143 80 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 4 20 tgl 12 1 \$0-onoff \$0-onoff empty -6 -6 0 10 -191407 -1
 -1 1 1;
@@ -100,52 +100,40 @@
 #X obj 324 286 s \$0-depth;
 #X obj 357 260 s \$0-lfo;
 #X obj 391 233 s \$0-freq;
-#X obj 74 85 hsl 70 15 0 1 0 0 \$0-wet \$0-wet wet 0 8 0 10 -191407
+#X obj 69 63 hsl 70 15 0 1 0 0 \$0-wet \$0-wet wet 0 8 0 10 -191407
 -1 -1 6900 1;
-#X obj 22 86 nbx 4 14 0 1 0 1 \$0-wet \$0-wet empty -20 6 0 10 -261234
+#X obj 21 64 nbx 4 14 0 1 0 1 \$0-wet \$0-wet empty -20 6 0 10 -261234
 -1 -1 1 256;
-#X obj 74 106 hsl 70 15 0 1 0 0 \$0-dry \$0-dry dry 0 8 0 10 -191407
--1 -1 6900 1;
-#X obj 22 107 nbx 4 14 0 1 0 1 \$0-dry \$0-dry empty -20 6 0 10 -261234
--1 -1 1 256;
-#X obj 74 19 hsl 70 15 0 1 0 0 \$0-depth \$0-depth depth 0 8 0 10 -191407
--1 -1 100 1;
-#X obj 22 20 nbx 4 14 0 1 0 1 \$0-depth \$0-depth empty -20 6 0 10
--261234 -1 -1 0.0144928 256;
-#X obj 74 41 hsl 70 15 0 1 0 0 \$0-lfo \$0-lfo lfo 0 8 0 10 -191407
+#X obj 69 78 hsl 70 15 0 1 0 0 \$0-dry \$0-dry dry 0 8 0 10 -191407
+-1 -1 4300 1;
+#X obj 21 79 nbx 4 14 0 1 0 1 \$0-dry \$0-dry empty -20 6 0 10 -261234
+-1 -1 0.623188 256;
+#X obj 69 19 hsl 70 15 0 1 0 0 \$0-depth \$0-depth depth 0 8 0 10 -191407
+-1 -1 1700 1;
+#X obj 21 19 nbx 4 14 0 1 0 1 \$0-depth \$0-depth empty -20 6 0 10
+-261234 -1 -1 0.246377 256;
+#X obj 69 34 hsl 70 15 0 1 0 0 \$0-lfo \$0-lfo lfo 0 8 0 10 -191407
 -1 -1 0 1;
-#X obj 22 42 nbx 4 14 0 1 0 1 \$0-lfo \$0-lfo empty -20 6 0 10 -261234
+#X obj 21 34 nbx 4 14 0 1 0 1 \$0-lfo \$0-lfo empty -20 6 0 10 -261234
 -1 -1 0 256;
-#X obj 74 63 hsl 70 15 0 1 0 0 \$0-freq \$0-freq freq 0 8 0 10 -191407
--1 -1 1100 1;
-#X obj 22 64 nbx 4 14 0 1 0 1 \$0-freq \$0-freq empty -20 6 0 10 -261234
--1 -1 0.15942 256;
+#X obj 69 48 hsl 70 15 0 1 0 0 \$0-freq \$0-freq freq 0 8 0 10 -191407
+-1 -1 150 1;
+#X obj 21 49 nbx 4 14 0 1 0 1 \$0-freq \$0-freq empty -20 6 0 10 -261234
+-1 -1 0.0217391 256;
 #N canvas 0 0 450 495 control 0;
 #X obj 111 420 outlet;
-#X obj 220 328 r \$0-onoff;
-#X obj 212 273 r \$0-freq;
-#X obj 197 218 r \$0-lfo;
-#X obj 172 164 r \$0-depth;
-#X obj 133 118 r \$0-dry;
-#X obj 111 57 r \$0-wet;
-#X msg 111 86 wet \$1;
-#X msg 133 142 dry \$1;
-#X msg 172 188 depth \$1;
-#X msg 197 242 lfo \$1;
-#X msg 212 295 freq \$1;
-#X msg 220 352 onoff \$1;
-#X connect 1 0 12 0;
-#X connect 2 0 11 0;
-#X connect 3 0 10 0;
-#X connect 4 0 9 0;
-#X connect 5 0 8 0;
-#X connect 6 0 7 0;
-#X connect 7 0 0 0;
-#X connect 8 0 0 0;
-#X connect 9 0 0 0;
-#X connect 10 0 0 0;
-#X connect 11 0 0 0;
-#X connect 12 0 0 0;
+#X obj 151 237 r \$0-freq;
+#X obj 136 182 r \$0-lfo;
+#X obj 111 128 r \$0-depth;
+#X msg 111 152 depth \$1;
+#X msg 136 206 lfo \$1;
+#X msg 151 259 freq \$1;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
 #X restore 89 223 pd control in;
 #X obj 16 158 inlet~ auduo;
 #X obj 257 149 inlet contorl messages;
@@ -200,4 +188,4 @@ pd-list;
 #X connect 30 0 9 0;
 #X connect 31 0 5 0;
 #X connect 32 0 1 1;
-#X coords 0 -1 1 1 150 130 1 0 0;
+#X coords 0 -1 1 1 145 100 1 0 0;

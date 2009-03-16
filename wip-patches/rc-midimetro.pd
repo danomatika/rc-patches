@@ -1,4 +1,4 @@
-#N canvas 1030 624 468 459 10;
+#N canvas 1030 591 468 459 10;
 #N canvas 0 0 812 291 save_state 0;
 #X text 8 10 sssad state saving;
 #X obj 316 123 sssad/sssad \$1/filename;
@@ -46,7 +46,6 @@ so ignore those bangs and let the symbols through;
 #X obj 158 74 loadbang;
 #X msg 158 127 120;
 #X msg 326 133 4;
-#X msg 224 130 1;
 #X msg 46 129 symbol empty;
 #X obj 46 162 s \$0-file;
 #X obj 158 163 s \$0-bpm;
@@ -54,29 +53,30 @@ so ignore those bangs and let the symbols through;
 #X obj 224 163 s \$0-eofstop;
 #X msg 446 132 1;
 #X obj 446 165 s \$0-midiin;
+#X msg 224 130 0;
 #X connect 0 0 1 0;
-#X connect 0 0 3 0;
+#X connect 0 0 10 0;
 #X connect 0 0 2 0;
-#X connect 0 0 4 0;
-#X connect 0 0 9 0;
-#X connect 1 0 6 0;
-#X connect 2 0 7 0;
-#X connect 3 0 8 0;
-#X connect 4 0 5 0;
-#X connect 9 0 10 0;
+#X connect 0 0 3 0;
+#X connect 0 0 8 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 8 0 9 0;
+#X connect 10 0 7 0;
 #X restore 144 434 pd defaults;
 #X obj 14 126 inlet;
 #X text 15 437 Dan Wilcox 2009;
 #X obj 56 214 s \$0-filename;
 #X obj 1 14 cnv 15 138 93 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X symbolatom 6 67 21 0 0 0 - #0-file -;
+#X symbolatom 6 67 18 0 0 0 - #0-file -;
 #X obj 98 49 nbx 3 14 1 256 0 0 \$0-ticksperbeat \$0-ticksperbeat tk/bt
 -32 7 0 10 -261234 -1 -1 4 256;
 #X obj 25 48 nbx 3 14 1 500 0 0 \$0-bpm \$0-bpm bpm -20 6 0 10 -261234
--1 -1 160 256;
+-1 -1 150 256;
 #X obj 6 21 tgl 20 0 \$0-startstop \$0-startstop empty 17 7 0 10 -4034
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 36 23 bng 15 250 50 0 \$0-reset \$0-reset reset 17 7 0 10 -191407
 -1 -1;
 #X obj 7 89 tgl 15 0 \$0-eofstop \$0-eofstop eof 17 7 0 10 -191407
@@ -292,6 +292,8 @@ so ignore those bangs and let the symbols through;
 #X obj -45 205 s \$0-reset;
 #X obj 66 205 s \$1/resetout;
 #X obj 66 180 r \$0-reset;
+#X obj 47 121 s \$1/startstopout;
+#X obj 47 97 r \$0-startstop;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
@@ -302,6 +304,7 @@ so ignore those bangs and let the symbols through;
 #X connect 10 0 11 0;
 #X connect 12 0 13 0;
 #X connect 15 0 14 0;
+#X connect 17 0 16 0;
 #X restore 272 346 pd sends and recvs;
 #X connect 9 0 39 0;
 #X connect 23 0 38 0;

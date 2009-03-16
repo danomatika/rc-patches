@@ -1,5 +1,5 @@
-#N canvas 0 0 360 367 10;
-#X obj 122 323 dac~;
+#N canvas 210 152 333 448 10;
+#X obj 66 417 dac~;
 #X text 17 14 rc-reverb~_: simple reverb;
 #N canvas 0 0 450 300 synth 0;
 #X obj 102 141 osc~ 440;
@@ -8,7 +8,7 @@
 #X obj 103 261 outlet~;
 #X obj 102 50 inlet;
 #X obj 103 233 *~;
-#X obj 169 143 rc-adsr~_ 0.2 5 100 50 300;
+#X obj 169 143 rc-adsr~_ 0.1 5 100 50 300;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
@@ -22,27 +22,33 @@
 ;
 #X obj 24 95 metro 1000;
 #X obj 24 148 + 48;
-#X obj 84 271 rc-reverb~_ 0.5 1 0.5;
-#X obj 128 104 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 12700 1;
-#X floatatom 125 128 5 0 0 1 reverb - -;
-#X obj 169 154 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 8300 1;
-#X floatatom 166 178 5 0 0 1 wet - -;
-#X obj 210 214 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 4200 1;
-#X floatatom 207 238 5 0 0 1 dry - -;
+#X obj 113 96 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 3100 1;
+#X floatatom 110 120 5 0 0 1 reverb - -;
+#X obj 149 181 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 2500 1;
+#X floatatom 146 205 5 0 0 1 wet - -;
+#X obj 181 266 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 3600 1;
+#X floatatom 178 290 5 0 0 1 dry - -;
 #X text 84 45 Creation args: reverb wet dry;
-#X connect 2 0 7 0;
+#X msg 178 316 dry \$1;
+#X msg 146 231 wet \$1;
+#X msg 110 146 reverb \$1;
+#X obj 23 377 rc-reverb~_ 0.5 1 0.5;
+#X connect 2 0 17 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
 #X connect 5 0 3 0;
 #X connect 6 0 2 0;
-#X connect 7 0 0 0;
-#X connect 7 1 0 1;
-#X connect 8 0 9 0;
-#X connect 9 0 7 1;
-#X connect 10 0 11 0;
-#X connect 11 0 7 2;
-#X connect 12 0 13 0;
-#X connect 13 0 7 3;
+#X connect 7 0 8 0;
+#X connect 8 0 16 0;
+#X connect 9 0 10 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 14 0 17 1;
+#X connect 15 0 17 1;
+#X connect 16 0 17 1;
+#X connect 17 0 0 0;
+#X connect 17 1 0 1;
