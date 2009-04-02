@@ -1,0 +1,54 @@
+#! /bin/bash
+#
+# pd install script
+#
+INSTALL_DIR=/usr/local/lib
+BUILD_DIR=.
+INSTALL_CMD="cp -xR"
+
+# Unit-Control
+mkdir -p $INSTALL_DIR
+mkdir -p $INSTALL_DIR/robotcowboy
+$INSTALL_CMD $BUILD_DIR/*.pd $INSTALL_DIR/robotcowboy
+$INSTALL_CMD $BUILD_DIR/*.txt $INSTALL_DIR/robotcowboy
+
+# rc-patches
+cd rc-patches
+./install
+cd ../
+
+# rc-drums
+cd rc-drums
+./install
+cd ../
+
+# rc-util
+cd rc-util
+./install
+cd ../
+
+# unit-patches
+cd unit-patches
+./install
+cd ../
+
+# wip-patches
+cd wip-patches
+./install
+cd ../
+
+# externals
+cd externals
+./install
+cd ../
+
+# samples
+cd samples
+./install
+cd ../
+
+# visual files
+cd visual
+./install
+cd ../
+

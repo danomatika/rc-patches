@@ -1,12 +1,12 @@
 #N canvas 0 0 450 300 10;
 #X obj 187 43 inlet~;
 #X obj 171 252 outlet~;
-#X obj 188 103 hip~ 500;
+#X obj 216 108 hip~ 500;
 #X obj 189 138 compressor~ 1;
 #X obj 190 171 rc-chorus~_ 0.31 0.5 0.5;
 #X obj 133 168 *~ 0.18;
 #X obj 170 209 +~;
-#X connect 0 0 2 0;
+#X connect 0 0 3 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 3 0 5 0;

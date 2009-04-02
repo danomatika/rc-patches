@@ -1,4 +1,4 @@
-#N canvas 1026 376 511 350 10;
+#N canvas 476 360 582 352 10;
 #X obj 14 278 outlet~;
 #N canvas 257 212 600 430 mix 0;
 #X obj 348 304 *~;
@@ -64,9 +64,9 @@
 #X connect 27 0 2 0;
 #X connect 28 0 24 0;
 #X restore 15 251 pd mix;
-#X obj 255 283 s \$0-wet;
-#X obj 293 258 s \$0-dry;
-#N canvas 0 0 451 263 state_saving 0;
+#X obj 255 312 s \$0-wet;
+#X obj 291 286 s \$0-dry;
+#N canvas 0 0 515 365 state_saving 0;
 #X text 10 9 sssad sends and recieves;
 #X obj 257 100 r \$0-wet;
 #X obj 152 125 sssad/sssad \$1/wet;
@@ -77,96 +77,150 @@
 #X obj 187 41 r \$0-reverb;
 #X obj 70 64 sssad/sssad \$1/reverb;
 #X obj 70 89 s \$0-reverb;
+#X obj 431 204 r \$0-echo;
+#X obj 320 228 sssad/sssad \$1/echo;
+#X obj 320 250 s \$0-echo;
+#X obj 158 224 r \$0-revpan;
+#X obj 35 248 sssad/sssad \$1/revpan;
+#X obj 35 270 s \$0-revpan;
+#X obj 256 281 r \$0-echopan;
+#X obj 127 306 sssad/sssad \$1/echopan;
+#X obj 127 328 s \$0-echopan;
 #X connect 1 0 2 1;
 #X connect 2 0 3 0;
 #X connect 4 0 5 1;
 #X connect 5 0 6 0;
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
+#X connect 10 0 11 1;
+#X connect 11 0 12 0;
+#X connect 13 0 14 1;
+#X connect 14 0 15 0;
+#X connect 16 0 17 1;
+#X connect 17 0 18 0;
 #X restore 385 315 pd state_saving;
-#X obj 369 209 s \$0-onoff;
+#X obj 489 211 s \$0-onoff;
 #X text 190 55 Creation args: name;
-#X obj 1 16 cnv 15 143 51 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 1 16 cnv 15 143 111 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 4 20 tgl 12 1 \$0-onoff \$0-onoff empty -6 -6 0 10 -191407 -1
 -1 1 1;
-#X obj 69 34 hsl 70 15 0 1 0 0 \$0-wet \$0-wet wet 0 8 0 10 -191407
--1 -1 5400 1;
-#X obj 21 35 nbx 4 14 0 1 0 1 \$0-wet \$0-wet empty -20 6 0 10 -261234
--1 -1 0.782609 256;
-#X obj 69 49 hsl 70 15 0 1 0 0 \$0-dry \$0-dry dry 0 8 0 10 -191407
--1 -1 6700 1;
-#X obj 21 50 nbx 4 14 0 1 0 1 \$0-dry \$0-dry empty -20 6 0 10 -261234
--1 -1 0.971014 256;
+#X obj 69 93 hsl 70 15 0 1 0 0 \$0-revpan \$0-revpan reverbpan 0 8
+0 10 -191407 -1 -1 4700 1;
+#X obj 21 94 nbx 4 14 0 1 0 1 \$0-revpan \$0-revpan empty -20 6 0 10
+-261234 -1 -1 0.681159 256;
+#X obj 69 108 hsl 70 15 0 1 0 0 \$0-echopan \$0-echopan echopan 0 8
+0 10 -191407 -1 -1 600 1;
+#X obj 21 109 nbx 4 14 0 1 0 1 \$0-echopan \$0-echopan empty -20 6
+0 10 -261234 -1 -1 0.0869565 256;
 #X obj 69 19 hsl 70 15 0 1 0 0 \$0-reverb \$0-reverb reverb 0 8 0 10
--191407 -1 -1 6900 1;
+-191407 -1 -1 6150 1;
 #X obj 21 20 nbx 4 14 0 1 0 1 \$0-reverb \$0-reverb empty -20 6 0 10
--261234 -1 -1 1 256;
-#N canvas 373 253 365 347 control 0;
+-261234 -1 -1 0.891304 256;
+#N canvas 373 253 401 352 control 0;
 #X obj 131 296 outlet;
-#X obj 171 158 r \$0-dry;
-#X obj 154 99 r \$0-wet;
-#X msg 154 128 wet \$1;
-#X msg 171 182 dry \$1;
-#X msg 131 70 reverb \$1;
-#X obj 131 44 r \$0-reverb;
+#X obj 170 68 r \$0-dry;
+#X obj 109 38 r \$0-wet;
+#X msg 109 67 wet \$1;
+#X msg 170 92 dry \$1;
+#X msg 23 89 reverb \$1;
+#X obj 23 63 r \$0-reverb;
+#X obj 237 97 r \$0-echo;
+#X msg 237 123 echo \$1;
+#X obj 245 176 r \$0-revpan;
+#X msg 269 261 echopan \$1;
+#X obj 269 235 r \$0-echopan;
+#X msg 245 202 reverbpan \$1;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 12 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 0;
+#X connect 12 0 0 0;
 #X restore 71 193 pd control in;
-#X obj 15 124 inlet~ auduo;
+#X obj 15 152 inlet~ auduo;
 #X text 11 308 2009 Dan Wilcox;
 #X text 10 325 danomatika.com | robotcowboy.com;
-#N canvas 0 0 450 300 defaults 0;
-#X obj 81 228 outlet;
-#X obj 110 59 loadbang;
-#X msg 145 147 wet 1;
-#X msg 195 147 dry 0;
-#X msg 31 142 reverb 0;
+#N canvas 0 0 539 300 defaults 0;
+#X obj 197 236 outlet;
+#X obj 235 74 loadbang;
+#X msg 256 146 echo 0.3;
+#X msg 118 141 wet 0.3;
+#X msg 180 141 dry 0.7;
+#X msg 326 149 echopan 1;
+#X msg 415 150 reverbpan 0;
+#X msg 31 142 reverb 0.5;
+#X connect 1 0 7 0;
+#X connect 1 0 3 0;
 #X connect 1 0 4 0;
 #X connect 1 0 2 0;
-#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 1 0 6 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
 #X restore 412 127 pd defaults;
-#X obj 369 183 clip 0 1;
+#X obj 489 185 clip 0 1;
 #N canvas 0 0 354 211 guts 0;
 #X obj -50 84 inlet~;
 #X obj -51 158 outlet~;
 #X obj 12 82 inlet;
 #X obj 90 132 r \$0-onoff;
 #X obj 90 157 switch~;
-#X obj -51 122 rc-reverb~_;
 #X obj 12 159 outlet~;
-#X connect 0 0 5 0;
-#X connect 2 0 5 1;
+#X obj -51 122 rc-reverb~_;
+#X connect 0 0 6 0;
+#X connect 2 0 6 1;
 #X connect 3 0 4 0;
-#X connect 5 0 1 0;
-#X connect 5 1 6 0;
+#X connect 6 0 1 0;
+#X connect 6 1 5 0;
 #X restore 32 220 pd guts;
 #X text 172 19 a simple reverb with gui;
 #X text 174 76 Reverb design by Miller Puckette. Adapted from Chris
 McCormick's s-reverb abstraction.;
 #X obj 255 123 inlet control messages;
-#X obj 255 155 route wet dry reverb onoff;
-#X obj 331 233 s \$0-reverb;
+#X obj 328 262 s \$0-reverb;
 #X obj 81 277 outlet~;
+#X obj 364 239 s \$0-echo;
+#X obj 69 34 hsl 70 15 0 1 0 0 \$0-echo \$0-echo echo 0 8 0 10 -191407
+-1 -1 4800 1;
+#X obj 21 35 nbx 4 14 0 1 0 1 \$0-echo \$0-echo empty -20 6 0 10 -261234
+-1 -1 0.695652 256;
+#X obj 69 55 hsl 70 15 0 1 0 0 \$0-wet \$0-wet wet 0 8 0 10 -191407
+-1 -1 3770 1;
+#X obj 21 56 nbx 4 14 0 1 0 1 \$0-wet \$0-wet empty -20 6 0 10 -261234
+-1 -1 0.546377 256;
+#X obj 69 70 hsl 70 15 0 1 0 0 \$0-dry \$0-dry dry 0 8 0 10 -191407
+-1 -1 5930 1;
+#X obj 21 71 nbx 4 14 0 1 0 1 \$0-dry \$0-dry empty -20 6 0 10 -261234
+-1 -1 0.85942 256;
+#X obj 409 191 s \$0-echopan;
+#X obj 383 216 s \$0-revpan;
+#X obj 255 155 route wet dry reverb echo reverbpan echopan onoff;
 #X connect 1 0 0 0;
-#X connect 1 1 27 0;
+#X connect 1 1 26 0;
 #X connect 15 0 21 1;
 #X connect 16 0 21 0;
 #X connect 16 0 1 0;
-#X connect 19 0 25 0;
+#X connect 19 0 36 0;
 #X connect 20 0 5 0;
 #X connect 21 0 1 1;
 #X connect 21 1 1 2;
-#X connect 24 0 25 0;
-#X connect 25 0 2 0;
-#X connect 25 1 3 0;
-#X connect 25 2 26 0;
-#X connect 25 3 20 0;
-#X coords 0 -1 1 1 145 70 1 0 0;
+#X connect 24 0 36 0;
+#X connect 36 0 2 0;
+#X connect 36 1 3 0;
+#X connect 36 2 25 0;
+#X connect 36 3 27 0;
+#X connect 36 4 35 0;
+#X connect 36 5 34 0;
+#X connect 36 6 20 0;
+#X coords 0 -1 1 1 145 130 1 0 0;
