@@ -1,4 +1,4 @@
-#N canvas 375 397 493 277 10;
+#N canvas 403 554 493 277 10;
 #X obj 40 157 route start stop;
 #X msg 40 188 1;
 #X msg 86 189 0;
@@ -18,16 +18,16 @@
 #X text 202 9 \$1 metro name \, \$2 tick to autostop;
 #X obj 142 56 s \$1/pos;
 #X obj 142 27 inlet;
-#X floatatom 4 19 5 0 0 1 tick - -;
+#X floatatom 19 21 5 0 0 1 tick - -;
 #X obj 4 40 bng 15 250 50 0 empty empty autostop 18 7 0 10 -203904
 -1 -1;
 #X obj 79 21 bng 15 250 50 0 empty empty start 17 7 0 10 -204786 -1
 -1;
 #X obj 79 41 bng 15 250 50 0 empty empty stop 17 7 0 10 -261234 -1
 -1;
-#X obj 17 242 outlet startstop;
+#X obj 134 243 outlet startstop;
 #X obj 261 104 spigot;
-#N canvas 0 0 450 300 autostop 0;
+#N canvas 4 46 450 300 autostop 0;
 #X obj 134 74 \$2;
 #X obj 134 35 loadbang;
 #X obj 134 100 moses 1;
@@ -41,6 +41,11 @@
 #X connect 3 0 5 0;
 #X connect 4 0 5 0;
 #X restore 294 80 pd autostop ticks;
+#X obj 4 21 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 205 94 spigot;
+#X obj 43 241 outlet ticks;
+#X obj 404 233 outlet done;
 #X connect 0 0 1 0;
 #X connect 0 0 21 0;
 #X connect 0 1 2 0;
@@ -58,10 +63,14 @@
 #X connect 13 0 10 0;
 #X connect 13 0 2 0;
 #X connect 13 0 20 0;
+#X connect 13 0 29 0;
 #X connect 14 0 13 0;
-#X connect 15 0 19 0;
 #X connect 15 0 24 0;
+#X connect 15 0 27 0;
+#X connect 15 0 28 0;
 #X connect 18 0 17 0;
 #X connect 24 0 14 0;
 #X connect 25 0 24 1;
-#X coords 0 -1 1 1 125 60 1 0 0;
+#X connect 26 0 27 1;
+#X connect 27 0 19 0;
+#X coords 0 0 1 1 125 60 0;

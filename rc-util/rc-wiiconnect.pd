@@ -1,10 +1,10 @@
-#N canvas 0 0 379 375 10;
+#N canvas 4 51 379 375 10;
 #X obj 6 16 bng 15 250 50 0 empty empty connect 17 7 0 10 -204786 -1
 -1;
 #X obj 6 38 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -261234
 -1 -1;
-#X obj 90 348 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
-1;
+#X obj 67 17 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1 1
+;
 #X obj 90 322 udpsend 7770;
 #X msg 189 283 connect 127.0.0.1 7770;
 #X obj 90 240 packOSC;

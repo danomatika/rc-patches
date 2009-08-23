@@ -1,0 +1,147 @@
+#N canvas 761 157 869 459 10;
+#X obj 69 187 rc-bass~;
+#X obj 69 223 rc-chan~;
+#X obj 68 415 rc-throw2~ BASS;
+#X obj 106 116 notein 8;
+#X obj 629 77 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 2800 1;
+#X floatatom 626 101 5 0 0 1 - - -;
+#X msg 626 127 d \$1;
+#X obj 674 130 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 2900 1;
+#X floatatom 671 154 5 0 0 1 - - -;
+#X msg 671 180 s \$1;
+#X obj 586 33 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 1100 1;
+#X floatatom 583 57 5 0 0 1 - - -;
+#X obj 717 180 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 9800 1;
+#X floatatom 714 204 5 0 0 1 - - -;
+#X msg 714 231 r \$1;
+#X msg 583 83 a \$1;
+#X obj 368 345 t a;
+#X obj 583 275 t a;
+#X obj 382 76 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 4700 1;
+#X obj 446 130 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 7200 1;
+#X floatatom 443 154 5 0 0 1 - - -;
+#X msg 443 180 mod2 \$1;
+#X text 375 47 fm synthesis controls;
+#X text 580 11 envelope controls;
+#X msg 379 126 mod1 \$1;
+#X obj 48 59 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 0 450 326 seq 0;
+#X obj 94 127 sel 0 1 2 3 4 5 6 7;
+#X obj 94 99 rc-count 8;
+#X obj 94 73 metro 250;
+#X obj 88 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 121 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 154 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 220 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 260 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 295 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 333 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 299 outlet;
+#X obj 94 20 inlet;
+#X obj 45 49 sel 0;
+#X msg 45 72 reset;
+#X msg 88 185 38;
+#X msg 154 186 50;
+#X msg 185 186 34;
+#X msg 260 188 38;
+#X msg 333 190 40;
+#X msg 121 186 45;
+#X msg 295 189 45;
+#X msg 220 187 rest;
+#X obj 185 241 makenote 64 100;
+#X obj 185 270 pack f f;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 0 2 5 0;
+#X connect 0 3 6 0;
+#X connect 0 4 7 0;
+#X connect 0 5 8 0;
+#X connect 0 6 9 0;
+#X connect 0 7 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 15 0;
+#X connect 4 0 20 0;
+#X connect 5 0 16 0;
+#X connect 6 0 17 0;
+#X connect 7 0 22 0;
+#X connect 8 0 18 0;
+#X connect 9 0 21 0;
+#X connect 10 0 19 0;
+#X connect 12 0 2 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 1 0;
+#X connect 15 0 23 0;
+#X connect 16 0 23 0;
+#X connect 17 0 23 0;
+#X connect 18 0 23 0;
+#X connect 19 0 23 0;
+#X connect 20 0 23 0;
+#X connect 21 0 23 0;
+#X connect 23 0 24 0;
+#X connect 23 1 24 1;
+#X connect 24 0 11 0;
+#X restore 48 85 pd seq;
+#X obj 48 114 unpack;
+#X obj 176 42 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 4100 1;
+#X obj 240 96 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 12700 1;
+#X floatatom 237 120 5 0 0 1 - - -;
+#X text 169 13 fm synthesis controls;
+#X msg 237 146 dist \$1;
+#X msg 173 92 amp \$1;
+#X floatatom 173 66 5 0 0 0 - - -;
+#X floatatom 379 101 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 17 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 17 0;
+#X connect 10 0 11 0;
+#X connect 11 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 15 0 17 0;
+#X connect 16 0 0 1;
+#X connect 17 0 16 0;
+#X connect 18 0 35 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 16 0;
+#X connect 24 0 16 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 0 0;
+#X connect 27 1 0 1;
+#X connect 28 0 34 0;
+#X connect 29 0 30 0;
+#X connect 30 0 32 0;
+#X connect 32 0 16 0;
+#X connect 33 0 16 0;
+#X connect 34 0 33 0;
+#X connect 35 0 24 0;
