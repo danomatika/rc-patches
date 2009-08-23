@@ -1,4 +1,4 @@
-#N canvas 0 0 360 369 10;
+#N canvas 4 51 360 369 10;
 #X declare -lib unauthorized;
 #X text 118 29 by ydegoyon.free.fr;
 #X text 21 15 rc-compressor : gui wrapper around compressor~;

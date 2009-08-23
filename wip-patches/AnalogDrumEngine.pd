@@ -1,10 +1,10 @@
-#N canvas 695 130 395 205 10;
+#N canvas 699 155 395 205 10;
 #X obj 44 104 dac~;
-#X obj 45 -10 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+#X obj 45 -10 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
 ;
 #X obj 45 54 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 #X obj 45 9 metro 160;
-#N canvas 119 555 1229 323 -------------------------drumsynth 1;
+#N canvas 123 580 1229 323 -------------------------drumsynth 0;
 #N canvas 0 0 518 471 clap 0;
 #X obj 189 66 noise~;
 #X obj 336 325 *~;
@@ -844,7 +844,7 @@
 #X restore 42 81 pd -------------------------drumsynth;
 #X obj 45 30 random 16;
 #X obj 118 9 hsl 128 15 50 400 0 0 empty empty empty -2 -6 0 8 -44926
--1 -1 6500 1;
+-1 -1 6400 1;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
 #X connect 2 1 4 1;

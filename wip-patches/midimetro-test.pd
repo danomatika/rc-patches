@@ -1,4 +1,4 @@
-#N canvas 211 100 536 797 10;
+#N canvas 215 125 536 797 10;
 #X obj 34 34 rc-midimetro metro;
 #X obj 100 176 rc-drumseq16 ds;
 #X obj 16 317 r metro/midi;
@@ -33,6 +33,7 @@ kickc/mute 0 \; SSSAD kickc/amp 87 \; SSSAD snrc/pan 0.5 \; SSSAD snrc/mute
 #X obj 263 86 r metro/reset;
 #X msg 261 118 1;
 #X obj 261 145 s metro/startstop;
+#X obj 144 778 rc-throw~;
 #X connect 0 1 1 0;
 #X connect 0 1 9 0;
 #X connect 1 0 10 0;
@@ -51,6 +52,8 @@ kickc/mute 0 \; SSSAD kickc/amp 87 \; SSSAD snrc/pan 0.5 \; SSSAD snrc/mute
 #X connect 12 0 11 1;
 #X connect 13 0 14 0;
 #X connect 15 0 16 0;
+#X connect 16 0 23 0;
+#X connect 17 0 23 0;
 #X connect 18 0 17 0;
 #X connect 19 0 0 0;
 #X connect 20 0 21 0;

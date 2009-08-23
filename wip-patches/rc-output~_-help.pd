@@ -1,0 +1,29 @@
+#N canvas 339 197 528 337 10;
+#X obj 15 251 rc-output~_;
+#X symbolatom 15 305 21 0 0 0 file - -;
+#X obj 78 279 tgl 15 0 empty empty recording 17 7 0 10 -262144 -1 -1
+0 1;
+#X text 235 293 Dan Wilcox 2009;
+#X text 233 306 robotcowboy.com|danomatika.com;
+#X text 80 228 left and right signal inputs;
+#X msg 34 92 wav;
+#X msg 54 115 mp3;
+#X msg 15 56 record $;
+#X obj 15 32 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 92 135 filename kaka;
+#X msg 92 161 filename /usr/home/test/fullpath;
+#X text 185 135 set the filename \, automatically appends filetype
+;
+#X text 293 160 takes relative or absolute paths;
+#X text 90 102 filetypes \, default: wav;
+#X text 74 5 rc-output~_: stereo audio outlet with built in file recorders
+;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;

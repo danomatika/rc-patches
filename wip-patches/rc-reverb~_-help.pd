@@ -1,5 +1,5 @@
-#N canvas 210 152 363 449 10;
-#X obj 43 415 dac~;
+#N canvas 222 227 404 642 10;
+#X obj 43 591 dac~;
 #X text 17 14 rc-reverb~_: simple reverb;
 #N canvas 0 0 450 300 synth 0;
 #X obj 102 141 osc~ 440;
@@ -39,7 +39,20 @@
 -1 -1 0 1;
 #X floatatom 146 208 5 0 0 1 echo - -;
 #X msg 146 234 echo \$1;
-#X obj 23 377 rc-reverb~_;
+#X obj 23 553 rc-reverb~_;
+#X obj 220 458 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 217 482 5 0 0 1 reverbpan - -;
+#X obj 252 543 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 249 567 5 0 0 1 echopan - -;
+#X msg 217 508 reverbpan \$1;
+#X text 216 439 0 - L;
+#X text 315 437 1 - R;
+#X text 248 527 0 - L;
+#X text 347 525 1 - R;
+#X msg 249 593 echopan \$1;
+#X msg 39 519 reverb;
 #X connect 2 0 20 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
@@ -59,3 +72,10 @@
 #X connect 19 0 20 1;
 #X connect 20 0 0 0;
 #X connect 20 1 0 1;
+#X connect 21 0 22 0;
+#X connect 22 0 25 0;
+#X connect 23 0 24 0;
+#X connect 24 0 30 0;
+#X connect 25 0 20 1;
+#X connect 30 0 20 1;
+#X connect 31 0 20 0;

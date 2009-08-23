@@ -1,5 +1,5 @@
-#N canvas 416 88 433 485 10;
-#X obj 23 447 dac~;
+#N canvas 420 113 511 700 10;
+#X obj 24 661 dac~;
 #N canvas 0 0 450 300 synth 0;
 #X obj 102 141 osc~ 440;
 #X obj 102 113 mtof;
@@ -22,27 +22,40 @@
 #X obj 24 95 metro 1000;
 #X obj 24 148 + 48;
 #X obj 127 95 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 4800 1;
 #X floatatom 124 119 5 0 0 1 reverb - -;
 #X obj 234 254 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 2000 1;
 #X floatatom 231 278 5 0 0 1 wet - -;
 #X obj 265 331 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 1400 1;
 #X floatatom 262 355 5 0 0 1 dry - -;
-#X obj 24 343 rc-reverb~;
+#X obj 24 521 rc-reverb~;
 #X msg 231 303 wet \$1;
 #X msg 262 380 dry \$1;
 #X msg 124 144 reverb \$1;
-#X msg 218 429 onoff \$1;
-#X obj 218 405 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 83 386 onoff \$1;
+#X obj 83 362 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 17 14 rc-reverb~_: simple reverb with gui;
 #X text 84 45 Creation args: name;
 #X obj 165 179 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 4300 1;
 #X floatatom 162 203 5 0 0 1 echo - -;
 #X msg 162 229 echo \$1;
+#X msg 62 459 reset;
+#X obj 293 432 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 6500 1;
+#X floatatom 290 456 5 0 0 1 reverbpan - -;
+#X obj 325 517 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 3700 1;
+#X floatatom 322 541 5 0 0 1 echopan - -;
+#X msg 290 482 reverbpan \$1;
+#X text 289 413 0 - L;
+#X text 388 411 1 - R;
+#X text 321 501 0 - L;
+#X text 420 499 1 - R;
+#X msg 322 567 echopan \$1;
 #X connect 1 0 12 0;
 #X connect 2 0 5 0;
 #X connect 3 0 4 0;
@@ -64,3 +77,10 @@
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 12 1;
+#X connect 23 0 12 1;
+#X connect 24 0 25 0;
+#X connect 25 0 28 0;
+#X connect 26 0 27 0;
+#X connect 27 0 33 0;
+#X connect 28 0 12 1;
+#X connect 33 0 12 1;

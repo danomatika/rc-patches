@@ -1,4 +1,4 @@
-#N canvas 184 329 524 429 10;
+#N canvas 228 405 524 429 10;
 #X obj 24 364 outlet~;
 #N canvas 0 0 447 432 state_saving 0;
 #X text 10 9 sssad sends and recieves;
@@ -39,20 +39,20 @@
 #X connect 20 0 21 0;
 #X restore 257 390 pd state_saving;
 #X text 190 55 Creation args: name;
-#X obj 1 16 cnv 15 143 136 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 1 16 cnv 15 128 136 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 69 46 hsl 70 15 0 1 0 0 \$0-q \$0-q q 0 8 0 10 -191407 -1 -1
-4450 1;
-#X obj 21 47 nbx 4 14 0 1 0 1 \$0-q \$0-q empty -20 6 0 10 -261234
--1 -1 0.645 256;
-#X obj 69 61 hsl 70 15 0 1 0 0 \$0-mod \$0-mod mod 0 8 0 10 -191407
--1 -1 6031 1;
-#X obj 21 62 nbx 4 14 0 1 0 1 \$0-mod \$0-mod empty -20 6 0 10 -261234
--1 -1 0.874 256;
-#X obj 69 31 hsl 70 15 0 1 0 0 \$0-cutoff \$0-cutoff cutoff 0 8 0 10
--191407 -1 -1 2988 1;
-#X obj 21 32 nbx 4 14 0 1 0 1 \$0-cutoff \$0-cutoff empty -20 6 0 10
--261234 -1 -1 0.433 256;
+#X obj 54 46 hsl 70 15 0 1 0 0 \$0-q \$0-q q 0 8 0 10 -191407 -1 -1
+5350 1;
+#X obj 6 47 nbx 4 14 0 1 0 1 \$0-q \$0-q empty -20 6 0 10 -261234 -1
+-1 0.775362 256;
+#X obj 54 61 hsl 70 15 0 1 0 0 \$0-mod \$0-mod mod 0 8 0 10 -191407
+-1 -1 6900 1;
+#X obj 6 62 nbx 4 14 0 1 0 1 \$0-mod \$0-mod empty -20 6 0 10 -261234
+-1 -1 1 256;
+#X obj 54 31 hsl 70 15 0 1 0 0 \$0-cutoff \$0-cutoff cutoff 0 8 0 10
+-191407 -1 -1 4988 1;
+#X obj 6 32 nbx 4 14 0 1 0 1 \$0-cutoff \$0-cutoff empty -20 6 0 10
+-261234 -1 -1 0.722899 256;
 #N canvas 0 0 450 300 defaults 0;
 #X obj 157 254 outlet;
 #X msg 272 128 a 0.07;
@@ -82,21 +82,21 @@
 #X connect 9 0 0 0;
 #X connect 10 0 7 0;
 #X restore 294 178 pd defaults;
-#X obj 68 105 hsl 70 15 0 1 0 0 \$0-d \$0-d d 0 8 0 10 -191407 -1 -1
-1746 1;
-#X obj 20 106 nbx 4 14 0 1 0 1 \$0-d \$0-d empty -20 6 0 10 -261234
--1 -1 0.253 256;
-#X obj 68 120 hsl 70 15 0 1 0 0 \$0-s \$0-s s 0 8 0 10 -191407 -1 -1
-1787 1;
-#X obj 20 121 nbx 4 14 0 1 0 1 \$0-s \$0-s empty -20 6 0 10 -261234
--1 -1 0.259 256;
-#X obj 68 90 hsl 70 15 0 1 0 0 \$0-a \$0-a a 0 8 0 10 -191407 -1 -1
-483 1;
-#X obj 20 91 nbx 4 14 0 1 0 1 \$0-a \$0-a empty -20 6 0 10 -261234
--1 -1 0.07 256;
-#X obj 68 135 hsl 70 15 0 1 0 0 \$0-r \$0-r r 0 8 0 10 -191407 -1 -1
+#X obj 53 105 hsl 70 15 0 1 0 0 \$0-d \$0-d d 0 8 0 10 -191407 -1 -1
+2546 1;
+#X obj 5 106 nbx 4 14 0 1 0 1 \$0-d \$0-d empty -20 6 0 10 -261234
+-1 -1 0.368986 256;
+#X obj 53 120 hsl 70 15 0 1 0 0 \$0-s \$0-s s 0 8 0 10 -191407 -1 -1
+2687 1;
+#X obj 5 121 nbx 4 14 0 1 0 1 \$0-s \$0-s empty -20 6 0 10 -261234
+-1 -1 0.38942 256;
+#X obj 53 90 hsl 70 15 0 1 0 0 \$0-a \$0-a a 0 8 0 10 -191407 -1 -1
+783 1;
+#X obj 5 91 nbx 4 14 0 1 0 1 \$0-a \$0-a empty -20 6 0 10 -261234 -1
+-1 0.113478 256;
+#X obj 53 135 hsl 70 15 0 1 0 0 \$0-r \$0-r r 0 8 0 10 -191407 -1 -1
 4126 1;
-#X obj 20 136 nbx 4 14 0 1 0 1 \$0-r \$0-r empty -20 6 0 10 -261234
+#X obj 5 136 nbx 4 14 0 1 0 1 \$0-r \$0-r empty -20 6 0 10 -261234
 -1 -1 0.598 256;
 #X text 2 16 filter;
 #X text 1 75 envelope;
@@ -111,7 +111,7 @@
 #X obj 246 287 s \$0-d;
 #X obj 121 176 inlet note control messages;
 #X obj 402 178 inlet vel;
-#N canvas 373 253 446 409 note 0;
+#N canvas 377 278 446 409 note 0;
 #X obj 131 369 outlet;
 #X obj 66 125 inlet;
 #X msg 131 59 cutoff \$1;
@@ -170,4 +170,4 @@
 #X connect 31 0 34 0;
 #X connect 32 0 21 0;
 #X connect 33 0 21 1;
-#X coords 0 -1 1 1 145 155 1 0 0;
+#X coords 0 -1 1 1 130 155 1 0 0;
