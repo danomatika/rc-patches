@@ -10,7 +10,6 @@ INSTALL_CMD="cp -xR"
 mkdir -p $INSTALL_DIR
 mkdir -p $INSTALL_DIR/robotcowboy
 $INSTALL_CMD $BUILD_DIR/*.pd $INSTALL_DIR/robotcowboy
-$INSTALL_CMD $BUILD_DIR/*.txt $INSTALL_DIR/robotcowboy
 
 # rc-patches
 cd rc-patches
