@@ -1,6 +1,6 @@
-#N canvas 691 340 329 241 10;
+#N canvas 905 142 329 241 10;
 #N canvas 188 162 832 454 audio 0;
-#N canvas 0 0 450 300 gate 0;
+#N canvas 0 22 450 300 gate 0;
 #X obj 68 42 inlet;
 #X obj 157 45 inlet;
 #X obj 89 179 outlet;
@@ -112,7 +112,7 @@
 #X text 4 76 ignore button until recording finished;
 #X obj 49 275 loadbang;
 #X msg 202 398 symbol unnamed;
-#N canvas 0 0 386 200 done_rec_audio 0;
+#N canvas 0 22 386 200 done_rec_audio 0;
 #X obj 25 57 inlet;
 #X text 18 14 plays a sample on a bang to note when recording is done
 ;
@@ -264,7 +264,7 @@
 #X obj 473 49 r UNIT_OSC;
 #X obj 473 76 routeOSC /pd;
 #X text 414 387 voice comm;
-#X obj 6 77 tgl 20 0 empty \$0-auto arm 0 -6 0 10 -261234 -1 -1 1 1
+#X obj 6 77 tgl 20 0 empty \$0-auto arm 0 -6 0 10 -261234 -1 -1 0 1
 ;
 #N canvas 656 502 364 177 vu_meters 0;
 #X obj 19 148 s \$0-vu_l;
@@ -292,7 +292,7 @@
 #X obj 50 20 vu 30 120 \$0-vu_l empty -1 -8 0 10 -66577 -1 0 0;
 #X obj 82 20 vu 30 120 \$0-vu_r empty -1 -8 0 10 -66577 -1 0 0;
 #X obj 115 18 vfad_scale -1;
-#N canvas 0 0 356 365 rec_flash 0;
+#N canvas 0 22 356 365 rec_flash 0;
 #X msg 55 -2 1;
 #X obj 78 57 \$0;
 #X obj 33 32 t f b;
@@ -323,7 +323,7 @@
 #X restore 35 355 pd rec_flash;
 #X obj 256 388 rc-record_mp3~;
 #X obj 152 388 rc-record~;
-#N canvas 0 0 450 300 toggle 0;
+#N canvas 0 22 450 300 toggle 0;
 #X obj 55 188 s \$0-auto;
 #X obj 98 97 loadbang;
 #X msg 82 127 1;
@@ -398,7 +398,7 @@
 #X connect 20 0 13 0;
 #X connect 21 0 13 0;
 #X restore 603 130 pd play sounds on rc-unitd events;
-#N canvas 0 0 450 300 turn 0;
+#N canvas 0 22 450 300 turn 0;
 #X obj 39 64 loadbang;
 #X obj -11 35 inlet;
 #X msg -11 148 \; pd dsp \$1;
@@ -418,7 +418,7 @@
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X restore 538 232 pd turn dsp on/off;
-#N canvas 0 0 450 300 play 0;
+#N canvas 0 22 450 300 play 0;
 #X obj 40 26 inlet;
 #X obj 39 188 clip~ -0.5 0.5;
 #X obj 40 161 rc-dist~_ 0.4;
@@ -503,7 +503,7 @@
 #X connect 38 0 39 0;
 #X coords 0 -1 1 1 135 148 1 0 0;
 #X restore 74 -8 pd audio;
-#N canvas 461 306 965 526 playlist 0;
+#N canvas 137 216 965 526 playlist 0;
 #X obj 176 75 openpanel;
 #X obj 1 16 cnv 15 160 118 empty empty empty 20 12 0 14 -191407 -66577
 0;
@@ -787,7 +787,7 @@
 #X connect 22 0 24 0;
 #X connect 24 0 18 0;
 #X restore 229 165 pd button_box;
-#N canvas 0 0 450 300 /pd/transport 0;
+#N canvas 0 22 450 300 /pd/transport 0;
 #X obj 139 46 inlet;
 #X obj 139 78 sel 0;
 #X msg 139 126 stop;
@@ -942,10 +942,10 @@
 #X obj 42 23 tgl 15 0 empty \$0-visual0 0 17 7 0 10 -204786 -1 -1 0
 1;
 #X obj 109 23 tgl 15 0 empty \$0-debug debug 17 7 0 10 -261234 -1 -1
-1 1;
+0 1;
 #N canvas 361 177 339 205 PD_RECV 0;
 #X obj 42 147 s pd;
-#N canvas 0 0 450 300 debug 0;
+#N canvas 0 22 450 300 debug 0;
 #X obj 87 102 inlet;
 #X obj 87 225 outlet;
 #X obj 118 158 spigot;
@@ -967,7 +967,7 @@
 #X connect 4 2 5 0;
 #X restore 32 294 pd PD_RECV;
 #X text 194 19 ports;
-#N canvas 0 0 450 469 /keyboard 0;
+#N canvas 0 22 450 469 /keyboard 0;
 #X floatatom 141 100 5 0 0 0 - - -;
 #X obj 34 27 inlet;
 #X obj 34 58 routeOSC /keyboard;
@@ -1321,7 +1321,7 @@
 #X connect 21 0 24 1;
 #X coords 0 -1 1 1 162 45 1 0 0;
 #X restore -98 133 pd connections;
-#N canvas 0 0 401 659 v3.5.0 0;
+#N canvas 0 22 401 659 v3.5.0 0;
 #X text 24 20 v2 - Consoles Afire Tour;
 #X text 42 99 - reorganize patch into gui objects;
 #X text 42 115 - add mp3 recording and switch;
