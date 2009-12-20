@@ -1,6 +1,6 @@
-#N canvas 489 314 804 525 10;
-#X obj 80 497 dac~;
-#X obj 79 469 *~;
+#N canvas 46 283 804 525 10;
+#X obj 78 497 dac~;
+#X obj 78 469 *~;
 #X msg 78 118 60 64;
 #X msg 119 170 62 64;
 #X msg 150 255 64 100;
@@ -10,18 +10,18 @@
 #X obj 78 344 unpack;
 #X msg 142 230 64 64;
 #X obj 48 59 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 278 60 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 7300 1;
 #X floatatom 275 84 5 0 0 1 - - -;
 #X msg 275 110 cutoff \$1;
 #X obj 316 139 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X floatatom 313 163 5 0 0 1 - - -;
 #X msg 313 189 q \$1;
 #X obj 380 182 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
-#X floatatom 377 206 5 0 0 1 enveleop_mod - -;
+-1 -1 4500 1;
+#X floatatom 377 206 5 0 0 1 envelope_mod - -;
 #X msg 377 232 mod \$1;
 #X obj 574 101 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
 -1 -1 0 1;
@@ -39,8 +39,8 @@
 #X floatatom 659 228 5 0 0 1 - - -;
 #X msg 659 255 r \$1;
 #X msg 528 107 a \$1;
-#X obj 97 444 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+#X obj 96 444 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 12700 1;
 #X obj 313 369 t a;
 #X obj 528 299 t a;
 #X text 15 21 rc-303~_ : a non-gui tr303 emulation;
@@ -61,7 +61,7 @@
 #X text 209 356 note off;
 #X text 313 440 danomatika.com | robotcowboy.com;
 #X msg 148 325 reset;
-#N canvas 0 0 450 326 seq 0;
+#N canvas 0 22 450 326 seq 0;
 #X obj 94 127 sel 0 1 2 3 4 5 6 7;
 #X obj 94 99 rc-count 8;
 #X obj 94 73 metro 250;
