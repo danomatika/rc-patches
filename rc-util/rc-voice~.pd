@@ -1,0 +1,10 @@
+#N canvas 0 22 450 300 10;
+#X obj 51 24 inlet~;
+#X obj 51 186 outlet~;
+#X obj 51 113 rc-guitar_delayomatic~;
+#X obj 51 67 compressor~ 1;
+#X obj 51 151 *~ 0.85;
+#X connect 0 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
