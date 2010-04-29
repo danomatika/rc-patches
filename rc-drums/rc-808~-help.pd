@@ -1,0 +1,9 @@
+#N canvas 465 427 744 261 10;
+#X obj 15 19 r DRUMMACHINE;
+#X text 116 18 triggers are 60 \, 61 \, ...;
+#X obj 15 234 throw~ LEFT;
+#X obj 650 234 throw~ RIGHT;
+#X obj 15 49 rc-808~;
+#X connect 0 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;

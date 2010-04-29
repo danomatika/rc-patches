@@ -1,0 +1,35 @@
+#N canvas 857 293 446 307 10;
+#X obj 111 120 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X obj 111 68 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X floatatom 111 262 5 0 0 0 - - -;
+#X obj 111 93 metro 500;
+#X msg 218 134 4;
+#X msg 253 177 8;
+#X msg 16 101 reset;
+#X msg 251 147 16;
+#X text 133 67 start bangs;
+#X text 152 261 left outlet: count;
+#X obj 218 239 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+-1 -1;
+#X text 288 154 right inlet: upper limit;
+#X text 75 41 creation arg: upper limit;
+#X text 313 187 lower limit is 0;
+#X text 239 239 bangs when reaching limit;
+#X text 12 79 reset count;
+#X msg 146 129 up;
+#X msg 167 158 down;
+#X text 8 9 rc-count: simple up/down counter;
+#X obj 155 205 rc-count 16;
+#X connect 0 0 19 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 19 1;
+#X connect 5 0 19 1;
+#X connect 6 0 19 0;
+#X connect 7 0 19 1;
+#X connect 16 0 19 0;
+#X connect 17 0 19 0;
+#X connect 19 0 2 0;
+#X connect 19 1 10 0;

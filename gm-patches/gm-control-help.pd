@@ -1,0 +1,46 @@
+#N canvas 805 189 381 489 10;
+#X msg 116 288 print;
+#X obj 105 395 print;
+#X text 53 76 see: http://en.wikipedia.org/wiki/General_midi;
+#X floatatom 63 360 5 0 0 1 control_num - -;
+#X text 161 289 print the table for reference;
+#X text 131 251 floats are passed through;
+#X text 274 435 Dan Wilcox 2009;
+#X text 174 455 danomatika.com | robotcowboy.com;
+#N canvas 0 22 188 147 noteout 0;
+#X obj 28 104 noteout 1;
+#X obj 28 65 makenote 100 500;
+#X obj 28 32 inlet;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 1 0;
+#X restore 226 394 pd noteout 1;
+#X msg 226 364 60;
+#X msg 262 365 65;
+#X text 218 336 try some notes;
+#X obj 63 324 gm-control;
+#X obj 41 420 ctlout 1;
+#X msg 36 154 Mod_Wheel;
+#X msg 63 179 Volume;
+#X msg 86 206 Pan;
+#X obj 17 120 hsl 128 15 0 127 0 0 empty empty control_amount -2 8
+0 10 -262144 -1 -1 0 1;
+#X floatatom 14 380 5 0 0 0 - - -;
+#X text 120 171 get control num using GM name;
+#X msg 100 251 1;
+#X text 6 14 gm-control: general midi control mapping look up table
+;
+#X text 20 50 converts a control name to a control num from the GM
+spec;
+#X connect 0 0 12 0;
+#X connect 3 0 1 0;
+#X connect 3 0 13 1;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 12 0 3 0;
+#X connect 14 0 12 0;
+#X connect 15 0 12 0;
+#X connect 16 0 12 0;
+#X connect 17 0 18 0;
+#X connect 18 0 13 0;
+#X connect 20 0 12 0;
