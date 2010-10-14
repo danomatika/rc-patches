@@ -1,4 +1,4 @@
-#N canvas 862 302 440 464 10;
+#N canvas 22 271 440 464 10;
 #X obj 32 435 outlet~;
 #N canvas 369 369 485 290 Oscillator_Bank 0;
 #X obj -27 32 inlet note;
@@ -75,7 +75,7 @@
 #X connect 27 0 12 1;
 #X connect 28 0 15 0;
 #X restore 267 181 pd Mod Mixer;
-#N canvas 721 164 576 661 Osc3 0;
+#N canvas 377 38 576 661 Osc3 0;
 #X msg 483 370 0.33;
 #X msg 447 370 0.5;
 #X msg 525 370 0.25;
@@ -363,7 +363,7 @@
 #X connect 46 2 19 0;
 #X connect 47 0 31 0;
 #X restore 129 225 pd Osc2;
-#N canvas 746 292 573 531 Osc1 0;
+#N canvas 462 194 573 531 Osc1 0;
 #X obj 206 496 outlet~;
 #X msg 483 288 0.33;
 #X msg 448 288 0.5;
@@ -406,16 +406,16 @@
 #X obj 181 205 loadbang;
 #X obj 181 236 random 1000;
 #X obj 181 264 / 1000;
-#X msg 210 184 bang;
 #X obj 385 326 rc-square~_;
 #X obj 54 136 r \$0-tune;
 #X obj 54 165 t b f;
 #X obj 30 234 + 0;
 #X obj 130 63 routeOSC /range /waveform;
 #X obj 130 152 expr ($f1-2)*12;
-#X connect 1 0 43 3;
-#X connect 2 0 43 3;
-#X connect 3 0 43 3;
+#X text 260 234 seed the phase;
+#X connect 1 0 42 3;
+#X connect 2 0 42 3;
+#X connect 3 0 42 3;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
@@ -446,38 +446,37 @@
 #X connect 28 0 35 0;
 #X connect 28 0 36 0;
 #X connect 28 0 37 0;
-#X connect 28 0 43 0;
+#X connect 28 0 42 0;
 #X connect 29 0 15 0;
 #X connect 29 0 19 0;
 #X connect 29 0 12 0;
 #X connect 29 0 11 0;
-#X connect 30 0 48 0;
-#X connect 31 0 46 0;
+#X connect 30 0 47 0;
+#X connect 31 0 45 0;
 #X connect 32 0 31 0;
 #X connect 32 1 28 1;
 #X connect 33 0 31 0;
-#X connect 34 0 47 0;
+#X connect 34 0 46 0;
 #X connect 35 0 6 0;
 #X connect 36 0 4 0;
 #X connect 37 0 5 0;
 #X connect 38 0 35 1;
 #X connect 38 0 36 1;
 #X connect 38 0 37 1;
-#X connect 38 0 43 1;
+#X connect 38 0 42 1;
 #X connect 39 0 40 0;
 #X connect 40 0 41 0;
 #X connect 41 0 35 2;
 #X connect 41 0 36 2;
 #X connect 41 0 37 2;
-#X connect 42 0 40 0;
-#X connect 43 0 16 0;
-#X connect 44 0 45 0;
-#X connect 45 0 31 0;
-#X connect 45 1 46 1;
-#X connect 46 0 28 0;
-#X connect 47 0 27 0;
-#X connect 47 1 20 0;
-#X connect 48 0 32 0;
+#X connect 42 0 16 0;
+#X connect 43 0 44 0;
+#X connect 44 0 31 0;
+#X connect 44 1 45 1;
+#X connect 45 0 28 0;
+#X connect 46 0 27 0;
+#X connect 46 1 20 0;
+#X connect 47 0 32 0;
 #X restore -27 227 pd Osc1;
 #N canvas 133 284 442 260 Noise 0;
 #X msg 279 134 0;
@@ -496,7 +495,7 @@
 #X obj 197 224 outlet~ mod;
 #X obj 76 21 inlet control;
 #X obj 76 47 routeOSC /type;
-#X obj 197 132 *~ 1.1;
+#X obj 197 132 *~ 2;
 #X connect 0 0 7 1;
 #X connect 1 0 16 0;
 #X connect 2 0 3 0;
@@ -515,11 +514,9 @@
 #X connect 16 0 7 0;
 #X connect 16 0 13 0;
 #X restore 370 143 pd Noise;
-#X obj -9 142 s \$0-note;
 #X connect 0 0 11 0;
 #X connect 0 0 10 0;
 #X connect 0 0 9 0;
-#X connect 0 0 13 0;
 #X connect 4 0 6 0;
 #X connect 6 0 11 1;
 #X connect 6 1 10 1;
@@ -538,17 +535,35 @@
 #X restore 32 249 pd Oscillator_Bank;
 #X obj 173 283 inlet~ external;
 #X obj 291 178 inlet control;
-#N canvas 653 151 450 300 defaults 0;
-#X obj 31 61 loadbang;
-#X obj 31 164 outlet;
-#X msg 31 115 /osc1/vol 0.5 \, /osc1/onoff 1 \, /osc2/vol 0.5 \, /osc2/onoff
-1 \, /osc3/vol 0.5 \, /osc3/onoff 1;
+#N canvas 12 52 498 351 defaults 0;
+#X obj 47 15 loadbang;
+#X obj 32 313 outlet;
+#X msg 126 238 /filter/cutoff 100 \, /filter/emphasis 7 \, /filter/amount
+7 \, /filter/A 10 \, /filter/D 300 \, /filter/S 5 \, /contour/A 10
+\, /contour/D 100 \, /contour/S 5;
+#X msg 145 293 /onoff 1 \, /vol 7.5 \, /A440 0;
+#X msg 88 172 /osc1/vol 5 \, /osc1/onoff 1 \, /osc2/vol 5 \, /osc2/onoff
+1 \, /osc3/vol 5 \, /osc3/onoff 1 \, /external/onoff 0 \, /external/vol
+5 \, /noise/onoff 0 \, /noise/vol 5 \, /noise/type 0;
+#X msg 32 64 /glide/onoff 0 \, /glide 0 \, /tune 0 \, /decay 1 \, /mod/onoff
+0 \, /mod 0 \, /mod/mix 5 \, /mod/osc 0 \, /mod/filter 0;
+#X msg 47 113 /osc1/range 3 \, /osc/waveform 0 \, /osc2/range 3 \,
+/osc2/detune 0 \, /osc2/waveform 2 \, /osc3/range 3 \, /osc3/control
+1 \, /osc3/detune 0 \, /osc3/waveform 3;
+#X connect 0 0 4 0;
+#X connect 0 0 5 0;
+#X connect 0 0 6 0;
 #X connect 0 0 2 0;
+#X connect 0 0 3 0;
 #X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
 #X restore 320 212 pd defaults;
 #X obj 32 177 inlet note;
 #X obj 101 342 inlet vel;
-#N canvas 812 423 342 350 Controllers 0;
+#N canvas 354 205 342 350 Controllers 0;
 #X obj 11 29 inlet note;
 #X obj 102 96 clip -2.5 2.5;
 #X text 114 67 Tune;
@@ -583,13 +598,13 @@
 #X connect 15 1 10 0;
 #X restore 32 212 pd Controllers;
 #X obj 291 251 s \$0-control;
-#N canvas 884 334 446 344 Modifiers 0;
+#N canvas 834 334 446 344 Modifiers 1;
 #X obj 27 19 inlet~ audio;
 #X obj 27 312 outlet~ audio;
 #X obj 27 275 *~;
 #X obj 108 85 inlet vel;
 #X obj 156 131 r \$0-control;
-#N canvas 693 45 267 222 Loudness 0;
+#N canvas 693 45 267 222 Loudness 1;
 #X obj 29 30 inlet vel;
 #X obj 143 32 inlet control;
 #X obj 29 196 outlet~;
@@ -608,7 +623,7 @@
 #X connect 6 0 2 0;
 #X connect 7 0 6 0;
 #X restore 108 223 pd Loudness Contour;
-#N canvas 767 371 653 459 Filter 0;
+#N canvas 19 172 653 459 Filter 0;
 #X obj 115 81 inlet vel;
 #X obj 130 280 inlet~ mod;
 #X obj 251 70 inlet control;
@@ -824,7 +839,6 @@
 #X connect 8 2 5 1;
 #X connect 9 0 4 0;
 #X restore 32 404 pd Output;
-#X text 221 421 2009 Dan Wilcox;
 #X text 26 14 a minimoog-inspired 3 osc synth;
 #X text 221 436 danomatika.com | robotcowboy.com;
 #X text 52 38 modeled after what I can find about the minimoog ...
@@ -835,6 +849,7 @@
 #X text 52 139 http://www.soundonsound.com/sos/mar05/articles/arturiaminimoog.htm
 ;
 #X text 91 61 I'm quite sure it dosen't sound *exactly* like one;
+#X text 221 421 2010 Dan Wilcox;
 #X connect 1 0 10 0;
 #X connect 1 1 10 1;
 #X connect 1 2 10 2;

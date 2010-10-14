@@ -1,4 +1,4 @@
-#N canvas 631 26 827 635 10;
+#N canvas 552 134 835 631 10;
 #X msg 28 386 save;
 #X msg 77 416 load;
 #X msg 72 387 clear;
@@ -27,7 +27,6 @@ SSSAD porto/onoff 0 \; SSSAD_ADMIN set \;;
 #X text 25 352 save everything /ka;
 #X text 258 297 save everything /la;
 #X text 554 235 just save everything!;
-#X text 16 13 rc-sssad: a sssad state saving object;
 #X text 45 55 Creation arg: local_prefix;
 #X text 317 14 The local_prefix is an osc address style prefix to the
 object name of sssad enabled patches aka;
@@ -37,7 +36,6 @@ by rc-sssad if its creation arg is "/ka".;
 #X text 458 544 rc-sssad's do not cross trigger the save command \,
 only the issuing object will write to the message.;
 #X text 224 560 the state is saved to a msg;
-#X text 698 507 2008 Dan Wilcox;
 #X text 460 588 Based off of the datastore patch and sssad abstractions
 by Frank Barknecht and the diy2 808_local & 808_global patches.;
 #X text 16 100 TODO: replace OSCroute's with abs;
@@ -52,13 +50,15 @@ by Frank Barknecht and the diy2 808_local & 808_global patches.;
 #X obj 262 329 rc-sssad /la;
 #X obj 28 443 rc-sssad /ka;
 #X text 317 96 If local_prefix is empty (or GLOBAL) \, the object will
-save globally. THe prefix can be changed using a "set" message.;
-#X connect 0 0 33 0;
-#X connect 1 0 33 0;
-#X connect 2 0 33 0;
-#X connect 27 0 5 0;
-#X connect 28 0 27 0;
-#X connect 29 0 27 0;
-#X connect 30 0 27 0;
-#X connect 32 0 3 0;
-#X connect 33 0 4 0;
+save globally. The prefix can be changed using a "set" message.;
+#X text 609 515 2008 \, 2010 Dan Wilcox;
+#X text 16 13 rc-sssad: a sssad state saving object w/ gui;
+#X connect 0 0 31 0;
+#X connect 1 0 31 0;
+#X connect 2 0 31 0;
+#X connect 25 0 5 0;
+#X connect 26 0 25 0;
+#X connect 27 0 25 0;
+#X connect 28 0 25 0;
+#X connect 30 0 3 0;
+#X connect 31 0 4 0;

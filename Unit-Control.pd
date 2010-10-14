@@ -1,4 +1,4 @@
-#N canvas 905 142 329 241 10;
+#N canvas 1017 211 329 241 10;
 #N canvas 188 162 832 454 audio 0;
 #N canvas 0 22 450 300 gate 0;
 #X obj 68 42 inlet;

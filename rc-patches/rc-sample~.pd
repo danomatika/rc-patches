@@ -151,9 +151,9 @@ player \, stereo;
 #X connect 22 3 20 0;
 #X restore 249 206 pd receives;
 #X obj 326 270 rc-sample~_;
-#X obj 356 345 *~ 1;
+#X obj 357 345 *~ 1;
 #X obj 326 344 *~ 1;
-#X obj 377 320 r \$0-amp;
+#X obj 378 320 r \$0-amp;
 #X obj 113 191 s \$0-amp;
 #X obj 53 55 hsl 70 15 0 2 0 1 \$0-speed \$0-speed speed 0 8 0 10 -191407
 -1 -1 2900 1;
