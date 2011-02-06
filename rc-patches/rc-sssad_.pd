@@ -1,4 +1,4 @@
-#N canvas 475 33 550 680 10;
+#N canvas 475 33 615 680 10;
 #X obj 291 452 r \$0-load;
 #X text 289 431 if the load button is pressed;
 #X obj 26 245 r \$0-save;
