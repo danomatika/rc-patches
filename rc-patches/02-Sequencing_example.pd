@@ -3,9 +3,7 @@ t;
 #N struct 1192cursor float x;
 #N struct 1192lines float x;
 #N canvas 413 171 821 192 10;
-#X obj 38 69 sssad/datastore;
 #N canvas 0 22 482 772 datastore 0;
-#X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD score/blocks 11 10 2 3 67 66 10 1 51 28 10 1
 67 52 1 2 51 36 7 3 51 50 2 3 67 66 2 3 19 18 2 3 35 34 2 3 63 52 5
 4 27 26 2 3 35 20 6 2 19 12 5 1 51 40 0 4 67 66 6 2 39 4 1 2 4 0 0
@@ -29,13 +27,14 @@ SSSAD pattern/pat4 1_1_1_0_0_1_1_0_0_1_1_0_0_1_1_0_0-2_0_0_1_1_0_0_1_0_0_0_1_1_0
 \; SSSAD drums/sequences 2_0_0_1_0_0_0_1_0_0_0_1_0_0_0_1_0-1_1_0_0_0_1_0_0_0_1_0_0_0_1_0_0_0
 \; SSSAD timer/ticksperbeat 4 \; SSSAD timer/bpm 140 \; SSSAD_ADMIN
 set \;;
-#X connect 0 0 1 0;
+#X obj 10 10 inlet;
+#X connect 1 0 0 0;
 #X restore 38 136 pd datastore;
 #X obj 696 139 dac~;
 #X obj 696 80 catch~ left;
 #X obj 717 108 catch~ right;
 #X text 217 163 hit start to let it go;
-#N canvas 352 257 469 517 drums 1;
+#N canvas 352 257 469 517 drums 0;
 #X obj 30 29 r timer/tick;
 #X obj 30 346 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
 -1;
@@ -219,7 +218,7 @@ set \;;
 #X restore 409 137 pd tones;
 #X text 35 46 sssad state saving;
 #X text 21 164 hit load to load the song;
-#N canvas 30 125 865 493 score 1;
+#N canvas 30 125 865 493 score 0;
 #X floatatom 56 429 5 0 0 0 - - -;
 #X obj 56 453 s pat;
 #X floatatom 105 427 5 0 0 0 - - -;
@@ -252,9 +251,11 @@ set \;;
 #X text 743 136 audio out;
 #X text 13 11 a simple song using the sequencing objects to form an
 overall song structure;
+#X obj 201 40 rc-midimetro timer;
 #X text 391 19 you will need pd-extended as I'm lazy and used some
 of the nice extended objects as well as sssad (included with the rc-patches)
-and Chris McCormick's s-abstractions for s-metro;
-#X obj 201 40 rc-midimetro timer;
-#X connect 3 0 2 0;
-#X connect 4 0 2 1;
+;
+#X obj 38 76 rc-sssad;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 17 0 0 0;
