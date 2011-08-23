@@ -1,8 +1,0 @@
-#N canvas 1545 342 516 349 10;
-#X text 34 21 Description: A parameter that bangs.;
-#X text 33 40 Comments: Must be used with a data.param.group;
-#X text 34 58 Does not work with get \, dump or save;
-#X obj 105 134 data.param.bang parameter_name;
-#X obj 105 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X connect 4 0 3 0;
