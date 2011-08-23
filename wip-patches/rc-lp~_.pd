@@ -1,4 +1,4 @@
-#N canvas 548 272 396 512 10;
+#N canvas 795 80 396 512 10;
 #X obj 23 478 outlet~;
 #X obj 115 93 inlet~ env;
 #X obj 23 92 inlet~ audio;
@@ -52,12 +52,13 @@
 #X obj 323 427 vline~;
 #X obj 23 441 *~;
 #X obj 311 272 / 2.4;
+#X obj 23 357 hip~ 5;
 #X connect 1 0 19 0;
 #X connect 2 0 7 0;
 #X connect 4 0 6 0;
 #X connect 5 0 11 0;
 #X connect 6 0 26 1;
-#X connect 7 0 29 0;
+#X connect 7 0 31 0;
 #X connect 8 0 9 0;
 #X connect 9 0 18 0;
 #X connect 9 0 30 0;
@@ -76,3 +77,4 @@
 #X connect 28 0 29 1;
 #X connect 29 0 0 0;
 #X connect 30 0 22 0;
+#X connect 31 0 29 0;

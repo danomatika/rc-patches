@@ -1,0 +1,784 @@
+#N canvas 150 281 761 472 10;
+#X obj 77 33 inlet midi;
+#X obj 27 33 route 60 61 62 63 64 65 66 67;
+#X obj 277 32 inlet control;
+#X obj 277 62 route BASS SNARE HIHAT CYMBAL CLAP BENDYTOM BELL;
+#X obj 155 424 outlet~;
+#X obj 314 423 outlet~;
+#N canvas 0 22 462 310 setup_popups 0;
+#X obj 21 278 s \$0-popups;
+#X msg 66 105 options unused Bass_Drum_1 Bass_Drum_2 Side_Stick Snare_Drum_1
+Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat Low_Tom_1 Pedal_Hi-Hat
+Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1 High_Tom_1
+Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal Cowbell
+Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo Mute_High_Conga
+Open_High_Conga Low_Conga High_Timbale Low_Timbale High_Agogo Low_Agogo
+Cabas Maracas Short_Whistle Long_Whistle Short_Gurio Long_Guiro Claves
+High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica Mute_Triangle
+Open_Triangle;
+#X msg 85 80 name drum;
+#X msg 21 104 0;
+#X obj 21 18 inlet;
+#X obj 21 42 t b b b;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 5 1 1 0;
+#X connect 5 2 2 0;
+#X restore 594 182 pd setup_popups;
+#X obj 594 140 loadbang;
+#X msg 667 139 bang;
+#X obj 0 116 cnv 15 536 284 empty empty empty 20 12 0 14 -162280 -66577
+0;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 7 271 pd bell;
+#N canvas 793 143 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X obj 82 344 rc-sample~_;
+#X connect 1 0 24 0;
+#X connect 2 0 15 0;
+#X connect 2 1 14 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 24 0;
+#X connect 7 0 24 0;
+#X connect 8 0 24 0;
+#X connect 9 0 23 0;
+#X connect 10 0 23 0;
+#X connect 11 0 24 0;
+#X connect 13 0 24 0;
+#X connect 17 0 16 0;
+#X connect 18 0 10 0;
+#X connect 23 2 3 0;
+#X connect 23 3 10 0;
+#X connect 24 0 5 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 7 139 pd bell;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 138 139 pd bell;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 269 139 pd bell;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 400 139 pd bell;
+#X obj 1164 33 cnv 15 15 15 empty empty 5 4 8 0 14 -233017 -66577 0
+;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 138 271 pd bell;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 269 271 pd bell;
+#N canvas 921 135 456 580 bell 0;
+#X obj 0 0 cnv 15 130 124 empty empty empty 4 8 0 14 -228856 -66577
+0;
+#X obj 4 35 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
+-1;
+#X obj 82 436 rc-pan~_;
+#X obj 8 105 hsl 116 15 0 1 0 0 empty empty pan 0 8 0 10 -261234 -1
+-1 0 1;
+#X obj 23 35 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
+;
+#N canvas 0 22 333 250 mute 0;
+#X obj 94 53 inlet~;
+#X obj 160 57 inlet;
+#X obj 160 87 sel 0;
+#X obj 94 200 outlet~;
+#X msg 160 120 1;
+#X msg 195 121 0;
+#X obj 94 168 rc-spigot~;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 4 0 6 1;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X restore 82 394 pd mute;
+#X msg 134 187 tone \$1;
+#X msg 123 164 amp \$1;
+#X msg 159 236 tune \$1;
+#X obj 130 -31 inlet control messages;
+#N canvas 296 236 450 300 defaults 0;
+#X obj 85 192 outlet;
+#X obj 149 58 t b;
+#X obj 149 26 inlet;
+#X msg 85 120 /amp 1;
+#X msg 149 119 /speed 0.5;
+#X msg 241 121 /pan 0.5;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 280 -30 pd defaults;
+#X obj 11 265 inlet midi;
+#X msg 171 264 pan \$1;
+#X msg 147 212 decay \$1;
+#X obj 82 344 rc-808bell~_;
+#X obj 127 467 outlet~;
+#X obj 82 490 outlet~;
+#X obj 4 5 popup 124 25 #ffffff drum unused Bass_Drum_1 Bass_Drum_2
+Side_Stick Snare_Drum_1 Hand_Clap Snare_Drum_2 Low_Tom_2 Closed_Hi-Hat
+Low_Tom_1 Pedal_Hi-Hat Mid_Tom_2 Open_Hi-Hat Mid_Tom_1 High_Tom_2 Crash_Cymbal_1
+High_Tom_1 Ride_Cymbal_1 Chinese_Cymbal Ride_Bell Tambourine Splash_Cymbal
+Cowbell Crash_Cymbal_2 Vibra_Slap Ride_Cymbal_2 High_Bongo Low_Bongo
+Mute_High_Conga Open_High_Conga Low_Conga High_Timbale Low_Timbale
+High_Agogo Low_Agogo Cabas Maracas Short_Whistle Long_Whistle Short_Gurio
+Long_Guiro Claves High_Wood_Block Low_Wood_Block Mute_Cuica Open_Cuica
+Mute_Triangle Open_Triangle;
+#X obj 3 -25 r \$0-popups;
+#X obj 73 35 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
+-1;
+#X symbolatom 4 54 20 0 0 0 - #0-file -;
+#X obj 111 35 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
+-1 -1 0 1;
+#X obj 8 75 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X obj 8 90 hsl 116 15 0 2 0 1 empty empty speed 0 8 0 10 -191407 -1
+-1 2900 1;
+#X obj 139 16 routeOSC /amp /tune /pan /reset;
+#X connect 1 0 14 0;
+#X connect 2 0 16 0;
+#X connect 2 1 15 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 0;
+#X connect 4 0 5 1;
+#X connect 5 0 2 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 0;
+#X connect 11 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 10 0;
+#X connect 24 2 3 0;
+#X connect 24 3 10 0;
+#X coords 0 -1 1 1 130 124 1 0 0;
+#X restore 400 271 pd bell;
+#X symbolatom 47 119 20 0 0 0 preset #0-file -;
+#X obj 245 120 bng 15 250 50 0 empty empty load -26 8 0 10 -99865 -1
+-1;
+#X obj 199 120 bng 15 250 50 0 empty empty save -26 8 0 10 -191407
+-1 -1;
+#X obj 276 120 hsl 116 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
+-1 -1 5800 1;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X coords 0 -1 1 1 536 300 1 0 100;

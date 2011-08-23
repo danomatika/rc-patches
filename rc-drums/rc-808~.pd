@@ -1,4 +1,4 @@
-#N canvas 8 72 704 361 10;
+#N canvas 140 72 704 361 10;
 #X obj 77 33 inlet midi;
 #X obj 77 62 route 60 61 62 63 64 65 66 67;
 #X obj 1 115 cnv 15 640 159 empty empty empty 20 12 0 14 -162280 -66577
@@ -11,11 +11,11 @@
 #X obj 5 42 hsl 70 15 0 1 0 0 empty empty amp 0 8 0 10 -191407 -1 -1
 6000 1;
 #X obj 5 62 hsl 70 15 0 1 0 0 empty empty tone 0 8 0 10 -191407 -1
--1 5050 1;
+-1 0 1;
 #X obj 5 82 hsl 70 15 0 1 0 0 empty empty decay 0 8 0 10 -191407 -1
--1 2600 1;
+-1 1400 1;
 #X obj 5 102 hsl 70 15 0 1 0 0 empty empty tune 0 8 0 10 -191407 -1
--1 3450 1;
+-1 3250 1;
 #X obj 62 22 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
 -1;
 #X obj 62 3 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
@@ -25,7 +25,7 @@
 -1 3500 1;
 #X obj 3 22 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -42,7 +42,7 @@
 #X connect 6 0 2 1;
 #X restore 83 394 pd mute;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.731884;
+#X msg 39 120 0;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -56,7 +56,7 @@
 #X restore 130 62 pd local state_save;
 #X msg 134 187 tone \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.376812;
+#X msg 39 120 0.202899;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -84,7 +84,7 @@
 #X msg 123 164 amp \$1;
 #X msg 147 212 decay \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.471014;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -181,11 +181,11 @@
 #X obj 5 42 hsl 70 15 0 1 0 0 empty empty amp 0 8 0 10 -191407 -1 -1
 5000 1;
 #X obj 5 62 hsl 70 15 0 1 0 0 empty empty tone 0 8 0 10 -191407 -1
--1 4000 1;
+-1 1800 1;
 #X obj 5 82 hsl 70 15 0 1 0 0 empty empty snappy 0 8 0 10 -191407 -1
--1 5700 1;
+-1 5400 1;
 #X obj 5 102 hsl 70 15 0 1 0 0 empty empty tune 0 8 0 10 -191407 -1
--1 3450 1;
+-1 3550 1;
 #X obj 62 22 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
 -1;
 #X obj 62 3 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
@@ -195,7 +195,7 @@
 -1 3450 1;
 #X obj 3 22 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -212,7 +212,7 @@
 #X connect 6 0 2 1;
 #X restore 83 394 pd mute;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.57971;
+#X msg 39 120 0.26087;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -226,7 +226,7 @@
 #X restore 130 62 pd local state_save;
 #X msg 134 187 tone \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.826087;
+#X msg 39 120 0.782609;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -253,7 +253,7 @@
 #X restore 130 40 pd local state_save;
 #X msg 123 164 amp \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.514493;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -350,11 +350,11 @@
 #X obj 0 0 cnv 15 80 142 empty empty HIHAT 0 8 0 14 -228856 -66577
 0;
 #X obj 5 64 hsl 70 15 0 1 0 0 empty empty amp 0 8 0 10 -191407 -1 -1
-5000 1;
+2800 1;
 #X obj 5 84 hsl 70 15 0 1 0 0 empty empty decay 0 8 0 10 -191407 -1
--1 3450 1;
+-1 6750 1;
 #X obj 5 104 hsl 70 15 0 1 0 0 empty empty tune 0 8 0 10 -191407 -1
--1 3450 1;
+-1 3650 1;
 #X obj 62 44 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
 -1;
 #X obj 82 436 rc-pan~_;
@@ -362,7 +362,7 @@
 -1 3450 1;
 #X obj 3 44 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -379,7 +379,7 @@
 #X connect 6 0 2 1;
 #X restore 83 394 pd mute;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.978261;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -392,7 +392,7 @@
 #X connect 5 0 0 0;
 #X restore 130 62 pd local state_save;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.528986;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -405,7 +405,7 @@
 #X connect 5 0 0 0;
 #X restore 130 84 pd local state_save;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.724638;
+#X msg 39 120 0.405797;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -503,11 +503,11 @@
 #X obj 0 0 cnv 15 80 142 empty empty BENDYTOM 0 8 0 14 -228856 -66577
 0;
 #X obj 5 42 hsl 70 15 0 1 0 0 empty empty amp 0 8 0 10 -191407 -1 -1
-5400 1;
+4100 1;
 #X obj 5 62 hsl 70 15 0 1 0 0 empty empty tone 0 8 0 10 -191407 -1
--1 6900 1;
+-1 3700 1;
 #X obj 5 82 hsl 70 15 0 1 0 0 empty empty decay 0 8 0 10 -191407 -1
--1 3450 1;
+-1 4900 1;
 #X obj 5 102 hsl 70 15 0 127 0 0 empty empty tune 0 8 0 10 -191407
 -1 -1 3477 1;
 #X obj 62 22 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
@@ -519,7 +519,7 @@
 -1 3450 1;
 #X obj 3 22 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -536,7 +536,7 @@
 #X connect 6 0 2 1;
 #X restore 83 394 pd mute;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 1;
+#X msg 39 120 0.536232;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -550,7 +550,7 @@
 #X restore 130 62 pd local state_save;
 #X msg 134 187 tone \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.710145;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -563,7 +563,7 @@
 #X connect 5 0 0 0;
 #X restore 130 84 pd local state_save;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.782609;
+#X msg 39 120 0.594203;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -674,11 +674,11 @@
 #X obj 0 0 cnv 15 80 142 empty empty CYMBAL 0 8 0 14 -228856 -66577
 0;
 #X obj 5 42 hsl 70 15 0 1 0 0 empty empty amp 0 8 0 10 -191407 -1 -1
-5900 1;
+4500 1;
 #X obj 5 62 hsl 70 15 0 1 0 0 empty empty tone 0 8 0 10 -191407 -1
 -1 3450 1;
 #X obj 5 82 hsl 70 15 0 1 0 0 empty empty decay 0 8 0 10 -191407 -1
--1 3450 1;
+-1 1750 1;
 #X obj 5 102 hsl 70 15 0 127 0 0 empty empty tune 0 8 0 10 -191407
 -1 -1 3477 1;
 #X obj 62 22 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
@@ -690,7 +690,7 @@
 -1 3450 1;
 #X obj 3 22 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -705,7 +705,7 @@
 #X connect 3 1 6 0;
 #X connect 5 0 2 1;
 #X connect 6 0 2 1;
-#X restore 83 394 pd mute;
+#X restore 82 395 pd mute;
 #N canvas 291 487 327 207 local 0;
 #X msg 39 120 0.5;
 #X msg 39 74 set \$1;
@@ -721,7 +721,7 @@
 #X restore 130 62 pd local state_save;
 #X msg 134 187 tone \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.253623;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -734,7 +734,7 @@
 #X connect 5 0 0 0;
 #X restore 130 84 pd local state_save;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.855072;
+#X msg 39 120 0.652174;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -773,7 +773,7 @@
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X restore 130 127 pd local state_save;
-#X msg 159 236 tune \$1;
+#X msg 157 237 tune \$1;
 #X obj 130 -31 inlet control messages;
 #N canvas 300 311 450 300 defaults 0;
 #X obj 85 227 outlet;
@@ -797,48 +797,48 @@
 #X connect 7 0 0 0;
 #X restore 280 -30 pd defaults;
 #X obj 11 265 inlet midi;
-#X msg 171 264 pan \$1;
 #X obj 130 -4 route amp tone decay tune pan reset;
 #X msg 147 212 decay \$1;
 #X obj 82 344 rc-808cymbal~_;
-#X obj 126 468 outlet~;
+#X obj 127 468 outlet~;
 #X obj 82 490 outlet~;
+#X obj 172 314 print;
 #X connect 1 0 14 0;
 #X connect 1 0 15 0;
 #X connect 2 0 11 0;
 #X connect 2 0 12 0;
 #X connect 3 0 13 0;
-#X connect 3 0 24 0;
+#X connect 3 0 23 0;
 #X connect 4 0 16 0;
 #X connect 4 0 18 0;
 #X connect 5 0 20 0;
-#X connect 6 0 25 0;
-#X connect 7 0 27 0;
-#X connect 7 1 26 0;
+#X connect 6 0 24 0;
+#X connect 7 0 26 0;
+#X connect 7 1 25 0;
 #X connect 8 0 17 0;
 #X connect 8 0 7 1;
-#X connect 8 0 22 0;
 #X connect 9 0 10 1;
 #X connect 10 0 7 0;
 #X connect 11 0 2 0;
-#X connect 12 0 25 0;
+#X connect 12 0 24 0;
 #X connect 13 0 3 0;
 #X connect 14 0 1 0;
-#X connect 15 0 25 0;
+#X connect 15 0 24 0;
 #X connect 16 0 4 0;
 #X connect 17 0 8 0;
-#X connect 18 0 25 0;
-#X connect 19 0 23 0;
-#X connect 20 0 23 0;
-#X connect 21 0 25 0;
-#X connect 23 0 1 0;
-#X connect 23 1 2 0;
-#X connect 23 2 3 0;
-#X connect 23 3 4 0;
-#X connect 23 4 8 0;
-#X connect 23 5 20 0;
-#X connect 24 0 25 0;
-#X connect 25 0 10 0;
+#X connect 18 0 24 0;
+#X connect 18 0 27 0;
+#X connect 19 0 22 0;
+#X connect 20 0 22 0;
+#X connect 21 0 24 0;
+#X connect 22 0 1 0;
+#X connect 22 1 2 0;
+#X connect 22 2 3 0;
+#X connect 22 3 4 0;
+#X connect 22 4 8 0;
+#X connect 22 5 20 0;
+#X connect 23 0 24 0;
+#X connect 24 0 10 0;
 #X coords 0 -1 1 1 80 142 1 0 0;
 #X restore 276 126 pd cymbal;
 #N canvas 741 114 359 548 clap 0;
@@ -855,7 +855,7 @@
 -1 3450 1;
 #X obj 3 22 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -955,13 +955,13 @@
 #X connect 19 2 14 0;
 #X coords 0 -1 1 1 80 142 1 0 0;
 #X restore 366 126 pd clap;
-#N canvas 968 114 359 548 bell 0;
+#N canvas 575 87 359 548 bell 0;
 #X obj 0 0 cnv 15 80 142 empty empty BELL 0 8 0 14 -228856 -66577 0
 ;
 #X obj 5 42 hsl 70 15 0 1 0 0 empty empty amp 0 8 0 10 -191407 -1 -1
-4900 1;
+5800 1;
 #X obj 5 62 hsl 70 15 0 1 0 0 empty empty tune 0 8 0 10 -191407 -1
--1 3450 1;
+-1 5550 1;
 #X obj 62 22 bng 15 250 50 0 empty empty reset -30 6 0 10 -191407 -1
 -1;
 #X obj 62 3 bng 15 250 50 0 empty empty empty -25 6 0 10 -204786 -1
@@ -971,7 +971,7 @@
 -1 3450 1;
 #X obj 3 22 tgl 15 0 empty empty m 6 7 0 10 -258113 -262144 -1 0 1
 ;
-#N canvas 0 0 333 250 mute 0;
+#N canvas 0 22 333 250 mute 0;
 #X obj 95 53 inlet~;
 #X obj 160 57 inlet;
 #X obj 94 168 *~ 1;
@@ -989,7 +989,7 @@
 #X restore 83 394 pd mute;
 #X msg 134 187 tone \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.710145;
+#X msg 39 120 0.84058;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -1036,7 +1036,7 @@
 #X msg 171 264 pan \$1;
 #X msg 147 212 decay \$1;
 #N canvas 291 487 327 207 local 0;
-#X msg 39 120 0.5;
+#X msg 39 120 0.804348;
 #X msg 39 74 set \$1;
 #X obj 39 45 inlet;
 #X obj 39 150 outlet;
@@ -1054,8 +1054,8 @@
 #X obj 82 490 outlet~;
 #X connect 1 0 10 0;
 #X connect 1 0 11 0;
-#X connect 2 0 9 0;
 #X connect 2 0 19 0;
+#X connect 2 0 13 0;
 #X connect 3 0 15 0;
 #X connect 4 0 21 0;
 #X connect 5 0 23 0;

@@ -1,0 +1,22 @@
+#N canvas 341 345 348 303 10;
+#X msg 40 55 1;
+#X text 89 65 nonzero number or "bang" to start;
+#X msg 77 104 0;
+#X msg 51 78 bang;
+#X msg 84 126 stop;
+#X text 121 114 zero or "stop" to stop;
+#X floatatom 113 208 4 0 0 0 - - -;
+#X text 149 207 beats per minute \, default: 120;
+#X obj 44 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 15 7 a bpm metronome;
+#X text 77 29 creation args: bpm;
+#X msg 113 180 120;
+#X obj 44 234 rc-metro 120;
+#X connect 0 0 12 0;
+#X connect 2 0 12 0;
+#X connect 3 0 12 0;
+#X connect 4 0 12 0;
+#X connect 6 0 12 1;
+#X connect 11 0 6 0;
+#X connect 12 0 8 0;

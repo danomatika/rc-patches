@@ -1,4 +1,4 @@
-#N canvas 1124 26 425 515 10;
+#N canvas 530 52 425 515 10;
 #X obj 56 107 rc-sample~ test;
 #X obj 55 284 rc-chan~ test;
 #X obj 56 -9 midiin;
@@ -132,9 +132,12 @@
 #X msg 289 63 symbol CB;
 #X msg 325 84 symbol CP;
 #X obj 224 289 table \$0-samp-wave 20000;
+#X obj 55 464 rc-throw2~ DRUMS;
 #X connect 0 0 1 0;
 #X connect 0 0 8 0;
 #X connect 0 0 9 0;
+#X connect 1 0 21 0;
+#X connect 1 1 21 1;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 3 1 4 1;

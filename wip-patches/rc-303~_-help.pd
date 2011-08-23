@@ -1,4 +1,4 @@
-#N canvas 46 283 804 525 10;
+#N canvas 54 199 804 525 10;
 #X obj 78 497 dac~;
 #X obj 78 469 *~;
 #X msg 78 118 60 64;
@@ -10,17 +10,17 @@
 #X obj 78 344 unpack;
 #X msg 142 230 64 64;
 #X obj 48 59 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 278 60 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 7300 1;
+-1 -1 0 1;
 #X floatatom 275 84 5 0 0 1 - - -;
 #X msg 275 110 cutoff \$1;
 #X obj 316 139 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X floatatom 313 163 5 0 0 1 - - -;
 #X msg 313 189 q \$1;
 #X obj 380 182 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 4500 1;
+-1 -1 0 1;
 #X floatatom 377 206 5 0 0 1 envelope_mod - -;
 #X msg 377 232 mod \$1;
 #X obj 574 101 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
@@ -40,7 +40,7 @@
 #X msg 659 255 r \$1;
 #X msg 528 107 a \$1;
 #X obj 96 444 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 12700 1;
+-1 -1 7700 1;
 #X obj 313 369 t a;
 #X obj 528 299 t a;
 #X text 15 21 rc-303~_ : a non-gui tr303 emulation;
@@ -128,6 +128,8 @@
 #X connect 23 1 24 1;
 #X connect 24 0 11 0;
 #X restore 48 85 pd seq;
+#X obj 18 352 notein;
+#X floatatom 20 401 5 0 0 0 - - -;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
 #X connect 2 0 8 0;
@@ -168,3 +170,6 @@
 #X connect 49 0 38 1;
 #X connect 52 0 38 0;
 #X connect 53 0 8 0;
+#X connect 54 0 38 0;
+#X connect 54 0 55 0;
+#X connect 54 1 38 1;

@@ -4,9 +4,9 @@
 #X msg 163 182 bang;
 #X obj 63 345 dac~;
 #X obj 64 300 rc-spigot~;
-#X obj 121 277 tgl 15 0 empty empty audio 17 7 0 10 -262144 -1 -1 1
+#X obj 121 277 tgl 15 0 empty empty audio 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 65 246 *~ 0.5;
+#X obj 64 246 *~ 0.5;
 #X obj 121 238 bng 15 250 50 0 empty empty done_playing 17 7 0 10 -262144
 -1 -1;
 #X obj 64 210 rc-sfplay~;
