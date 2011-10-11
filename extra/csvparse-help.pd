@@ -1,4 +1,4 @@
-#N canvas 698 31 421 598 10;
+#N canvas 698 31 462 719 10;
 #X declare -lib moocow;
 #X declare -lib list-abs;
 #X declare -lib mrpeach;
@@ -9,23 +9,35 @@
 #X msg -151 158 raw 1;
 #X obj -151 131 loadbang;
 #X obj -172 186 httpget;
-#X text -189 542 danomatika.com | robotcowboy.com;
-#X text -188 527 2011 Dan Wilcox GPL v3;
-#X text -188 557 https://github.com/danomatika/rc-patches;
+#X text -188 676 danomatika.com | robotcowboy.com;
+#X text -187 661 2011 Dan Wilcox GPL v3;
+#X text -187 691 https://github.com/danomatika/rc-patches;
 #X text -109 158 output raw bytes;
 #X text -195 7 csvparse: parse raw bytes of a csv file into lists;
 #X text -174 44 fetch earthquake data during the last hour;
-#X obj -145 359 print line;
-#X text -129 330 outputs each line as a list;
-#X symbolatom -172 492 45 0 0 1 Datetime - -;
-#X floatatom -145 467 10 0 0 1 Lat - -;
-#X floatatom -118 444 10 0 0 1 Lon - -;
-#X floatatom -91 419 10 0 0 1 Magnitude - -;
-#X obj -172 386 packel 4 5 6 7;
-#X text -73 384 parse earthquake data;
-#X obj -172 331 t a a;
-#X text -113 279 parse raw csv bytes into lists \, one per line;
-#X obj -172 280 csvparse;
+#X obj -145 433 print line;
+#X text -129 404 outputs each line as a list;
+#X symbolatom -172 588 45 0 0 1 Datetime - -;
+#X floatatom -145 563 10 0 0 1 Lat - -;
+#X floatatom -118 540 10 0 0 1 Lon - -;
+#X floatatom -91 515 10 0 0 1 Magnitude - -;
+#X obj -172 482 packel 4 5 6 7;
+#X text -73 480 parse earthquake data;
+#X obj -172 405 t a a;
+#X text -113 337 parse raw csv bytes into lists \, one per line;
+#X obj -172 338 csvparse;
+#X obj -127 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -108 369 bangs when a line is finished;
+#X msg -109 274 34 \, 97 \, 32 \, 98 \, 32 \, 99 \, 32 \, 100 \, 34
+\, 44 \, 49 \, 50 \, 51 \, 13 \, 10;
+#X msg -108 302 34 97 32 98 32 99 32 100 34 44 49 50 51 13 10;
+#X text 174 301 "a b c d" \, 123;
+#X text -135 248 raw bytes in as floats or lists;
+#X text -175 632 aka: "a fancy \, string" --> a fancy string;
+#X text -175 617 note: quotes and commas inside quoted strings are
+swallowed;
+#X obj -173 457 list;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
@@ -35,6 +47,10 @@
 #X connect 17 1 14 0;
 #X connect 17 2 15 0;
 #X connect 17 3 16 0;
-#X connect 19 0 17 0;
+#X connect 19 0 30 0;
 #X connect 19 1 11 0;
 #X connect 21 0 19 0;
+#X connect 21 1 22 0;
+#X connect 24 0 21 0;
+#X connect 25 0 21 0;
+#X connect 30 0 17 0;
