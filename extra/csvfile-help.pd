@@ -1,0 +1,52 @@
+#N canvas 876 139 446 594 10;
+#X declare -lib moocow;
+#X declare -lib zexy;
+#X declare -lib mrpeach;
+#X obj -313 188 csvfile;
+#X obj -286 314 print line;
+#X obj -294 247 print info;
+#X obj -252 212 print end;
+#X obj -274 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -186 212 bangs at end of file;
+#X text -221 247 outputs paramaters from the info message;
+#X text -270 285 outputs each line as a list;
+#X msg -297 86 info;
+#X msg -286 111 bang;
+#X msg -313 60 read data/eqs1hour-M1.csv;
+#X msg -278 135 rewind;
+#X text -230 135 rewind to the beginning of the file;
+#X text -256 84 send out info on the binary file (sorry \, no number
+of lines);
+#X text -149 61 open a file to read;
+#X text -333 11 csvfile: wrapper around the mrpeach binfile to read
+csv files;
+#X symbolatom -313 447 45 0 0 1 Datetime - -;
+#X floatatom -286 422 10 0 0 1 Lat - -;
+#X floatatom -259 399 10 0 0 1 Lon - -;
+#X floatatom -232 374 10 0 0 1 Magnitude - -;
+#X obj -313 341 packel 4 5 6 7;
+#X text -214 339 parse earthquake data;
+#X obj -313 286 t a a;
+#X text -330 547 danomatika.com | robotcowboy.com;
+#X text -329 532 2011 Dan Wilcox GPL v3;
+#X text -329 562 https://github.com/danomatika/rc-patches;
+#X text -331 492 aka: "a fancy \, string" --> a fancy string;
+#X text -331 477 note: quotes and commas inside quoted strings are
+swallowed;
+#X text -260 161 etc \, all binfile options are there ...;
+#X text -246 110 send out every line;
+#X connect 0 0 22 0;
+#X connect 0 1 2 0;
+#X connect 0 2 4 0;
+#X connect 0 2 3 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 20 0 16 0;
+#X connect 20 1 17 0;
+#X connect 20 2 18 0;
+#X connect 20 3 19 0;
+#X connect 22 0 20 0;
+#X connect 22 1 1 0;
