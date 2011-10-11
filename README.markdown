@@ -18,3 +18,4 @@ samples: samples used by Unit-Control
 
 wip-patches: bleeding edge work in progress patches (to be moved)
 
+extra: more advanced patches which require externals (aka pd-extended)
