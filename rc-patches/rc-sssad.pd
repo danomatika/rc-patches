@@ -30,7 +30,7 @@ a message;
 #X obj 403 261 symbol;
 #X text 108 147 The prefix can be set using a "set" message. Sending
 "set GLOBAL" resets rc-sssad to global SSSAD.;
-#N canvas 0 0 339 199 recvs 0;
+#N canvas 0 22 339 199 recvs 0;
 #X obj 28 34 r \$0-save;
 #X obj 101 33 r \$0-load;
 #X obj 173 33 r \$0-clear;
