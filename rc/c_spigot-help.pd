@@ -1,4 +1,4 @@
-#N canvas 1336 24 865 516 10;
+#N canvas 415 24 851 515 10;
 #N canvas 1025 361 582 570 REFERENCE 0;
 #X text 24 51 Summary: toggle a signal on/off without clicking.;
 #X text 24 104 Inlet 0: audio signal to toggle;

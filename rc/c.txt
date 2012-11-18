@@ -1,0 +1,1 @@
+c_spigot - toggle a signal without clicking
