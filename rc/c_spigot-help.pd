@@ -1,10 +1,9 @@
 #N canvas 415 24 851 515 10;
-#N canvas 1025 361 582 570 REFERENCE 0;
+#N canvas 698 230 582 570 REFERENCE 0;
 #X text 24 51 Summary: toggle a signal on/off without clicking.;
 #X text 24 104 Inlet 0: audio signal to toggle;
 #X text 24 144 Inlet 1: <float> Turn on/off the audio signal. Any non-zero
 floats are treated as a 1 aka on.;
-#X text 24 184 comment;
 #X text 25 192 Outlet 0: toggled audio signal;
 #X text 24 234 Description: This is just a convenience audio signal
 [spigot]. It includes a 5 ms fade in/out to avoid clicks.;
