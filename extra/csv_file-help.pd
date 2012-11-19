@@ -1,15 +1,14 @@
-#N canvas 876 139 451 613 10;
+#N canvas 587 92 451 613 10;
 #X declare -lib moocow;
 #X declare -lib zexy;
 #X declare -lib mrpeach;
-#X obj -313 188 csvfile;
 #X obj -286 314 print line;
-#X obj -294 247 print info;
-#X obj -252 212 print end;
-#X obj -274 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -291 247 print info;
+#X obj -246 214 print end;
+#X obj -268 215 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text -186 212 bangs at end of file;
-#X text -221 247 outputs paramaters from the info message;
+#X text -180 214 bangs at end of file;
+#X text -218 247 outputs paramaters from the info message;
 #X text -270 285 outputs each line as a list;
 #X msg -297 86 info;
 #X msg -286 111 bang;
@@ -19,8 +18,6 @@
 #X text -256 84 send out info on the binary file (sorry \, no number
 of lines);
 #X text -149 61 open a file to read;
-#X text -333 11 csvfile: wrapper around the mrpeach binfile to read
-csv files;
 #X symbolatom -313 472 45 0 0 1 Datetime - -;
 #X floatatom -286 447 10 0 0 1 Lat - -;
 #X floatatom -259 424 10 0 0 1 Lon - -;
@@ -37,18 +34,21 @@ swallowed;
 #X text -260 161 etc \, all binfile options are there ...;
 #X text -246 110 send out one line;
 #X obj -313 339 list;
-#X connect 0 0 22 0;
-#X connect 0 1 2 0;
-#X connect 0 2 4 0;
-#X connect 0 2 3 0;
-#X connect 8 0 0 0;
-#X connect 9 0 0 0;
-#X connect 10 0 0 0;
-#X connect 11 0 0 0;
-#X connect 20 0 16 0;
-#X connect 20 1 17 0;
-#X connect 20 2 18 0;
-#X connect 20 3 19 0;
-#X connect 22 0 30 0;
-#X connect 22 1 1 0;
+#X text -319 11 csv_file: wrapper around mrpeach [binfile] to read
+csv files;
+#X obj -313 188 csv_file;
+#X connect 7 0 30 0;
+#X connect 8 0 30 0;
+#X connect 9 0 30 0;
+#X connect 10 0 30 0;
+#X connect 18 0 14 0;
+#X connect 18 1 15 0;
+#X connect 18 2 16 0;
+#X connect 18 3 17 0;
+#X connect 20 0 28 0;
+#X connect 20 1 0 0;
+#X connect 28 0 18 0;
 #X connect 30 0 20 0;
+#X connect 30 1 1 0;
+#X connect 30 2 3 0;
+#X connect 30 2 2 0;
