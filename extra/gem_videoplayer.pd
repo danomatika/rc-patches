@@ -1,4 +1,4 @@
-#N canvas 262 172 430 508 10;
+#N canvas 262 172 454 507 10;
 #X declare -path ../rc-patches;
 #X obj 102 364 pix_film;
 #X obj 15 11 inlet;
@@ -6,15 +6,15 @@
 #X msg 162 148 0;
 #X msg 201 149 1;
 #X obj 162 97 change;
-#X obj 242 95 expr 1/$f1*1000;
-#X obj 242 70 inlet fps;
-#X obj 224 212 inlet frame pos;
-#X obj 262 234 inlet loopsize in frames;
+#X obj 216 93 expr 1/$f1*1000;
+#X obj 216 68 inlet fps;
+#X obj 242 211 inlet frame pos;
+#X obj 280 233 inlet loopsize in frames;
 #X obj 162 336 counter 1 4;
-#X msg 224 302 min \$1;
-#X obj 224 265 t f f;
-#X obj 274 302 + 4;
-#X obj 262 264 t b f;
+#X msg 242 301 min \$1;
+#X obj 242 264 t f f;
+#X obj 292 301 + 4;
+#X obj 280 263 t b f;
 #N canvas 673 108 384 201 args 0;
 #X obj 15 27 loadbang;
 #X obj 15 89 list append \$1;
@@ -45,7 +45,7 @@
 #X obj 15 70 symbol;
 #X msg 15 214 open \$1;
 #X obj 15 97 rc-filename;
-#X obj 242 122 moses 1;
+#X obj 216 120 moses 1;
 #X obj 15 42 route open play;
 #X obj 229 14 declare -path ../rc-patches;
 #X connect 0 0 20 0;
