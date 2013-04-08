@@ -6,13 +6,12 @@
 #X obj 31 57 gemhead;
 #X obj 31 121 gem_pointSize 10;
 #X obj 31 159 gem_point 100 100;
-#X text 158 37 creation args: size;
+#X text 156 47 creation args: size;
 #X floatatom 124 89 5 0 0 0 - - -;
 #X obj 31 252 gem_rect 200 200 50 50;
 #X msg 76 221 draw point;
 #X text 164 88 sizes < 1 are ignored;
 #X obj 76 192 loadbang;
-#X text 13 16 change point draw size;
 #X msg 212 188 run \$1;
 #X obj 212 161 tgl 15 0 empty empty <--_start_gem_window 17 7 0 10
 -262144 -1 -1 0 1;
@@ -24,12 +23,13 @@
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 264 188 pd setup;
+#X text 13 16 [gem_pointSize]: change point draw size;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 8 0;
 #X connect 7 0 4 1;
 #X connect 9 0 8 0;
 #X connect 11 0 9 0;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
-#X connect 16 0 15 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 15 0 14 0;
