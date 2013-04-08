@@ -77,10 +77,8 @@
 #X obj 223 316 + 0;
 #X obj 433 75 unpack f f f f s;
 #X text 374 202 [rectangle] is 2x in size;
-#X obj 329 204 * 1;
-#X obj 277 203 * 1;
-#X obj 352 218 * 2;
-#X obj 325 248 * 2;
+#X obj 277 203 * 0.5;
+#X obj 333 203 * 0.5;
 #X connect 0 0 21 0;
 #X connect 2 0 4 0;
 #X connect 3 0 34 0;
@@ -92,10 +90,8 @@
 #X connect 9 0 37 0;
 #X connect 10 0 36 0;
 #X connect 10 1 35 0;
-#X connect 10 2 40 0;
-#X connect 10 2 42 0;
-#X connect 10 3 39 0;
-#X connect 10 3 41 0;
+#X connect 10 2 39 0;
+#X connect 10 3 40 0;
 #X connect 14 0 15 0;
 #X connect 15 0 2 0;
 #X connect 16 0 22 0;
@@ -139,7 +135,7 @@
 #X connect 37 2 22 2;
 #X connect 37 3 22 3;
 #X connect 37 4 28 0;
-#X connect 39 0 2 2;
-#X connect 40 0 2 1;
-#X connect 41 0 23 0;
-#X connect 42 0 24 0;
+#X connect 39 0 2 1;
+#X connect 39 0 24 0;
+#X connect 40 0 2 2;
+#X connect 40 0 23 0;
