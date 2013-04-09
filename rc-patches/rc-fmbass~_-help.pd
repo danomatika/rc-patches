@@ -1,0 +1,157 @@
+#N canvas 399 95 804 525 10;
+#X obj 78 497 dac~;
+#X obj 78 469 *~;
+#X msg 78 118 60 64;
+#X msg 119 170 62 64;
+#X msg 150 255 64 100;
+#X msg 91 141 60 0;
+#X msg 138 192 62 0;
+#X msg 168 281 64 0;
+#X obj 78 344 unpack;
+#X msg 142 230 64 64;
+#X obj 48 59 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 574 101 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 3600 1;
+#X floatatom 571 125 5 0 0 1 - - -;
+#X msg 571 151 d \$1;
+#X obj 619 154 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 11000 1;
+#X floatatom 616 178 5 0 0 1 - - -;
+#X msg 616 204 s \$1;
+#X obj 531 57 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 528 81 5 0 0 1 - - -;
+#X obj 662 204 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 9400 1;
+#X floatatom 659 228 5 0 0 1 - - -;
+#X msg 659 255 r \$1;
+#X msg 528 107 a \$1;
+#X obj 96 444 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 12000 1;
+#X obj 313 369 t a;
+#X obj 528 299 t a;
+#X text 49 381 note;
+#X text 125 381 vel;
+#X text 149 144 midi note vel;
+#X text 353 458 Dan Wilcox 2009;
+#X msg 183 356 0;
+#X text 209 356 note off;
+#X text 352 470 danomatika.com | robotcowboy.com;
+#X msg 148 325 reset;
+#N canvas 0 22 450 326 seq 0;
+#X obj 94 127 sel 0 1 2 3 4 5 6 7;
+#X obj 94 99 rc-count 8;
+#X obj 94 73 metro 250;
+#X obj 88 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 121 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 154 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 220 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 260 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 295 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 333 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 299 outlet;
+#X obj 94 20 inlet;
+#X obj 45 49 sel 0;
+#X msg 45 72 reset;
+#X msg 88 185 38;
+#X msg 154 186 50;
+#X msg 185 186 34;
+#X msg 260 188 38;
+#X msg 333 190 40;
+#X msg 121 186 45;
+#X msg 295 189 45;
+#X msg 220 187 rest;
+#X obj 185 241 makenote 64 100;
+#X obj 185 270 pack f f;
+#X connect 0 0 3 0;
+#X connect 0 1 4 0;
+#X connect 0 2 5 0;
+#X connect 0 3 6 0;
+#X connect 0 4 7 0;
+#X connect 0 5 8 0;
+#X connect 0 6 9 0;
+#X connect 0 7 10 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 15 0;
+#X connect 4 0 20 0;
+#X connect 5 0 16 0;
+#X connect 6 0 17 0;
+#X connect 7 0 22 0;
+#X connect 8 0 18 0;
+#X connect 9 0 21 0;
+#X connect 10 0 19 0;
+#X connect 12 0 2 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 1 0;
+#X connect 15 0 23 0;
+#X connect 16 0 23 0;
+#X connect 17 0 23 0;
+#X connect 18 0 23 0;
+#X connect 19 0 23 0;
+#X connect 20 0 23 0;
+#X connect 21 0 23 0;
+#X connect 23 0 24 0;
+#X connect 23 1 24 1;
+#X connect 24 0 11 0;
+#X restore 48 85 pd seq;
+#X obj 271 87 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 8900 1;
+#X floatatom 268 111 5 0 0 1 - - -;
+#X obj 335 141 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 11400 1;
+#X floatatom 332 165 5 0 0 1 - - -;
+#X msg 332 191 mod2 \$1;
+#X text 264 58 fm synthesis controls;
+#X text 525 35 envelope controls;
+#X msg 268 137 mod1 \$1;
+#X obj 78 410 rc-fmbass~_;
+#X text 15 21 rc-fmbass~_ : a simple e-bass;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 43 0;
+#X connect 8 1 43 1;
+#X connect 9 0 8 0;
+#X connect 10 0 34 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 25 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 25 0;
+#X connect 17 0 18 0;
+#X connect 18 0 22 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 25 0;
+#X connect 22 0 25 0;
+#X connect 23 0 1 1;
+#X connect 24 0 43 0;
+#X connect 25 0 24 0;
+#X connect 30 0 43 1;
+#X connect 33 0 43 0;
+#X connect 34 0 8 0;
+#X connect 35 0 36 0;
+#X connect 36 0 42 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 24 0;
+#X connect 42 0 24 0;
+#X connect 43 0 1 0;

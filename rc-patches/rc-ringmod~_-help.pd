@@ -1,7 +1,7 @@
-#N canvas 812 175 516 476 10;
-#X obj 22 420 dac~;
+#N canvas 812 175 496 411 10;
+#X obj 22 379 dac~;
 #X floatatom 31 63 5 0 0 0 - - -;
-#X obj 142 321 tabwrite~ output;
+#X obj 84 266 tabwrite~ output;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array output 100 float 1;
 #A 0 -0.0871495 -0.0600115 -0.0326196 -0.00508119 0.0224952 0.050001
@@ -19,48 +19,34 @@
 -0.355288 -0.337159 -0.317694 -0.296968 -0.275062 -0.252061 -0.228055
 -0.203134 -0.177401 -0.150954 -0.123897;
 #X coords 0 1 99 -1 200 140 1;
-#X restore 289 200 graph;
-#X obj 142 286 metro 100;
-#X obj 142 260 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 283 109 graph;
+#X obj 84 231 metro 100;
+#X obj 84 205 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 31 377 rc-spigot~;
-#X obj 88 354 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 31 309 *~ 0.5;
-#X text 165 258 graph;
-#X text 12 11 rc-ringmod~: a ring modulator with wet/dry mix control
-;
-#X msg 169 87 wet 0.5;
-#X msg 229 97 dry 0.25;
-#X msg 120 117 onoff \$1;
-#X obj 120 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text 154 56 control messages;
-#X text 39 139 audio in;
-#X text 111 354 audio;
-#X obj 289 377 sssad/datastore;
-#X text 286 354 sssad state saving;
+#X text 107 203 graph;
+#X obj 320 306 sssad/datastore;
+#X text 317 283 sssad state saving;
 #N canvas 0 22 450 300 datastore 0;
 #X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD rm1/frq 104.703 \; SSSAD rm1/dry 0.362319 \;
 SSSAD rm1/wet 0.753623 \; SSSAD rm1/onoff 1 \; SSSAD_ADMIN set \;;
 #X connect 0 0 1 0;
-#X restore 290 447 pd datastore;
-#X obj 31 164 rc-ringmod~ rm1;
-#X msg 243 131 freq 667;
+#X restore 321 376 pd datastore;
 #X obj 31 87 osc~ 440;
-#X connect 1 0 23 0;
+#X floatatom 118 138 5 0 0 1 modulation_frequency - -;
+#X obj 55 311 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 31 342 *~ 0;
+#X obj 31 164 rc-ringmod~_ 90;
+#X text 12 11 rc-ringmod~_: a simple ring modulator;
+#X text 147 58 creation arg: modulation frequency;
+#X connect 1 0 10 0;
 #X connect 4 0 2 0;
 #X connect 5 0 4 0;
-#X connect 6 0 0 0;
-#X connect 6 0 0 1;
-#X connect 7 0 6 1;
-#X connect 8 0 6 0;
-#X connect 11 0 21 1;
-#X connect 12 0 21 1;
-#X connect 13 0 21 1;
+#X connect 10 0 14 0;
+#X connect 11 0 14 1;
+#X connect 12 0 13 1;
+#X connect 13 0 0 0;
+#X connect 13 0 0 1;
+#X connect 14 0 2 0;
 #X connect 14 0 13 0;
-#X connect 21 0 2 0;
-#X connect 21 0 8 0;
-#X connect 22 0 21 1;
-#X connect 23 0 21 0;

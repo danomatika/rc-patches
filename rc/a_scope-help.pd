@@ -1,0 +1,76 @@
+#N canvas 362 131 997 499 10;
+#N canvas 517 323 582 570 REFERENCE 0;
+#X text 24 105 Inlet 0: audio signal to graph;
+#X text 24 132 Inlet 1: control messages: onoff 0 or 1 \, refresh rate
+in ms \, xscale x-axis sensitivity \, yscale y-axis sensitivity \,
+reset all settings;
+#X text 24 273 Warning: This takes some cpu \, so it's best to leave
+it off when not needed. Also \, the higher the refresh rate \, the
+more cpu will be used.;
+#X text 24 31 Name: [a_scope];
+#X text 24 51 Summary: a time domain signal gui \, not precise enough
+for scientific work!;
+#X text 24 435 Tags: Audio \, Analysis \, Oscilloscope \, Time Domain
+;
+#X text 24 221 Description: This is a simple oscilloscope table grapher.
+It's not super precise but useful. The incoming signal is clipped to
+stay in the table boundaries.;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore -55 36 pd REFERENCE;
+#X obj -55 6 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 408 39 Example:;
+#X obj 519 184 noise~;
+#X obj 442 151 hsl 128 15 20 20000 0 0 empty empty 20-20k 32 8 0 10
+-262144 -1 -1 267 1;
+#X floatatom 439 184 10 0 0 0 - - -;
+#X text 693 419 <-- reset;
+#X text 692 307 <-- refresh & onoff;
+#X obj 439 97 loadbang;
+#X msg 439 124 440;
+#X obj 439 234 osc~;
+#X obj 519 235 *~ 0;
+#X obj 543 209 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 781 363 u_loadmeter;
+#X text 69 9 - a simple oscilloscope gui;
+#X text -51 8 a_scope;
+#X obj 519 307 a_scope;
+#X msg 678 101 refresh \$1;
+#X msg 612 74 onoff \$1;
+#X obj 612 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 681 57 hsl 128 15 10 1000 0 0 empty empty 10-1000 32 8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 678 79 5 0 0 0 - - -;
+#X obj 746 127 hsl 128 15 128 1024 0 0 empty empty 128-1024 32 8 0
+10 -262144 -1 -1 0 1;
+#X floatatom 743 149 5 0 0 0 - - -;
+#X msg 743 171 xscale \$1;
+#X obj 785 198 hsl 128 15 0.2 2 0 0 empty empty 0.2-2 32 8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 782 220 5 0 0 0 - - -;
+#X msg 782 242 yscale \$1;
+#X msg 801 271 reset;
+#X text 419 466 rc-patches (https://github.com/danomatika/rc-patches)
+- 2013;
+#X connect 3 0 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 11 1;
+#X connect 17 0 16 1;
+#X connect 18 0 16 1;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 17 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 16 1;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 16 1;
+#X connect 28 0 16 1;

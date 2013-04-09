@@ -1,0 +1,13 @@
+#N canvas 566 563 243 254 10;
+#X obj 42 139 *~;
+#X obj 42 49 inlet~;
+#X obj 57 81 inlet freq;
+#X obj 42 169 outlet~;
+#X text 30 17 simple ring modulator;
+#X text 33 201 2009 Dan Wilcox;
+#X text 25 220 robotcowboy.com|danomatika.com;
+#X obj 57 107 osc~ \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 7 0;
+#X connect 7 0 0 1;

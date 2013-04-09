@@ -1,0 +1,4 @@
+1, ../rc-adsr~-help.pd;
+2, ../rc-delay~-help.pd;
+3, ../rc-spigot~-help.pd;
+4, ../rc-delay~-help.pd;

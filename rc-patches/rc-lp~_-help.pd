@@ -1,0 +1,32 @@
+#N canvas 0 22 427 415 10;
+#X text 103 56 creation args: freq \, q;
+#X obj 50 124 noise~;
+#X obj 108 124 rc-adsr~_ 1 10 100 50 1000;
+#X msg 108 91 bang;
+#X obj 77 369 dac~;
+#X obj 77 341 *~;
+#X obj 95 316 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 10300 1;
+#X obj 150 163 hsl 128 15 20 20000 1 0 empty empty 20-20k 32 8 0 10
+-262144 -1 -1 8000 1;
+#X obj 204 215 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 201 240 5 0 0 0 q - -;
+#X floatatom 147 191 5 0 0 0 freq - -;
+#X text 146 90 <---- make noise;
+#X text 211 362 Dan Wilcox 2009;
+#X text 210 374 danomatika.com | robotcowboy.com;
+#X text 28 18 rc-lp~_ : a low-pass resonant filter;
+#X text 204 282 just a wrapper around moog~;
+#X obj 77 281 rc-lp~_ 2000 0.5;
+#X connect 1 0 16 0;
+#X connect 2 0 16 1;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 5 1;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 16 3;
+#X connect 10 0 16 2;
+#X connect 16 0 5 0;
