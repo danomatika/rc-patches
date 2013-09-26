@@ -1,0 +1,1 @@
+e_3bandeq - a simple dj-style 3 band equalizer
