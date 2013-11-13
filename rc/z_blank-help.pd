@@ -1,4 +1,4 @@
-#N canvas 56 24 862 519 10;
+#N canvas 115 63 868 521 10;
 #N canvas 377 58 582 570 REFERENCE 0;
 #X text 24 51 Summary:;
 #X text 24 91 Argument 0:;
@@ -18,7 +18,7 @@ help patches.;
 #X text 468 51 Example:;
 #X text 129 21 - summary;
 #X obj 8 20 dac~;
-#X obj 594 55 soundinput;
-#X obj 599 415 soundoutput;
-#X text 485 478 rc-patches (https://github.com/danomatika/rc-patches)
+#X obj 601 95 soundinput;
+#X obj 607 404 soundoutput;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2013;
