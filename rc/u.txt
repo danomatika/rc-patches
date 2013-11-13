@@ -9,7 +9,7 @@ u_listlen - calculate length of a list
 u_listmean - calculate the arithmetic mean of a list
 u_listrev - reverse a list's order
 u_listunique - remove duplicates from a list
-u_mux2 - multiplex between 2 inlets to 1 outleti
+u_mux2 - multiplex between 2 inlets to 1 outlet
 u_openclose - open and close patches via filename (requires ggee)
 u_remote - send remote messages to state saving objects
 u_savestate - save & load scene state settings
