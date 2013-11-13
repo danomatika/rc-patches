@@ -9,7 +9,7 @@
 #X obj 105 156 inlet bangs;
 #X obj 20 20 inlet~ audio;
 #X obj 112 50 block~ 256 1;
-#X obj 20 200 tabwrite~ \$0-a_spectroscope;
+#X obj 20 200 tabwrite~ \$0-g_spectroscope;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 0 1 2 0;
@@ -62,7 +62,7 @@
 #X obj 4 19 cnv 15 298 138 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array \$0-a_spectroscope 128 float 0;
+#X array \$0-g_spectroscope 128 float 0;
 #X coords 0 50 128 0 300 140 1 0 0;
 #X restore 3 18 graph;
 #X obj 6 158 hsl 295 10 0 128 0 0 \$0-xscale \$0-xscale empty -2 -8
@@ -76,7 +76,6 @@
 #X obj 295 331 pack 50 127;
 #X obj 451 105 s \$0-xscale;
 #X obj 359 32 route onoff refresh xscale yscale reset;
-#X obj 224 396 s \$0-a_spectroscope;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
 and/or modify it under the terms of the GNU General Public License
@@ -94,9 +93,10 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 56 54 Copyright (C) 2012 \, Dan Wilcox <danomatika@gmail.com>
 ;
 #X restore 455 293 pd LICENSE-GPL;
+#X obj 224 396 s \$0-g_spectroscope;
 #X connect 1 0 0 0;
 #X connect 2 0 32 0;
-#X connect 3 0 35 0;
+#X connect 3 0 36 0;
 #X connect 4 0 1 0;
 #X connect 5 0 0 1;
 #X connect 6 0 7 0;
@@ -116,7 +116,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 28 0 29 0;
 #X connect 29 0 3 0;
 #X connect 30 0 26 0;
-#X connect 31 0 35 0;
+#X connect 31 0 36 0;
 #X connect 32 0 31 0;
 #X connect 34 0 12 0;
 #X connect 34 1 14 0;
