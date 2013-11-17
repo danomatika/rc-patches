@@ -157,7 +157,6 @@
 #X restore 22 116 pd textfile;
 #X obj 60 82 outlet state out to msgbox;
 #X obj -15 155 outlet done;
-#X obj 165 17 inlet state in form msgbox;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
 and/or modify it under the terms of the GNU General Public License
@@ -175,9 +174,10 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 56 54 Copyright (C) 2013 \, Dan Wilcox <danomatika@gmail.com>
 ;
 #X restore 221 155 pd LICENSE-GPL;
+#X obj 165 17 inlet state in from msgbox;
 #X connect 0 0 2 0;
 #X connect 2 0 5 0;
 #X connect 2 1 3 0;
 #X connect 2 2 4 0;
 #X connect 3 0 5 0;
-#X connect 6 0 1 0;
+#X connect 7 0 1 0;
