@@ -40,18 +40,18 @@ http://puredata.hurleur.com/sujet-1687.html;
 #X obj 360 399 e_resonzq;
 #X obj 288 399 e_reslop;
 #X obj 496 138 noise~;
-#X text 471 86 Freq band controls are 0-2 which allows *boosting* as
-well as filtering.;
 #X text 526 438 Use a range of 0-1 if you only want to attenuate.;
 #X obj 658 391 g_hsl high 0 1;
 #X obj 577 266 g_hsl high 0 2;
 #X obj 8 20 e_3bandeq;
 #X text 129 21 - dj-style 3 band equalizer;
+#X text 471 86 Freq band controls are 0-2 which allows *boosting* as
+well as attenuating.;
 #X connect 4 0 3 0;
 #X connect 6 0 4 1;
 #X connect 7 0 8 0;
-#X connect 8 0 19 0;
+#X connect 8 0 18 0;
 #X connect 9 0 7 0;
 #X connect 15 0 4 0;
-#X connect 18 0 4 1;
-#X connect 19 0 6 0;
+#X connect 17 0 4 1;
+#X connect 18 0 6 0;

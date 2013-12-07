@@ -31,7 +31,7 @@ and/or time sig \, then 120 & 4/4 are used as per the MIDI file specification.
 #X obj 499 440 soundoutput;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2013;
-#X obj 489 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 1 1
+#X obj 489 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X msg 556 155 reopen;
 #X floatatom 542 304 5 0 0 1 ticks - -;
@@ -143,6 +143,20 @@ and/or time sig \, then 120 & 4/4 are used as per the MIDI file specification.
 #X text 127 157 this is a very basic general midi player;
 #X text 43 198 chans 10 & 11 for drums;
 #X text 229 240 instrument channels;
+#N canvas 561 329 368 212 raw 0;
+#X text 24 25;
+#X text 16 48 status byte + channels;
+#X text 17 80 144 - 159: noteon;
+#X text 18 96 160 - 175: poly aftertouch;
+#X text 18 114 176 - 191: control change;
+#X text 18 132 192 - 207: program change;
+#X text 18 149 208 - 223: pitch bend;
+#X text 19 165 224 - 239: aftertouch;
+#X text 19 185 255 127 len data: Midi File Proprietary Event;
+#X text 16 64 128 - 143: noteoff;
+#X text 12 8 notes on what values are used to parse raw midi bytes
+inside c_midiplay;
+#X restore 389 350 pd raw midi vals;
 #X connect 0 0 3 0;
 #X connect 0 1 2 0;
 #X connect 0 2 1 0;
