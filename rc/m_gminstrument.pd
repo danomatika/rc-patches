@@ -1,0 +1,295 @@
+#N struct 1024-lookup float x array pairs 1024-pair;
+#N struct 1024-pair symbol name float note;
+#N canvas 411 55 510 220 10;
+#N canvas 107 565 450 300 \$0-data 0;
+#X scalar 1024-lookup 0 \; Acoustic_Grand_Piano 1 \; Bright_Acoustic_Piano
+2 \; Electric_Grand_Piano 3 \; Honky-Tonk_Piano 4 \; Electric_Piano_1
+5 \; Electric_Piano_2 6 \; Harpsichord 7 \; Clavinet 8 \; Celesta 9
+\; Glockenspiel 10 \; Music_Box 11 \; Vibraphone 12 \; Marimba 13 \;
+Xylophone 14 \; Tubular_Bells 15 \; Dulcimer 16 \; Drawbar_Organ 17
+\; Percussive_Organ 18 \; Rock_Organ 19 \; Church_Organ 20 \; Reed_Organ
+21 \; Accordian 22 \; Harmonica 23 \; Tango_Accordian 24 \; Acoustic_Guitar_Nylon
+25 \; Acoustic_Guitar_Steel 26 \; Electric_Guitar_Jazz 27 \; Electric_Guitar_Clean
+28 \; Electric_Guitar_Muted 29 \; Overdriven_Guitar 30 \; Distortion_Guitar
+31 \; Guitar_Harmonics 32 \; Acoustic_Bass 33 \; Electric_Bass_Finger
+34 \; Electric_Bass_Pick 35 \; Fretless_Bass 36 \; Slap_Bass_1 37 \;
+Slap_Bass_2 38 \; Synth_Bass_1 39 \; Synth_Bass_2 40 \; Violin 41 \;
+Viola 42 \; Cello 43 \; Contrabass 44 \; Tremolo_Strings 45 \; Pizzicato_Strings
+46 \; Orchestral_Harp 47 \; Timpani 48 \; String_Ensemble_1 49 \; String_Ensemble_2
+50 \; Synth_Strings_1 51 \; Synth_Strings_2 52 \; Choir_Aahs 53 \;
+Choir_Oohs 54 \; Synth_Voice 55 \; Orchestra_Hit 56 \; Trumpet 57 \;
+Trombone 58 \; Tuba 59 \; Muted_Trumpet 60 \; French_Horn 61 \; Brass_Section
+62 \; Synth_Brass_1 63 \; Synth_Brass_2 64 \; Soprano_Sax 65 \; Alto_Sax
+66 \; Tenor_Sax 67 \; Baritone_Sax 68 \; Oboe 69 \; English_Horn 70
+\; Bassoon 71 \; Clarinet 72 \; Piccolo 73 \; Flute 74 \; Recorder
+75 \; Pan_Flute 76 \; Blown_Bottle 77 \; Shakuhachi 78 \; Whistle 79
+\; Ocarina 80 \; Synth_Lead_Square 81 \; Synth_Lead_Saw 82 \; Synth_Lead_Calliope
+83 \; Synth_Lead_Chiff 84 \; Synth_Lead_Charang 85 \; Synth_Lead_Voice
+86 \; Synth_Lead_Fifths 87 \; Synth_Lead_Bass 88 \; Synth_Pad_NewAge
+89 \; Synth_Pad_Warm 90 \; Synth_Pad_Polysynth 91 \; Synth_Pad_Choir
+92 \; Synth_Pad_Bowed 93 \; Synth_Pad_Metallic 94 \; Synth_Pad_Halo
+95 \; Synth_Pad_Sweep 96 \; FX_Rain 97 \; FX_Soundtrack 98 \; FX_Crystal
+99 \; FX_Atmosphere 100 \; FX_Brightness 101 \; FX_Goblins 102 \; FX_Echoes
+103 \; FX_SciFi 104 \; Sitar 105 \; Banjo 106 \; Shamisen 107 \; Koto
+108 \; Kalimba 109 \; Bag_Pipes 110 \; Fiddle 111 \; Shanai 112 \;
+Tinkle_Bell 113 \; Agogo 114 \; Steel_Drums 115 \; Woodblock 116 \;
+Taiko_Drum 117 \; Melodic_Tom 118 \; Synth_Drum 119 \; Reverse_Cymbal
+120 \; Guitar_Fret_Noise 121 \; Breath_Noise 122 \; Seashore 123 \;
+Bird_Tweet 124 \; Telephone_Ring 125 \; Helicopter 126 \; Applause
+127 \; Gunshot 128 \; \;;
+#X restore 318 116 pd \$0-data;
+#N canvas 370 32 810 653 init 0;
+#X obj 708 534 r \$0-lookup-p;
+#X obj 589 609 set \$0-pair note;
+#X obj 432 559 unpack s f;
+#X obj 573 561 element \$0-lookup pairs;
+#X obj 573 475 f;
+#X obj 602 475 + 1;
+#X msg 616 447 0;
+#X obj 432 442 t a b;
+#X obj 14 61 t b b;
+#X msg 14 25 bang;
+#X obj 529 186 pointer;
+#X obj 424 263 pointer;
+#X msg 437 238 bang;
+#X msg 526 78 clear;
+#X msg 424 186 0;
+#X text 475 237 resend;
+#X msg 529 161 traverse \$1 \, bang;
+#X obj 529 133 symbol pd-\$0-data;
+#X obj 407 23 loadbang;
+#X obj 526 102 s pd-\$0-data;
+#X text 585 186 where to create? In [pd \$0-data]!;
+#X obj 424 291 s \$0-lookup-p;
+#X obj 424 213 append \$0-lookup x;
+#X msg 473 23 bang;
+#X obj 432 608 set -symbol \$0-pair name;
+#N canvas 631 380 281 281 change-size 0;
+#X obj 49 151 max;
+#X obj 82 151 f;
+#X obj 49 18 inlet;
+#X obj 49 182 change -1;
+#X obj 64 75 r \$0-reset;
+#X obj 64 100 t b b;
+#X msg 118 153 set -1;
+#X obj 49 44 + 1;
+#X msg 64 124 0;
+#X obj 12 244 s \$0-size;
+#X obj 184 183 r \$0-lookup-p;
+#X obj 49 211 setsize \$0-lookup pairs;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 7 0;
+#X connect 3 0 9 0;
+#X connect 3 0 11 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 5 1 6 0;
+#X connect 6 0 3 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 10 0 11 1;
+#X restore 600 534 pd change-size;
+#X obj 573 505 t f f;
+#X obj 577 77 s \$0-reset;
+#X obj 407 51 t b b b b;
+#X text 621 506 load lookup table;
+#X msg 14 90 Acoustic_Grand_Piano 1 \, Bright_Acoustic_Piano 2 \, Electric_Grand_Piano
+3 \, Honky-Tonk_Piano 4 \, Electric_Piano_1 5 \, Electric_Piano_2 6
+\, Harpsichord 7 \, Clavinet 8 \, Celesta 9 \, Glockenspiel 10 \, Music_Box
+11 \, Vibraphone 12 \, Marimba 13 \, Xylophone 14 \, Tubular_Bells
+15 \, Dulcimer 16 \, Drawbar_Organ 17 \, Percussive_Organ 18 \, Rock_Organ
+19 \, Church_Organ 20 \, Reed_Organ 21 \, Accordian 22 \, Harmonica
+23 \, Tango_Accordian 24 \, Acoustic_Guitar_Nylon 25 \, Acoustic_Guitar_Steel
+26 \, Electric_Guitar_Jazz 27 \, Electric_Guitar_Clean 28 \, Electric_Guitar_Muted
+29 \, Overdriven_Guitar 30 \, Distortion_Guitar 31 \, Guitar_Harmonics
+32 \, Acoustic_Bass 33 \, Electric_Bass_Finger 34 \, Electric_Bass_Pick
+35 \, Fretless_Bass 36 \, Slap_Bass_1 37 \, Slap_Bass_2 38 \, Synth_Bass_1
+39 \, Synth_Bass_2 40 \, Violin 41 \, Viola 42 \, Cello 43 \, Contrabass
+44 \, Tremolo_Strings 45 \, Pizzicato_Strings 46 \, Orchestral_Harp
+47 \, Timpani 48 \, String_Ensemble_1 49 \, String_Ensemble_2 50 \,
+Synth_Strings_1 51 \, Synth_Strings_2 52 \, Choir_Aahs 53 \, Choir_Oohs
+54 \, Synth_Voice 55 \, Orchestra_Hit 56 \, Trumpet 57 \, Trombone
+58 \, Tuba 59 \, Muted_Trumpet 60 \, French_Horn 61 \, Brass_Section
+62 \, Synth_Brass_1 63 \, Synth_Brass_2 64 \, Soprano_Sax 65 \, Alto_Sax
+66 \, Tenor_Sax 67 \, Baritone_Sax 68 \, Oboe 69 \, English_Horn 70
+\, Bassoon 71 \, Clarinet 72 \, Piccolo 73 \, Flute 74 \, Recorder
+75 \, Pan_Flute 76 \, Blown_Bottle 77 \, Shakuhachi 78 \, Whistle 79
+\, Ocarina 80 \, Synth_Lead_Square 81 \, Synth_Lead_Saw 82 \, Synth_Lead_Calliope
+83 \, Synth_Lead_Chiff 84 \, Synth_Lead_Charang 85 \, Synth_Lead_Voice
+86 \, Synth_Lead_Fifths 87 \, Synth_Lead_Bass 88 \, Synth_Pad_NewAge
+89 \, Synth_Pad_Warm 90 \, Synth_Pad_Polysynth 91 \, Synth_Pad_Choir
+92 \, Synth_Pad_Bowed 93 \, Synth_Pad_Metallic 94 \, Synth_Pad_Halo
+95 \, Synth_Pad_Sweep 96 \, FX_Rain 97 \, FX_Soundtrack 98 \, FX_Crystal
+99 \, FX_Atmosphere 100 \, FX_Brightness 101 \, FX_Goblins 102 \, FX_Echoes
+103 \, FX_SciFi 104 \, Sitar 105 \, Banjo 106 \, Shamisen 107 \, Koto
+108 \, Kalimba 109 \, Bag_Pipes 110 \, Fiddle 111 \, Shanai 112 \,
+Tinkle_Bell 113 \, Agogo 114 \, Steel_Drums 115 \, Woodblock 116 \,
+Taiko_Drum 117 \, Melodic_Tom 118 \, Synth_Drum 119 \, Reverse_Cymbal
+120 \, Guitar_Fret_Noise 121 \, Breath_Noise 122 \, Seashore 123 \,
+Bird_Tweet 124 \, Telephone_Ring 125 \, Helicopter 126 \, Applause
+127 \, Gunshot 128;
+#X connect 0 0 3 1;
+#X connect 2 0 24 0;
+#X connect 2 1 1 0;
+#X connect 3 0 1 1;
+#X connect 3 0 24 1;
+#X connect 4 0 5 0;
+#X connect 4 0 26 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 1;
+#X connect 7 0 2 0;
+#X connect 7 1 4 0;
+#X connect 8 0 30 0;
+#X connect 8 1 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 22 1;
+#X connect 11 0 21 0;
+#X connect 12 0 11 0;
+#X connect 13 0 19 0;
+#X connect 14 0 22 0;
+#X connect 16 0 10 0;
+#X connect 17 0 16 0;
+#X connect 18 0 28 0;
+#X connect 22 0 11 0;
+#X connect 23 0 28 0;
+#X connect 26 0 3 0;
+#X connect 26 1 25 0;
+#X connect 28 0 9 0;
+#X connect 28 1 14 0;
+#X connect 28 2 17 0;
+#X connect 28 3 13 0;
+#X connect 28 3 27 0;
+#X connect 30 0 7 0;
+#X restore 196 189 pd init;
+#N canvas 307 179 450 300 \$0-lookup 0;
+#X obj 42 95 drawpolygon 900 1 0 0 0 10 10 10 10 0 0 0;
+#X obj 42 54 struct \$0-lookup float x array pairs \$0-pair;
+#X restore 196 138 pd \$0-lookup;
+#N canvas 763 275 396 238 \$0-pair 0;
+#X obj 77 51 struct \$0-pair symbol name float note;
+#X restore 196 115 pd \$0-pair;
+#N canvas 651 113 329 471 print 0;
+#X obj 85 234 element \$0-lookup pairs;
+#X obj 85 178 until;
+#X obj 100 101 getsize \$0-lookup pairs;
+#X obj 85 127 f;
+#X obj 85 206 f;
+#X obj 114 206 + 1;
+#X obj 85 152 t f b;
+#X msg 128 178 0;
+#X obj 139 46 r \$0-lookup-p;
+#X obj 220 204 r \$0-lookup-p;
+#X obj 85 262 get \$0-pair note name;
+#X obj 85 291 pack f s;
+#X obj 85 429 print gm-percussion;
+#X obj 20 18 inlet;
+#X msg 20 337 ------------------------------;
+#X obj 31 291 t b b b;
+#X obj 100 73 pointer;
+#X obj 20 47 t b b b b;
+#X msg 50 365 General Midi Control Num Mapping;
+#X connect 0 0 10 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 1;
+#X connect 6 0 1 0;
+#X connect 6 1 7 0;
+#X connect 7 0 4 1;
+#X connect 8 0 16 1;
+#X connect 9 0 0 1;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 11 0 12 0;
+#X connect 13 0 17 0;
+#X connect 14 0 12 0;
+#X connect 15 0 14 0;
+#X connect 15 1 18 0;
+#X connect 15 2 14 0;
+#X connect 16 0 2 0;
+#X connect 17 0 14 0;
+#X connect 17 1 3 0;
+#X connect 17 2 15 0;
+#X connect 17 3 16 0;
+#X connect 18 0 12 0;
+#X restore 107 135 pd print;
+#X msg 107 109 bang;
+#N canvas 315 372 348 376 lookup 0;
+#X obj 19 17 inlet;
+#X obj 208 338 outlet;
+#X obj 100 209 element \$0-lookup pairs;
+#X obj 100 153 until;
+#X obj 115 76 getsize \$0-lookup pairs;
+#X obj 100 237 get \$0-pair name note;
+#X obj 208 310 f;
+#X obj 46 238 symbol;
+#X obj 100 279 select SYMBOL;
+#X obj 100 102 f;
+#X obj 100 181 f;
+#X obj 129 181 + 1;
+#X obj 100 127 t f b;
+#X msg 143 153 0;
+#X obj 159 22 r \$0-lookup-p;
+#X obj 235 179 r \$0-lookup-p;
+#X obj 93 22 r \$0-size;
+#X obj 114 51 pointer;
+#X obj 19 46 t b a b;
+#X connect 0 0 18 0;
+#X connect 2 0 5 0;
+#X connect 3 0 10 0;
+#X connect 5 0 8 0;
+#X connect 5 1 6 1;
+#X connect 6 0 1 0;
+#X connect 7 0 8 1;
+#X connect 8 0 6 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 0;
+#X connect 10 0 2 0;
+#X connect 11 0 10 1;
+#X connect 12 0 3 0;
+#X connect 12 1 13 0;
+#X connect 13 0 10 1;
+#X connect 14 0 17 1;
+#X connect 15 0 2 1;
+#X connect 16 0 9 1;
+#X connect 17 0 4 0;
+#X connect 18 0 9 0;
+#X connect 18 1 7 0;
+#X restore 60 163 pd lookup;
+#X obj 13 191 outlet;
+#X obj 13 38 inlet name;
+#X text 147 55 see: http://en.wikipedia.org/wiki/General_midi;
+#X text 192 90 Data structures:;
+#X text 315 94 the lookup table is in here;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X text 56 54 Copyright (C) 2013 \, Dan Wilcox <danomatika@gmail.com>
+;
+#X restore 316 188 pd LICENSE-GPL;
+#X obj 13 76 route float print;
+#X text 315 138 inspired by rjlib m_symbolarray;
+#X text 12 6 general midi instrument mapping look up table;
+#X text 100 30 converts an instrument name to a program num from the
+GM spec;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 8 0 13 0;
+#X connect 13 0 7 0;
+#X connect 13 1 5 0;
+#X connect 13 2 6 0;

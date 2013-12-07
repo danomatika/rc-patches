@@ -1,17 +1,35 @@
-#N struct 1010-lookup float x array pairs 1010-pair;
-#N struct 1010-pair symbol name float note;
-#N canvas 411 55 510 220 10;
+#N struct 1218-lookup float x array pairs 1218-pair;
+#N struct 1218-pair symbol name float note;
+#N canvas 748 22 510 220 10;
 #N canvas 107 565 450 300 \$0-data 0;
-#X scalar 1010-lookup 0 \; Mod_Wheel 1 \; Data_Entry_MSB 6 \; Volume
-7 \; Pan 10 \; Expression 11 \; Data_Entry_LSB 38 \; Sustain_Pedal
-64 \; Filter_Resonance 71 \; Release_Time 72 \; Attack_Time 73 \; Filter_Frequency
-74 \; Decay_Time 75 \; Vibrato_Rate 76 \; Vibrato_Depth 77 \; Vibrato_Delay
-78 \; Reverb_Level 91 \; Tremolo_Level 92 \; Chorus_Level 93 \; Celeste_Level
-94 \; Phaser_Level 95 \; Non_Reg_Param_LSB 98 \; Non_Reg_Param_MSB
-99 \; Reg_Param_Num_LSB 100 \; Reg_Param_Num_MSB 101 \; All_Controllers_Off
-121 \; All_Notes_Off 123 \; \;;
+#X scalar 1218-lookup 0 \; Bass_Drum_1 35 \; Bass_Drum_2 36 \; Side_Stick
+37 \; Snare_Drum_1 38 \; Hand_Clap 39 \; Snare_Drum_2 40 \; Low_Tom_2
+41 \; Closed_Hi-Hat 42 \; Low_Tom_1 43 \; Pedal_Hi-Hat 44 \; Mid_Tom_2
+45 \; Open_Hi-Hat 46 \; Mid_Tom_1 47 \; High_Tom_2 48 \; Crash_Cymbal_1
+49 \; High_Tom_1 50 \; Ride_Cymbal_1 51 \; Chinese_Cymbal 52 \; Ride_Bell
+53 \; Tambourine 54 \; Splash_Cymbal 55 \; Cowbell 56 \; Crash_Cymbal_2
+57 \; Vibra_Slap 58 \; Ride_Cymbal_2 59 \; High_Bongo 60 \; Low_Bongo
+61 \; Mute_High_Conga 62 \; Open_High_Conga 63 \; Low_Conga 64 \; High_Timbale
+65 \; Low_Timbale 66 \; High_Agogo 67 \; Low_Agogo 68 \; Cabasa 69
+\; Maracas 70 \; Short_Whistle 71 \; Long_Whistle 72 \; Short_Guiro
+73 \; Long_Guiro 74 \; Claves 75 \; High_Wood_Block 76 \; Low_Wood_Block
+77 \; Mute_Cuica 78 \; Open_Cuica 79 \; Mute_Triangle 80 \; Open_Triangle
+81 \; \;;
 #X restore 318 116 pd \$0-data;
 #N canvas 370 32 810 653 init 0;
+#X msg 31 244 Bass_Drum_1 35 \, Bass_Drum_2 36 \, Side_Stick 37 \,
+Snare_Drum_1 38 \, Hand_Clap 39 \, Snare_Drum_2 40 \, Low_Tom_2 41
+\, Closed_Hi-Hat 42 \, Low_Tom_1 43 \, Pedal_Hi-Hat 44 \, Mid_Tom_2
+45 \, Open_Hi-Hat 46 \, Mid_Tom_1 47 \, High_Tom_2 48 \, Crash_Cymbal_1
+49 \, High_Tom_1 50 \, Ride_Cymbal_1 51 \, Chinese_Cymbal 52 \, Ride_Bell
+53 \, Tambourine 54 \, Splash_Cymbal 55 \, Cowbell 56 \, Crash_Cymbal_2
+57 \, Vibra_Slap 58 \, Ride_Cymbal_2 59 \, High_Bongo 60 \, Low_Bongo
+61 \, Mute_High_Conga 62 \, Open_High_Conga 63 \, Low_Conga 64 \, High_Timbale
+65 \, Low_Timbale 66 \, High_Agogo 67 \, Low_Agogo 68 \, Cabasa 69
+\, Maracas 70 Maracas \, Short_Whistle 71 \, Long_Whistle 72 \, Short_Guiro
+73 \, Long_Guiro 74 \, Claves 75 Claves \, High_Wood_Block 76 \, Low_Wood_Block
+77 \, Mute_Cuica 78 \, Open_Cuica 79 \, Mute_Triangle 80 \, Open_Triangle
+81;
 #X obj 307 544 r \$0-lookup-p;
 #X obj 188 619 set \$0-pair note;
 #X obj 31 569 unpack s f;
@@ -68,46 +86,38 @@
 #X obj 577 77 s \$0-reset;
 #X obj 407 51 t b b b b;
 #X text 220 516 load lookup table;
-#X msg 31 244 Mod_Wheel 1 \, Data_Entry_MSB 6 \, Volume 7 \, Pan 10
-\, Expression 11 \, Data_Entry_LSB 38 \, Sustain_Pedal 64 \, Filter_Resonance
-71 \, Release_Time 72 \, Attack_Time 73 \, Filter_Frequency 74 \, Decay_Time
-75 \, Vibrato_Rate 76 \, Vibrato_Depth 77 \, Vibrato_Delay 78 \, Reverb_Level
-91 \, Tremolo_Level 92 \, Chorus_Level 93 \, Celeste_Level 94 \, Phaser_Level
-95 \, Non_Reg_Param_LSB 98 \, Non_Reg_Param_MSB 99 \, Reg_Param_Num_LSB
-100 \, Reg_Param_Num_MSB 101 \, All_Controllers_Off 121 \, All_Notes_Off
-123;
-#X connect 0 0 3 1;
-#X connect 2 0 24 0;
-#X connect 2 1 1 0;
-#X connect 3 0 1 1;
-#X connect 3 0 24 1;
-#X connect 4 0 5 0;
-#X connect 4 0 26 0;
-#X connect 5 0 4 1;
-#X connect 6 0 4 1;
-#X connect 7 0 2 0;
-#X connect 7 1 4 0;
-#X connect 8 0 30 0;
-#X connect 8 1 6 0;
-#X connect 9 0 8 0;
-#X connect 10 0 22 1;
-#X connect 11 0 21 0;
-#X connect 12 0 11 0;
-#X connect 13 0 19 0;
-#X connect 14 0 22 0;
-#X connect 16 0 10 0;
-#X connect 17 0 16 0;
-#X connect 18 0 28 0;
-#X connect 22 0 11 0;
-#X connect 23 0 28 0;
-#X connect 26 0 3 0;
-#X connect 26 1 25 0;
-#X connect 28 0 9 0;
-#X connect 28 1 14 0;
-#X connect 28 2 17 0;
-#X connect 28 3 13 0;
-#X connect 28 3 27 0;
-#X connect 30 0 7 0;
+#X connect 0 0 8 0;
+#X connect 1 0 4 1;
+#X connect 3 0 25 0;
+#X connect 3 1 2 0;
+#X connect 4 0 2 1;
+#X connect 4 0 25 1;
+#X connect 5 0 6 0;
+#X connect 5 0 27 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 1;
+#X connect 8 0 3 0;
+#X connect 8 1 5 0;
+#X connect 9 0 0 0;
+#X connect 9 1 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 23 1;
+#X connect 12 0 22 0;
+#X connect 13 0 12 0;
+#X connect 14 0 20 0;
+#X connect 15 0 23 0;
+#X connect 17 0 11 0;
+#X connect 18 0 17 0;
+#X connect 19 0 29 0;
+#X connect 23 0 12 0;
+#X connect 24 0 29 0;
+#X connect 27 0 4 0;
+#X connect 27 1 26 0;
+#X connect 29 0 10 0;
+#X connect 29 1 15 0;
+#X connect 29 2 18 0;
+#X connect 29 3 14 0;
+#X connect 29 3 28 0;
 #X restore 196 189 pd init;
 #N canvas 307 179 450 300 \$0-lookup 0;
 #X obj 42 95 drawpolygon 900 1 0 0 0 10 10 10 10 0 0 0;
@@ -132,10 +142,10 @@
 #X obj 85 429 print gm-percussion;
 #X obj 20 18 inlet;
 #X msg 20 337 ------------------------------;
+#X msg 50 365 General Midi Percussion Note Mapping;
 #X obj 31 291 t b b b;
 #X obj 100 73 pointer;
 #X obj 20 47 t b b b b;
-#X msg 50 365 General Midi Control Num Mapping;
 #X connect 0 0 10 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 1;
@@ -146,22 +156,22 @@
 #X connect 6 0 1 0;
 #X connect 6 1 7 0;
 #X connect 7 0 4 1;
-#X connect 8 0 16 1;
+#X connect 8 0 17 1;
 #X connect 9 0 0 1;
 #X connect 10 0 11 0;
 #X connect 10 1 11 1;
 #X connect 11 0 12 0;
-#X connect 13 0 17 0;
+#X connect 13 0 18 0;
 #X connect 14 0 12 0;
-#X connect 15 0 14 0;
-#X connect 15 1 18 0;
-#X connect 15 2 14 0;
-#X connect 16 0 2 0;
-#X connect 17 0 14 0;
-#X connect 17 1 3 0;
-#X connect 17 2 15 0;
-#X connect 17 3 16 0;
-#X connect 18 0 12 0;
+#X connect 15 0 12 0;
+#X connect 16 0 14 0;
+#X connect 16 1 15 0;
+#X connect 16 2 14 0;
+#X connect 17 0 2 0;
+#X connect 18 0 14 0;
+#X connect 18 1 3 0;
+#X connect 18 2 16 0;
+#X connect 18 3 17 0;
 #X restore 107 135 pd print;
 #X msg 107 109 bang;
 #N canvas 315 372 348 376 lookup 0;
@@ -209,6 +219,9 @@
 #X obj 13 191 outlet;
 #X obj 13 38 inlet name;
 #X text 132 48 see: http://en.wikipedia.org/wiki/General_midi;
+#X text 100 30 converts a drum name to a note num from the GM spec
+;
+#X text 12 6 general midi percussion mapping look up table;
 #X text 192 90 Data structures:;
 #X text 315 94 the lookup table is in here;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
@@ -230,12 +243,9 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X restore 316 188 pd LICENSE-GPL;
 #X obj 13 76 route float print;
 #X text 315 138 inspired by rjlib m_symbolarray;
-#X text 100 30 converts a control name to a control num from the GM
-spec;
-#X text 12 6 general midi control mapping look up table;
 #X connect 5 0 4 0;
 #X connect 6 0 7 0;
-#X connect 8 0 13 0;
-#X connect 13 0 7 0;
-#X connect 13 1 5 0;
-#X connect 13 2 6 0;
+#X connect 8 0 15 0;
+#X connect 15 0 7 0;
+#X connect 15 1 5 0;
+#X connect 15 2 6 0;

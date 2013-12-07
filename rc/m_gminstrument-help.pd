@@ -1,0 +1,62 @@
+#N struct 1024-lookup float x array pairs 1024-pair;
+#N struct 1024-pair symbol name float note;
+#N struct 1026-lookup float x array pairs 1026-pair;
+#N struct 1026-pair symbol name float note;
+#N canvas 178 65 868 521 10;
+#N canvas 187 140 582 570 REFERENCE 0;
+#X text 24 434 Tags: midi \, general midi \, look up table;
+#X text 24 31 Name: m_gminstrument;
+#X text 24 51 Summary: converts an instrument name to a program num
+from the General Midi (GM) spec;
+#X text 24 108 Inlet 0: <symbol> instrument name \, <float> floats
+are passed through \, "print" print the look up table;
+#X text 24 164 Outlet 0: program num;
+#X text 24 234 Description: This is a helper when woking with the General
+Midi spec. I can never remember which instrument goes with which number
+\, so it's nice to use the instrument names themselves. See the spec
+for more info: http://en.wikipedia.org/wiki/General_midi;
+#X text 24 334 See also: m_gmcontrol m_gmpercussion;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 468 51 Example:;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2013;
+#X text 512 439 naturally \, hook up Pd to a General Midi synth ...
+;
+#X msg 582 268 print;
+#X obj 529 376 print;
+#X floatatom 529 340 5 0 0 1 program_num - -;
+#X text 627 269 print the table for reference;
+#X msg 566 231 60;
+#X text 597 231 floats are passed through;
+#X text 617 145 get pgm num using GM name;
+#X msg 502 134 Synth_Bass_1;
+#X msg 529 159 Choir_Aahs;
+#X obj 580 376 pgmout 1;
+#N canvas 0 22 188 147 noteout 0;
+#X obj 28 104 noteout 1;
+#X obj 28 65 makenote 100 500;
+#X obj 28 32 inlet;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 1 0;
+#X restore 692 374 pd noteout 1;
+#X msg 692 344 60;
+#X msg 728 345 65;
+#X text 684 316 try some notes;
+#X msg 552 186 Acoustic_Grand_Piano;
+#X obj 529 304 m_gminstrument;
+#X text 129 21 - general midi instrument mapping look up table;
+#X obj 8 20 m_gminstrument;
+#X connect 5 0 20 0;
+#X connect 7 0 6 0;
+#X connect 7 0 14 0;
+#X connect 9 0 20 0;
+#X connect 12 0 20 0;
+#X connect 13 0 20 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 7 0;

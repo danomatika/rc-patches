@@ -1,4 +1,7 @@
 m_ctlin - ctlin that can learn it's ctl num & channel
 m_fadtodb - convert fader scale to vu db
+m_gmcontrol - general midi control mapping look up table
+m_gminstrument - general midi instrument mapping look up table
+m_gmpercussion - general midi percussion mapping look up table
 m_mavg - moving average filter
 m_scalefilter - filter notes based on a given scale
