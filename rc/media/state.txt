@@ -1,4 +1,10 @@
-e_3bandeq-myeq high 1;
-e_3bandeq-myeq med 1;
-e_3bandeq-myeq dry 0;
-e_3bandeq-myeq low 1;
+s_fmbass-bass123 R 0.629;
+s_fmbass-bass123 S 0.291;
+s_fmbass-bass123 D 0.37;
+s_fmbass-bass123 A 0.874016;
+s_fmbass-bass123 index2 0.542;
+s_fmbass-bass123 index1 0.446;
+e_3bandeq-eq123 high 1;
+e_3bandeq-eq123 med 1;
+e_3bandeq-eq123 dry 0;
+e_3bandeq-eq123 low 1.62205;
