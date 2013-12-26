@@ -1,0 +1,58 @@
+#N canvas 41 196 868 521 10;
+#N canvas 131 104 582 570 REFERENCE 0;
+#X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
+;
+#X text 24 124 Inlet 0: bang - trigger \, <float> - midi velocity trigger
+;
+#X text 24 213 Outlet 0: audio signal out;
+#X text 24 51 Summary: a Roland TR-808 cymball emulation;
+#X text 24 31 Name: [s_808cymbal];
+#X text 24 152 Inlet 1: "amp" <float> - amplitude (0-1) \, "tone" <float>
+- where the stick hits (0-1) \, "decay" <float> - decay time (0-1)
+\, "tune" <float> - cowbell size aka pitch (0-1);
+#X text 24 263 Description: This is an emulation of the TR-808 cymbal
+made by comparing recordings of actual hardware at various knob setting
+levels to reverse engineer the audio synthesis. Adapted form original
+work by Damian Stewart (frey.co.nz). The control values match the 808
+controls except for the addition of the tuning (for hip-hop tracks
+of course).;
+#X text 24 367 See also: [s_808bass] \, [s_808hihat] \, [s_808bell]
+\, [s_808snare];
+#X text 24 434 Tags: audio \, drum \, cymbal \, 808 \, emulation;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 468 51 Example:;
+#X obj 542 404 soundoutput;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2013;
+#X obj 498 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 542 182 64;
+#X msg 562 211 127;
+#X text 479 97 triggers;
+#X text 539 159 midi vel;
+#X text 521 129 bang;
+#X text 582 365 output lvl = vel/127 * amp;
+#X obj 542 364 *~ 1;
+#X msg 677 132 reset;
+#X obj 677 273 g_hsl tune 0 1;
+#X obj 677 238 g_hsl decay 0 1;
+#X obj 677 202 g_hsl tone 0 1;
+#X obj 677 166 g_hsl amp 0 1;
+#X obj 542 308 s_808cymbal my808cymbal;
+#X text 611 98 defaults: amp & tune 0.5 \, tone & decay 0;
+#X text 129 21 - a tr808 cymbal emulation;
+#X obj 8 20 s_808cymbal;
+#X connect 5 0 18 0;
+#X connect 6 0 18 0;
+#X connect 7 0 18 0;
+#X connect 12 0 3 1;
+#X connect 12 0 3 0;
+#X connect 13 0 17 0;
+#X connect 14 0 18 1;
+#X connect 15 0 14 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 12 0;

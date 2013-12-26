@@ -1,4 +1,11 @@
 s_303 - roland tb 303 style bass synth (requires ggee)
+s_808bass - a tr808 bass/kick drum emulation
+s_808bell - a tr808 cowbell emulation
+s_808clap - a tr808 hand clap emulation
+s_808cymbal - a tr808 cymbal emulation
+s_808hihat - a tr808 hi hat emulation
+s_808snare - a tr808 snare drum emulation
+s_bendytom - an electro bendy tom
 s_crossfm - cross frequency modulation synth
 s_crossfmpm - cross frequency / phase modulation synth
 s_crosspm - cross phase modulation synth

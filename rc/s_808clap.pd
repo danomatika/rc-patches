@@ -1,0 +1,131 @@
+#N canvas 589 148 532 307 10;
+#X obj 22 268 outlet~;
+#X obj 107 121 t b f;
+#X obj 55 213 clip 0 1;
+#X obj 22 20 inlet;
+#X obj 22 240 *~ 0.5;
+#X obj 68 95 moses 1;
+#X text 130 95 no noteoffs!;
+#N canvas 613 108 576 567 cp 0;
+#X obj 182 364 vline~;
+#X obj 33 475 *~;
+#X obj 103 285 del 30;
+#X obj 33 500 hip~ 800;
+#X obj 103 336 1.5;
+#X obj 134 337 0.7;
+#X obj 103 260 t b b f;
+#X obj 103 233 f;
+#X obj 33 528 outlet~;
+#X obj 25 23 inlet;
+#X obj 249 165 del 2122;
+#X obj 206 141 t b b;
+#X obj 206 224 switch~;
+#X obj 118 141 / 127;
+#X msg 206 189 1;
+#X msg 159 92 127;
+#X obj 182 390 *~;
+#X obj 182 416 *~;
+#X obj 182 442 *~;
+#X obj 118 163 sqrt;
+#X obj 118 182 sqrt;
+#X obj 118 203 sqrt;
+#X obj 33 389 e_resonzq 1000 1 2;
+#X obj 159 63 loadbang;
+#X text 182 496 Author: Roman Haefeli/Frank Barknecht (updated to work
+in pd-vanilla/Rjlib \, replace expensive dbtorms~ with powers);
+#X text 184 530 Version: 2009-02-24;
+#X obj 33 361 noise~;
+#X msg 249 189 0;
+#X obj 25 60 t b b;
+#X obj 118 23 inlet;
+#X msg 68 23 bang;
+#X msg 182 319 \$1 \, 0 34 \, \$1 0.5 10.5 \, 0 34 11 \, \$1 0 23 \,
+0 34 23 \, \$1 0 31 \, 0 34 31 \, \$1 0 36 \, 0 115 36.5 \, 0 250 65
+\, 0 2000 120;
+#X connect 0 0 16 0;
+#X connect 0 0 16 1;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 22 2;
+#X connect 5 0 22 2;
+#X connect 6 0 2 0;
+#X connect 6 1 5 0;
+#X connect 6 2 31 0;
+#X connect 7 0 6 0;
+#X connect 9 0 28 0;
+#X connect 10 0 27 0;
+#X connect 11 0 14 0;
+#X connect 11 1 10 0;
+#X connect 13 0 19 0;
+#X connect 14 0 12 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 1;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 0 18 1;
+#X connect 18 0 1 1;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 7 1;
+#X connect 22 0 1 0;
+#X connect 23 0 15 0;
+#X connect 26 0 22 0;
+#X connect 27 0 12 0;
+#X connect 28 0 7 0;
+#X connect 28 1 11 0;
+#X connect 29 0 13 0;
+#X connect 30 0 28 0;
+#X connect 31 0 0 0;
+#X restore 22 159 pd cp;
+#X text 78 19 an 808 hand clap emulation;
+#N canvas 496 105 387 156 defaults 0;
+#X obj 21 12 inlet;
+#X obj 58 43 loadbang;
+#X obj 21 118 outlet;
+#X msg 21 78 amp 0.5 \, tune 0.5;
+#X connect 0 0 3 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X restore 419 55 pd defaults;
+#X obj 335 55 route reset;
+#X obj 335 21 inlet control;
+#X obj 398 83 u_dispatch \$0 amp;
+#X obj 398 107 u_dispatch \$0 tune;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X text 56 54 Copyright (C) 2009 \, 2013 Dan Wilcox <danomatika@gmail.com>
+;
+#X restore 349 266 pd LICENSE-GPL;
+#X obj 22 62 route bang float;
+#X obj 55 187 r \$0-amp;
+#X text 130 237 adapted from cp in rjlib s_drumelectro by Roman Haefeli
+& Frank Barknecht (BSD license);
+#X obj 349 161 u_loader s_808clap-\$1 \$0;
+#X connect 1 0 7 0;
+#X connect 1 1 7 1;
+#X connect 2 0 4 1;
+#X connect 3 0 15 0;
+#X connect 4 0 0 0;
+#X connect 5 1 1 0;
+#X connect 7 0 4 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 10 1 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 15 0 7 0;
+#X connect 15 1 5 0;
+#X connect 16 0 2 0;

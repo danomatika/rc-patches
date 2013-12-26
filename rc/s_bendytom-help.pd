@@ -1,0 +1,56 @@
+#N canvas 316 115 868 521 10;
+#N canvas 131 104 582 570 REFERENCE 0;
+#X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
+;
+#X text 24 153 Inlet 0: bang - trigger \, <float> - midi velocity trigger
+;
+#X text 24 244 Outlet 0: audio signal out;
+#X text 24 372 See also: [s_808bass] \, [s_808hihat] \, [s_808cymbal]
+\, [s_808snare];
+#X text 24 31 Name: [s_bendytom];
+#X text 24 113 Argument 1: <float> tune midi pitch \, optional;
+#X text 24 181 Inlet 1: "amp" <float> - amplitude (0-1) \, "tone" <float>
+- stick hit noise amt (0-1) \, "decay" <float> - decay len (0-1) \,
+"tune" <float> - midi pitch (0-127);
+#X text 24 307 Description: This is a simple electro "bendy tom" \,
+often heard in disco tracks.;
+#X text 24 51 Summary: an electro bendy tom for disco tracks;
+#X text 24 434 Tags: audio \, drum \, bendy tom;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 468 51 Example:;
+#X obj 561 404 soundoutput;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2013;
+#X obj 517 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 561 182 64;
+#X msg 581 211 127;
+#X text 498 97 triggers;
+#X text 558 159 midi vel;
+#X text 540 129 bang;
+#X text 601 365 output lvl = vel/127 * amp;
+#X obj 561 364 *~ 1;
+#X msg 702 132 reset;
+#X obj 702 238 g_hsl decay 0 1;
+#X obj 702 202 g_hsl tone 0 1;
+#X obj 702 166 g_hsl amp 0 1;
+#X obj 561 308 s_bendytom mybendytom 72;
+#X obj 702 271 g_hsl tune 0 127;
+#X text 611 100 defaults: amp \, tone \, decay 0.5 \; tune 60;
+#X text 713 308 <- opt: set tune as arg2;
+#X obj 8 20 s_bendytom;
+#X text 129 21 - an electro bendy tom;
+#X connect 5 0 17 0;
+#X connect 6 0 17 0;
+#X connect 7 0 17 0;
+#X connect 12 0 3 1;
+#X connect 12 0 3 0;
+#X connect 13 0 16 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 0;
+#X connect 16 0 15 0;
+#X connect 17 0 12 0;
+#X connect 18 0 17 1;

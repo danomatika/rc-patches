@@ -1,0 +1,67 @@
+#N canvas 52 98 868 521 10;
+#N canvas 131 104 582 570 REFERENCE 0;
+#X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
+;
+#X text 24 31 Name: [s_808snare];
+#X text 24 224 Outlet 0: closed hat audio signal out;
+#X text 24 247 Outlet 1: open hat audio signal out;
+#X text 24 282 Description: This is an emulation of the TR-808 hi hat
+made by comparing recordings of actual hardware at various knob setting
+levels to reverse engineer the audio synthesis. Adapted from original
+work by Damian Stewart (frey.co.nz). The control values match the 808
+controls except for the addition of the tuning (for hip-hop tracks
+of course).;
+#X text 24 386 See also: [s_808bass] \, [s_808snare] \, [s_808cymbal]
+\, [s_808bell];
+#X text 24 434 Tags: audio \, drum \, hi hat \, 808 \, emulation;
+#X text 24 51 Summary: a Roland TR-808 hihat emulation;
+#X text 24 126 Inlet 0: bang - closed trigger \, <float> - midi vel
+trigger;
+#X text 24 150 Inlet 1: bang - open trigger \, <float> - midi vel trigger
+;
+#X text 24 175 Inlet 2: "amp" <float> - amplitude (0-1) \, "decay"
+<float> - open hat decay (0-1) \, "tune" <float> - drum pitch (0-1)
+;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 468 51 Example:;
+#X obj 561 382 soundoutput;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2013;
+#X obj 482 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 526 184 64;
+#X msg 546 213 127;
+#X text 523 161 midi vel;
+#X text 505 131 bang;
+#X text 696 366 output lvl = vel/127 * amp;
+#X msg 707 132 reset;
+#X obj 707 236 g_hsl tune 0 1;
+#X obj 707 166 g_hsl amp 0 1;
+#X text 691 99 all values default to 0.5;
+#X obj 561 342 s_808hihat my808hihat;
+#X obj 8 20 s_808hihat;
+#X obj 707 201 g_hsl decay 0 1;
+#X obj 594 134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 638 184 64;
+#X msg 658 213 127;
+#X text 635 161 midi vel;
+#X text 617 131 bang;
+#X text 575 98 open triggers;
+#X text 463 98 closed triggers;
+#X text 129 21 - a tr808 hi hat emulation;
+#X connect 5 0 15 0;
+#X connect 6 0 15 0;
+#X connect 7 0 15 0;
+#X connect 11 0 13 0;
+#X connect 12 0 15 2;
+#X connect 13 0 17 0;
+#X connect 15 0 3 0;
+#X connect 15 1 3 1;
+#X connect 17 0 12 0;
+#X connect 18 0 15 1;
+#X connect 19 0 15 1;
+#X connect 20 0 15 1;
