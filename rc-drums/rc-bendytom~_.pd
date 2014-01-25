@@ -1,5 +1,5 @@
 #N canvas 669 284 359 497 10;
-#X obj 42 427 outlet~;
+#X obj 43 427 outlet~;
 #X obj 165 401 switch~;
 #X obj 156 337 env~;
 #X obj 134 370 > 1;
@@ -13,7 +13,7 @@
 #X obj 152 263 f 1;
 #X obj 152 208 clip 0 1;
 #X obj 43 20 inlet;
-#X obj 42 401 *~ 0.5;
+#X obj 43 401 *~ 0.5;
 #X obj 43 371 hip~ 5;
 #X obj 43 274 t b b;
 #X obj 13 20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -26,17 +26,17 @@
 #X obj 269 218 env~ 256;
 #X obj 269 244 / 100;
 #X obj 217 559 *~;
-#X floatatom 308 319 5 0 0 0 bp*freq - -;
+#X floatatom 308 319 5 0 0 0 bp*freq - -, f 5;
 #X obj 311 294 hsl 128 15 200 20000 1 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X floatatom 319 374 8 0 0 0 bp+freq - -;
+#X floatatom 319 374 8 0 0 0 bp+freq - -, f 8;
 #X obj 322 346 hsl 128 15 200 20000 1 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X floatatom 307 418 5 0 0 0 - - -;
-#X floatatom 284 499 9 0 0 0 hipfreq - -;
+#X floatatom 307 418 5 0 0 0 - - -, f 5;
+#X floatatom 284 499 9 0 0 0 hipfreq - -, f 9;
 #X obj 287 472 hsl 128 15 200 20000 1 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X floatatom 74 272 5 0 0 0 - - -;
+#X floatatom 74 272 5 0 0 0 - - -, f 5;
 #X obj 77 247 hsl 128 15 200 20000 1 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 269 393 + 3263;
@@ -47,7 +47,7 @@
 #X obj 217 649 outlet~;
 #X obj 269 349 * 903.6;
 #X obj 217 173 ead~ 1 350;
-#X floatatom 267 596 9 0 0 0 alllop - -;
+#X floatatom 267 596 9 0 0 0 alllop - -, f 9;
 #X obj 270 569 hsl 128 15 200 20000 1 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 23 245 noise~;
@@ -197,22 +197,22 @@
 #X obj 75 23 inlet;
 #X msg 181 98 tune 60;
 #X msg 274 96 decay 0.5;
-#X obj 222 164 list-onearg \$1;
 #X msg 222 194 tune \$1;
 #X obj 126 55 t b b;
+#X obj 222 164 list-abs/list-onearg \$1;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
-#X connect 3 0 9 0;
-#X connect 4 0 9 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X connect 7 0 8 0;
-#X connect 8 0 0 0;
-#X connect 9 0 1 0;
-#X connect 9 0 2 0;
-#X connect 9 0 6 0;
+#X connect 7 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 6 0;
+#X connect 8 0 9 0;
+#X connect 8 1 5 0;
 #X connect 9 0 7 0;
-#X connect 9 1 5 0;
 #X restore 92 38 pd defaults;
 #X obj 61 118 moses 1;
 #X text 52 99 no noteoffs!;
@@ -224,7 +224,7 @@
 #X obj 43 62 route bang float amp tune decay tone reset;
 #X obj 264 102 clip 0 1;
 #X obj 264 128 s \$0-tone;
-#X obj 42 340 *~ 2;
+#X obj 43 340 *~ 2;
 #X connect 2 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;

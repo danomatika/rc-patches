@@ -1,6 +1,6 @@
 #N canvas 423 356 411 334 10;
 #X obj 19 136 inlet;
-#X obj 18 299 outlet~;
+#X obj 19 299 outlet~;
 #X obj 61 167 r \$0-phase;
 #X text 166 21 simple midi controlled square wave;
 #X obj 40 241 r \$0-amp;
@@ -35,17 +35,17 @@
 #X obj 1 16 cnv 15 128 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 53 22 hsl 70 15 0 1 0 0 \$0-amp \$0-amp amp 0 8 0 10 -191407
--1 -1 3450 1;
+-1 -1 5300 1;
 #X obj 53 43 hsl 70 15 0 0.99 0 0 \$0-phase \$0-phase phase 0 8 0 10
--191407 -1 -1 0 1;
+-191407 -1 -1 500 1;
 #X obj 53 58 hsl 70 15 0 1 0 0 \$0-pulsewidth \$0-pulsewidth pulsewidth
-0 8 0 10 -191407 -1 -1 3450 1;
+0 8 0 10 -191407 -1 -1 5200 1;
 #X obj 5 59 nbx 4 14 0 1 0 0 \$0-pulsewidth \$0-pulsewidth empty 0
--6 0 10 -261234 -1 -1 0.5 256;
+-6 0 10 -261234 -1 -1 0.753623 256;
 #X obj 5 23 nbx 4 14 0 1 0 0 \$0-amp \$0-amp empty 0 -6 0 10 -261234
--1 -1 0.5 256;
+-1 -1 0.768116 256;
 #X obj 5 44 nbx 4 14 0 0.99 0 0 \$0-phase \$0-phase empty 0 -6 0 10
--261234 -1 -1 0 256;
+-261234 -1 -1 0.0717391 256;
 #X text 112 301 2007 Dan Wilcox;
 #X text 176 59 Creation args: name;
 #N canvas 0 22 450 300 defaults 0;

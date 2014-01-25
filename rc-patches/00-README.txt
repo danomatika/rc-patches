@@ -1,12 +1,12 @@
-Dan Wilcox 2008
+Dan Wilcox 2008-2014
 
-rc-patches v0.3.0
+rc-patches v0.3.2
 
 bring on the bump using your favorite minimal object-oriented algorithmic balls
 
 Originally begun at a STEIM residency in October 2007, these patches are inspired by Chris McCormick's awesome s-abstractions and Frank Barknecht's sssad state saving.  Most of the objects have guis with sssad state saveable parameters.
 
-You will need pd-extended and sssad (included in .zip).
+You will need pd-extended and sssad (included).
 
 patches
 
@@ -25,11 +25,49 @@ Some of the objects included are:
 
 update history
 
-    * 10/19/08 v0.3.0 - added a bunch of new objects, removed pdmtl dependencies, removed dynamic gui objects (just too slow), added index help patches
-    * 12/18/07 v0.2.0 - added rc-record~, fixed missing [symbol] in rc-patternbuddy, and replaced all OSCx 
-						objects with mrpeach OSC objects, removing oscx as a requirement (its depreciated)
-    * 11/09/07 v0.1.1 - fixed [rc-chipwave~] adsr and replaced usage of [gate 2] with a subpatch
-    * 11/08/07 v0.1.0 - released initial version
+* 01/24/14 v0.3.2 - FINAL VERSION
+
+	THIS PATCH LIB IS NOW DEPRECATED …
+
+	made external usage explicit by using library names e.g. [zexy/multiplex]
+
+	removed [imports] for Pd-vanilla
+	
+	updated index help patches with all new patches
+
+* ~ 2012 v0.3.1
+
+	added a bunch of patches (rc-filter~, rc-midimetro, rc-notein, rc-ctlin, etc)
+
+	cleaned up/expanded other patches, created some non-gui versions of gui patches, ie. rc-delay~ -> rc-delay~ (nongui)
+	
+	added [imports] for a few externals
+
+* 10/19/08 v0.3.0
+
+	added a bunch of new objects, removed pdmtl dependencies
+
+	removed dynamic gui objects (just too slow)
+
+	added index help patches
+
+* 12/18/07 v0.2.0
+
+	added rc-record~
+
+	fixed missing [symbol] in rc-patternbuddy
+	
+	replaced all OSCx  objects with mrpeach OSC objects, removing oscx as a requirement (its deprecated)
+
+* 11/09/07 v0.1.1
+
+	fixed [rc-chipwave~] adsr
+
+	replaced usage of [gate 2] with a subpatch
+
+* 11/08/07 v0.1.0
+
+	released initial version
 
 
 

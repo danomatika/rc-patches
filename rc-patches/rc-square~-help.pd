@@ -1,15 +1,15 @@
 #N canvas 664 58 531 529 10;
-#X floatatom 74 135 5 0 0 0 - - -;
-#X obj 30 475 dac~;
+#X floatatom 74 135 5 0 0 0 - - -, f 5;
+#X obj 29 475 dac~;
 #X obj 289 248 rc-adsr~ env1 500;
 #X obj 29 83 random 90;
 #X obj 29 110 moses 20;
 #X obj 29 58 metro 100;
 #X obj 29 21 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
 ;
-#X floatatom 80 37 5 0 0 0 - - -;
+#X floatatom 80 37 5 0 0 0 - - -, f 5;
 #X obj 340 412 sssad/datastore;
-#N canvas 0 0 450 300 datastore 0;
+#N canvas 0 22 450 300 datastore 0;
 #X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD synth1/pulsewidth 0.724638 \; SSSAD synth1/phase
 0.186522 \; SSSAD synth1/amp 0.594203 \; SSSAD env1/R 869.565 \; SSSAD
@@ -22,7 +22,7 @@ env1/amp 0.681159 \; SSSAD_ADMIN set \;;
 #X text 89 110 filter out notes under 20;
 #X text 331 382 sssad state saving;
 #X text 55 230 midi in;
-#X obj 30 419 *~;
+#X obj 29 419 *~;
 #X text 178 279 amplitude \, 0-1;
 #X text 178 307 phase \, 0-1;
 #X text 177 337 pulsewidth \, 0-1;

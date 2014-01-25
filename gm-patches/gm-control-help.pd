@@ -2,7 +2,7 @@
 #X msg 116 288 print;
 #X obj 105 395 print;
 #X text 53 76 see: http://en.wikipedia.org/wiki/General_midi;
-#X floatatom 63 360 5 0 0 1 control_num - -;
+#X floatatom 63 360 5 0 0 1 control_num - -, f 5;
 #X text 161 289 print the table for reference;
 #X text 131 251 floats are passed through;
 #X text 274 435 Dan Wilcox 2009;
@@ -25,7 +25,7 @@
 #X msg 86 206 Pan;
 #X obj 17 120 hsl 128 15 0 127 0 0 empty empty control_amount -2 8
 0 10 -262144 -1 -1 0 1;
-#X floatatom 14 380 5 0 0 0 - - -;
+#X floatatom 14 380 5 0 0 0 - - -, f 5;
 #X text 120 171 get control num using GM name;
 #X msg 100 251 1;
 #X text 6 14 gm-control: general midi control mapping look up table

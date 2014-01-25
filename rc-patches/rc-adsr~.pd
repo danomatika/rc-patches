@@ -1,9 +1,9 @@
 #N canvas 310 74 602 488 10;
 #X obj 81 155 inlet;
-#X obj 101 453 outlet~;
+#X obj 100 453 outlet~;
 #X text 173 6 ADSR ENVELOPE;
 #X text 448 374 ssad state saving;
-#N canvas 0 0 407 357 state_saving 0;
+#N canvas 0 22 407 357 state_saving 0;
 #X obj 17 57 sssad/sssad \$1/amp;
 #X obj 122 35 r \$0-amp;
 #X obj 17 79 s \$0-amp;
@@ -50,25 +50,25 @@ note dur;
 #X obj 1 15 cnv 15 128 97 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 53 23 hsl 70 15 0 1 0 0 \$0-amp \$0-amp amp 0 8 0 10 -191407
--1 -1 1400 1;
+-1 -1 4200 1;
 #X obj 53 46 hsl 70 15 0 100 0 0 \$0-A \$0-A attack 0 8 0 10 -191407
--1 -1 600 1;
+-1 -1 1400 1;
 #X obj 53 61 hsl 70 15 0 1000 0 0 \$0-D \$0-D decay 0 8 0 10 -191407
--1 -1 4400 1;
+-1 -1 2500 1;
 #X obj 53 76 hsl 70 15 0 100 0 0 \$0-S \$0-S sustain 0 8 0 10 -191407
--1 -1 4600 1;
+-1 -1 2600 1;
 #X obj 53 91 hsl 70 15 0 2000 0 0 \$0-R \$0-R release 0 8 0 10 -191407
--1 -1 2900 1;
+-1 -1 4300 1;
 #X obj 5 62 nbx 4 14 0 1000 0 0 \$0-D \$0-D empty -10 6 0 10 -261234
--1 -1 637.681 256;
+-1 -1 362.319 256;
 #X obj 5 77 nbx 4 14 0 100 0 0 \$0-S \$0-S empty -10 6 0 10 -261234
--1 -1 66.6667 256;
+-1 -1 37.6812 256;
 #X obj 5 92 nbx 4 14 0 2000 0 0 \$0-R \$0-R empty -10 6 0 10 -261234
--1 -1 840.58 256;
+-1 -1 1246.38 256;
 #X obj 5 24 nbx 4 14 0 1 0 0 \$0-amp \$0-amp empty -20 6 0 10 -261234
--1 -1 0.202899 256;
+-1 -1 0.608696 256;
 #X obj 5 47 nbx 4 14 0 100 0 0 \$0-A \$0-A empty -10 6 0 10 -261234
--1 -1 8.69565 256;
+-1 -1 20.2899 256;
 #X obj 312 298 s \$0-A;
 #X obj 100 425 rc-adsr~_;
 #X obj 100 184 loadbang;
@@ -80,7 +80,7 @@ note dur;
 #X obj 130 340 r \$0-D;
 #X obj 120 315 r \$0-A;
 #X obj 110 288 r \$0-amp;
-#N canvas 0 0 450 300 defaults 0;
+#N canvas 0 22 450 300 defaults 0;
 #X obj 205 50 loadbang;
 #X obj 205 177 outlet;
 #X msg 164 120 A 0;

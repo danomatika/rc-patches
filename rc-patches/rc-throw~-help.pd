@@ -12,8 +12,8 @@
 #X text 20 12 rc-throw~: throws one signal to a named stereo catches
 ;
 #X obj 35 119 rc-throw~;
-#X obj 196 222 catch~ TEST1/left;
-#X obj 219 253 catch~ TEST1/right;
+#X obj 197 222 catch~ TEST1/left;
+#X obj 218 253 catch~ TEST1/right;
 #X obj 33 282 rc-throw~ TEST1;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;

@@ -5,7 +5,7 @@
 #X msg 45 104 Bass_Drum_1;
 #X text 24 38 converts a drum name to a note num from the GM spec;
 #X text 25 64 see: http://en.wikipedia.org/wiki/General_midi;
-#X floatatom 68 308 5 0 0 1 note - -;
+#X floatatom 68 308 5 0 0 1 note - -, f 5;
 #X text 166 237 print the table for reference;
 #X msg 105 199 60;
 #X text 136 199 floats are passed through;

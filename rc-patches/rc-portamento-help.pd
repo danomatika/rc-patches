@@ -1,14 +1,14 @@
-#N canvas 872 328 356 396 10;
+#N canvas 872 328 356 408 10;
 #X obj 33 278 osc~;
-#X floatatom 33 61 5 0 0 0 - - -;
-#X obj 34 366 dac~;
+#X floatatom 33 61 5 0 0 0 - - -, f 5;
+#X obj 33 366 dac~;
 #X obj 33 310 *~ 0.1;
-#X floatatom 136 95 5 0 0 0 - - -;
-#X obj 91 316 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+#X floatatom 136 95 5 0 0 0 - - -, f 5;
+#X obj 90 316 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
 1;
 #X text 74 54 midi in;
 #X text 72 267 glides freq out;
-#X text 111 315 sound/no sound;
+#X text 110 315 sound/no sound;
 #X text 18 11 rc-portamento \, generates a glide between notes;
 #X msg 48 94 60;
 #X msg 65 120 80;
@@ -16,7 +16,7 @@
 #X obj 33 250 mtof;
 #X text 184 88 you can send vals > 2000 here;
 #X obj 224 289 sssad/datastore;
-#N canvas 0 0 450 300 datastore 0;
+#N canvas 0 22 450 300 datastore 0;
 #X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD port1/speed 1246.38 \; SSSAD port1/onoff 0 \;
 SSSAD_ADMIN set \;;
@@ -28,7 +28,7 @@ SSSAD_ADMIN set \;;
 #X obj 218 128 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 252 130 control msg;
-#X obj 34 340 rc-spigot~;
+#X obj 33 340 rc-spigot~;
 #X obj 33 177 rc-portamento port1 200;
 #X connect 0 0 3 0;
 #X connect 1 0 23 0;

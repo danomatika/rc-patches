@@ -1,10 +1,10 @@
-#N struct 1190cursor float x;
+#N struct 1261cursor float x;
 #N canvas 67 22 810 678 10;
 #X text 6 627 template definition:;
 #X obj 72 205 bng 12 250 50 0 \$0new empty add_block 16 9 0 8 -204786
 -1 -1;
 #N canvas 134 279 710 489 \$0data 0;
-#X scalar 1190cursor 0 \;;
+#X scalar 1261cursor 0 \;;
 #X coords 0 -1 770 180 770 180 1;
 #X restore 19 22 pd \$0data;
 #X obj 19 205 bng 12 250 50 0 \$0clear empty clear 16 9 0 8 -228856
@@ -140,7 +140,7 @@ x0(0:300)(0:900)(1) y0(0:15)(11:161)(1);
 #X restore 157 647 pd \$0cursor;
 #X obj 4 256 inlet;
 #X obj 373 647 namecanvas \$0arranger;
-#N canvas 43 35 512 493 setup 0;
+#N canvas 245 62 512 493 setup 0;
 #X obj 59 322 pack f s;
 #X obj 110 276 \$0;
 #X obj 59 252 t f b;
@@ -158,11 +158,11 @@ x0(0:300)(0:900)(1) y0(0:15)(11:161)(1);
 #X obj 37 423 pack f s;
 #X msg 37 446 \; \$2 donecanvasdialog 1 -1 1 0 -1 \$1 220 \$1 220 0
 0;
-#X obj 37 21 s-default \$2 256;
 #X obj 37 43 * 3;
 #X obj 37 398 + 28;
 #X text 317 420 setup canvas;
 #X text 329 182 setup data sub patch canvas;
+#X obj 37 21 list-abs/list-onearg \$2 256;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 2 1 1 0;
@@ -173,12 +173,12 @@ x0(0:300)(0:900)(1) y0(0:15)(11:161)(1);
 #X connect 7 1 6 0;
 #X connect 8 0 5 1;
 #X connect 10 0 7 0;
-#X connect 11 0 16 0;
+#X connect 11 0 15 0;
 #X connect 11 1 2 0;
 #X connect 11 2 10 0;
-#X connect 14 0 15 0;
-#X connect 15 0 11 0;
-#X connect 16 0 12 0;
+#X connect 14 0 11 0;
+#X connect 15 0 12 0;
+#X connect 18 0 14 0;
 #X restore 7 601 pd setup;
 #X text 2 223 args: [name] [length] [bars per section] [ticker name]
 [ticks per bar];

@@ -1,4 +1,4 @@
-#N canvas 1104 463 422 482 10;
+#N canvas 640 238 422 482 10;
 #X obj 80 199 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 80 135 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
@@ -14,9 +14,9 @@
 #X msg 78 286 tune \$1;
 #X msg 75 105 amp \$1;
 #X obj -64 447 dac~;
-#X floatatom -49 391 5 0 1 0 - - -;
+#X floatatom -49 391 5 0 1 0 - - -, f 5;
 #X obj -64 415 *~;
-#X floatatom 29 346 5 0 0 1 envelope - -;
+#X floatatom 29 346 5 0 0 1 envelope - -, f 5;
 #X obj -18 367 tgl 15 0 empty empty playing 17 7 0 10 -262144 -1 -1
 0 1;
 #X msg -39 123 64;
@@ -31,7 +31,7 @@
 #X msg -120 283 reset;
 #X msg 77 228 decay \$1;
 #X obj 81 263 hsl 128 15 1 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5200 1;
+-1 -1 0 1;
 #X text -147 9 rc-bendytom~_ : a non-gui electro bendy tom;
 #X text 142 285 midi 1-127;
 #X text -104 35 Creation args: midinote;

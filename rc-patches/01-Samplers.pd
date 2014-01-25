@@ -1,4 +1,4 @@
-#N canvas 88 200 397 282 10;
+#N canvas 475 202 397 282 10;
 #X obj 47 80 rc-sample~;
 #X obj 48 212 rc-sfplay~;
 #X obj 47 36 rc-sample~_;

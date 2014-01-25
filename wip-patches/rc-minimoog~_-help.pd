@@ -1,12 +1,12 @@
-#N canvas 290 50 940 697 10;
+#N canvas 160 50 940 697 10;
+#X declare -path ../rc-patches -stdpath extra/list-abs -stdlib extra/mrpeach
+;
 #X obj 20 139 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 71 140 5 0 0 0 - - -;
-#X obj 84 455 rc-scope~;
+#X floatatom 71 140 5 0 0 0 - - -, f 5;
 #X msg 179 341 0;
 #X obj 473 162 t a;
-#X msg 92 191 60 62 65 72;
-#X floatatom 20 239 5 0 0 0 - - -;
+#X floatatom 20 245 5 0 0 0 - - -, f 5;
 #X obj 195 235 rc-spigot~;
 #X obj 252 208 tgl 15 0 empty empty input 17 7 0 10 -262144 -1 -1 0
 1;
@@ -18,17 +18,17 @@
 ;
 #X text 90 63 I'm quite sure it dosen't sound *exactly* like one;
 #X text 25 16 rc-minmoog~_ : a minimoog-inspired 3 osc synth;
-#X text 452 35 danomatika.com | robotcowboy.com;
+#X text 411 33 danomatika.com | robotcowboy.com;
 #X text 443 90 Controls;
-#X floatatom 22 366 5 0 0 0 - - -;
-#X floatatom 132 279 5 0 0 0 - - -;
+#X floatatom 20 366 5 0 0 0 - - -, f 5;
+#X floatatom 132 285 5 0 0 0 - - -, f 5;
 #N canvas 173 60 979 679 Oscillator 0;
 #X obj 67 157 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 2;
 #X obj 32 62 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 3;
-#X floatatom 32 83 5 0 0 0 - - -;
-#X floatatom 67 179 5 0 0 0 - - -;
+-1 -1 2;
+#X floatatom 32 83 5 0 0 0 - - -, f 5;
+#X floatatom 67 179 5 0 0 0 - - -, f 5;
 #X text 182 130 0 - triangle;
 #X text 182 151 1 - triangle/sawtooth mix;
 #X text 183 170 2 - sawtooth;
@@ -42,14 +42,14 @@
 #X obj 32 330 t a;
 #X obj 32 645 outlet;
 #X obj 690 188 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X obj 449 53 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 1;
-#X floatatom 449 74 5 0 0 0 - - -;
-#X floatatom 690 210 5 0 0 0 - - -;
+-1 -1 2;
+#X floatatom 449 74 5 0 0 0 - - -, f 5;
+#X floatatom 690 210 5 0 0 0 - - -, f 5;
 #X obj 583 116 hsl 128 15 -7 7 0 0 empty empty -7-7 32 8 0 10 -262144
--1 -1 6250 1;
-#X floatatom 580 141 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 580 141 5 0 0 0 - - -, f 5;
 #X text 800 168 0 - triangle;
 #X text 801 189 1 - triangle/sawtooth mix;
 #X text 802 208 2 - sawtooth;
@@ -66,16 +66,16 @@
 #X text 696 261 0 by default;
 #X obj 449 254 t a;
 #X obj 604 558 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 1;
-#X obj 213 361 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
 -1 -1 0;
-#X floatatom 213 382 5 0 0 0 - - -;
-#X floatatom 604 580 5 0 0 0 - - -;
+#X obj 213 361 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
+-1 -1 2;
+#X floatatom 213 382 5 0 0 0 - - -, f 5;
+#X floatatom 604 580 5 0 0 0 - - -, f 5;
 #X obj 431 478 hsl 128 15 -7 7 0 0 empty empty -7-7 32 8 0 10 -262144
--1 -1 300 1;
-#X floatatom 428 503 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 428 503 5 0 0 0 - - -, f 5;
 #X msg 428 431 0;
-#X obj 481 369 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 481 369 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 563 363 if control is 0 \, osc 3's frequency is set by the
 detune which is 0-127;
@@ -145,27 +145,27 @@ when using it for modulation;
 ;
 #X obj 148 95 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 145 120 5 0 0 0 - - -;
+#X floatatom 145 120 5 0 0 0 - - -, f 5;
 #X msg 145 143 /osc1/vol \$1;
 #X obj 291 45 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 380 97 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 377 122 5 0 0 0 - - -;
+#X floatatom 377 122 5 0 0 0 - - -, f 5;
 #X msg 291 70 /osc2/onoff \$1;
 #X msg 376 145 /osc2/vol \$1;
 #X obj 535 52 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 648 72 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 645 97 5 0 0 0 - - -;
+#X floatatom 645 97 5 0 0 0 - - -, f 5;
 #X msg 535 81 /osc3/onoff \$1;
 #X msg 645 120 /osc3/vol \$1;
 #X obj 106 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 195 305 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 192 330 5 0 0 0 - - -;
+#X floatatom 192 330 5 0 0 0 - - -, f 5;
 #X msg 191 353 /external/vol \$1;
 #X msg 106 278 /external/onoff \$1;
 #X obj 44 537 outlet;
@@ -186,8 +186,8 @@ not to modulation;
 -1 -1 0;
 #X obj 629 322 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 728 392 5 0 0 0 - - -;
-#X floatatom 626 347 5 0 0 0 - - -;
+#X floatatom 728 392 5 0 0 0 - - -, f 5;
+#X floatatom 626 347 5 0 0 0 - - -, f 5;
 #X text 803 377 0 - white noise;
 #X text 803 393 1 - pink noise;
 #X text 489 232 the noise sources can be used for both sound and modulation
@@ -236,30 +236,30 @@ to modulation;
 #X connect 44 0 41 0;
 #X connect 45 0 21 0;
 #X restore 473 122 pd Mixer;
-#N canvas 417 145 804 540 Controllers 1;
-#X obj 33 21 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#N canvas 88 41 804 540 Controllers 0;
+#X obj 33 21 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 80 75 hsl 128 15 0 5000 0 0 empty empty 0-5000 32 8 0 10 -262144
--1 -1 71 1;
-#X floatatom 77 100 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 77 100 5 0 0 0 - - -, f 5;
 #X obj 129 208 hsl 128 15 -2.5 2.5 0 0 empty empty -2.5-2.5 32 8 0
 10 -262144 -1 -1 0 1;
-#X floatatom 126 233 5 0 0 0 - - -;
+#X floatatom 126 233 5 0 0 0 - - -, f 5;
 #X msg 126 183 0;
 #X obj 464 25 tgl 15 0 empty empty mod_on 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 465 217 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 462 242 5 0 0 0 - - -;
+#X floatatom 462 242 5 0 0 0 - - -, f 5;
 #X msg 462 186 0;
 #X msg 569 189 10;
 #X msg 519 186 5;
 #X obj 466 83 hsl 128 15 0 127 0 0 empty empty 0-127 32 8 0 10 -262144
--1 -1 11900 1;
-#X floatatom 463 108 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 463 108 5 0 0 0 - - -, f 5;
 #X text 461 168 osc3 ------|----- noise;
 #X obj 462 300 tgl 15 0 empty empty osc_mod 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X obj 462 356 tgl 15 0 empty empty filter_mod 17 7 0 10 -262144 -1
 -1 0 1;
 #X msg 33 48 /glide/onoff \$1;
@@ -285,6 +285,7 @@ to modulation;
 #X text 160 309 enable/disable the ADSR release decay;
 #X text 219 332 on the Filter and Contour;
 #X msg 164 360 /decay \$1;
+#X obj 37 37;
 #X connect 0 0 17 0;
 #X connect 1 0 2 0;
 #X connect 2 0 18 0;
@@ -319,48 +320,48 @@ to modulation;
 #X msg 205 113 /filter/emphasis \$1;
 #X msg 364 116 /filter/amount \$1;
 #X obj 31 59 hsl 128 15 200 20000 1 0 empty empty 200-20k 32 8 0 10
--262144 -1 -1 6100 1;
-#X floatatom 28 111 5 0 127 1 0-127 - -;
+-262144 -1 -1 0 1;
+#X floatatom 28 111 5 0 127 1 0-127 - -, f 5;
 #X text 66 87 cutoff frequency;
 #X text 16 13 a low-pass filter [moog~];
 #X obj 208 59 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
--1 -1 7900 1;
-#X floatatom 205 84 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 205 84 5 0 0 0 - - -, f 5;
 #X text 249 86 q (resonance);
 #X obj 367 61 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 364 86 5 0 0 0 - - -;
+#X floatatom 364 86 5 0 0 0 - - -, f 5;
 #X obj 28 86 ftom;
 #X obj 367 266 hsl 128 15 100 10000 1 0 empty empty 100-10k_log 32
-8 0 10 -262144 -1 -1 1600 1;
-#X floatatom 364 315 5 0 0 1 0-10k_ms - -;
+8 0 10 -262144 -1 -1 0 1;
+#X floatatom 364 315 5 0 0 1 0-10k_ms - -, f 5;
 #X obj 364 292 - 100;
 #X obj 367 157 hsl 128 15 100 10000 1 0 empty empty 100-10k_log 32
-8 0 10 -262144 -1 -1 700 1;
-#X floatatom 364 206 5 0 0 1 0-10k_ms - -;
+8 0 10 -262144 -1 -1 0 1;
+#X floatatom 364 206 5 0 0 1 0-10k_ms - -, f 5;
 #X obj 364 183 - 100;
 #X obj 368 385 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
--1 -1 9800 1;
-#X floatatom 365 409 5 0 0 1 - - -;
+-1 -1 0 1;
+#X floatatom 365 409 5 0 0 1 - - -, f 5;
 #X msg 364 231 /filter/A \$1;
 #X msg 364 340 /filter/D \$1;
 #X msg 365 434 /filter/S \$1;
 #X obj 28 442 t a;
 #X obj 725 170 hsl 128 15 100 10000 1 0 empty empty 100-10k_log 32
-8 0 10 -262144 -1 -1 2200 1;
-#X floatatom 722 219 5 0 0 1 0-10k_ms - -;
+8 0 10 -262144 -1 -1 0 1;
+#X floatatom 722 219 5 0 0 1 0-10k_ms - -, f 5;
 #X msg 723 338 /contour/S \$1;
 #X msg 722 244 /contour/D \$1;
 #X msg 722 135 /contour/A \$1;
 #X text 580 14 an ampltude envelope generator (vca);
 #X obj 722 196 - 100;
 #X obj 725 61 hsl 128 15 100 10000 1 0 empty empty 100-10k_log 32 8
-0 10 -262144 -1 -1 400 1;
-#X floatatom 722 110 5 0 0 1 0-10k_ms - -;
+0 10 -262144 -1 -1 0 1;
+#X floatatom 722 110 5 0 0 1 0-10k_ms - -, f 5;
 #X obj 722 87 - 100;
 #X obj 726 289 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
--1 -1 8900 1;
-#X floatatom 723 313 5 0 0 1 - - -;
+-1 -1 0 1;
+#X floatatom 723 313 5 0 0 1 - - -, f 5;
 #X obj 632 432 t a;
 #X obj 28 511 outlet;
 #X connect 0 0 24 0;
@@ -404,8 +405,8 @@ to modulation;
 #X obj 29 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 142 58 hsl 128 15 0 10 0 0 empty empty 0-10 32 8 0 10 -262144
--1 -1 11600 1;
-#X floatatom 139 83 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 139 83 5 0 0 0 - - -, f 5;
 #X msg 29 67 /onoff \$1;
 #X msg 139 106 /vol \$1;
 #X obj 269 169 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -421,13 +422,11 @@ to modulation;
 #X connect 6 0 7 0;
 #X connect 7 0 0 0;
 #X restore 617 123 pd Output;
-#X floatatom 195 159 5 0 0 0 - - -;
-#X obj 20 263 makenote 100 200;
-#X obj 92 165 loadbang;
-#X obj 22 399 - 12;
+#X floatatom 195 159 5 0 0 0 - - -, f 5;
+#X obj 20 269 makenote 100 200;
+#X obj 20 399 - 12;
 #X obj 84 413 rc-minimoog~_;
 #X obj 20 163 metro 500;
-#X obj 20 215 rc-randseq 0;
 #X obj 371 321 pack f f;
 #X obj 545 610 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -438,11 +437,11 @@ to modulation;
 #X obj 542 561 list-delete;
 #X obj 555 452 list-sort;
 #X obj 460 378 unpack f f;
-#X text 452 20 2010 Dan Wilcox;
+#X text 411 18 2010 Dan Wilcox;
 #X obj 471 521 list-find;
 #X obj 541 523 list;
 #X obj 543 585 route bang;
-#X floatatom 289 588 5 0 0 0 - - -;
+#X floatatom 289 588 5 0 0 0 - - -, f 5;
 #X text 326 590 lowest note;
 #X text 568 612 all notes off;
 #X text 753 445 clear lists;
@@ -450,9 +449,9 @@ to modulation;
 #X obj 471 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 491 435 note on;
-#X floatatom 453 406 5 0 0 0 - - -;
-#X floatatom 540 382 5 0 0 0 - - -;
-#X floatatom 366 441 5 0 0 0 - - -;
+#X floatatom 453 406 5 0 0 0 - - -, f 5;
+#X floatatom 540 382 5 0 0 0 - - -, f 5;
+#X floatatom 366 441 5 0 0 0 - - -, f 5;
 #X obj 360 470 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 381 471 note off;
@@ -474,7 +473,7 @@ without triggering attack;
 #X obj 396 525 t a a;
 #X obj 469 574 list-len;
 #X obj 504 649 - 1;
-#X floatatom 426 600 5 0 0 0 - - -;
+#X floatatom 426 600 5 0 0 0 - - -, f 5;
 #X text 437 614 highest note;
 #X obj 423 628 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -486,8 +485,8 @@ without triggering attack;
 #X msg 775 397 -1;
 #X obj 701 384 t b b b;
 #X obj 641 418 f;
-#X floatatom 683 447 5 0 0 0 - - -;
-#X floatatom 642 445 5 0 0 0 - - -;
+#X floatatom 683 447 5 0 0 0 - - -, f 5;
+#X floatatom 642 445 5 0 0 0 - - -, f 5;
 #X obj 713 526 &;
 #X obj 713 551 sel 1;
 #X obj 706 583 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -497,10 +496,8 @@ without triggering attack;
 #X obj 517 408 list;
 #X text 788 548 detect initial note on;
 #X text 729 584 attack;
-#X obj 44 609 rc-throw2~ BASS;
-#X floatatom 440 317 5 0 0 0 - - -;
-#X floatatom 327 321 5 0 0 0 - - -;
-#X obj 198 406 rc-lp~_;
+#X floatatom 440 317 5 0 0 0 - - -, f 5;
+#X floatatom 327 321 5 0 0 0 - - -, f 5;
 #N canvas 364 22 877 722 notein 0;
 #X obj 46 49 inlet note;
 #X obj 129 50 inlet vel;
@@ -519,7 +516,7 @@ without triggering attack;
 #X obj 473 537 list-find;
 #X obj 389 548 list;
 #X obj 389 601 route bang;
-#X floatatom 28 552 5 0 0 0 - - -;
+#X floatatom 28 552 5 0 0 0 - - -, f 5;
 #X text 65 554 lowest note;
 #X text 412 630 all notes off;
 #X text 741 399 clear lists;
@@ -527,9 +524,9 @@ without triggering attack;
 #X obj 266 361 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 286 362 note on;
-#X floatatom 266 324 5 0 0 0 - - -;
-#X floatatom 353 300 5 0 0 0 - - -;
-#X floatatom 37 331 5 0 0 0 - - -;
+#X floatatom 266 324 5 0 0 0 - - -, f 5;
+#X floatatom 353 300 5 0 0 0 - - -, f 5;
+#X floatatom 37 331 5 0 0 0 - - -, f 5;
 #X obj 31 360 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 52 361 note off;
@@ -548,7 +545,7 @@ without triggering attack;
 #X obj 192 520 t a a;
 #X obj 248 550 list-len;
 #X obj 248 576 - 1;
-#X floatatom 219 629 5 0 0 0 - - -;
+#X floatatom 219 629 5 0 0 0 - - -, f 5;
 #X text 247 650 highest note;
 #X obj 219 653 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -560,8 +557,8 @@ without triggering attack;
 #X msg 746 343 -1;
 #X obj 727 313 t b b b;
 #X obj 652 369 f;
-#X floatatom 693 400 5 0 0 0 - - -;
-#X floatatom 652 398 5 0 0 0 - - -;
+#X floatatom 693 400 5 0 0 0 - - -, f 5;
+#X floatatom 652 398 5 0 0 0 - - -, f 5;
 #X obj 652 454 &;
 #X obj 652 479 sel 1;
 #X obj 652 508 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -572,7 +569,7 @@ without triggering attack;
 #X text 675 509 attack;
 #X obj 389 505 t b f;
 #X obj 330 326 list;
-#X floatatom 603 643 5 0 0 0 - - -;
+#X floatatom 603 643 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 4 0 8 0;
@@ -636,99 +633,105 @@ without triggering attack;
 #X connect 58 0 9 0;
 #X connect 59 0 3 0;
 #X restore 283 353 pd notein;
-#X connect 0 0 30 0;
-#X connect 1 0 30 1;
-#X connect 3 0 29 1;
-#X connect 4 0 29 3;
-#X connect 5 0 31 1;
-#X connect 6 0 26 0;
-#X connect 7 0 29 2;
-#X connect 8 0 7 1;
-#X connect 9 0 6 0;
-#X connect 10 0 18 0;
-#X connect 12 0 32 0;
-#X connect 12 0 92 0;
-#X connect 12 0 94 0;
-#X connect 12 1 32 1;
-#X connect 12 1 91 0;
-#X connect 12 1 94 1;
-#X connect 18 0 28 0;
-#X connect 20 0 4 0;
-#X connect 21 0 4 0;
-#X connect 22 0 4 0;
-#X connect 23 0 4 0;
-#X connect 24 0 4 0;
-#X connect 25 0 59 0;
-#X connect 26 0 10 0;
-#X connect 26 1 10 1;
-#X connect 26 1 19 0;
-#X connect 26 1 29 1;
-#X connect 27 0 5 0;
-#X connect 28 0 29 0;
+#X obj 20 190 random 30;
+#X obj 20 219 + 32;
+#X obj 563 70 declare -path ../rc-patches -stdpath extra/list-abs -stdlib
+extra/mrpeach;
+#X obj 84 446 rc-gain~;
+#X obj 84 500 dac~;
+#X connect 0 0 27 0;
+#X connect 1 0 27 1;
+#X connect 2 0 26 1;
+#X connect 3 0 26 3;
+#X connect 4 0 24 0;
+#X connect 5 0 26 2;
+#X connect 6 0 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 16 0;
+#X connect 10 0 28 0;
+#X connect 10 0 87 0;
+#X connect 10 0 88 0;
+#X connect 10 1 28 1;
+#X connect 10 1 86 0;
+#X connect 10 1 88 1;
+#X connect 16 0 25 0;
+#X connect 18 0 3 0;
+#X connect 19 0 3 0;
+#X connect 20 0 3 0;
+#X connect 21 0 3 0;
+#X connect 22 0 3 0;
+#X connect 23 0 55 0;
+#X connect 24 0 8 0;
+#X connect 24 1 8 1;
+#X connect 24 1 17 0;
+#X connect 24 1 26 1;
+#X connect 25 0 26 0;
+#X connect 26 0 92 0;
+#X connect 26 0 92 1;
+#X connect 27 0 89 0;
+#X connect 28 0 32 0;
 #X connect 29 0 2 0;
-#X connect 29 0 90 0;
-#X connect 29 0 90 1;
-#X connect 30 0 31 0;
-#X connect 31 0 6 0;
-#X connect 32 0 36 0;
-#X connect 33 0 3 0;
-#X connect 34 0 54 0;
-#X connect 34 0 57 0;
-#X connect 34 0 78 0;
-#X connect 34 1 40 0;
-#X connect 34 1 75 0;
-#X connect 35 0 34 0;
-#X connect 36 0 35 0;
-#X connect 37 0 39 0;
-#X connect 38 0 44 0;
-#X connect 39 0 42 1;
-#X connect 39 0 43 1;
-#X connect 39 0 67 0;
-#X connect 39 0 61 0;
-#X connect 39 0 87 1;
-#X connect 40 0 52 0;
-#X connect 40 1 53 0;
-#X connect 40 1 87 0;
-#X connect 42 0 38 1;
-#X connect 43 0 38 0;
-#X connect 44 0 33 0;
-#X connect 44 0 65 0;
-#X connect 44 1 37 0;
-#X connect 45 0 73 0;
-#X connect 52 0 50 0;
-#X connect 52 0 62 1;
-#X connect 54 0 55 0;
-#X connect 57 1 43 0;
-#X connect 57 2 42 0;
-#X connect 58 0 29 1;
-#X connect 59 0 7 0;
-#X connect 61 0 45 0;
-#X connect 65 0 43 1;
-#X connect 65 0 42 1;
-#X connect 65 0 87 1;
-#X connect 66 1 70 0;
-#X connect 67 0 66 0;
-#X connect 67 1 68 0;
-#X connect 68 0 69 0;
-#X connect 69 0 66 1;
-#X connect 70 0 72 0;
-#X connect 74 0 79 1;
-#X connect 74 0 80 0;
-#X connect 75 0 79 0;
-#X connect 75 1 76 0;
-#X connect 76 0 74 1;
-#X connect 77 0 74 1;
+#X connect 30 0 50 0;
+#X connect 30 0 53 0;
+#X connect 30 0 74 0;
+#X connect 30 1 36 0;
+#X connect 30 1 71 0;
+#X connect 31 0 30 0;
+#X connect 32 0 31 0;
+#X connect 33 0 35 0;
+#X connect 34 0 40 0;
+#X connect 35 0 38 1;
+#X connect 35 0 39 1;
+#X connect 35 0 63 0;
+#X connect 35 0 57 0;
+#X connect 35 0 83 1;
+#X connect 36 0 48 0;
+#X connect 36 1 49 0;
+#X connect 36 1 83 0;
+#X connect 38 0 34 1;
+#X connect 39 0 34 0;
+#X connect 40 0 29 0;
+#X connect 40 0 61 0;
+#X connect 40 1 33 0;
+#X connect 41 0 69 0;
+#X connect 48 0 46 0;
+#X connect 48 0 58 1;
+#X connect 50 0 51 0;
+#X connect 53 1 39 0;
+#X connect 53 2 38 0;
+#X connect 54 0 26 1;
+#X connect 55 0 5 0;
+#X connect 57 0 41 0;
+#X connect 61 0 39 1;
+#X connect 61 0 38 1;
+#X connect 61 0 83 1;
+#X connect 62 1 66 0;
+#X connect 63 0 62 0;
+#X connect 63 1 64 0;
+#X connect 64 0 65 0;
+#X connect 65 0 62 1;
+#X connect 66 0 68 0;
+#X connect 70 0 75 1;
+#X connect 70 0 76 0;
+#X connect 71 0 75 0;
+#X connect 71 1 72 0;
+#X connect 72 0 70 1;
+#X connect 73 0 70 1;
+#X connect 74 0 75 0;
+#X connect 74 1 73 0;
+#X connect 75 0 70 0;
+#X connect 75 0 77 0;
+#X connect 76 0 82 0;
+#X connect 77 0 81 0;
 #X connect 78 0 79 0;
-#X connect 78 1 77 0;
-#X connect 79 0 74 0;
-#X connect 79 0 81 0;
-#X connect 80 0 86 0;
-#X connect 81 0 85 0;
-#X connect 82 0 83 0;
-#X connect 83 0 84 0;
-#X connect 84 0 62 0;
-#X connect 85 0 82 0;
-#X connect 86 0 82 1;
-#X connect 87 0 37 0;
-#X connect 94 0 29 0;
-#X connect 94 1 29 1;
+#X connect 79 0 80 0;
+#X connect 80 0 58 0;
+#X connect 81 0 78 0;
+#X connect 82 0 78 1;
+#X connect 83 0 33 0;
+#X connect 88 0 26 0;
+#X connect 88 1 26 1;
+#X connect 89 0 90 0;
+#X connect 90 0 4 0;
+#X connect 92 0 93 0;
+#X connect 92 1 93 1;

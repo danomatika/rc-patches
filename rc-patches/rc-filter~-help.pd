@@ -1,13 +1,13 @@
-#N canvas 796 260 596 674 10;
+#N canvas 760 159 596 674 10;
 #X obj 39 641 dac~;
-#X obj 97 569 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+#X obj 96 569 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
 1;
 #X obj 39 546 *~;
 #X obj 40 72 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
 ;
 #X obj 40 95 metro 1000;
 #X obj 40 121 random 100;
-#N canvas 0 0 450 300 datastore 0;
+#N canvas 0 22 450 300 datastore 0;
 #X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD filt1/res 0.637681 \; SSSAD filt1/freq 17500.8
 \; SSSAD filt1/onoff 1 \; SSSAD env1/R 927.536 \; SSSAD env1/S 20.2899
@@ -17,7 +17,7 @@ set \;;
 #X connect 0 0 1 0;
 #X restore 363 634 pd datastore;
 #X text 357 534 sssad state saving;
-#X obj 40 595 rc-spigot~;
+#X obj 39 595 rc-spigot~;
 #X obj 363 560 sssad/datastore;
 #X obj 40 220 rc-sawosc~ synth1;
 #X obj 431 377 rc-adsr~ env1;
@@ -25,7 +25,7 @@ set \;;
 #X msg 117 74 500;
 #X msg 366 219 bang;
 #X obj 203 253 rc-lfo lfo1;
-#X text 116 569 audio;
+#X text 115 569 audio;
 #X msg 205 88 64;
 #X msg 260 137 70;
 #X msg 236 110 45;

@@ -1,7 +1,7 @@
 #N canvas 328 131 692 450 10;
 #X obj 23 312 openpanel;
 #X obj 389 114 inlet;
-#X obj 325 403 outlet~;
+#X obj 326 403 outlet~;
 #X obj 357 377 outlet~;
 #X obj 23 287 r \$0-load;
 #X obj 8 117 inlet;
@@ -24,20 +24,20 @@
 symbol will be loaded and sent as a bang;
 #X text 15 209 the band then opens a load file dialog which is annoying
 so ignore those bangs and let the symbols through;
-#X obj 373 173 l2s;
 #X obj 598 162 r \$0-amp;
 #X obj 493 221 s \$0-amp;
 #X obj 493 189 sssad/sssad \$1/amp;
+#X obj 373 173 zexy/list2symbol;
 #X connect 1 0 9 1;
 #X connect 3 0 8 1;
 #X connect 5 0 7 1;
 #X connect 7 0 10 0;
 #X connect 8 0 4 0;
 #X connect 9 0 2 0;
-#X connect 10 1 13 0;
-#X connect 13 0 6 0;
-#X connect 14 0 16 1;
-#X connect 16 0 15 0;
+#X connect 10 1 16 0;
+#X connect 13 0 15 1;
+#X connect 15 0 14 0;
+#X connect 16 0 6 0;
 #X restore 126 349 pd save_state;
 #X text 111 325 sssad state saving;
 #X obj 8 341 s \$0-filename;
@@ -46,24 +46,24 @@ so ignore those bangs and let the symbols through;
 #X text 214 46 Creation args: name;
 #X obj 43 244 s \$0-speed;
 #X obj 78 218 s \$0-reverse;
-#N canvas 327 556 443 244 split_filename_for_symbolbox 0;
+#N canvas 327 556 493 240 split_filename_for_symbolbox 0;
 #X obj 17 25 inlet;
-#X obj 92 188 s \$0-file;
-#X obj 17 128 makesymbol /%s;
-#X obj 17 88 prepend symbol;
-#X text 113 89 make incoming filepath a symbol;
-#X text 115 114 add a "/" so if loading a local path aka ./file.wav
+#X obj 134 189 s \$0-file;
+#X text 173 87 make incoming filepath a symbol;
+#X text 141 114 add a "/" so if loading a local path aka ./file.wav
 ;
-#X obj 17 56 l2s _;
-#X text 57 56 spaces to _;
-#X obj 17 163 splitfilename;
-#X text 121 129 splitfilename will dump the filename out the right
+#X text 138 57 spaces to _;
+#X text 147 129 splitfilename will dump the filename out the right
 ;
-#X connect 0 0 6 0;
-#X connect 2 0 8 0;
-#X connect 3 0 2 0;
-#X connect 6 0 3 0;
-#X connect 8 1 1 0;
+#X obj 17 163 iemlib/splitfilename;
+#X obj 17 128 zexy/makesymbol /%s;
+#X obj 17 88 cyclone/prepend symbol;
+#X obj 17 56 zexy/list2symbol _;
+#X connect 0 0 9 0;
+#X connect 6 1 1 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
 #X restore 345 203 pd split_filename_for_symbolbox;
 #X obj 1 15 cnv 15 128 77 empty empty empty 20 12 0 14 -228856 -66577
 0;
@@ -71,7 +71,7 @@ so ignore those bangs and let the symbols through;
 -1 -1;
 #X obj 5 20 bng 15 250 50 0 \$0-play \$0-play1 empty -25 6 0 10 -204786
 -1 -1;
-#X symbolatom 5 71 20 0 0 0 - #0-file -;
+#X symbolatom 5 71 20 0 0 0 - #0-file -, f 20;
 #X obj 110 21 tgl 15 0 \$0-reverse \$0-reverse rev -20 6 0 10 -261234
 -1 -1 0 1;
 #X obj 53 40 hsl 70 15 0 1 0 1 \$0-amp \$0-amp amp 0 8 0 10 -191407
@@ -83,7 +83,6 @@ so ignore those bangs and let the symbols through;
 #X text 162 12 a gui wrapper around rc-sample~_ \, a one shot sample
 player \, stereo;
 #X text 10 378 Dan Wilcox 2008;
-#X obj 8 170 l2s;
 #N canvas 0 22 450 300 gui 0;
 #X obj 82 36 inlet;
 #X obj 148 97 outlet;
@@ -160,26 +159,27 @@ player \, stereo;
 #X obj 5 56 nbx 4 14 0 2 0 1 \$0-speed \$0-speed empty -20 6 0 10 -261234
 -1 -1 0.84058 256;
 #X obj 8 146 route load speed rev amp;
+#X obj 8 170 zexy/list2symbol;
 #X connect 0 0 11 0;
-#X connect 1 0 30 0;
+#X connect 1 0 29 0;
 #X connect 4 0 0 0;
-#X connect 5 0 39 0;
+#X connect 5 0 38 0;
 #X connect 12 0 17 0;
 #X connect 12 0 26 0;
-#X connect 26 0 32 0;
-#X connect 29 0 11 0;
-#X connect 30 0 32 1;
-#X connect 31 0 32 0;
-#X connect 32 0 34 0;
-#X connect 32 1 33 0;
-#X connect 32 2 6 0;
-#X connect 33 0 3 0;
-#X connect 34 0 2 0;
-#X connect 35 0 33 1;
-#X connect 35 0 34 1;
-#X connect 39 0 29 0;
-#X connect 39 1 15 0;
-#X connect 39 2 16 0;
-#X connect 39 3 36 0;
-#X connect 39 4 31 0;
+#X connect 26 0 31 0;
+#X connect 29 0 31 1;
+#X connect 30 0 31 0;
+#X connect 31 0 33 0;
+#X connect 31 1 32 0;
+#X connect 31 2 6 0;
+#X connect 32 0 3 0;
+#X connect 33 0 2 0;
+#X connect 34 0 32 1;
+#X connect 34 0 33 1;
+#X connect 38 0 39 0;
+#X connect 38 1 15 0;
+#X connect 38 2 16 0;
+#X connect 38 3 35 0;
+#X connect 38 4 30 0;
+#X connect 39 0 11 0;
 #X coords 0 -1 1 1 130 95 1 0 0;

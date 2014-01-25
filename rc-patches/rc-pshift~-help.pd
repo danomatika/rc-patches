@@ -1,21 +1,21 @@
 #N canvas 781 366 564 431 10;
 #X obj 34 358 rc-spigot~;
-#X obj 132 359 rc-spigot~;
-#X obj 35 404 dac~;
-#X obj 33 142 osc~ 440;
+#X obj 131 359 rc-spigot~;
+#X obj 34 404 dac~;
+#X obj 34 142 osc~ 440;
 #X obj 34 170 *~ 0.5;
 #X obj 91 333 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 189 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 188 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 161 311 pitch shifted audio;
+#X text 160 311 pitch shifted audio;
 #X text 46 311 normal audio;
 #X msg 250 71 transpose \$1;
-#X floatatom 250 42 5 0 0 0 - - -;
+#X floatatom 250 42 5 0 0 0 - - -, f 5;
 #X msg 343 91 window \$1;
-#X floatatom 343 65 5 0 0 0 - - -;
+#X floatatom 343 65 5 0 0 0 - - -, f 5;
 #X msg 412 125 delay \$1;
-#X floatatom 412 101 5 0 0 0 - - -;
+#X floatatom 412 101 5 0 0 0 - - -, f 5;
 #X text 292 41 semitones;
 #X text 383 65 msec;
 #X text 451 103 msec;
@@ -25,7 +25,7 @@
 1;
 #X text 29 55 Creation args: name;
 #X obj 364 325 sssad/datastore;
-#N canvas 0 0 450 300 datastore 0;
+#N canvas 0 22 450 300 datastore 0;
 #X obj 10 10 r SSSADDATA;
 #X msg 10 30 \; SSSAD ps1/delay 29 \; SSSAD ps1/dry 0.289855 \; SSSAD
 ps1/wet 0.623188 \; SSSAD ps1/window 44 \; SSSAD ps1/transpose 13 \;

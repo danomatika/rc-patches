@@ -1,11 +1,11 @@
-#N canvas 309 247 744 412 12;
+#N canvas 309 247 305 272 12;
 #X obj 66 95 inlet~;
 #X obj 130 96 inlet~;
-#X obj 68 216 outlet~;
-#X obj 141 215 outlet~;
+#X obj 67 216 outlet~;
+#X obj 140 217 outlet~;
 #X obj 67 143 +~;
 #X obj 140 141 -~;
-#X obj 141 165 delwrite~ \$1 \$2;
+#X obj 140 165 delwrite~ \$1 \$2;
 #X obj 140 191 delread~ \$1 \$2;
 #X text 48 14 this is not my design;
 #X connect 0 0 4 0;

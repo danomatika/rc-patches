@@ -2,7 +2,7 @@
 #X msg 112 257 print;
 #X obj 59 365 print;
 #X text 54 83 see: http://en.wikipedia.org/wiki/General_midi;
-#X floatatom 59 329 5 0 0 1 program_num - -;
+#X floatatom 59 329 5 0 0 1 program_num - -, f 5;
 #X text 157 258 print the table for reference;
 #X msg 96 220 60;
 #X text 127 220 floats are passed through;

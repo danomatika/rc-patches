@@ -1,13 +1,10 @@
-#N canvas 773 139 456 500 10;
-#X declare -lib moocow;
-#X declare -lib list-abs;
-#X declare -lib mrpeach;
+#N canvas 773 139 451 505 10;
 #X text 56 349 from;
 #X obj 90 326 unpack 0 0 0 0;
-#X floatatom 90 349 3 0 0 0 - - -;
-#X floatatom 117 349 3 0 0 0 - - -;
-#X floatatom 144 349 3 0 0 0 - - -;
-#X floatatom 171 349 3 0 0 0 - - -;
+#X floatatom 90 349 3 0 0 0 - - -, f 3;
+#X floatatom 117 349 3 0 0 0 - - -, f 3;
+#X floatatom 144 349 3 0 0 0 - - -, f 3;
+#X floatatom 171 349 3 0 0 0 - - -, f 3;
 #X obj 113 301 tgl 15 0 empty empty connected 18 7 0 10 -24198 -241291
 -1 0 1;
 #X text 197 349 (Server IP Address);

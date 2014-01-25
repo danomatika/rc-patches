@@ -1,19 +1,18 @@
-#N struct 1192rect float x float y float w float x0 float y0 float
-t;
-#N struct 1192cursor float x;
-#N struct 1192lines float x;
+#N struct 1092cursor float x;
+#N struct 1092lines float x;
 #N canvas 413 171 821 192 10;
 #N canvas 0 22 482 772 datastore 0;
+#X obj 10 10 inlet;
 #X msg 10 30 \; SSSAD score/blocks 11 10 2 3 67 66 10 1 51 28 10 1
 67 52 1 2 51 36 7 3 51 50 2 3 67 66 2 3 19 18 2 3 35 34 2 3 63 52 5
 4 27 26 2 3 35 20 6 2 19 12 5 1 51 40 0 4 67 66 6 2 39 4 1 2 4 0 0
 1 \; SSSAD p1/speed 173.913 \; SSSAD p1/onoff 1 \; SSSAD t1-pb/pat4
-1_33_0_0_33_0_0_0_0_24_0_0_50_0_0_50_0 \; SSSAD t1-pb/pat3 1_30_0_0_35_0_24_0_38_0_0_24_0_0_0_40_0
-\; SSSAD t1-pb/pat2 1_30_0_0_35_0_24_0_27_0_0_24_0_0_0_40_0 \; SSSAD
-t1-pb/pat1 1_30_0_0_35_0_24_0_27_0_0_24_0_0_0_40_0 \; SSSAD t2-pb/pat4
-1_0_0_50_0_0_0_0_40_0_0_45_0_0_55_0_0 \; SSSAD t2-pb/pat3 1_0_0_0_44_0_0_0_50_0_0_0_38_0_40_0_0
-\; SSSAD t2-pb/pat2 1_0_0_64_0_0_40_0_0_0_0_0_0_0_0_0_0 \; SSSAD t2-pb/pat1
-1_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 \; SSSAD s2/pulsewidth 0.753623 \;
+0_33_0_0_33_0_0_0_0_24_0_0_50_0_0_50_0 \; SSSAD t1-pb/pat3 0_30_0_0_35_0_24_0_38_0_0_24_0_0_0_40_0
+\; SSSAD t1-pb/pat2 0_30_0_0_35_0_24_0_27_0_0_24_0_0_0_40_0 \; SSSAD
+t1-pb/pat1 0_30_0_0_35_0_24_0_27_0_0_24_0_0_0_40_0 \; SSSAD t2-pb/pat4
+0_0_0_50_0_0_0_0_40_0_0_45_0_0_55_0_0 \; SSSAD t2-pb/pat3 0_0_0_0_44_0_0_0_50_0_0_0_38_0_40_0_0
+\; SSSAD t2-pb/pat2 0_0_0_64_0_0_40_0_0_0_0_0_0_0_0_0_0 \; SSSAD t2-pb/pat1
+0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 \; SSSAD s2/pulsewidth 0.753623 \;
 SSSAD s2/phase 0 \; SSSAD s2/amp 0.768116 \; SSSAD tracks/sequences
 2_0_0_64_0_0_40_0_0_0_0_0_0_0_0_0_0-1_30_0_0_35_0_24_0_27_0_0_24_0_0_0_40_0
 \; SSSAD e2/R 927.536 \; SSSAD e2/S 66.6667 \; SSSAD e2/D 260.87 \;
@@ -27,8 +26,7 @@ SSSAD pattern/pat4 1_1_1_0_0_1_1_0_0_1_1_0_0_1_1_0_0-2_0_0_1_1_0_0_1_0_0_0_1_1_0
 \; SSSAD drums/sequences 2_0_0_1_0_0_0_1_0_0_0_1_0_0_0_1_0-1_1_0_0_0_1_0_0_0_1_0_0_0_1_0_0_0
 \; SSSAD timer/ticksperbeat 4 \; SSSAD timer/bpm 140 \; SSSAD_ADMIN
 set \;;
-#X obj 10 10 inlet;
-#X connect 1 0 0 0;
+#X connect 0 0 1 0;
 #X restore 38 136 pd datastore;
 #X obj 696 139 dac~;
 #X obj 696 80 catch~ left;
@@ -40,8 +38,8 @@ set \;;
 -1;
 #X obj 55 323 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
 -1;
-#X obj 29 493 throw~ left;
-#X obj 56 426 throw~ right;
+#X obj 30 493 throw~ left;
+#X obj 55 426 throw~ right;
 #X obj 154 246 r pat;
 #X text 236 61 xoxo drum sequencer;
 #X text 198 244 drum sequencer pattern controller;
@@ -70,60 +68,60 @@ set \;;
 #X msg 25 70 bang;
 #X obj 25 41 inlet;
 #X text 193 81 bump;
-#X obj 88 312 outlet~;
+#X obj 89 312 outlet~;
 #X obj 147 184 loadbang;
-#X obj 105 159 ear~ 10 20;
 #X obj 38 185 osc~ 100;
 #X obj 71 97 del 30;
 #X obj 147 209 f 90;
+#X obj 104 159 creb/ear~ 10 20;
 #X connect 0 0 3 0;
-#X connect 1 0 10 0;
-#X connect 2 0 10 0;
+#X connect 1 0 13 0;
+#X connect 2 0 13 0;
 #X connect 3 0 8 0;
 #X connect 4 0 3 1;
 #X connect 5 0 1 0;
-#X connect 5 0 12 0;
+#X connect 5 0 11 0;
 #X connect 6 0 5 0;
-#X connect 9 0 13 0;
-#X connect 10 0 0 1;
-#X connect 11 0 0 0;
-#X connect 12 0 2 0;
-#X connect 13 0 4 0;
+#X connect 9 0 12 0;
+#X connect 10 0 0 0;
+#X connect 11 0 2 0;
+#X connect 12 0 4 0;
+#X connect 13 0 0 1;
 #X restore 30 462 pd bump~;
 #N canvas 0 22 343 343 swish~ 0;
-#X obj 132 225 *~;
+#X obj 133 225 *~;
 #X msg 103 104 start;
-#X msg 149 104 stop;
+#X msg 148 104 stop;
 #X obj 133 267 *~;
 #X obj 175 239 dbtorms;
 #X msg 103 51 bang;
 #X obj 103 21 inlet;
-#X obj 132 310 outlet~;
+#X obj 133 310 outlet~;
 #X text 236 79 swish;
-#X obj 149 78 del 15;
-#X obj 148 157 ear~ 0 80;
+#X obj 148 78 del 15;
 #X obj 42 202 +~;
 #X obj 57 165 *~ 0.2;
-#X obj 43 109 noise~;
+#X obj 42 109 noise~;
 #X obj 175 189 loadbang;
 #X obj 175 214 f 90;
-#X obj 58 139 osc~ 200;
+#X obj 57 139 osc~ 200;
+#X obj 148 157 creb/ear~ 0 80;
 #X connect 0 0 3 0;
-#X connect 1 0 10 0;
-#X connect 2 0 10 0;
+#X connect 1 0 16 0;
+#X connect 2 0 16 0;
 #X connect 3 0 7 0;
 #X connect 4 0 3 1;
 #X connect 5 0 1 0;
 #X connect 5 0 9 0;
 #X connect 6 0 5 0;
 #X connect 9 0 2 0;
-#X connect 10 0 0 1;
-#X connect 11 0 0 0;
-#X connect 12 0 11 1;
-#X connect 13 0 11 0;
-#X connect 14 0 15 0;
-#X connect 15 0 4 0;
-#X connect 16 0 12 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 15 0 11 0;
+#X connect 16 0 0 1;
 #X restore 55 397 pd swish~;
 #X text 59 56 half speed;
 #X obj 30 100 rc-drumseq16 drums;
@@ -141,26 +139,24 @@ set \;;
 #X connect 15 0 9 0;
 #X restore 409 110 pd drums;
 #N canvas 474 129 749 671 tones 0;
-#X floatatom 31 306 5 0 0 0 - - -;
-#X floatatom 56 266 5 0 0 0 - - -;
+#X floatatom 31 306 5 0 0 0 - - -, f 5;
+#X floatatom 56 266 5 0 0 0 - - -, f 5;
 #X obj 31 20 r timer/tick;
-#X obj 32 575 throw~ left;
-#X obj 32 522 *~;
-#X obj 152 361 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
+#X obj 31 575 throw~ left;
+#X obj 31 522 *~;
+#X obj 162 361 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144
 -1 -1;
 #X obj 31 330 sel 0;
 #X obj 31 388 rc-sawosc~ s1;
-#X obj 152 383 rc-adsr~ e1;
-#X floatatom 347 323 5 0 0 0 - - -;
-#X obj 355 602 *~;
+#X floatatom 347 323 5 0 0 0 - - -, f 5;
+#X obj 354 602 *~;
 #X obj 347 345 sel 0;
-#X obj 356 628 throw~ right;
+#X obj 354 628 throw~ right;
 #X obj 281 206 r tracks;
 #X text 381 28 midi note sequencer;
 #X text 364 206 pattern control;
-#X text 188 357 envelope maker;
-#X text 614 394 envelope maker;
-#X obj 558 420 rc-adsr~ e2;
+#X text 198 357 envelope maker;
+#X text 597 391 envelope maker;
 #N canvas 174 673 340 188 run 0;
 #X obj 60 67 sel 0;
 #X msg 60 94 reset;
@@ -175,8 +171,8 @@ set \;;
 #X restore 151 43 pd run;
 #X obj 151 22 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
 1;
-#X text 57 363 noise maker;
-#X msg 558 394 dur 500;
+#X text 64 362 noise maker;
+#X msg 606 366 dur 500;
 #X obj 354 391 rc-portamento p1;
 #X obj 507 338 r porta;
 #X text 498 315 controls portamento from score;
@@ -188,40 +184,55 @@ set \;;
 #X obj 508 236 rc-patternbuddy t2-pb t2 1;
 #X obj 281 236 rc-patternbuddy t1-pb t1 1;
 #X obj 354 467 rc-square~ s2;
+#X floatatom 394 369 5 0 0 0 - - -, f 5;
+#X obj 558 420 rc-adsr~ e2;
+#X obj 31 362 + 12;
+#X obj 558 392 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 162 383 rc-adsr~ e1;
+#X obj 606 341 loadbang;
+#X obj 31 469 lop~ 2000;
+#X obj 354 561 lop~ 5000;
 #X connect 0 0 6 0;
-#X connect 1 0 9 0;
-#X connect 2 0 27 0;
-#X connect 2 0 28 0;
+#X connect 1 0 8 0;
+#X connect 2 0 25 0;
+#X connect 2 0 26 0;
 #X connect 4 0 3 0;
-#X connect 5 0 8 0;
+#X connect 5 0 36 0;
 #X connect 6 1 5 0;
-#X connect 6 1 7 0;
-#X connect 7 0 4 0;
-#X connect 8 0 4 1;
+#X connect 6 1 34 0;
+#X connect 7 0 38 0;
+#X connect 8 0 10 0;
 #X connect 9 0 11 0;
-#X connect 10 0 12 0;
-#X connect 11 1 22 0;
-#X connect 11 1 23 0;
-#X connect 13 0 32 0;
-#X connect 18 0 10 1;
-#X connect 19 0 27 0;
-#X connect 19 0 28 0;
-#X connect 20 0 19 0;
-#X connect 22 0 18 0;
-#X connect 23 0 33 0;
-#X connect 24 0 26 0;
-#X connect 26 0 23 1;
-#X connect 27 0 0 0;
-#X connect 28 0 1 0;
-#X connect 29 0 31 0;
-#X connect 33 0 10 0;
+#X connect 10 1 21 0;
+#X connect 10 1 32 0;
+#X connect 10 1 35 0;
+#X connect 12 0 30 0;
+#X connect 17 0 25 0;
+#X connect 17 0 26 0;
+#X connect 18 0 17 0;
+#X connect 20 0 33 0;
+#X connect 21 0 31 0;
+#X connect 22 0 24 0;
+#X connect 24 0 21 1;
+#X connect 25 0 0 0;
+#X connect 26 0 1 0;
+#X connect 27 0 29 0;
+#X connect 31 0 39 0;
+#X connect 33 0 9 1;
+#X connect 34 0 7 0;
+#X connect 35 0 33 0;
+#X connect 36 0 4 1;
+#X connect 37 0 20 0;
+#X connect 38 0 4 0;
+#X connect 39 0 9 0;
 #X restore 409 137 pd tones;
 #X text 35 46 sssad state saving;
 #X text 21 164 hit load to load the song;
-#N canvas 30 125 865 493 score 0;
-#X floatatom 56 429 5 0 0 0 - - -;
+#N canvas 62 237 865 493 score 0;
+#X floatatom 56 429 5 0 0 0 - - -, f 5;
 #X obj 56 453 s pat;
-#X floatatom 105 427 5 0 0 0 - - -;
+#X floatatom 105 427 5 0 0 0 - - -, f 5;
 #X obj 105 453 s tracks;
 #X text 13 17 score from the s-abstractions;
 #X obj 72 388 sel 0;

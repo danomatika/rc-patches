@@ -1,10 +1,10 @@
 #N canvas 552 98 322 432 10;
-#X obj 104 227 osc~ 440;
-#X obj 131 267 osc~ 220;
+#X obj 103 227 osc~ 440;
+#X obj 132 267 osc~ 220;
 #X obj 38 81 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0 1
 ;
-#X text 165 227 left;
-#X text 192 267 right;
+#X text 164 227 left;
+#X text 193 267 right;
 #X text 15 59 record on/off;
 #X text 1 12 stereo wav recording object;
 #X msg 93 165 set hello;
@@ -12,7 +12,7 @@
 #X msg 75 135 set test;
 #X text 81 36 note: will overwrite exisiting files;
 #X text 131 63 give it the full path;
-#X symbolatom 75 352 30 0 0 0 file - -;
+#X symbolatom 75 352 30 0 0 0 file - -, f 30;
 #X obj 132 326 tgl 15 0 empty empty recording 17 7 0 10 -262144 -1
 -1 0 1;
 #X text 75 114 set the filename;
