@@ -3,29 +3,27 @@ rc-patches
 
 Pure Data abstractions for the [robotcowboy](http://robotcowboy.com) project
 
-Copyright (c) [Dan Wilcox](danomatika.com) 2007, 2011-2013
+Copyright (c) [Dan Wilcox](danomatika.com) 2007, 2011-2014
 
 LAYOUT
 ------
 
-### Current
+The rc lib is focused on pd-vanilla / rjlib in order for the majority of patches to work in libpd.
 
-The current rc lib is moving towards a pd-vanilla / rjlib focus in order for the majority of patches to work in libpd.
-
-You will need to have the [rjlib](https://github.com/rjdj/rjlib) installed and added to your path. Get it from here: https://github.com/rjdj/rjlib
+You will need to have the [rjlib](https://github.com/rjdj/rjlib) installed and added to your path. Get it from here: <https://github.com/rjdj/rjlib>
 
 **rc**: the new robotcowboy lib, following the rjlib model
 
-**rc-patches**: robotcowboy patch library (to be slowly rewritten into the rc lib)
-
-**gm-patches**: general midi helpers (to be rewritten into the rc lib)
-
-**rc-drums**: 808 drum emulation (to be rewritten into the rc lib)
-
 **extra**: patches which require externals (aka pd-extended)
 
-### Old (deprecated)
+### Deprecated
 
-These will either be removed or rewritten and added to other folders.
+These are the old rc-patches for Pd-extended, 2008-2013. Most, if not all of this functionality has been rewritten in **rc**.
 
-**wip-patches**: bleeding edge work in progress patches (to be moved)
+**rc-patches**: robotcowboy patch library (mostly rewritten into the rc lib)
+
+**gm-patches**: general midi helpers (rewritten into the rc lib)
+
+**rc-drums**: 808 drum emulation (rewritten into the rc lib)
+
+**wip-patches**: (old) bleeding edge work in progress patches (not cleaned)
