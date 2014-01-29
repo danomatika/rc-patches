@@ -104,7 +104,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 14 0 16 0;
 #X connect 15 0 10 1;
 #X connect 16 0 15 1;
-#X connect 17 0 11 0;
+#X connect 17 0 11 1;
 #X connect 17 1 14 0;
 #X restore 0 237 pd filter;
 #X text 181 270 Dan Wilcox 2009 \, 2013;

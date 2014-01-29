@@ -58,7 +58,7 @@ but it has the same spirit. Originally adapted from Damian Stewart's
 #X msg 311 187 rest;
 #X obj 185 241 makenote 64 100;
 #X obj 185 270 pack f f;
-#X floatatom 145 47 5 0 0 0 - - -;
+#X floatatom 145 47 5 0 0 0 - - -, f 5;
 #X obj 94 99 u_count 8;
 #X obj 94 73 metro 100;
 #X connect 0 0 6 0;
@@ -111,10 +111,10 @@ but it has the same spirit. Originally adapted from Damian Stewart's
 #X text 130 21 - roland tb 303 style bass synth;
 #X obj 559 364 s_303 my303;
 #X obj 683 104 g_hradio waveform 2;
-#X obj 8 20 s_303;
 #X msg 683 79 reset;
 #X obj 573 298 notein;
 #X text 745 80 saw | square;
+#X obj 8 20 s_303;
 #X connect 5 0 6 0;
 #X connect 6 0 21 0;
 #X connect 7 0 8 0;
@@ -134,6 +134,6 @@ but it has the same spirit. Originally adapted from Damian Stewart's
 #X connect 21 0 4 0;
 #X connect 21 0 4 1;
 #X connect 22 0 13 0;
-#X connect 24 0 22 0;
-#X connect 25 0 11 0;
-#X connect 25 1 11 1;
+#X connect 23 0 22 0;
+#X connect 24 0 11 0;
+#X connect 24 1 11 1;

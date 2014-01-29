@@ -1,4 +1,9 @@
-#N canvas 441 36 462 719 10;
+#N canvas 441 36 462 716 10;
+#X declare -stdpath extra/list-abs -stdpath extra/moocow -stdpath extra/zexy
+;
+#X declare -stdpath extra/zexy -stdpath extra/moocow -stdpath extra/mrpeach
+;
+#X declare -stdpath extra/zexy;
 #X obj -127 210 tgl 15 0 empty empty connected 17 7 0 10 -262144 -1
 -1 0 1;
 #X msg -151 158 raw 1;
@@ -11,10 +16,10 @@
 #X obj -145 433 print line;
 #X text -129 404 outputs each line as a list;
 #X symbolatom -172 588 45 0 0 1 Datetime - -, f 45;
-#X floatatom -135 563 10 0 0 1 Lat - -, f 10;
-#X floatatom -98 540 10 0 0 1 Lon - -, f 10;
-#X floatatom -61 515 10 0 0 1 Magnitude - -, f 10;
-#X text -44 480 parse earthquake data;
+#X floatatom -145 563 10 0 0 1 Lat - -, f 10;
+#X floatatom -118 540 10 0 0 1 Lon - -, f 10;
+#X floatatom -91 515 10 0 0 1 Magnitude - -, f 10;
+#X text -73 480 parse earthquake data;
 #X obj -172 405 t a a;
 #X text -102 337 parse raw csv bytes into lists \, one per line;
 #X obj -121 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -33,22 +38,23 @@ swallowed;
 ;
 #X obj -172 338 csv_parse;
 #X obj -172 186 http_get;
-#X obj -172 482 zexy/packel 4 5 6 7;
 #X msg -172 71 get http://earthquake.usgs.gov/earthquakes/catalogs/eqs1hour-M1.txt
 ;
+#X obj 77 664 declare -stdpath extra/zexy;
+#X obj -172 482 packel 4 5 6 7;
 #X connect 1 0 28 0;
 #X connect 2 0 1 0;
 #X connect 15 0 25 0;
 #X connect 15 1 8 0;
 #X connect 19 0 27 0;
 #X connect 20 0 27 0;
-#X connect 25 0 29 0;
+#X connect 25 0 31 0;
 #X connect 27 0 15 0;
 #X connect 27 1 17 0;
 #X connect 28 0 27 0;
 #X connect 28 2 0 0;
-#X connect 29 0 10 0;
-#X connect 29 1 11 0;
-#X connect 29 2 12 0;
-#X connect 29 3 13 0;
-#X connect 30 0 28 0;
+#X connect 29 0 28 0;
+#X connect 31 0 10 0;
+#X connect 31 1 11 0;
+#X connect 31 2 12 0;
+#X connect 31 3 13 0;

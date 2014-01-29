@@ -1,4 +1,6 @@
 #N canvas 252 258 393 381 10;
+#X declare -stdpath extra/list-abs -stdpath extra/moocow -stdpath extra/zexy
+;
 #N canvas 752 80 578 534 build 0;
 #X obj 80 42 inlet chars;
 #X text -13 8 build each comma separated symbol;
@@ -24,9 +26,9 @@
 ;
 #X obj 258 303 t a;
 #X text 172 82 check for comma \, and quote ";
-#X obj 164 468 zexy/list2symbol;
 #X obj 3 40 inlet send;
-#X obj 164 436 moocow/wchars2any 128 -1;
+#X obj 164 436 wchars2any 128 -1;
+#X obj 164 468 l2s;
 #X connect 0 0 4 0;
 #X connect 3 0 10 0;
 #X connect 4 1 15 0;
@@ -40,7 +42,7 @@
 #X connect 9 1 11 0;
 #X connect 10 0 11 1;
 #X connect 10 0 7 1;
-#X connect 11 0 24 0;
+#X connect 11 0 23 0;
 #X connect 12 0 9 0;
 #X connect 13 0 14 0;
 #X connect 14 0 5 0;
@@ -50,9 +52,9 @@
 #X connect 16 0 12 1;
 #X connect 17 0 12 1;
 #X connect 20 0 7 0;
-#X connect 22 0 18 0;
-#X connect 23 0 9 0;
-#X connect 24 0 22 0;
+#X connect 22 0 9 0;
+#X connect 23 0 24 0;
+#X connect 24 0 18 0;
 #X restore 139 229 pd build symbol;
 #N canvas 1037 114 238 405 build 0;
 #X obj 91 208 list prepend;
@@ -68,7 +70,7 @@
 #X text 12 11 build each line;
 #X obj 72 140 r \$0-reset;
 #X obj 56 267 l2s;
-#N canvas 991 616 373 196 default 1;
+#N canvas 991 616 373 196 default 0;
 #X text 14 14 use comma as the default delimiter since it will never
 be in the list (as opposed to spaces ...);
 #X obj 16 162 outlet;
@@ -84,7 +86,7 @@ be in the list (as opposed to spaces ...);
 #X restore 110 247 pd default delim;
 #X text 90 269 convert symbols to nums;
 #X obj 56 350 route bang;
-#X obj 56 293 zexy/symbol2list;
+#X obj 56 293 s2l;
 #X connect 0 0 1 0;
 #X connect 0 0 2 1;
 #X connect 1 0 0 1;
@@ -121,7 +123,11 @@ be in the list (as opposed to spaces ...);
 #X obj 53 108 loadbang;
 #X obj 199 116 t b a;
 #X text 78 163 ignore EOL if immediately after a CR ...;
-#X obj 20 48 list-abs/list-drip;
+#X obj 20 48 list-drip;
+#N canvas 0 22 450 300 declares 0;
+#X obj 22 18 declare -stdpath extra/list-abs -stdpath extra/moocow
+-stdpath extra/zexy;
+#X restore 270 22 pd declares;
 #X connect 0 0 1 1;
 #X connect 1 0 8 0;
 #X connect 2 0 13 0;
