@@ -11,10 +11,10 @@ indexes \, from 0 - [list length].;
 #X text 24 185 set <symbol> - Set the target table name.;
 #X text 24 149 <float> list - New contents of the table as a list of
 floats. Non floats are dropped.;
-#X text 24 334 See also: [tabwrite] [tabread] [tabset] (requires zexy)
-;
 #X text 24 51 Summary: set the contents of a table via a list \, equivalent
 to [tabset] in the zexy external;
+#X text 24 334 See also: []u_tabdump [tabwrite] [tabread] [tabset]
+(requires zexy);
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -29,7 +29,7 @@ to [tabset] in the zexy external;
 #X coords 0 1 8 -1 200 140 1;
 #X restore 470 333 graph;
 #X msg 621 210 set \$1;
-#X floatatom 590 126 4 0 0 0 - - -;
+#X floatatom 590 126 4 0 0 0 - - -, f 4;
 #X obj 621 189 symbol \$0_array1;
 #X msg 621 171 bang;
 #X msg 723 170 bang;
