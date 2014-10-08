@@ -81,6 +81,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 24 1 35 2;
 #X connect 25 0 27 0;
 #X connect 26 0 27 0;
+#X connect 27 0 4 0;
 #X connect 27 1 4 1;
 #X connect 29 0 23 1;
 #X connect 30 0 14 0;

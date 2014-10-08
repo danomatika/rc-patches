@@ -8,7 +8,9 @@ Originally begun at a STEIM residency in October 2007, these patches are inspire
 
 You will need pd-extended and sssad (included).
 
-patches
+The following externals are required: creb, cyclone, iemlib, iemgui, ggee, list-abs, maxlib, mrpeach, nusmuk, unauthorized, zexy
+
+External usage assumes installation in the Pd stdpath (aka extra/*) and usage is via explict library name, except for zexy & iemlib which *may* or *may not* be built as a combined library on Linux. For these, you must manually add them to your path.
 
 Some of the objects included are:
 
