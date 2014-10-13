@@ -49,21 +49,21 @@ which I found on the pd-list in 2008 or so;
 #X obj 4 18 cnv 15 148 98 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 6 117 hsl 145 10 128 1024 0 0 \$0-xscale \$0-xscale empty -2
--8 0 10 -261234 -66577 -1 4082 1;
+-8 0 10 -261234 -66577 -1 3171 1;
 #X obj 153 19 vsl 10 95 0.2 2 0 0 \$0-yscale \$0-yscale empty 0 -9
-0 10 -261234 -66577 -1 4219 1;
+0 10 -261234 -66577 -1 500 1;
 #X obj 153 117 bng 10 250 50 0 \$0-reset \$0-reset empty 17 7 0 10
 -99865 -228856 -1;
 #X obj 153 5 tgl 10 0 \$0-onoff \$0-onoff empty 17 7 0 10 -99865 -4034
--1 0 1;
+-1 1 1;
 #X obj 108 5 nbx 4 10 10 1000 0 0 \$0-refresh \$0-refresh empty 0 -8
-0 10 -99865 -228856 -228856 251.654 256;
+0 10 -99865 -228856 -228856 100 256;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array \$0-g_scope 512 float 0;
-#X coords 0 1 512 -1 150 100 1 0 0;
+#X array \$0-g_scope 325 float 0;
+#X coords 0 0.295745 325.307 -0.295745 150 100 1 0 0;
 #X restore 3 17 graph;
 #X obj 24 461 tabwrite~ \$0-g_scope;
-#X obj 206 459 s \$0-g-scope;
+#X obj 206 459 s \$0-g_scope;
 #X connect 0 0 28 0;
 #X connect 1 0 42 0;
 #X connect 2 0 25 0;
