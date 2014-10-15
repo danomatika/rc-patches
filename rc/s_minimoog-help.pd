@@ -37,7 +37,7 @@ actual minimoog front panel knobs but ranges are normalized 0 -1;
 #X obj 482 82 notein 1;
 #X obj 482 114 pack f 0;
 #X obj 497 147 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X msg 671 299 panic;
 #X msg 671 263 reset;
 #X obj 581 262 r \$0-control;
