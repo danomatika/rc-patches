@@ -22,11 +22,11 @@ osc3range \, osc3detune \, osc3wave \, osc1on \, osc1vol \, osc2on
 #X text 22 434 Tags: synth \, minimoog \, moog \, analog \, audio;
 #X text 24 51 Summary: A minimoog-inspired 3 oscillator synth modeled
 after what I could find about the minimoog model D.;
-#X text 22 354 Description: This is not an entirely accurate modeling
-of a minimoog \, but it's lots of fun. Control names and value ranges
-are based on the actual minimoog front panel knobs.;
-#X text 22 407 See also: [s_ejun] [s_303] [s_fmbass] [s_fm4] [s_rhodey]
+#X text 22 413 See also: [s_ejun] [s_303] [s_fmbass] [s_fm4] [s_rhodey]
 ;
+#X text 22 352 Description: This is not an entirely accurate modeling
+of a minimoog \, but it's lots of fun. Control names are based on the
+actual minimoog front panel knobs but ranges are normalized 0 -1;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -169,7 +169,7 @@ are based on the actual minimoog front panel knobs.;
 #X connect 45 0 36 0;
 #X restore 497 174 pd sequences;
 #X obj 566 148 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 643 345 g_scope;
 #X text 667 69 Controls;
 #N canvas 30 53 909 658 Oscillator 0;
@@ -208,7 +208,7 @@ are based on the actual minimoog front panel knobs.;
 #X floatatom 35 387 5 0 0 0 - - -, f 5;
 #X floatatom 454 536 5 0 0 0 - - -, f 5;
 #X obj 253 483 hsl 128 15 0 127 0 0 empty empty empty 32 8 0 10 -262144
--1 -1 323 1;
+-1 -1 0 1;
 #X floatatom 250 508 5 0 0 0 - - -, f 5;
 #X msg 250 452 0;
 #X text 396 358 if control is 0 \, osc 3's frequency is set by the
