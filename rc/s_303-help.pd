@@ -1,8 +1,9 @@
-#N canvas 348 75 868 521 10;
+#N canvas 911 132 868 521 10;
+#X declare -stdpath extra/ggee;
+#X declare -stdpath extra/ggee;
 #N canvas 129 180 582 570 REFERENCE 0;
 #X text 24 30 Name: [s_303];
 #X text 24 51 Summary: a Roland TB-303 style bass synth;
-#X text 24 366 See also: [s_fmbass] [s_fm4] [s_ejun] [s_rhodey];
 #X text 24 434 Tags: bass \, synth \, audio;
 #X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
 ;
@@ -16,6 +17,8 @@
 for inspiration. Ok ok \, this isn't a *real* emulation of a 303 \,
 but it has the same spirit. Originally adapted from Damian Stewart's
 [d-303] in 2008 frey.co.nz.;
+#X text 24 366 See also: [s_minimoog] [s_fmbass] [s_fm4] [s_ejun] [s_rhodey]
+;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
