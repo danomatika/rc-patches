@@ -1,6 +1,4 @@
-#N canvas 911 132 868 521 10;
-#X declare -stdpath extra/ggee;
-#X declare -stdpath extra/ggee;
+#N canvas 416 147 868 521 10;
 #N canvas 129 180 582 570 REFERENCE 0;
 #X text 24 30 Name: [s_303];
 #X text 24 51 Summary: a Roland TB-303 style bass synth;

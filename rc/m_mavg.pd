@@ -27,7 +27,6 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X restore 194 180 pd LICENSE-GPL;
 #X text 22 15 usage: m_mavg <number of floats to average> (optional)
 ;
-#X text 147 130;
 #X text 168 122 based on : zexy [mavg];
 #X connect 0 0 3 0;
 #X connect 1 0 0 1;

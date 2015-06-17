@@ -1,4 +1,4 @@
-#N canvas 452 232 398 379 10;
+#N canvas 452 232 446 375 10;
 #X declare -path ../rc;
 #X obj 23 29 gemhead;
 #X obj 208 230 inlet~ X;
@@ -48,6 +48,8 @@
 #X restore 181 171 pd route scope;
 #X obj 297 143 r \$0-run;
 #X obj 297 110 s \$0-run;
+#X msg 359 173 defaultView;
+#X obj 359 144 loadbang;
 #X connect 0 0 11 0;
 #X connect 1 0 10 1;
 #X connect 2 0 10 2;
@@ -70,4 +72,6 @@
 #X connect 20 0 10 0;
 #X connect 20 1 15 0;
 #X connect 21 0 13 0;
+#X connect 23 0 15 0;
+#X connect 24 0 23 0;
 #X coords 0 -1 1 1 100 20 1 160 20;

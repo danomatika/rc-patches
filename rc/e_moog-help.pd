@@ -10,11 +10,10 @@
 [u_lowassq];
 #X text 24 434 Tags: filter \, low pass \, resonant \, audio;
 #X text 24 252 Description: This has a sweepable frequency signal inlet
-\, useful with an envelope generator. Currently \, this object is simply
-a wrapper around the ggee [moog~] external. It will hopefully be ported
-to pure pd at some point.;
-#X text 24 162 Inlet 1: resonance frequency modulation \, use [sig~
-1] if want a flat freq;
+\, useful with an envelope generator. This object is a convenience
+wrapper around the the [bob~] filter included with Pd versions 0.46+.
+;
+#X text 24 162 Inlet 1: resonance frequency modulation;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -27,9 +26,9 @@ to pure pd at some point.;
 #X text 666 334 creation args: freq \, q;
 #X obj 556 94 noise~;
 #X obj 617 224 hsl 128 15 20 20000 1 0 empty empty 20-20k 32 8 0 10
--262144 -1 -1 11000 1;
+-262144 -1 -1 7000 1;
 #X obj 646 280 hsl 128 15 0 1 0 0 empty empty 0-1 32 8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X floatatom 643 305 5 0 0 1 q - -, f 5;
 #X floatatom 614 252 5 0 0 1 freq - -, f 5;
 #X text 649 66 <---- make noise;
@@ -43,7 +42,7 @@ to pure pd at some point.;
 -1;
 #X obj 624 124 delay 110;
 #X obj 678 95 hsl 128 15 50 1000 0 0 empty empty 100-1000 32 8 0 10
--262144 -1 -1 4700 1;
+-262144 -1 -1 300 1;
 #X connect 7 0 14 0;
 #X connect 8 0 11 0;
 #X connect 9 0 10 0;

@@ -1,4 +1,4 @@
-#N canvas 498 150 868 521 10;
+#N canvas 142 229 868 521 10;
 #N canvas 623 160 582 570 REFERENCE 0;
 #X text 24 31 Name: [c_ear];
 #X text 24 51 Summary: AR envelope generator with quadratic curves
@@ -30,14 +30,14 @@ trigger the release.;
 #X coords 0 1 1000 -1 200 140 1;
 #X restore 644 101 graph;
 #X msg 487 370 bang;
-#X floatatom 568 323 5 0 0 1 attack - -;
-#X floatatom 600 347 5 0 0 1 release - -;
+#X floatatom 568 323 5 0 0 1 attack - -, f 5;
+#X floatatom 600 347 5 0 0 1 release - -, f 5;
 #X msg 537 283 start;
 #X msg 510 332 stop;
 #X obj 510 195 t b b;
 #X obj 510 167 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 555 220 5 0 0 1 decay - -;
+#X floatatom 555 220 5 0 0 1 sustain - -, f 5;
 #X obj 8 20 c_ear;
 #X obj 510 244 delay 10;
 #X obj 537 373 c_ear 10 15;

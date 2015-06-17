@@ -1,0 +1,328 @@
+#N canvas 553 212 800 379 10;
+#N canvas 418 66 515 392 e3 0;
+#X obj 100 100 cnv 15 150 140 empty empty Mixer 8 12 0 14 -99865 -262144
+0;
+#X obj 105 356 outlet;
+#X obj 104 21 inlet;
+#X obj 107 162 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 1 1;
+#X obj 125 147 hsl 113 15 0 1 0 0 empty empty osc2 8 8 0 10 -99865
+-262144 -228856 11200 1;
+#X obj 125 162 hsl 113 15 0 1 0 0 empty empty osc3 8 8 0 10 -99865
+-262144 -228856 11200 1;
+#X obj 125 177 hsl 113 15 0 1 0 0 empty empty external 8 8 0 10 -99865
+-262144 -228856 0 1;
+#X obj 125 192 hsl 113 15 0 1 0 0 empty empty noise 8 8 0 10 -99865
+-262144 -228856 0 1;
+#X obj 107 147 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 1 1;
+#X obj 107 132 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 1 1;
+#X obj 107 177 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X obj 107 192 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X obj 107 207 hradio 15 1 0 2 empty empty noisetype 32 8 0 10 -128992
+-228856 -228856 0;
+#X obj 125 132 hsl 113 15 0 1 0 0 empty empty osc1 8 8 0 10 -99865
+-262144 -228856 11200 1;
+#X obj 100 241 cnv 15 149 49 empty empty Output 8 6 0 14 -99865 -262144
+0;
+#X obj 111 268 hsl 128 15 0 1 0 0 empty empty vol 8 8 0 10 -99865 -262144
+-228856 12700 1;
+#X obj 198 244 tgl 15 0 empty empty A440 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X obj 104 43 route osc1on osc1vol osc2on osc2vol osc3on osc3vol externalon
+externalvol noiseon noisevol noisetype A440on vol;
+#X msg 11 301 vol \$1;
+#X msg 284 142 osc1vol \$1;
+#X msg 284 174 osc2vol \$1;
+#X msg 284 204 osc3vol \$1;
+#X msg 284 233 externalvol \$1;
+#X msg 285 264 noisevol \$1;
+#X msg 285 294 A440on \$1;
+#X msg 10 269 noisetype \$1;
+#X msg 10 240 noiseon \$1;
+#X msg 10 212 externalon \$1;
+#X msg 10 186 osc3on \$1;
+#X msg 10 160 osc2on \$1;
+#X msg 10 134 osc1on \$1;
+#X connect 2 0 17 0;
+#X connect 3 0 28 0;
+#X connect 4 0 20 0;
+#X connect 5 0 21 0;
+#X connect 6 0 22 0;
+#X connect 7 0 23 0;
+#X connect 8 0 29 0;
+#X connect 9 0 30 0;
+#X connect 10 0 27 0;
+#X connect 11 0 26 0;
+#X connect 12 0 25 0;
+#X connect 13 0 19 0;
+#X connect 15 0 18 0;
+#X connect 16 0 24 0;
+#X connect 17 0 9 0;
+#X connect 17 1 13 0;
+#X connect 17 2 8 0;
+#X connect 17 3 4 0;
+#X connect 17 4 3 0;
+#X connect 17 5 5 0;
+#X connect 17 6 10 0;
+#X connect 17 7 6 0;
+#X connect 17 8 11 0;
+#X connect 17 9 7 0;
+#X connect 17 10 12 0;
+#X connect 17 11 16 0;
+#X connect 17 12 15 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 1 0;
+#X connect 21 0 1 0;
+#X connect 22 0 1 0;
+#X connect 23 0 1 0;
+#X connect 24 0 1 0;
+#X connect 25 0 1 0;
+#X connect 26 0 1 0;
+#X connect 27 0 1 0;
+#X connect 28 0 1 0;
+#X connect 29 0 1 0;
+#X connect 30 0 1 0;
+#X coords 0 -1 1 1 150 190 1 100 100;
+#X restore 552 101 pd e3;
+#N canvas 305 38 498 433 o1 0;
+#X obj 100 100 cnv 15 150 190 empty empty Modifiers 8 12 0 14 -99865
+-262144 0;
+#X obj 105 397 outlet;
+#X obj 108 26 inlet;
+#X obj 111 132 hsl 128 15 0 1 0 0 empty empty filter_cutoff 8 8 0 10
+-99865 -262144 -228856 8890 1;
+#X obj 111 147 hsl 128 15 0 1 0 0 empty empty filter_emphasis 8 8 0
+10 -99865 -262144 -228856 8890 1;
+#X obj 111 162 hsl 128 15 0 1 0 0 empty empty filter_amount 8 8 0 10
+-99865 -262144 -228856 8890 1;
+#X obj 111 176 hsl 128 15 0 1 0 0 empty empty filter_A 8 8 0 10 -99865
+-262144 -228856 127 1;
+#X obj 111 191 hsl 128 15 0 1 0 0 empty empty filter_D 8 8 0 10 -99865
+-262144 -228856 1270 1;
+#X obj 111 206 hsl 128 15 0 1 0 0 empty empty filter_S 8 8 0 10 -99865
+-262144 -228856 6350 1;
+#X obj 111 238 hsl 128 15 0 1 0 0 empty empty loudness_contour_A 8
+8 0 10 -99865 -262144 -228856 127 1;
+#X obj 111 253 hsl 128 15 0 1 0 0 empty empty loudness_contour_D 8
+8 0 10 -99865 -262144 -228856 635 1;
+#X obj 111 268 hsl 128 15 0 1 0 0 empty empty loudness_contour_S 8
+8 0 10 -99865 -262144 -228856 6350 1;
+#X obj 108 54 route filtercutoff filteremph filteramt filterA filterD
+filterS contourA contourD contourS;
+#X msg 285 165 filteremph \$1;
+#X msg 285 192 filteramt \$1;
+#X msg 285 219 filterA \$1;
+#X msg 285 244 filterD \$1;
+#X msg 285 271 filterS \$1;
+#X msg 285 299 contourA \$1;
+#X msg 285 322 contourD \$1;
+#X msg 285 345 contourS \$1;
+#X msg 285 141 filtercutoff \$1;
+#X connect 2 0 12 0;
+#X connect 3 0 21 0;
+#X connect 4 0 13 0;
+#X connect 5 0 14 0;
+#X connect 6 0 15 0;
+#X connect 7 0 16 0;
+#X connect 8 0 17 0;
+#X connect 9 0 18 0;
+#X connect 10 0 19 0;
+#X connect 11 0 20 0;
+#X connect 12 0 3 0;
+#X connect 12 1 4 0;
+#X connect 12 2 5 0;
+#X connect 12 3 6 0;
+#X connect 12 4 7 0;
+#X connect 12 5 8 0;
+#X connect 12 6 9 0;
+#X connect 12 7 10 0;
+#X connect 12 8 11 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 0;
+#X connect 15 0 1 0;
+#X connect 16 0 1 0;
+#X connect 17 0 1 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 1 0;
+#X connect 21 0 1 0;
+#X coords 0 -1 1 1 150 190 1 100 100;
+#X restore 401 101 pd o1;
+#X obj 101 315 outlet;
+#N canvas 192 37 510 433 e1 0;
+#X obj 100 100 cnv 15 150 190 empty empty Oscillator_Bank 8 12 0 14
+-99865 -262144 0;
+#X obj 107 377 outlet;
+#X obj 142 33 inlet;
+#X obj 142 132 hradio 15 1 0 6 empty empty range 8 8 0 10 -128992 -228856
+-33289 3;
+#X obj 128 268 tgl 15 0 empty empty Ctl -18 8 0 10 -128992 -228856
+-228856 1 1;
+#X obj 146 268 hsl 85 15 0 1 0 0 empty empty detune 8 8 0 10 -99865
+-262144 -228856 4200 1;
+#X obj 142 147 hradio 15 1 0 6 empty empty wave 8 8 0 10 -128992 -228856
+-33289 0;
+#X obj 142 175 hradio 15 1 0 6 empty empty range 8 8 0 10 -128992 -228856
+-33289 3;
+#X obj 142 190 hradio 15 1 0 6 empty empty wave 8 8 0 10 -128992 -228856
+-33289 2;
+#X obj 143 238 hradio 15 1 0 6 empty empty range 8 8 0 10 -128992 -228856
+-33289 3;
+#X obj 143 253 hradio 15 1 0 6 empty empty wave 8 8 0 10 -128992 -228856
+-33289 3;
+#X obj 145 205 hsl 85 15 0 1 0 0 empty empty detune 8 8 0 10 -99865
+-262144 -228856 4200 1;
+#X text 135 222 -7 ---- | ---- 7;
+#X text 115 132 1;
+#X text 114 175 2;
+#X text 113 239 3;
+#X obj 142 64 route osc1range osc1wave osc2range osc2wave osc2detune
+osc3range osc3wave osc3detune osc3ctl;
+#X msg 9 145 osc1range \$1;
+#X msg 9 169 osc1wave \$1;
+#X msg 9 203 osc2range \$1;
+#X msg 9 226 osc2wave \$1;
+#X msg 9 250 osc2detune \$1;
+#X msg 270 238 osc3range \$1;
+#X msg 270 264 osc3wave \$1;
+#X msg 270 292 osc3detune \$1;
+#X msg 100 298 osc3ctl \$1;
+#X connect 2 0 16 0;
+#X connect 3 0 17 0;
+#X connect 4 0 25 0;
+#X connect 5 0 24 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 20 0;
+#X connect 9 0 22 0;
+#X connect 10 0 23 0;
+#X connect 11 0 21 0;
+#X connect 16 0 3 0;
+#X connect 16 1 6 0;
+#X connect 16 2 7 0;
+#X connect 16 3 8 0;
+#X connect 16 4 11 0;
+#X connect 16 5 9 0;
+#X connect 16 6 10 0;
+#X connect 16 7 5 0;
+#X connect 16 8 4 0;
+#X connect 17 0 1 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 1 0;
+#X connect 21 0 1 0;
+#X connect 22 0 1 0;
+#X connect 23 0 1 0;
+#X connect 24 0 1 0;
+#X connect 25 0 1 0;
+#X coords 0 -1 1 1 150 190 1 100 100;
+#X restore 251 101 pd e1;
+#N canvas 621 218 508 478 e1 0;
+#X obj 100 100 cnv 15 150 190 empty empty Controllers 8 12 0 14 -99865
+-262144 0;
+#X obj 112 436 outlet;
+#X obj 108 26 inlet;
+#X obj 111 147 hsl 128 15 0 1 0 0 empty empty tune 8 8 0 10 -99865
+-262144 -228856 6350 1;
+#X obj 126 175 hsl 113 15 0 1 0 0 empty empty glide 8 8 0 10 -99865
+-262144 -228856 0 1;
+#X text 105 132 -2.5 ----- | ----- 2.5;
+#X obj 108 175 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X obj 111 237 hsl 128 15 0 1 0 0 empty empty modmix 8 8 0 10 -99865
+-262144 -228856 0 1;
+#X obj 109 268 tgl 15 0 empty empty decay 17 7 0 10 -128992 -228856
+-228856 1 1;
+#X obj 177 268 tgl 15 0 empty empty keytrack 17 7 0 10 -128992 -228856
+-228856 1 1;
+#X obj 126 190 hsl 113 15 0 1 0 0 empty empty mod 8 8 0 10 -99865 -262144
+-228856 0 1;
+#X obj 108 190 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X text 105 222 osc3 ----- | ---- noise;
+#X obj 108 205 tgl 15 0 empty empty oscmod 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X obj 175 205 tgl 15 0 empty empty filtermod 17 7 0 10 -128992 -228856
+-228856 0 1;
+#X obj 108 51 route tune glideon glide modon mod oscmod filtermod modmix
+decayon keytrack;
+#X msg 273 307 keytrack \$1;
+#X msg 110 334 modmix \$1;
+#X msg 86 307 filtermod \$1;
+#X msg 17 306 oscmod \$1;
+#X msg 13 252 modon \$1;
+#X msg 29 279 mod \$1;
+#X msg 7 199 glideon \$1;
+#X msg 28 224 glide \$1;
+#X msg 26 164 tune \$1;
+#X msg 197 308 decayon \$1;
+#X connect 2 0 15 0;
+#X connect 3 0 24 0;
+#X connect 4 0 23 0;
+#X connect 6 0 22 0;
+#X connect 7 0 17 0;
+#X connect 8 0 25 0;
+#X connect 9 0 16 0;
+#X connect 10 0 21 0;
+#X connect 11 0 20 0;
+#X connect 13 0 19 0;
+#X connect 14 0 18 0;
+#X connect 15 0 3 0;
+#X connect 15 1 6 0;
+#X connect 15 2 4 0;
+#X connect 15 3 11 0;
+#X connect 15 4 10 0;
+#X connect 15 5 13 0;
+#X connect 15 6 14 0;
+#X connect 15 7 7 0;
+#X connect 15 8 8 0;
+#X connect 15 9 9 0;
+#X connect 16 0 1 0;
+#X connect 17 0 1 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 1 0;
+#X connect 21 0 1 0;
+#X connect 22 0 1 0;
+#X connect 23 0 1 0;
+#X connect 24 0 1 0;
+#X connect 25 0 1 0;
+#X coords 0 -1 1 1 150 190 1 100 100;
+#X restore 101 101 pd e1;
+#X obj 101 68 t a a a a;
+#X obj 101 42 inlet;
+#X text 103 9 parameter editing GUI for s_minimoog;
+#X text 560 341 danomatika.com | robotcowboy.com;
+#X text 560 326 2010 \, 2014 Dan Wilcox;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X text 56 54 Copyright (C) 2009 \, 2015 Dan Wilcox <danomatika@gmail.com>
+;
+#X restore 609 20 pd LICENSE-GPL;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 5 1 3 0;
+#X connect 5 2 1 0;
+#X connect 5 3 0 0;
+#X connect 6 0 5 0;
+#X coords 0 -1 1 1 602 192 1 100 100;

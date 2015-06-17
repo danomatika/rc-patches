@@ -1,13 +1,13 @@
-#N canvas 304 140 868 521 10;
-#X declare -stdpath extra/ggee;
-#X declare -stdpath extra/ggee;
+#N struct 3720-symarray float x array symbols 3720-sym;
+#N struct 3720-sym symbol name float on;
+#N canvas 144 117 868 521 10;
+#X declare -path .;
+#X declare -path .;
 #N canvas 62 184 582 570 REFERENCE 0;
 #X text 24 31 Name: s_minimoog;
 #X text 24 121 Inlet 0: midi note & velocity pairs;
 #X text 24 141 Inlet 1: external audio in to mixer & modifiers;
 #X text 23 294 Outlet 0: audio out;
-#X text 23 315 Outlet 1: sends internal settings when receieving "save"
-message to third inlet.;
 #X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
 ;
 #X text 24 165 Inlet 2: control inlet to set parameters. See example
@@ -27,21 +27,23 @@ after what I could find about the minimoog model D.;
 #X text 22 352 Description: This is not an entirely accurate modeling
 of a minimoog \, but it's lots of fun. Control names are based on the
 actual minimoog front panel knobs but ranges are normalized 0 -1;
+#X text 23 315 Outlet 1: sends internal settings when receiving "save"
+message to third inlet.;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X text 471 32 Example:;
-#X obj 531 206 soundinput;
+#X obj 531 237 soundinput;
 #X obj 482 435 soundoutput;
 #X obj 482 82 notein 1;
 #X obj 482 114 pack f 0;
-#X obj 497 147 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
-1 1;
-#X msg 671 299 panic;
-#X msg 671 263 reset;
-#X obj 581 262 r \$0-control;
-#X text 716 263 reset to defaults;
+#X obj 497 159 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
+0 1;
+#X msg 615 360 panic;
+#X msg 615 324 reset;
+#X obj 581 295 r \$0-control;
+#X text 660 324 reset to defaults;
 #N canvas 0 22 663 427 sequences 0;
 #X obj 71 190 sel 0 1 2 3 4 5 6 7;
 #X obj 156 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -64,13 +66,6 @@ actual minimoog front panel knobs but ranges are normalized 0 -1;
 #X obj 71 20 inlet;
 #X obj 22 49 sel 0;
 #X msg 22 72 reset;
-#X msg 156 248 38;
-#X msg 222 249 50;
-#X msg 253 249 34;
-#X msg 47 246 38;
-#X msg 120 248 40;
-#X msg 189 249 45;
-#X msg 82 247 45;
 #X msg 288 250 rest;
 #X obj 156 304 makenote 64 100;
 #X obj 156 333 pack f f;
@@ -106,6 +101,13 @@ actual minimoog front panel knobs but ranges are normalized 0 -1;
 #X msg 524 254 57;
 #X msg 491 254 55;
 #X msg 455 253 rest;
+#X msg 47 246 50;
+#X msg 82 247 57;
+#X msg 120 248 52;
+#X msg 156 248 50;
+#X msg 189 249 57;
+#X msg 222 249 62;
+#X msg 253 249 46;
 #X connect 0 0 6 0;
 #X connect 0 1 7 0;
 #X connect 0 2 8 0;
@@ -114,170 +116,153 @@ actual minimoog front panel knobs but ranges are normalized 0 -1;
 #X connect 0 5 3 0;
 #X connect 0 6 4 0;
 #X connect 0 7 5 0;
-#X connect 1 0 13 0;
-#X connect 2 0 18 0;
-#X connect 3 0 14 0;
-#X connect 4 0 15 0;
-#X connect 5 0 20 0;
-#X connect 6 0 16 0;
-#X connect 7 0 19 0;
-#X connect 8 0 17 0;
+#X connect 1 0 43 0;
+#X connect 2 0 44 0;
+#X connect 3 0 45 0;
+#X connect 4 0 46 0;
+#X connect 5 0 13 0;
+#X connect 6 0 40 0;
+#X connect 7 0 41 0;
+#X connect 8 0 42 0;
 #X connect 10 0 11 0;
-#X connect 10 0 25 0;
+#X connect 10 0 18 0;
 #X connect 11 0 12 0;
-#X connect 12 0 24 0;
-#X connect 13 0 21 0;
-#X connect 14 0 21 0;
-#X connect 15 0 21 0;
-#X connect 16 0 21 0;
-#X connect 17 0 21 0;
-#X connect 18 0 21 0;
-#X connect 19 0 21 0;
-#X connect 21 0 22 0;
-#X connect 21 1 22 1;
-#X connect 22 0 9 0;
-#X connect 23 0 25 1;
-#X connect 24 0 41 0;
-#X connect 25 0 24 0;
+#X connect 12 0 17 0;
+#X connect 14 0 15 0;
+#X connect 14 1 15 1;
+#X connect 15 0 9 0;
+#X connect 16 0 18 1;
+#X connect 17 0 34 0;
+#X connect 18 0 17 0;
+#X connect 19 0 25 0;
+#X connect 19 1 26 0;
+#X connect 19 2 27 0;
+#X connect 19 3 20 0;
+#X connect 19 4 21 0;
+#X connect 19 5 22 0;
+#X connect 19 6 23 0;
+#X connect 19 7 24 0;
+#X connect 20 0 39 0;
+#X connect 21 0 38 0;
+#X connect 22 0 37 0;
+#X connect 23 0 36 0;
+#X connect 24 0 28 0;
+#X connect 25 0 31 0;
 #X connect 26 0 32 0;
-#X connect 26 1 33 0;
-#X connect 26 2 34 0;
-#X connect 26 3 27 0;
-#X connect 26 4 28 0;
-#X connect 26 5 29 0;
-#X connect 26 6 30 0;
-#X connect 26 7 31 0;
-#X connect 27 0 46 0;
-#X connect 28 0 45 0;
-#X connect 29 0 44 0;
-#X connect 30 0 43 0;
-#X connect 31 0 35 0;
-#X connect 32 0 38 0;
-#X connect 33 0 39 0;
-#X connect 34 0 40 0;
-#X connect 36 0 37 0;
-#X connect 36 1 37 1;
-#X connect 37 0 9 0;
-#X connect 38 0 36 0;
-#X connect 39 0 36 0;
-#X connect 40 0 36 0;
-#X connect 41 0 0 0;
-#X connect 41 1 26 0;
-#X connect 42 0 41 1;
-#X connect 43 0 36 0;
-#X connect 44 0 36 0;
-#X connect 45 0 36 0;
-#X restore 497 174 pd sequences;
-#X obj 566 148 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+#X connect 27 0 33 0;
+#X connect 29 0 30 0;
+#X connect 29 1 30 1;
+#X connect 30 0 9 0;
+#X connect 31 0 29 0;
+#X connect 32 0 29 0;
+#X connect 33 0 29 0;
+#X connect 34 0 0 0;
+#X connect 34 1 19 0;
+#X connect 35 0 34 1;
+#X connect 36 0 29 0;
+#X connect 37 0 29 0;
+#X connect 38 0 29 0;
+#X connect 40 0 14 0;
+#X connect 41 0 14 0;
+#X connect 42 0 14 0;
+#X connect 43 0 14 0;
+#X connect 44 0 14 0;
+#X connect 45 0 14 0;
+#X connect 46 0 14 0;
+#X restore 497 186 pd sequences;
+#X obj 566 160 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 643 345 g_scope;
-#X text 667 69 Controls;
-#N canvas 30 53 909 658 Oscillator 0;
+#N canvas 111 80 909 658 Oscillator 0;
 #X obj 67 154 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 5;
-#X obj 32 62 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
 -1 -1 2;
+#X obj 32 62 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
+-1 -1 4;
 #X floatatom 32 83 5 0 0 0 - - -, f 5;
 #X floatatom 67 176 5 0 0 0 - - -, f 5;
-#X text 182 129 0 - triangle;
 #X text 182 148 1 - triangle/sawtooth mix;
 #X text 182 167 2 - sawtooth;
 #X text 182 186 3 - 1:2 square;
 #X text 183 203 4 - 1:3 square;
 #X text 183 221 5 - 1:4 square;
-#X text 76 83 2 by default;
 #X text 84 225 0 by default;
 #X obj 631 133 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 5;
 #X obj 449 53 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
 -1 -1 2;
 #X floatatom 449 74 5 0 0 0 - - -, f 5;
 #X floatatom 631 155 5 0 0 0 - - -, f 5;
-#X text 742 115 0 - triangle;
 #X text 742 134 1 - triangle/sawtooth mix;
-#X text 742 153 2 - sawtooth;
 #X text 742 171 3 - 1:2 square;
 #X text 742 188 4 - 1:3 square;
 #X text 742 206 5 - 1:4 square;
-#X text 488 73 2 by default;
 #X text 630 206 0 by default;
-#X obj 454 514 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
+#X obj 315 519 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
 -1 -1 1;
 #X obj 35 366 hradio 15 1 0 6 empty empty 0-5_int 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #X floatatom 35 387 5 0 0 0 - - -, f 5;
-#X floatatom 454 536 5 0 0 0 - - -, f 5;
-#X obj 253 483 hsl 128 15 0 127 0 0 empty empty empty 32 8 0 10 -262144
--1 -1 0 1;
-#X floatatom 250 508 5 0 0 0 - - -, f 5;
-#X msg 250 452 0;
-#X text 396 358 if control is 0 \, osc 3's frequency is set by the
-detune which is 0-127;
-#X text 318 321 turn control off to set osc3 freq manually \, useful
+#X floatatom 315 541 5 0 0 0 - - -, f 5;
+#X text 353 365 turn control off to set osc3 freq manually \, useful
 when using it for modulation;
-#X text 595 496 0 - triangle;
-#X text 595 533 2 - sawtooth;
-#X text 595 551 3 - 1:2 square;
-#X text 595 568 4 - 1:3 square;
-#X text 595 586 5 - 1:4 square;
-#X text 595 514 1 - rev sawtooth;
-#X msg 303 451 range -7 7;
-#X msg 384 452 range 0 127;
-#X obj 303 420 sel 1;
+#X text 456 538 2 - sawtooth;
+#X text 456 573 4 - 1:3 square;
+#X text 456 591 5 - 1:4 square;
+#X text 456 519 1 - rev sawtooth;
 #X text 73 385 2 by default;
-#X text 294 507 0 by default;
-#X text 498 536 0 by default;
+#X text 359 541 0 by default;
 #X msg 67 198 osc1wave \$1;
 #X msg 32 105 osc1range \$1;
 #X obj 32 264 s \$0-control;
 #X obj 449 258 s \$0-control;
-#X text 181 49 oscillator 1: sound source;
-#X text 606 43 oscillator 2: sound source with detune;
+#X text 29 15 oscillator 1: sound source;
+#X text 447 14 oscillator 2: sound source with detune;
 #X text 32 322 oscillator 3: sound and modulation source;
 #X msg 449 96 osc2range \$1;
 #X text 448 154 -7 --------|------- 7;
 #X msg 631 177 osc2wave \$1;
 #X obj 35 628 s \$0-control;
-#X obj 303 358 g_tgl osc3ctl;
-#X obj 303 395 route osc3ctl;
-#X msg 454 558 osc3wave \$1;
-#X msg 250 531 osc3detune \$1;
+#X obj 355 413 g_tgl osc3ctl;
+#X msg 315 563 osc3wave \$1;
 #X msg 35 408 osc3range \$1;
-#X text 396 405 if control is 1 \, osc3's frequency is set by the incoming
+#X text 527 449 if control is 1 \, osc3's frequency is set by the incoming
 note and the detune is -7 to 7 (default);
 #X obj 449 173 g_hsl osc2detune 0 1;
 #X msg 522 127 osc2detune 0.5;
-#X obj 88 467 g_hsl osc3detune 0 1;
+#X obj 355 447 g_hsl osc3detune 0 1;
+#X text 528 424 if control is 0 \, osc 3's frequency is set by the
+detune;
+#X text 182 129 0 - triangle (default);
+#X msg 428 423 osc3detune 0.5;
+#X text 456 556 3 - 1:2 square (default);
+#X text 456 501 0 - triangle;
+#X text 742 153 2 - sawtooth (default);
+#X text 742 115 0 - triangle;
+#X text 132 62 LO \, 32' \, 16' \, 8'(default) \, 4' \, 2';
+#X text 547 52 LO \, 32' \, 16' \, 8'(default) \, 4' \, 2';
+#X text 132 366 LO \, 32' \, 16' \, 8'(default) \, 4' \, 2';
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
-#X connect 2 0 46 0;
-#X connect 3 0 45 0;
-#X connect 12 0 15 0;
-#X connect 13 0 14 0;
-#X connect 14 0 52 0;
-#X connect 15 0 54 0;
-#X connect 24 0 27 0;
-#X connect 25 0 26 0;
-#X connect 26 0 60 0;
-#X connect 27 0 58 0;
-#X connect 28 0 29 0;
-#X connect 29 0 59 0;
-#X connect 30 0 28 0;
-#X connect 39 0 28 0;
-#X connect 40 0 28 0;
-#X connect 41 0 39 0;
-#X connect 41 1 40 0;
-#X connect 45 0 47 0;
-#X connect 46 0 47 0;
-#X connect 52 0 62 0;
-#X connect 54 0 48 0;
-#X connect 56 0 64 0;
-#X connect 57 0 41 0;
-#X connect 58 0 55 0;
-#X connect 60 0 55 0;
-#X connect 62 0 48 0;
-#X connect 63 0 62 0;
-#X connect 64 0 55 0;
+#X connect 2 0 31 0;
+#X connect 3 0 30 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 37 0;
+#X connect 13 0 39 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 43 0;
+#X connect 22 0 42 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 0;
+#X connect 37 0 45 0;
+#X connect 39 0 33 0;
+#X connect 41 0 47 0;
+#X connect 42 0 40 0;
+#X connect 43 0 40 0;
+#X connect 45 0 33 0;
+#X connect 46 0 45 0;
+#X connect 47 0 40 0;
+#X connect 50 0 47 0;
 #X coords 0 0 1 1 120 90 0;
 #X restore 670 128 pd Oscillator Bank;
 #N canvas 312 63 539 546 Mixer 0;
@@ -373,7 +358,7 @@ than the first) \, but will not retrigger the ADSDs.;
 #X connect 25 0 24 0;
 #X connect 26 0 24 0;
 #X restore 670 98 pd Controllers;
-#N canvas 140 286 608 327 Modifiers 0;
+#N canvas 85 425 608 327 Modifiers 0;
 #X text 372 13 an ampltude envelope generator (vca);
 #X text 16 13 a low-pass filter [e_moog];
 #X text 184 96 emphasis (resonance);
@@ -414,10 +399,10 @@ than the first) \, but will not retrigger the ADSDs.;
 #X restore 670 214 pd Output;
 #X text 129 21 - a mnimoog-inspired 3 oscillator synth;
 #X msg 10 20 s_minimoog;
-#N canvas 23 30 1164 441 detailed 0;
+#X text 656 360 clear key tracker (if on);
+#X text 667 69 Control Details;
+#N canvas 197 273 1179 540 fancy 0;
 #X obj 21 291 soundoutput;
-#X msg 120 215 save;
-#X obj 143 272 print;
 #X obj 21 132 m_majorscale 50;
 #X obj 21 78 metro 500;
 #X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
@@ -425,40 +410,209 @@ than the first) \, but will not retrigger the ADSDs.;
 #X obj 21 211 pack;
 #X obj 27 174 notein;
 #X obj 21 154 makenote 127 300;
-#X floatatom 112 62 5 0 0 0 - - -, f 5;
 #X obj 21 104 random 10;
-#X msg 169 218 reset;
+#X msg 120 195 reset;
+#X obj 556 361 s \$0-control;
+#X obj 556 128 r \$0-GUI;
+#X obj 764 127 declare -path .;
+#X msg 207 132 save;
+#X obj 171 272 u_cocollect;
+#X obj 207 193 t a b;
+#X obj 207 59 bng 64 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 171 502 s \$0-GUI;
+#X obj 187 296 loadbang;
+#X obj 171 236 r \$0-control;
+#N canvas 0 58 1013 367 midi-control 0;
+#X obj 37 214 m_symbolarray;
+#X obj 21 110 ctlin;
+#X obj 21 186 / 127;
+#X obj 125 65 loadbang;
+#X obj 21 297 s \$0-GUI;
+#X text 124 31 add your midi controller mappings here. Format: <ctl-num>
+<method name>;
+#X floatatom 47 144 5 0 0 0 - - -, f 5;
+#X floatatom 88 145 5 0 0 0 - - -, f 5;
+#X obj 21 260 list prepend;
+#X text 119 259 swap;
+#X msg 558 66 env1a \, env1d \, env1r \, env1s \, env2a \, env2d \,
+env2r \, env2s \, env3a \, env3d \, env3r \, env3s \, mod1a \, mod1b
+\, mod1c \, mod1d \, mod2a \, mod2b \, mod2c \, mod2d \, mod3a \, mod3b
+\, mod3c \, mod3d \, osc1a \, osc1b \, osc1c \, osc1d \, osc2a \, osc2b
+\, osc2c \, osc2d \, osc3a \, osc3b \, osc3c \, osc3d \,;
+#X msg 201 222 dump;
+#X symbolatom 37 241 10 0 0 0 - - -, f 10;
+#X obj 201 276 print;
+#X obj 201 244 u_dumpfile controls.txt cr;
+#X text 552 32 Control Template - These are the methods \, that s_czz_synth
+accepts. They all expect values in a range of 0-1.;
+#X text 241 220 You can also keep your settings in a file.;
+#X obj 201 336 declare -path .;
+#X text 317 339 let me find "controls.txt" here.;
+#X msg 125 91 74 osc1a \, 71 osc1b \, 81 osc1c;
+#X connect 0 0 8 1;
+#X connect 0 0 12 0;
+#X connect 1 0 6 0;
+#X connect 1 0 2 0;
+#X connect 1 1 7 0;
+#X connect 1 1 0 0;
+#X connect 2 0 8 0;
+#X connect 3 0 19 0;
+#X connect 8 0 4 0;
+#X connect 11 0 14 0;
+#X connect 14 0 0 1;
+#X connect 14 0 13 0;
+#X connect 19 0 0 1;
+#X restore 356 103 pd midi-control;
+#X text 346 84 Set controllers here:;
+#X symbolatom 350 271 20 0 0 0 - - -, f 20;
+#X obj 452 250 s \$0-GUI;
+#X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
+-262144 -1 3 256;
+#X obj 371 173 pgmin 1;
+#X obj 350 154 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X msg 145 169 panic;
+#N canvas 0 22 1108 693 presets 0;
+#X obj 24 24 inlet;
+#X obj 24 651 outlet name;
+#X obj 24 628 symbol;
+#X obj 107 650 outlet parms;
+#X obj 24 580 route name;
+#X obj 24 50 sel 0 1 2 3 4 5 6 7 8 9 10;
+#X msg 24 99 name Default \, keytrack 1 \, externalvol 0 \, externalon
+0 \, mod 0 \, osc3ctl 1 \, filteremph 0.7 \, vol 1 \, contourS 0.5
+\, contourD 0.05 \, contourA 0.01 \, filterS 0.5 \, filterD 0.1 \,
+filterA 0.01 \, filteramt 0.7 \, filtercutoff 0.7 \, noisetype 0 \,
+noisevol 0 \, noiseon 0 \, osc3vol 1 \, osc3on 1 \, osc2vol 1 \, osc2on
+1 \, osc1vol 1 \, osc1on 1 \, osc3detune 0.5 \, osc3wave 3 \, osc3range
+3 \, osc2detune 0.5 \, osc2wave 2 \, osc2range 3 \, osc1wave 0 \, osc1range
+3 \, filtermod 0 \, oscmod 0 \, modmix 0 \, modon 0 \, decayon 1 \,
+glide 0 \, glideon 0 \, tune 0.5 \,;
+#X msg 457 94 name ELP_Trilogy \, keytrack 1 \, externalvol 0 \, externalon
+0 \, mod 0.178571 \, osc3ctl 1 \, filteremph 0.622047 \, vol 1 \, contourS
+1 \, contourD 0.362205 \, contourA 0 \, filterS 0 \, filterD 0.517323
+\, filterA 0 \, filteramt 0.385827 \, filtercutoff 0.432283 \, noisetype
+0 \, noisevol 0 \, noiseon 0 \, osc3vol 0.258929 \, osc3on 1 \, osc2vol
+0.767857 \, osc2on 1 \, osc1vol 0.258929 \, osc1on 1 \, osc3detune
+0.5 \, osc3wave 3 \, osc3range 2 \, osc2detune 0.511905 \, osc2wave
+3 \, osc2range 5 \, osc1wave 3 \, osc1range 2 \, filtermod 1 \, oscmod
+0 \, modmix 0 \, modon 1 \, decayon 1 \, glide 0.455357 \, glideon
+1 \, tune 0.5 \,;
+#X msg 492 397 name Logic \, keytrack 1 \, externalvol 0 \, externalon
+0 \, mod 1 \, osc3ctl 0 \, filteremph 0.96063 \, vol 1 \, contourS
+0.496063 \, contourD 0.244094 \, contourA 0 \, filterS 0.889764 \,
+filterD 0.320472 \, filterA 0.0708661 \, filteramt 1 \, filtercutoff
+0.535433 \, noisetype 0 \, noisevol 0 \, noiseon 0 \, osc3vol 0.348214
+\, osc3on 0 \, osc2vol 0.5625 \, osc2on 1 \, osc1vol 0.410714 \, osc1on
+1 \, osc3detune 0 \, osc3wave 4 \, osc3range 0 \, osc2detune 0.5 \,
+osc2wave 2 \, osc2range 2 \, osc1wave 2 \, osc1range 2 \, filtermod
+1 \, oscmod 0 \, modmix 0 \, modon 1 \, decayon 1 \, glide 0.455357
+\, glideon 0 \, tune 0.5 \,;
+#X msg 92 394 name ELP_AquaTarkus \, keytrack 1 \, externalvol 0 \,
+externalon 0 \, mod 0 \, osc3ctl 1 \, filteremph 0.598425 \, vol 0.850394
+\, contourS 0.251969 \, contourD 0.254724 \, contourA 0 \, filterS
+0.535433 \, filterD 0.170866 \, filterA 0.0472441 \, filteramt 0.598425
+\, filtercutoff 0.464567 \, noisetype 0 \, noisevol 0 \, noiseon 0
+\, osc3vol 0.848214 \, osc3on 1 \, osc2vol 0.848214 \, osc2on 1 \,
+osc1vol 0.848214 \, osc1on 1 \, osc3detune 1 \, osc3wave 2 \, osc3range
+3 \, osc2detune 0.77381 \, osc2wave 2 \, osc2range 3 \, osc1wave 2
+\, osc1range 3 \, filtermod 0 \, oscmod 0 \, modmix 0 \, modon 0 \,
+decayon 1 \, glide 0 \, glideon 0 \, tune 0.5 \,;
+#X msg 37 243 name MoonChord \, keytrack 1 \, externalvol 0 \, externalon
+0 \, mod 0 \, osc3ctl 1 \, filteremph 0.676378 \, vol 0.850394 \, contourS
+1 \, contourD 0.656299 \, contourA 0 \, filterS 0.5 \, filterD 0.273228
+\, filterA 0.277717 \, filteramt 0.290551 \, filtercutoff 0.416535
+\, noisetype 0 \, noisevol 0 \, noiseon 0 \, osc3vol 0.267857 \, osc3on
+1 \, osc2vol 0.714286 \, osc2on 1 \, osc1vol 0.267857 \, osc1on 1 \,
+osc3detune 0.833333 \, osc3wave 3 \, osc3range 2 \, osc2detune 0.5
+\, osc2wave 2 \, osc2range 2 \, osc1wave 3 \, osc1range 2 \, filtermod
+0 \, oscmod 0 \, modmix 0 \, modon 0 \, decayon 1 \, glide 0 \, glideon
+0 \, tune 0.5 \,;
+#X msg 465 249 name Carpenter \, keytrack 1 \, externalvol 0 \, externalon
+0 \, mod 0.0357143 \, osc3ctl 1 \, filteremph 0.606299 \, vol 1 \,
+contourS 0.866142 \, contourD 0.76378 \, contourA 0.858268 \, filterS
+0.850394 \, filterD 0.997638 \, filterA 0.354331 \, filteramt 1 \,
+filtercutoff 0.251181 \, noisetype 0 \, noisevol 0 \, noiseon 0 \,
+osc3vol 0.553571 \, osc3on 1 \, osc2vol 0.785714 \, osc2on 1 \, osc1vol
+0.517857 \, osc1on 1 \, osc3detune 0.5 \, osc3wave 1 \, osc3range 1
+\, osc2detune 0.511905 \, osc2wave 0 \, osc2range 2 \, osc1wave 2 \,
+osc1range 2 \, filtermod 1 \, oscmod 0 \, modmix 0 \, modon 0 \, decayon
+1 \, glide 0.455357 \, glideon 0 \, tune 0.5 \,;
+#X connect 0 0 5 0;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 5 0 6 0;
+#X connect 5 1 10 0;
+#X connect 5 2 9 0;
+#X connect 5 3 7 0;
+#X connect 5 4 11 0;
+#X connect 5 5 8 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X restore 350 229 pd presets;
+#X msg 275 162 64 100;
+#X msg 171 319 keytrack 1 \, externalvol 0 \, externalon 0 \, mod 0.0357143
+\, osc3ctl 1 \, filteremph 0.606299 \, vol 1 \, contourS 0.866142 \,
+contourD 0.76378 \, contourA 0.858268 \, filterS 0.850394 \, filterD
+0.997638 \, filterA 0.354331 \, filteramt 1 \, filtercutoff 0.251181
+\, noisetype 0 \, noisevol 0 \, noiseon 0 \, osc3vol 0.553571 \, osc3on
+1 \, osc2vol 0.785714 \, osc2on 1 \, osc1vol 0.517857 \, osc1on 1 \,
+osc3detune 0.5 \, osc3wave 1 \, osc3range 1 \, osc2detune 0.511905
+\, osc2wave 0 \, osc2range 2 \, osc1wave 2 \, osc1range 2 \, filtermod
+1 \, oscmod 0 \, modmix 0 \, modon 0 \, decayon 1 \, glide 0.455357
+\, glideon 0 \, tune 0.5 \,;
+#X text 552 97 [g_minimoog]: gui interface for parameter editing;
+#X obj 556 155 g_minimoog;
 #X obj 21 245 s_minimoog \$0-TAG;
-#X connect 1 0 12 2;
-#X connect 3 0 8 0;
-#X connect 4 0 10 0;
+#X connect 1 0 6 0;
+#X connect 2 0 7 0;
+#X connect 3 0 2 0;
+#X connect 4 0 32 0;
 #X connect 5 0 4 0;
-#X connect 6 0 12 0;
-#X connect 7 0 6 0;
-#X connect 7 1 6 1;
-#X connect 8 0 6 0;
-#X connect 8 1 6 1;
-#X connect 9 0 10 1;
-#X connect 10 0 3 0;
-#X connect 11 0 12 2;
-#X connect 12 0 0 0;
-#X connect 12 0 0 1;
-#X connect 12 1 2 0;
-#X restore 668 33 pd detailed example;
-#X text 712 299 clear key tracker (if on);
+#X connect 5 1 4 1;
+#X connect 6 0 4 0;
+#X connect 6 1 4 1;
+#X connect 7 0 1 0;
+#X connect 8 0 32 2;
+#X connect 10 0 31 0;
+#X connect 12 0 14 0;
+#X connect 13 0 29 0;
+#X connect 14 0 32 2;
+#X connect 14 1 13 1;
+#X connect 15 0 12 0;
+#X connect 17 0 29 0;
+#X connect 18 0 32 2;
+#X connect 23 0 27 0;
+#X connect 24 0 23 0;
+#X connect 25 0 23 0;
+#X connect 26 0 32 2;
+#X connect 27 0 21 0;
+#X connect 27 1 22 0;
+#X connect 28 0 32 0;
+#X connect 29 0 16 0;
+#X connect 31 0 9 0;
+#X connect 32 0 0 0;
+#X connect 32 0 0 1;
+#X connect 32 1 13 0;
+#X restore 668 29 pd fancy GUI example;
+#X obj 482 384 s_minimoog \$0-TAG;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
-- 2014;
-#X obj 482 318 s_minimoog \$0-TAG;
-#X connect 3 0 26 1;
+- 2015;
+#X connect 3 0 24 1;
 #X connect 5 0 6 0;
 #X connect 5 1 6 1;
-#X connect 6 0 26 0;
+#X connect 6 0 24 0;
 #X connect 7 0 12 0;
-#X connect 8 0 26 2;
-#X connect 9 0 26 2;
-#X connect 10 0 26 2;
-#X connect 12 0 26 0;
+#X connect 8 0 24 2;
+#X connect 9 0 24 2;
+#X connect 10 0 24 2;
+#X connect 12 0 24 0;
 #X connect 13 0 12 1;
-#X connect 26 0 4 0;
-#X connect 26 0 4 1;
-#X connect 26 0 14 0;
+#X connect 24 0 4 0;
+#X connect 24 0 4 1;
