@@ -1,5 +1,5 @@
-#N struct 3720-symarray float x array symbols 3720-sym;
-#N struct 3720-sym symbol name float on;
+#N struct 5703-symarray float x array symbols 5703-sym;
+#N struct 5703-sym symbol name float on;
 #N canvas 144 117 868 521 10;
 #X declare -path .;
 #X declare -path .;
@@ -10,15 +10,6 @@
 #X text 23 294 Outlet 0: audio out;
 #X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
 ;
-#X text 24 165 Inlet 2: control inlet to set parameters. See example
-for details. Messages are: tune \, glideon \, glide \, keytrack \,
-decayon \, modon \, mod \, modmix \, oscmod \, filtermod \, osc1range
-\, osc1wave \, osc2range \, osc2wave \, osc2detune \, osc3control \,
-osc3range \, osc3detune \, osc3wave \, osc1on \, osc1vol \, osc2on
-\, osc2vol \, osc3on \, osc3vol \, externalon \, externalvol \, noiseon
-\, noisevol \, noisetype \, filtercutoff \, filtereemph \, filteramt
-\, filterA \, filterD \, filterS \, contourA \, contourD \, contourS
-\, vol \, A440on;
 #X text 22 434 Tags: synth \, minimoog \, moog \, analog \, audio;
 #X text 24 51 Summary: A minimoog-inspired 3 oscillator synth modeled
 after what I could find about the minimoog model D.;
@@ -29,21 +20,30 @@ of a minimoog \, but it's lots of fun. Control names are based on the
 actual minimoog front panel knobs but ranges are normalized 0 -1;
 #X text 23 315 Outlet 1: sends internal settings when receiving "save"
 message to third inlet.;
+#X text 24 165 Inlet 2: control inlet to set parameters. See example
+for details. Messages are: tune \, glideon \, glide \, keytrack \,
+decayon \, modon \, mod \, modmix \, oscmod \, filtermod \, osc1range
+\, osc1wave \, osc2range \, osc2wave \, osc2detune \, osc3control \,
+osc3range \, osc3detune \, osc3wave \, osc1on \, osc1vol \, osc2on
+\, osc2vol \, osc3on \, osc3vol \, externalon \, externalvol \, noiseon
+\, noisevol \, noisetype \, filtercutoff \, filtereemph \, filteramt
+\, filterA \, filterD \, filterS \, contourA \, contourD \, contourS
+\, vol \, A440on;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X text 471 32 Example:;
-#X obj 531 237 soundinput;
+#X obj 531 214 soundinput;
 #X obj 482 435 soundoutput;
 #X obj 482 82 notein 1;
 #X obj 482 114 pack f 0;
 #X obj 497 159 tgl 15 0 empty empty play_seq 17 7 0 10 -262144 -1 -1
 0 1;
-#X msg 615 360 panic;
-#X msg 615 324 reset;
-#X obj 581 295 r \$0-control;
-#X text 660 324 reset to defaults;
+#X msg 615 333 panic;
+#X msg 615 297 reset;
+#X obj 581 268 r \$0-control;
+#X text 660 297 reset to defaults;
 #N canvas 0 22 663 427 sequences 0;
 #X obj 71 190 sel 0 1 2 3 4 5 6 7;
 #X obj 156 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -399,7 +399,7 @@ than the first) \, but will not retrigger the ADSDs.;
 #X restore 670 214 pd Output;
 #X text 129 21 - a mnimoog-inspired 3 oscillator synth;
 #X msg 10 20 s_minimoog;
-#X text 656 360 clear key tracker (if on);
+#X text 656 333 clear key tracker (if on);
 #X text 667 69 Control Details;
 #N canvas 197 273 1179 540 fancy 0;
 #X obj 21 291 soundoutput;
@@ -468,7 +468,7 @@ accepts. They all expect values in a range of 0-1.;
 #X symbolatom 350 271 20 0 0 0 - - -, f 20;
 #X obj 452 250 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 3 256;
+-262144 -1 0 256;
 #X obj 371 173 pgmin 1;
 #X obj 350 154 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
 -1 -1 3;
@@ -601,9 +601,12 @@ osc3detune 0.5 \, osc3wave 1 \, osc3range 1 \, osc2detune 0.511905
 #X connect 32 0 0 1;
 #X connect 32 1 13 0;
 #X restore 668 29 pd fancy GUI example;
-#X obj 482 384 s_minimoog \$0-TAG;
+#X obj 482 361 s_minimoog \$0-TAG;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2015;
+#X msg 615 366 save;
+#X text 656 367 dump all control params;
+#X obj 581 397 print minimoog params;
 #X connect 3 0 24 1;
 #X connect 5 0 6 0;
 #X connect 5 1 6 1;
@@ -616,3 +619,5 @@ osc3detune 0.5 \, osc3wave 1 \, osc3range 1 \, osc2detune 0.511905
 #X connect 13 0 12 1;
 #X connect 24 0 4 0;
 #X connect 24 0 4 1;
+#X connect 24 1 28 0;
+#X connect 26 0 24 2;

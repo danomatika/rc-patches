@@ -1,24 +1,69 @@
-#N canvas 115 63 868 521 10;
-#N canvas 377 58 582 570 REFERENCE 0;
-#X text 24 51 Summary:;
-#X text 24 91 Argument 0:;
-#X text 24 124 Inlet 0:;
-#X text 24 144 Inlet 1:;
-#X text 24 164 Outlet 0:;
-#X text 24 184 Outlet 1:;
-#X text 24 434 Tags:;
-#X text 24 334 See also:;
-#X text 24 31 Name: Template Help Patch;
-#X text 24 234 Description: Use this as a template for writing other
-help patches.;
+#N canvas 115 63 1093 523 10;
+#N canvas 384 157 582 570 REFERENCE 0;
+#X text 24 31 Name: g_minimoog;
+#X text 24 51 Summary: GUI for s_minimoog for parameter editing \,
+does not contain the synth itself;
+#X text 24 141 Outlet 0: s_minimoog control messages;
+#X text 24 108 Inlet 0: s_minimoog control messages;
+#X text 24 381 See also: g_synthcontrol (rjlib);
+#X text 24 434 Tags: synth \, GUI \, programmer \, interface \, preset
+;
+#X text 24 234 Description: This is a special GUI for editing the many
+parameters in s_minimoog. You can syncronize this with an s_minimoog
+instance by using the "save" command to send out it's current current
+state into a g_minimoog. This approach along with u_collect can be
+used to save presets into message boxes. Accepts all s_minimoog control
+parameters \, see s_minimoog-help for a list.;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X text 468 51 Example:;
-#X text 129 21 - summary;
-#X obj 8 20 dac~;
-#X obj 601 95 soundinput;
-#X obj 607 404 soundoutput;
-#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
-- 2013;
+#X obj 476 458 soundoutput;
+#X obj 475 109 g_minimoog;
+#X text 807 54 sends/receieves same messages as s_minimoog;
+#X obj 476 396 s_minimoog;
+#X obj 476 326 tgl 30 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+1;
+#X msg 565 81 filtercutoff 0.5 \, filteremphasis 0.7 \, filteramount
+0.2;
+#X text 7 21 g_minimoog;
+#X text 129 21 - GUI for s_minimoog parameters;
+#X text 596 483 rc-patches (https://github.com/danomatika/rc-patches)
+- 2015;
+#N canvas 0 22 245 242 makenote 0;
+#X obj 46 54 inlet;
+#X obj 46 160 pack;
+#X msg 46 106 64;
+#X obj 46 186 outlet;
+#X obj 46 137 makenote 100 1000;
+#X obj 46 81 metro 1500;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 1 1;
+#X connect 5 0 2 0;
+#X restore 476 368 pd makenote;
+#X obj 567 367 t a;
+#X obj 566 423 s \$0-dump;
+#X obj 475 79 r \$0-dump;
+#X obj 598 356 sel 1;
+#X msg 589 389 save;
+#X msg 568 313 reset;
+#X obj 567 334 t a b;
+#X connect 4 0 13 0;
+#X connect 6 0 3 0;
+#X connect 6 0 3 1;
+#X connect 6 1 14 0;
+#X connect 7 0 12 0;
+#X connect 7 0 16 0;
+#X connect 8 0 4 0;
+#X connect 12 0 6 0;
+#X connect 13 0 6 2;
+#X connect 15 0 4 0;
+#X connect 16 0 17 0;
+#X connect 17 0 6 2;
+#X connect 18 0 19 0;
+#X connect 19 0 13 0;
+#X connect 19 1 17 0;
