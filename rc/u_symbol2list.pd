@@ -1,0 +1,107 @@
+#N canvas 242 56 402 640 10;
+#X obj 100 81 list fromsymbol;
+#X obj 100 111 u_listdrip;
+#X obj 100 450 list tosymbol;
+#X obj 100 52 symbol;
+#X obj 228 265 t a;
+#X obj 140 265 list prepend;
+#X msg 209 239 bang;
+#X obj 100 531 list prepend;
+#X obj 195 531 t a;
+#X obj 209 207 r \$0-reset;
+#X obj 47 574 list;
+#X obj 100 316 list;
+#X msg 169 505 bang;
+#X obj 169 476 r \$0-reset;
+#X obj 28 172 t b b b;
+#X obj 28 232 s \$0-reset;
+#X obj 100 205 t b b;
+#X obj 133 372 list length;
+#X obj 100 341 t a a;
+#X obj 100 423 spigot;
+#X obj 133 398 > 0;
+#X obj 100 17 inlet;
+#X obj 47 601 outlet;
+#X obj 220 18 inlet;
+#N canvas 601 119 191 210 arg1 0;
+#X obj 19 18 loadbang;
+#X obj 19 101 select symbol;
+#X obj 94 71 symbol;
+#X obj 19 44 t b b;
+#X obj 94 169 outlet;
+#X obj 19 71 symbol \$1;
+#X msg 19 129 32;
+#X text 46 130 default: SPACE CHAR;
+#X connect 0 0 3 0;
+#X connect 1 0 6 0;
+#X connect 1 1 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 5 0;
+#X connect 3 1 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 0;
+#X restore 285 18 pd arg1;
+#X obj 283 105 list fromsymbol;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X text 56 54 Copyright (C) 2015 \, Dan Wilcox <danomatika@gmail.com>
+;
+#X restore 211 602 pd LICENSE-GPL;
+#X obj 283 75 symbol;
+#X obj 283 134 route float bang;
+#X msg 329 161 0;
+#X obj 220 48 route float;
+#X obj 100 172 sel 32;
+#X connect 0 0 1 0;
+#X connect 1 0 31 0;
+#X connect 1 1 14 0;
+#X connect 2 0 7 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 1;
+#X connect 5 0 4 0;
+#X connect 5 0 11 1;
+#X connect 6 0 5 1;
+#X connect 6 0 11 1;
+#X connect 7 0 8 0;
+#X connect 7 0 10 1;
+#X connect 8 0 7 1;
+#X connect 9 0 6 0;
+#X connect 10 0 22 0;
+#X connect 11 0 18 0;
+#X connect 12 0 7 1;
+#X connect 12 0 10 1;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 14 1 10 0;
+#X connect 14 2 11 0;
+#X connect 16 0 6 0;
+#X connect 16 1 11 0;
+#X connect 17 0 20 0;
+#X connect 18 0 19 0;
+#X connect 18 1 17 0;
+#X connect 19 0 2 0;
+#X connect 20 0 19 1;
+#X connect 21 0 3 0;
+#X connect 23 0 30 0;
+#X connect 24 0 30 0;
+#X connect 25 0 28 0;
+#X connect 27 0 25 0;
+#X connect 28 0 31 1;
+#X connect 28 1 29 0;
+#X connect 29 0 31 1;
+#X connect 30 0 31 1;
+#X connect 30 1 27 0;
+#X connect 31 0 16 0;
+#X connect 31 1 5 0;

@@ -2,6 +2,8 @@ u_allnotesoff - send noteoff for all midi notes
 u_count - up/down counter
 u_demux2 - demultiplex from 1 inlet between 2 outlets
 u_list2symbol - convert a list into a symbol
+u_symbol2list - convert a symbol into a list
+u_symbol2float - convert a symbol into a float
 u_listfind - find position(s) of a value in a list
 u_listgroup - group items into lists of the same size
 u_listlastx - make a list of the last x items

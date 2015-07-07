@@ -1,4 +1,4 @@
-#N canvas 183 22 882 511 10;
+#N canvas 373 83 882 511 10;
 #N canvas 54 148 582 570 REFERENCE 0;
 #X text 24 51 Summary: convert an incoming list into a symbol with
 list elements separated by a given sumbol;
@@ -11,9 +11,9 @@ list elements separated by a given sumbol;
 #X text 24 256 Description: This is essentially a pd-vanilla version
 of [list2symbol] in the zexy external.;
 #X text 24 434 Tags: Lists \, Utilities;
-#X text 24 334 See also: [list2symbol] & [l2s] (require zexy) [list]
-[u_listdrop] [u_lister];
 #X text 24 31 Name: [u_list2symbol];
+#X text 24 334 See also: [u_symbol2list] [list] [u_listdrip] [u_lister]
+;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -24,10 +24,10 @@ of [list2symbol] in the zexy external.;
 #X msg 559 148 symbol --;
 #X msg 581 198 symbol;
 #X text 629 199 even to a zero-length symbol!;
-#X symbolatom 484 308 50 0 0 0 - - -;
+#X symbolatom 484 308 50 0 0 0 - - -, f 50;
 #X msg 569 174 symbol .;
 #X msg 485 353 yet another list of symbols;
-#X symbolatom 485 426 50 0 0 0 - - -;
+#X symbolatom 485 426 50 0 0 0 - - -, f 50;
 #X text 587 390 <-- also set the separator as a creation arg;
 #X text 625 146 set the separator (default is a space);
 #X msg 597 233 32;
