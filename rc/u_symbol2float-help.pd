@@ -1,15 +1,18 @@
-#N canvas 258 66 868 521 10;
+#N canvas 73 64 868 521 10;
 #N canvas 113 64 582 570 REFERENCE 0;
-#X text 24 31 Name: u_symbol2float;
-#X text 24 51 Summary: parses a symbol into a float;
-#X text 24 234 Description: A Pd vanilla symbol to float converter
-using [list fromsymbol] \, By Cyrille Henry on the pd-list July 2015
-and updated for decimal points by Alexandros Drymonitis.;
 #X text 24 334 See also: [u_symbol2list];
 #X text 24 434 Tags: Symbol \, Utilities;
-#X text 24 124 Inlet 0: symbol to convert;
-#X text 24 164 Outlet 0: converted symbol as a float (if successful)
+#X text 24 234 Description: A Pd vanilla symbol to float converter
+using [list fromsymbol]. Written by Alexandros Drymonitis \, after
+a discussion on the Pd list with Cyrille Henry and Chris McCormick.
 ;
+#X text 24 124 Inlet 0: symbol with numeric elements to convert;
+#X text 24 51 Summary: Parses a symbol's numeric elements into a float.
+Supports negative and decimal values as well as scientific notation.
+;
+#X text 24 31 Name: [u_symbol2float];
+#X text 24 164 Outlet 0: converted symbol as a float \, non numeric
+chars are silently ignored;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -17,22 +20,27 @@ and updated for decimal points by Alexandros Drymonitis.;
 #X text 468 51 Example:;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2015;
-#X floatatom 538 149 5 0 0 0 - - -, f 5;
-#X floatatom 563 402 20 0 0 1 float - -, f 20;
-#X msg 597 151 1;
-#X msg 626 186 123.45;
-#X obj 563 359 u_symbol2float;
-#X obj 563 241 makefilename %f;
-#X text 665 243 float2symbol;
+#X floatatom 513 99 5 0 0 0 - - -, f 5;
+#X floatatom 538 434 20 0 0 1 float - -, f 20;
+#X msg 562 99 123.45;
+#X obj 538 391 u_symbol2float;
+#X obj 538 205 makefilename %f;
+#X text 640 207 float2symbol;
 #X text 129 21 - parses a symbol into a float;
+#X msg 564 248 symbol nonfloat;
+#X symbolatom 538 351 15 0 0 1 symbol - -, f 15;
 #X obj 8 20 u_symbol2float;
-#X text 704 276 swallows nonfloats;
-#X msg 589 275 symbol nonfloat;
-#X symbolatom 563 319 15 0 0 1 symbol - -, f 15;
-#X connect 4 0 9 0;
-#X connect 6 0 9 0;
-#X connect 7 0 9 0;
-#X connect 8 0 5 0;
-#X connect 9 0 15 0;
-#X connect 14 0 15 0;
-#X connect 15 0 8 0;
+#X msg 581 296 symbol nonfloat100.200;
+#X text 673 248 ignores nonfloats;
+#X text 733 296 finds digits;
+#X msg 596 129 -200.23;
+#X msg 628 160 2.3e+10;
+#X connect 4 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 14 0 12 0;
+#X connect 17 0 8 0;
+#X connect 18 0 8 0;
