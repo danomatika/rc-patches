@@ -1,46 +1,52 @@
-#N canvas 773 139 451 505 10;
-#X text 56 349 from;
-#X obj 90 326 unpack 0 0 0 0;
-#X floatatom 90 349 3 0 0 0 - - -, f 3;
-#X floatatom 117 349 3 0 0 0 - - -, f 3;
-#X floatatom 144 349 3 0 0 0 - - -, f 3;
-#X floatatom 171 349 3 0 0 0 - - -, f 3;
-#X obj 113 301 tgl 15 0 empty empty connected 18 7 0 10 -24198 -241291
--1 0 1;
-#X text 197 349 (Server IP Address);
-#X obj 68 381 print got;
-#X text 15 476 2010 mrpeach \, HCS \, & the PD community;
-#X msg 93 101 disconnect;
-#X msg 68 61 get http://132.205.142.12/index.php;
-#X msg 45 38 get http://checkip.dyndns.org/index.html;
-#X text 111 251 also takes tcpclient arguments (except for connect)
+#N canvas 773 139 455 544 10;
+#X declare -stdpath extra/zexy -stdpath extra/moocow -stdpath extra/mrpeach
 ;
-#X text 15 436 danomatika.com | robotcowboy.com;
-#X text 16 451 https://github.com/danomatika/rc-patches;
-#X text 16 421 2011 Dan Wilcox GPL v3;
-#X msg 106 167 header \$1;
-#X obj 106 144 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 56 381 from;
+#X obj 90 358 unpack 0 0 0 0;
+#X floatatom 90 381 3 0 0 0 - - -, f 3;
+#X floatatom 117 381 3 0 0 0 - - -, f 3;
+#X floatatom 144 381 3 0 0 0 - - -, f 3;
+#X floatatom 171 381 3 0 0 0 - - -, f 3;
+#X obj 113 333 tgl 15 0 empty empty connected 18 7 0 10 -24198 -241291
+-1 0 1;
+#X text 197 381 (Server IP Address);
+#X obj 68 413 print got;
+#X text 15 508 2010 mrpeach \, HCS \, & the PD community;
+#X msg 93 133 disconnect;
+#X text 111 283 also takes tcpclient arguments (except for connect)
+;
+#X text 15 468 danomatika.com | robotcowboy.com;
+#X text 16 483 https://github.com/danomatika/rc-patches;
+#X text 16 453 2011 Dan Wilcox GPL v3;
+#X msg 106 199 header \$1;
+#X obj 106 176 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 133 144 print the HTTP header? (off by default);
-#X text 166 102 ... useful for large files ...;
-#X msg 124 222 raw \$1;
-#X obj 124 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 133 176 print the HTTP header? (off by default);
+#X text 166 134 ... useful for large files ...;
+#X msg 124 254 raw \$1;
+#X obj 124 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 150 198 output raw bytes instead of floats & symbols;
-#X text 133 382 outputs each line as a list;
+#X text 150 230 output raw bytes instead of floats & symbols;
+#X text 133 414 outputs each line as a list;
 #X text 11 7 http_get: a simple webclient using HTTP-GET;
-#X obj 68 276 http_get;
+#X obj 68 308 http_get;
+#X msg 45 38 get http://checkip.dyndns.org/index.html;
+#X msg 85 95 get http://localhost/your/server 8080;
+#X text 315 61 specify port number;
+#X msg 68 61 get http://132.205.142.12/index.php 80;
+#X text 363 84 default: 80;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
 #X connect 1 2 4 0;
 #X connect 1 3 5 0;
-#X connect 10 0 26 0;
-#X connect 11 0 26 0;
-#X connect 12 0 26 0;
-#X connect 17 0 26 0;
-#X connect 18 0 17 0;
-#X connect 21 0 26 0;
-#X connect 22 0 21 0;
-#X connect 26 0 8 0;
-#X connect 26 1 1 0;
-#X connect 26 2 6 0;
+#X connect 10 0 24 0;
+#X connect 15 0 24 0;
+#X connect 16 0 15 0;
+#X connect 19 0 24 0;
+#X connect 20 0 19 0;
+#X connect 24 0 8 0;
+#X connect 24 1 1 0;
+#X connect 24 2 6 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 0;
+#X connect 28 0 24 0;
