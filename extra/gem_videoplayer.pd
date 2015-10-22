@@ -1,4 +1,4 @@
-#N canvas 761 249 417 506 10;
+#N canvas 482 205 528 508 10;
 #X declare -path ../rc-patches;
 #X obj 105 364 pix_film;
 #X obj 15 11 inlet;
@@ -8,8 +8,8 @@
 #X obj 189 97 change;
 #X obj 243 93 expr 1/$f1*1000;
 #X obj 243 68 inlet fps;
-#X obj 300 269 inlet frame pos;
-#X obj 228 238 inlet loopsize in frames;
+#X obj 295 270 inlet frame pos;
+#X obj 350 235 inlet loopsize in frames;
 #N canvas 673 108 384 201 args 0;
 #X obj 15 27 loadbang;
 #X obj 15 89 list append \$1;
@@ -46,7 +46,7 @@
 #X obj 303 381 unpack f f f;
 #X obj 189 268 u_count;
 #X obj 150 338 + 0;
-#X obj 300 300 moses 0;
+#X obj 295 301 moses 0;
 #X obj 258 268 + 1;
 #X msg 228 342 0;
 #X obj 189 299 moses 0;
