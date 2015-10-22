@@ -29,14 +29,13 @@
 #X obj 261 299 unpack f f;
 #X obj 320 252 t a a b;
 #X obj 337 88 t a a;
-#N canvas 0 22 398 122 defaults 0;
+#N canvas 239 84 398 122 defaults 0;
 #X obj 18 16 loadbang;
 #X obj 18 88 outlet;
 #X text 224 89 default black background;
 #X msg 18 48 offset 100 100 \, dimen 400 400 \, defaultView \, color
 0 0 0;
 #X connect 0 0 3 0;
-#X connect 3 0 1 0;
 #X restore 68 12 pd defaults;
 #X text 73 158 allow titles with spaces;
 #X text 326 451 2012 Dan Wilcox GPL v3;
