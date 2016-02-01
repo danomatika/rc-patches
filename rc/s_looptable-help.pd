@@ -1,0 +1,72 @@
+#N canvas 133 74 750 620 10;
+#X obj 542 586 table loop-samp;
+#X obj 542 496 openpanel;
+#X obj 542 552 soundfiler;
+#X obj 542 469 bng 20 250 50 0 empty empty open-sample 0 -6 1 10 -262144
+-1 -1;
+#X obj 326 587 s RJLIB;
+#X msg 326 556 sf-samplerate 44100;
+#X text 319 532 Set soundfile samplerate globally:;
+#X msg 155 502 stop;
+#X obj 155 463 g_tgl smooth;
+#X msg 230 438 sr 44100;
+#X msg 155 437 sr 22050;
+#X text 153 417 adjust file samplerate (Hz \, default 22050);
+#X text 191 175 original gain \, half pitch;
+#X text 220 239 original gain \, original pitch \, start at 500ms;
+#X obj 58 564 soundoutput;
+#X msg 542 526 read -resize \$1 loop-samp;
+#X msg 71 142 loop-samp 0.5;
+#X msg 103 239 loop-samp 1 1 500;
+#X obj 58 516 s_looptable;
+#X text 196 502 stop looping;
+#X obj 145 346 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 132 315 bang;
+#X msg 155 386 set 0.5;
+#X text 167 315 repeat last instruction;
+#X text 168 347 loop on/off;
+#X text 127 112 play all with original gain and original pitch;
+#X text 164 143 half gain and original pitch;
+#X text 18 11 s_looptable;
+#X text 114 37 s_looptable is controlled through messages composed
+of:;
+#X text 114 63 <table name> <gain> <transposition> <start location
+(ms)> <duration (ms)>;
+#X text 229 469 optional loop overlap smoothing (default off);
+#X text 211 387 set current pos in the loop (normalized 0-1);
+#X msg 84 174 loop-samp 1 0.5;
+#X msg 155 528 reset;
+#X text 200 530 reset to start;
+#X msg 97 207 loop-samp 1 -1 \, set 0;
+#X text 241 208 original gain \, backwards & start at beginning of
+loop;
+#X msg 58 112 loop-samp;
+#X text 315 274 original gain \, original pitch \, start at 500ms \,
+play for 1000ms & start at beginning of loop;
+#X msg 125 272 loop-samp 1 1 500 1000 \, set 0;
+#X text 337 312 Changing the tranpsotion \, start pos \, & duration
+does not take effect until the loop has finished from its current position.
+If you want an immediate jump \, follow up your change command with
+a "set 0" which resets the loop position to the start.;
+#X text 113 12 low level but flexible table sample looper;
+#X connect 1 0 15 0;
+#X connect 3 0 1 0;
+#X connect 5 0 4 0;
+#X connect 7 0 18 1;
+#X connect 8 0 18 1;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 15 0 2 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 0;
+#X connect 18 0 14 1;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;
+#X connect 22 0 18 0;
+#X connect 32 0 18 0;
+#X connect 33 0 18 1;
+#X connect 35 0 18 0;
+#X connect 37 0 18 0;
+#X connect 39 0 18 0;

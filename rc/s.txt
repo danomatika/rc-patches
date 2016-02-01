@@ -9,4 +9,5 @@ s_bendytom - an electro bendy tom
 s_crossfm - cross frequency modulation synth
 s_crossfmpm - cross frequency / phase modulation synth
 s_crosspm - cross phase modulation synth
+s_looptable - low level but flexible table sample looper
 s_sample - one shot sample player
