@@ -1,0 +1,27 @@
+#N canvas 540 71 610 251 10;
+#X obj 302 214 tgl 15 0 empty empty connected? 17 7 0 10 -262144 -1
+-1 1 1;
+#X obj 302 103 tgl 15 0 empty empty connect 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 443 159 tgl 15 0 empty empty print_all_messages 17 7 0 10 -262144
+-1 -1 0 1;
+#X text 18 14 convenience wrapper for netsend & oscformat;
+#X text 156 38 creation args: sending ip & port (optional);
+#X msg 377 123 set localhost 9988;
+#X text 500 122 set ip & port;
+#X obj 23 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 147 104 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11800 1;
+#X obj 302 183 n_oscsend localhost 8880;
+#X text 21 75 test messages to n_oscreceive-help.pd;
+#X obj 23 133 oscformat /test/tgl;
+#X obj 144 131 oscformat /test/slider;
+#X connect 1 0 9 0;
+#X connect 2 0 9 1;
+#X connect 5 0 9 0;
+#X connect 7 0 11 0;
+#X connect 8 0 12 0;
+#X connect 9 0 0 0;
+#X connect 11 0 9 0;
+#X connect 12 0 9 0;

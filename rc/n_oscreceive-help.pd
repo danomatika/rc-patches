@@ -1,0 +1,25 @@
+#N canvas 58 70 426 306 10;
+#X obj 132 128 tgl 15 0 empty empty print_all_messages 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 33 55 tgl 15 0 empty empty listen 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 86 85 set 9988;
+#X text 149 86 set listening port;
+#X text 159 154 creation arg: listening port (optional);
+#X text 12 16 convenience wrapper for netreceive & ocparse;
+#X text 112 198 osc list messages out;
+#X obj 33 154 n_oscreceive 8880;
+#X obj 33 197 route test;
+#X obj 33 233 route tgl slider;
+#X obj 33 268 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 82 268 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8000 1;
+#X text 150 235 test messages from n_sendosc-help.pd;
+#X connect 0 0 7 1;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;

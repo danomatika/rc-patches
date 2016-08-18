@@ -1,0 +1,2 @@
+n_oscreceive - convenience wrapper for netreceive & ocparse
+n_oscsend - convenience wrapper for netsend & oscformat
