@@ -6,8 +6,10 @@ s_808cymbal - a tr808 cymbal emulation
 s_808hihat - a tr808 hi hat emulation
 s_808snare - a tr808 snare drum emulation
 s_bendytom - an electro bendy tom
+s_brownnoise - brown noise generator
 s_crossfm - cross frequency modulation synth
 s_crossfmpm - cross frequency / phase modulation synth
 s_crosspm - cross phase modulation synth
 s_looptable - low level but flexible table sample looper
 s_sample - one shot sample player
+s_scrubtable - scrib the contents of a table

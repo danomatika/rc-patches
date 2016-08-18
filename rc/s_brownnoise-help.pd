@@ -1,0 +1,17 @@
+#N canvas 286 216 908 350 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-brown-display 5000 float 0;
+#X coords 0 1 4999 -1 500 300 1 0 0;
+#X restore 390 29 graph;
+#X obj 168 151 tabwrite~ \$0-brown-display;
+#X obj 168 100 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 23 290 posted by Matt Barder <brbrofsvl@gmail.com> to the pd-list
+Nov 2015;
+#X obj 29 219 soundoutput;
+#X obj 29 63 s_brownnoise;
+#X text 22 19 brown noise generator;
+#X connect 2 0 1 0;
+#X connect 5 0 1 0;
+#X connect 5 0 4 1;
+#X connect 5 0 4 0;

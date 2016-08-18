@@ -1,0 +1,35 @@
+#N canvas 536 142 622 388 10;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array scrub-samp 22050 float 0;
+#X coords 0 1 22050 -1 200 140 1 0 0;
+#X restore 345 204 graph;
+#X obj 418 83 adc~ 1;
+#X obj 418 110 hip~ 5;
+#X obj 476 112 bng 15 250 50 0 empty empty record 17 7 0 10 -258113
+-1 -1;
+#X obj 174 218 bng 15 250 50 0 empty empty play_once 17 7 0 10 -4034
+-1 -1;
+#X obj 71 301 soundoutput;
+#X obj 74 84 hsl 128 15 0 127 0 0 empty empty scrub_me -2 -8 0 10 -4032
+-1 -1 0 1;
+#X obj 71 110 / 127;
+#X floatatom 71 136 10 0 0 1 position_0-1 - -, f 10;
+#X obj 418 145 tabwrite~ scrub-samp;
+#X obj 174 242 tabplay~ scrub-samp;
+#X floatatom 206 153 5 0 0 1 interpolation_delay_in_ms - -, f 5;
+#X msg 37 41 set scrub-samp;
+#X obj 71 182 s_scrubtable scrub-samp;
+#X text 22 11 scrub the contents of a table;
+#X connect 1 0 2 0;
+#X connect 2 0 9 0;
+#X connect 3 0 9 0;
+#X connect 4 0 10 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 13 0;
+#X connect 10 0 5 1;
+#X connect 10 0 5 0;
+#X connect 11 0 13 1;
+#X connect 12 0 13 0;
+#X connect 13 0 5 0;
+#X connect 13 0 5 1;
