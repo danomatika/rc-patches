@@ -4,4 +4,6 @@ m_gmcontrol - general midi control mapping look up table
 m_gminstrument - general midi instrument mapping look up table
 m_gmpercussion - general midi percussion mapping look up table
 m_mavg - moving average filter
+m_randomfloat - outputs a normalized random float from 0 - 1
+m_randomrange - output a random int  between a range of numbers
 m_scalefilter - filter notes based on a given scale
