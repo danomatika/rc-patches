@@ -15,5 +15,6 @@ u_mux2 - multiplex between 2 inlets to 1 outlet
 u_openclose - open and close patches via filename (requires ggee)
 u_remote - send remote messages to state saving objects
 u_savestate - save & load scene state settings
+u_symbolchange - like [change] but for symbols
 u_tabdump - dump the contents of a table as a list
 u_tabset - set the contents of a table via a list

@@ -45,11 +45,11 @@ loop;
 #X text 315 274 original gain \, original pitch \, start at 500ms \,
 play for 1000ms & start at beginning of loop;
 #X msg 125 272 loop-samp 1 1 500 1000 \, set 0;
-#X text 337 312 Changing the tranpsotion \, start pos \, & duration
+#X text 113 12 low level but flexible table sample looper;
+#X text 337 312 Changing the transposition \, start pos \, & duration
 does not take effect until the loop has finished from its current position.
 If you want an immediate jump \, follow up your change command with
 a "set 0" which resets the loop position to the start.;
-#X text 113 12 low level but flexible table sample looper;
 #X connect 1 0 15 0;
 #X connect 3 0 1 0;
 #X connect 5 0 4 0;
