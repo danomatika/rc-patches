@@ -1,8 +1,4 @@
-#N struct 1013-lookup float x array pairs 1013-pair;
-#N struct 1013-pair symbol name float note;
-#N struct 1014-lookup float x array pairs 1014-pair;
-#N struct 1014-pair symbol name float note;
-#N canvas 178 65 868 521 10;
+#N canvas 337 74 868 521 10;
 #N canvas 187 140 582 570 REFERENCE 0;
 #X text 24 434 Tags: midi \, general midi \, look up table;
 #X text 24 31 Name: m_gmcontrol;
@@ -15,7 +11,7 @@ passed through \, "print" print the look up table;
 Midi spec. I can never remember which control goes with which number
 \, so it's nice to use the control names themselves. See the spec for
 more info: http://en.wikipedia.org/wiki/General_midi;
-#X text 24 334 See also: m_gminstrument m_gmpercussion;
+#X text 24 334 See also: [m_gminstrument] [m_gmpercussion];
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -27,7 +23,7 @@ more info: http://en.wikipedia.org/wiki/General_midi;
 ;
 #X msg 610 264 print;
 #X obj 599 371 print;
-#X floatatom 557 336 5 0 0 1 control_num - -;
+#X floatatom 557 336 5 0 0 1 control_num - -, f 5;
 #X text 655 265 print the table for reference;
 #X text 625 227 floats are passed through;
 #N canvas 0 22 188 147 noteout 0;
@@ -47,7 +43,7 @@ more info: http://en.wikipedia.org/wiki/General_midi;
 #X msg 580 182 Pan;
 #X obj 511 96 hsl 128 15 0 127 0 0 empty empty control_amount -2 8
 0 10 -262144 -1 -1 0 1;
-#X floatatom 508 356 5 0 0 0 - - -;
+#X floatatom 508 356 5 0 0 0 - - -, f 5;
 #X text 614 147 get control num using GM name;
 #X msg 594 227 1;
 #X obj 557 300 m_gmcontrol;

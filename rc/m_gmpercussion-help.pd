@@ -1,8 +1,4 @@
-#N struct 1004-lookup float x array pairs 1004-pair;
-#N struct 1004-pair symbol name float note;
-#N struct 1005-lookup float x array pairs 1005-pair;
-#N struct 1005-pair symbol name float note;
-#N canvas 22 73 868 521 10;
+#N canvas 330 38 868 521 10;
 #N canvas 187 140 582 570 REFERENCE 0;
 #X text 24 31 Name: m_gmpercussion;
 #X text 24 51 Summary: converts a drum name to a midi note from the
@@ -10,12 +6,12 @@ General Midi (GM) spec;
 #X text 24 108 Inlet 0: <symbol> percussion instrument name \, <float>
 floats are passed through \, "print" print the look up table;
 #X text 24 164 Outlet 0: midi note;
-#X text 24 334 See also: m_gminstrument m_gmcontrol;
 #X text 24 234 Description: This is a helper when woking with the General
 Midi spec. I can never remember which instrument goes with which note
 \, so it's nice to use the instrument names themselves. See the spec
 for more info: http://en.wikipedia.org/wiki/General_midi;
 #X text 24 434 Tags: midi \, general midi \, look up table;
+#X text 24 334 See also: [m_gminstrument] [m_gmcontrol];
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -26,7 +22,7 @@ for more info: http://en.wikipedia.org/wiki/General_midi;
 #X msg 610 255 print;
 #X obj 557 363 print;
 #X msg 534 123 Bass_Drum_1;
-#X floatatom 557 327 5 0 0 1 note - -;
+#X floatatom 557 327 5 0 0 1 note - -, f 5;
 #X text 655 256 print the table for reference;
 #X msg 594 214 60;
 #X text 625 214 floats are passed through;
@@ -45,9 +41,9 @@ for more info: http://en.wikipedia.org/wiki/General_midi;
 #X text 516 399 note: chan 10 for percussion (+11 in GM2);
 #X obj 557 291 m_gmpercussion;
 #X text 129 21 - general midi percussion mapping look up table;
-#X obj 8 20 m_gmpercussion;
 #X text 512 439 naturally \, hook up Pd to a General Midi synth ...
 ;
+#X obj 8 20 m_gmpercussion;
 #X connect 4 0 17 0;
 #X connect 6 0 17 0;
 #X connect 7 0 5 0;

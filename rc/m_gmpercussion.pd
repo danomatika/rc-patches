@@ -1,229 +1,76 @@
-#N struct 1218-lookup float x array pairs 1218-pair;
-#N struct 1218-pair symbol name float note;
-#N canvas 748 22 510 220 10;
-#N canvas 107 565 450 300 \$0-data 0;
-#X scalar 1218-lookup 0 \; Bass_Drum_1 35 \; Bass_Drum_2 36 \; Side_Stick
-37 \; Snare_Drum_1 38 \; Hand_Clap 39 \; Snare_Drum_2 40 \; Low_Tom_2
-41 \; Closed_Hi-Hat 42 \; Low_Tom_1 43 \; Pedal_Hi-Hat 44 \; Mid_Tom_2
-45 \; Open_Hi-Hat 46 \; Mid_Tom_1 47 \; High_Tom_2 48 \; Crash_Cymbal_1
-49 \; High_Tom_1 50 \; Ride_Cymbal_1 51 \; Chinese_Cymbal 52 \; Ride_Bell
-53 \; Tambourine 54 \; Splash_Cymbal 55 \; Cowbell 56 \; Crash_Cymbal_2
-57 \; Vibra_Slap 58 \; Ride_Cymbal_2 59 \; High_Bongo 60 \; Low_Bongo
-61 \; Mute_High_Conga 62 \; Open_High_Conga 63 \; Low_Conga 64 \; High_Timbale
-65 \; Low_Timbale 66 \; High_Agogo 67 \; Low_Agogo 68 \; Cabasa 69
-\; Maracas 70 \; Short_Whistle 71 \; Long_Whistle 72 \; Short_Guiro
-73 \; Long_Guiro 74 \; Claves 75 \; High_Wood_Block 76 \; Low_Wood_Block
-77 \; Mute_Cuica 78 \; Open_Cuica 79 \; Mute_Triangle 80 \; Open_Triangle
-81 \; \;;
-#X restore 318 116 pd \$0-data;
-#N canvas 370 32 810 653 init 0;
-#X msg 31 244 Bass_Drum_1 35 \, Bass_Drum_2 36 \, Side_Stick 37 \,
-Snare_Drum_1 38 \, Hand_Clap 39 \, Snare_Drum_2 40 \, Low_Tom_2 41
-\, Closed_Hi-Hat 42 \, Low_Tom_1 43 \, Pedal_Hi-Hat 44 \, Mid_Tom_2
-45 \, Open_Hi-Hat 46 \, Mid_Tom_1 47 \, High_Tom_2 48 \, Crash_Cymbal_1
-49 \, High_Tom_1 50 \, Ride_Cymbal_1 51 \, Chinese_Cymbal 52 \, Ride_Bell
-53 \, Tambourine 54 \, Splash_Cymbal 55 \, Cowbell 56 \, Crash_Cymbal_2
-57 \, Vibra_Slap 58 \, Ride_Cymbal_2 59 \, High_Bongo 60 \, Low_Bongo
-61 \, Mute_High_Conga 62 \, Open_High_Conga 63 \, Low_Conga 64 \, High_Timbale
-65 \, Low_Timbale 66 \, High_Agogo 67 \, Low_Agogo 68 \, Cabasa 69
-\, Maracas 70 Maracas \, Short_Whistle 71 \, Long_Whistle 72 \, Short_Guiro
-73 \, Long_Guiro 74 \, Claves 75 Claves \, High_Wood_Block 76 \, Low_Wood_Block
-77 \, Mute_Cuica 78 \, Open_Cuica 79 \, Mute_Triangle 80 \, Open_Triangle
-81;
-#X obj 307 544 r \$0-lookup-p;
-#X obj 188 619 set \$0-pair note;
-#X obj 31 569 unpack s f;
-#X obj 172 571 element \$0-lookup pairs;
-#X obj 172 485 f;
-#X obj 201 485 + 1;
-#X msg 215 457 0;
-#X obj 31 452 t a b;
-#X obj 31 208 t b b;
-#X msg 31 172 bang;
-#X obj 529 186 pointer;
-#X obj 424 263 pointer;
-#X msg 437 238 bang;
-#X msg 526 78 clear;
-#X msg 424 186 0;
-#X text 475 237 resend;
-#X msg 529 161 traverse \$1 \, bang;
-#X obj 529 133 symbol pd-\$0-data;
-#X obj 407 23 loadbang;
-#X obj 526 102 s pd-\$0-data;
-#X text 585 186 where to create? In [pd \$0-data]!;
-#X obj 424 291 s \$0-lookup-p;
-#X obj 424 213 append \$0-lookup x;
-#X msg 473 23 bang;
-#X obj 31 618 set -symbol \$0-pair name;
-#N canvas 631 380 281 281 change-size 0;
-#X obj 49 151 max;
-#X obj 82 151 f;
-#X obj 49 18 inlet;
-#X obj 49 182 change -1;
-#X obj 64 75 r \$0-reset;
-#X obj 64 100 t b b;
-#X msg 118 153 set -1;
-#X obj 49 44 + 1;
-#X msg 64 124 0;
-#X obj 12 244 s \$0-size;
-#X obj 184 183 r \$0-lookup-p;
-#X obj 49 211 setsize \$0-lookup pairs;
-#X connect 0 0 1 0;
-#X connect 0 0 3 0;
-#X connect 1 0 0 1;
-#X connect 2 0 7 0;
-#X connect 3 0 9 0;
-#X connect 3 0 11 0;
-#X connect 4 0 5 0;
+#N canvas 0 23 472 148 10;
+#N canvas 0 23 322 464 print 0;
+#X obj 134 182 + 1;
+#X obj 100 182 f;
+#X obj 100 151 until;
+#X msg 142 151 0;
+#X obj 100 403 print -n;
+#X obj 29 42 inlet;
+#X obj 40 247 t b b b;
+#X obj 100 246 list trim;
+#X obj 29 67 t b b b;
+#X obj 100 97 t b b;
+#X obj 100 214 text get \$0-lookup;
+#X obj 100 123 text size \$0-lookup;
+#X msg 29 293 ---------------------------------------;
+#X msg 59 321 General Midi Percussion Num Mapping;
+#X connect 0 0 1 1;
+#X connect 1 0 0 0;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
 #X connect 5 0 8 0;
-#X connect 5 1 6 0;
-#X connect 6 0 3 0;
-#X connect 7 0 0 0;
-#X connect 8 0 0 1;
-#X connect 10 0 11 1;
-#X restore 199 544 pd change-size;
-#X obj 172 515 t f f;
-#X obj 577 77 s \$0-reset;
-#X obj 407 51 t b b b b;
-#X text 220 516 load lookup table;
-#X connect 0 0 8 0;
-#X connect 1 0 4 1;
-#X connect 3 0 25 0;
-#X connect 3 1 2 0;
-#X connect 4 0 2 1;
-#X connect 4 0 25 1;
-#X connect 5 0 6 0;
-#X connect 5 0 27 0;
-#X connect 6 0 5 1;
-#X connect 7 0 5 1;
-#X connect 8 0 3 0;
-#X connect 8 1 5 0;
-#X connect 9 0 0 0;
-#X connect 9 1 7 0;
-#X connect 10 0 9 0;
-#X connect 11 0 23 1;
-#X connect 12 0 22 0;
-#X connect 13 0 12 0;
-#X connect 14 0 20 0;
-#X connect 15 0 23 0;
-#X connect 17 0 11 0;
-#X connect 18 0 17 0;
-#X connect 19 0 29 0;
-#X connect 23 0 12 0;
-#X connect 24 0 29 0;
-#X connect 27 0 4 0;
-#X connect 27 1 26 0;
-#X connect 29 0 10 0;
-#X connect 29 1 15 0;
-#X connect 29 2 18 0;
-#X connect 29 3 14 0;
-#X connect 29 3 28 0;
-#X restore 196 189 pd init;
-#N canvas 307 179 450 300 \$0-lookup 0;
-#X obj 42 95 drawpolygon 900 1 0 0 0 10 10 10 10 0 0 0;
-#X obj 42 54 struct \$0-lookup float x array pairs \$0-pair;
-#X restore 196 138 pd \$0-lookup;
-#N canvas 763 275 396 238 \$0-pair 0;
-#X obj 77 51 struct \$0-pair symbol name float note;
-#X restore 196 115 pd \$0-pair;
-#N canvas 651 113 329 471 print 0;
-#X obj 85 234 element \$0-lookup pairs;
-#X obj 85 178 until;
-#X obj 100 101 getsize \$0-lookup pairs;
-#X obj 85 127 f;
-#X obj 85 206 f;
-#X obj 114 206 + 1;
-#X obj 85 152 t f b;
-#X msg 128 178 0;
-#X obj 139 46 r \$0-lookup-p;
-#X obj 220 204 r \$0-lookup-p;
-#X obj 85 262 get \$0-pair note name;
-#X obj 85 291 pack f s;
-#X obj 85 429 print gm-percussion;
-#X obj 20 18 inlet;
-#X msg 20 337 ------------------------------;
-#X msg 50 365 General Midi Percussion Note Mapping;
-#X obj 31 291 t b b b;
-#X obj 100 73 pointer;
-#X obj 20 47 t b b b b;
-#X connect 0 0 10 0;
-#X connect 1 0 4 0;
-#X connect 2 0 3 1;
-#X connect 3 0 6 0;
-#X connect 4 0 5 0;
-#X connect 4 0 0 0;
-#X connect 5 0 4 1;
-#X connect 6 0 1 0;
-#X connect 6 1 7 0;
-#X connect 7 0 4 1;
-#X connect 8 0 17 1;
-#X connect 9 0 0 1;
-#X connect 10 0 11 0;
-#X connect 10 1 11 1;
-#X connect 11 0 12 0;
-#X connect 13 0 18 0;
-#X connect 14 0 12 0;
-#X connect 15 0 12 0;
-#X connect 16 0 14 0;
-#X connect 16 1 15 0;
-#X connect 16 2 14 0;
-#X connect 17 0 2 0;
-#X connect 18 0 14 0;
-#X connect 18 1 3 0;
-#X connect 18 2 16 0;
-#X connect 18 3 17 0;
-#X restore 107 135 pd print;
-#X msg 107 109 bang;
-#N canvas 315 372 348 376 lookup 0;
-#X obj 19 17 inlet;
-#X obj 208 338 outlet;
-#X obj 100 209 element \$0-lookup pairs;
-#X obj 100 153 until;
-#X obj 115 76 getsize \$0-lookup pairs;
-#X obj 100 237 get \$0-pair name note;
-#X obj 208 310 f;
-#X obj 46 238 symbol;
-#X obj 100 279 select SYMBOL;
-#X obj 100 102 f;
-#X obj 100 181 f;
-#X obj 129 181 + 1;
-#X obj 100 127 t f b;
-#X msg 143 153 0;
-#X obj 159 22 r \$0-lookup-p;
-#X obj 235 179 r \$0-lookup-p;
-#X obj 93 22 r \$0-size;
-#X obj 114 51 pointer;
-#X obj 19 46 t b a b;
-#X connect 0 0 18 0;
+#X connect 6 0 12 0;
+#X connect 6 1 13 0;
+#X connect 6 2 12 0;
+#X connect 7 0 4 0;
+#X connect 8 0 12 0;
+#X connect 8 1 9 0;
+#X connect 8 2 6 0;
+#X connect 9 0 11 0;
+#X connect 9 1 3 0;
+#X connect 10 0 7 0;
+#X connect 11 0 2 0;
+#X connect 12 0 4 0;
+#X connect 13 0 4 0;
+#X restore 22 88 pd print;
+#X obj 257 92 text define -k \$0-lookup;
+#A set Bass_Drum_1 35 \; Bass_Drum_2 36 \; Side_Stick 37 \; Snare_Drum_1
+38 \; Hand_Clap 39 \; Snare_Drum_2 40 \; Low_Tom_2 41 \; Closed_Hi-Hat
+42 \; Low_Tom_1 43 \; Pedal_Hi-Hat 44 \; Mid_Tom_2 45 \; Open_Hi-Hat
+46 \; Mid_Tom_1 47 \; High_Tom_2 48 \; Crash_Cymbal_1 49 \; High_Tom_1
+50 \; Ride_Cymbal_1 51 \; Chinese_Cymbal 52 \; Ride_Bell 53 \; Tambourine
+54 \; Splash_Cymbal 55 \; Cowbell 56 \; Crash_Cymbal_2 57 \; Vibra_Slap
+58 \; Ride_Cymbal_2 59 \; High_Bongo 60 \; Low_Bongo 61 \; Mute_High_Conga
+62 \; Open_High_Conga 63 \; Low_Conga 64 \; High_Timbale 65 \; Low_Timbale
+66 \; High_Agogo 67 \; Low_Agogo 68 \; Cabasa 69 \; Maracas 70 \; Short_Whistle
+71 \; Long_Whistle 72 \; Short_Guiro 73 \; Long_Guiro 74 \; Claves
+75 \; High_Wood_Block 76 \; Low_Wood_Block 77 \; Mute_Cuica 78 \; Open_Cuica
+79 \; Mute_Triangle 80 \; Open_Triangle 81 \;;
+#N canvas 561 209 266 280 lookup 0;
+#X obj 50 26 inlet;
+#X obj 146 227 outlet;
+#X obj 119 97 symbol;
+#X obj 50 150 moses 0;
+#X obj 89 202 unpack s f;
+#X obj 50 121 text search \$0-lookup;
+#X obj 89 176 text get \$0-lookup;
+#X obj 50 50 route symbol;
+#X obj 119 74 list trim;
+#X connect 0 0 7 0;
 #X connect 2 0 5 0;
-#X connect 3 0 10 0;
-#X connect 5 0 8 0;
-#X connect 5 1 6 1;
-#X connect 6 0 1 0;
-#X connect 7 0 8 1;
-#X connect 8 0 6 0;
-#X connect 9 0 12 0;
-#X connect 10 0 11 0;
-#X connect 10 0 2 0;
-#X connect 11 0 10 1;
-#X connect 12 0 3 0;
-#X connect 12 1 13 0;
-#X connect 13 0 10 1;
-#X connect 14 0 17 1;
-#X connect 15 0 2 1;
-#X connect 16 0 9 1;
-#X connect 17 0 4 0;
-#X connect 18 0 9 0;
-#X connect 18 1 7 0;
-#X restore 60 163 pd lookup;
-#X obj 13 191 outlet;
-#X obj 13 38 inlet name;
-#X text 132 48 see: http://en.wikipedia.org/wiki/General_midi;
-#X text 100 30 converts a drum name to a note num from the GM spec
-;
-#X text 12 6 general midi percussion mapping look up table;
-#X text 192 90 Data structures:;
-#X text 315 94 the lookup table is in here;
+#X connect 3 1 6 0;
+#X connect 4 1 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 7 1 8 0;
+#X connect 8 0 2 0;
+#X restore 121 89 pd lookup;
+#X text 254 71 the lookup table data is in here;
+#X obj 121 116 outlet;
+#X obj 22 58 route print float;
+#X obj 22 30 inlet name;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
 and/or modify it under the terms of the GNU General Public License
@@ -240,12 +87,13 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 ;
 #X text 56 54 Copyright (C) 2013 \, Dan Wilcox <danomatika@gmail.com>
 ;
-#X restore 316 188 pd LICENSE-GPL;
-#X obj 13 76 route float print;
-#X text 315 138 inspired by rjlib m_symbolarray;
-#X connect 5 0 4 0;
-#X connect 6 0 7 0;
-#X connect 8 0 15 0;
-#X connect 15 0 7 0;
-#X connect 15 1 5 0;
-#X connect 15 2 6 0;
+#X restore 257 118 pd LICENSE-GPL;
+#X text 140 48 see: http://en.wikipedia.org/wiki/General_midi;
+#X text 108 30 converts a drum name to a note num from the GM spec
+;
+#X text 20 6 general midi percussion mapping look up table;
+#X connect 2 0 4 0;
+#X connect 5 0 0 0;
+#X connect 5 1 4 0;
+#X connect 5 2 2 0;
+#X connect 6 0 5 0;
