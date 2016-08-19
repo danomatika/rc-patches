@@ -1,0 +1,13 @@
+#N canvas 0 23 655 197 10;
+#X obj 290 59 inlet~;
+#X obj 290 92 outlet~;
+#X obj 366 59 inlet~;
+#X obj 366 92 outlet~;
+#X obj 50 119 s~ \$1/left;
+#X obj 160 58 catch~ \$1/right;
+#X obj 50 58 catch~ \$1/left;
+#X obj 160 119 s~ \$1/right;
+#X text 282 117 Dummy xlets for optional execution order forcing. They
+do nothing else.;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;

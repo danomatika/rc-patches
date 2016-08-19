@@ -1,0 +1,87 @@
+#N canvas 115 63 868 521 10;
+#N canvas 139 88 582 570 REFERENCE 0;
+#X text 24 31 Name: c_bus2;
+#X text 24 51 Summary: create a named audio bus (stereo);
+#X text 24 91 Argument 0: name of bus. Must be unique and not used
+in [catch~] or [s~] anywhere else.;
+#X text 24 164 Inlet 1: dummy inlet for execution order forcing.;
+#X text 24 144 Inlet 0: dummy inlet for execution order forcing.;
+#X text 24 204 Outlet 0: dummy outlet for execution order forcing.
+Carries no sound signal;
+#X text 24 234 Outlet 1: dummy outlet for execution order forcing.
+Carries no sound signal;
+#X text 24 277 Description: [c_bus2] is a routing helper for stereo
+audio. It receives audio [throw~]s to its internal [catch~]s named
+by its argument (\$1/left & \$1/right) \, then [send~]s it along to
+a [receive~] of the same name. [c_bus2] is meant to be used with the
+[c_robus2] to send stereo audio to a bus and with [c_frombus2] to read
+from the bus.;
+#X text 24 374 See also: [c_frombus2] [c_tobus2] [c_bus] [c_frombus2]
+etc;
+#X text 24 434 Tags: audio signal bus routing;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2016;
+#X obj 495 211 noise~;
+#X obj 708 212 osc~ 440;
+#X obj 680 400 soundoutput;
+#X obj 680 367 c_xfade;
+#X obj 745 368 hsl 50 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 494 385 lop~ 220;
+#X msg 569 182 ONE;
+#X msg 604 183 TWO;
+#X msg 625 210 set ONE;
+#X text 597 211 or:;
+#X msg 782 211 ONE;
+#X msg 815 211 TWO;
+#X msg 531 326 TWO;
+#X msg 494 326 ONE;
+#X msg 570 325 error;
+#X text 479 160 Sending to busses;
+#X text 477 28 First create busses. Bus names are globally visible.
+;
+#X text 651 182 renaming bus target;
+#X text 477 112 Dummy in/outlets can be used to force execution order.
+Here bus THREE will execute prior to bus FOUR.;
+#X text 478 287 Reading from busses;
+#X obj 546 63 c_bus2 ONE;
+#X obj 623 63 c_bus2 TWO;
+#X obj 702 64 c_bus2 THREE;
+#X obj 702 85 c_bus2 FOUR;
+#X text 479 449 Note: Read and sending can introduce delays and thus
+phasing effects.;
+#X obj 495 243 c_tobus2 ONE;
+#X obj 708 245 c_tobus2 TWO;
+#X obj 494 352 c_frombus2 ONE;
+#X obj 557 385 lop~ 220;
+#X obj 494 416 c_tobus2 TWO;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X msg 7 21 c_bus2;
+#X text 129 21 - create a named stereo audio bus;
+#X obj 680 298 c_frombus2 ONE;
+#X obj 699 326 c_frombus2 TWO;
+#X connect 2 0 27 0;
+#X connect 2 0 27 1;
+#X connect 3 0 28 0;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 5 2;
+#X connect 7 0 31 0;
+#X connect 8 0 27 2;
+#X connect 9 0 27 2;
+#X connect 10 0 27 2;
+#X connect 12 0 28 2;
+#X connect 13 0 28 2;
+#X connect 14 0 29 0;
+#X connect 15 0 29 0;
+#X connect 16 0 29 0;
+#X connect 24 0 25 0;
+#X connect 24 1 25 1;
+#X connect 29 0 7 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 1;
+#X connect 35 0 5 0;
+#X connect 36 0 5 1;

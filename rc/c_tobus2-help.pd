@@ -1,0 +1,38 @@
+#N canvas 115 63 868 521 10;
+#N canvas 338 85 582 570 REFERENCE 0;
+#X text 24 32 Name: c_tobus2;
+#X text 24 51 Summary: send to a named audio bus (stereo);
+#X text 24 91 Argument 0: name of bus to send audio to;
+#X text 24 124 Inlet 0: audio signal to send;
+#X text 24 144 Inlet 1: set <name>: rename target bus to <name>. <name>:
+rename target bus to <name> is not equal to "set";
+#X text 24 334 See also: [c_bus2] [c_frombus2] [c_bus] [c_tobus] etc
+;
+#X text 24 234 Description: [c_tobus2] is mean to be used together
+with the [c_bus2] object to send audio to a bus. Please see the [c_bus]
+help file for details.;
+#X text 24 434 Tags: audio signal bus routing;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 468 51 Example:;
+#X obj 553 252 noise~;
+#X msg 627 223 ONE;
+#X msg 662 224 TWO;
+#X msg 683 251 set ONE;
+#X text 482 220 Sending to busses;
+#X text 485 130 First create busses. Bus names are globally visible.
+;
+#X text 713 220 renaming bus target;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2016;
+#X obj 568 167 c_bus2 \$0-MYBUS;
+#X obj 553 284 c_tobus2 \$0-MYBUS;
+#X msg 10 20 c_tobus2;
+#X text 129 21 - send to a named stereo audio bus;
+#X connect 3 0 12 0;
+#X connect 3 0 12 1;
+#X connect 4 0 12 2;
+#X connect 5 0 12 2;
+#X connect 6 0 12 2;
