@@ -11,5 +11,6 @@ s_crossfm - cross frequency modulation synth
 s_crossfmpm - cross frequency / phase modulation synth
 s_crosspm - cross phase modulation synth
 s_looptable - low level but flexible table sample looper
+s_playsf - a simple stereo soundfile player
 s_sample - one shot sample player
 s_scrubtable - scrib the contents of a table
