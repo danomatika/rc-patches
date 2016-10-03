@@ -1,4 +1,4 @@
-#N canvas 169 44 868 521 10;
+#N canvas 197 47 868 521 10;
 #X declare -path .;
 #N canvas 49 116 484 490 REFERENCE 0;
 #X text 24 31 Name: [c_playlist];
@@ -9,21 +9,20 @@ playlist file's folder is added to your path using [declare];
 #X text 24 127 Inlet 0: "next" & "prev" - next or previous in the list
 \; <float> - choose item in list by index \, numbers are clipped between
 0 & list len \; "reset" - set current index to 0 \, doesn't send;
-#X text 24 246 Outlet 0: <symbol> list item;
-#X text 24 332 Description: The playlist format is very simple: a text
-file with each item on a separate line \, empty lines are ignored.
-Use this in conjunction with [u_openclose] to automatically open/close
-the current playlist item.;
+#X text 24 239 Outlet 0: <symbol> list item;
 #X text 24 400 See also: [u_dumpfile] \, [u_symbolarray] \, [u_openclose]
 ;
 #X text 24 434 Tags: playlist \, text file \, lists;
-#X text 24 307 Outlet 3: bangs on end of list;
-#X text 24 266 Outlet 1: <float> playlist position;
-#X text 24 287 Outlet 2: <float> playlist length \, updated when loading
+#X text 24 300 Outlet 3: bangs on end of list;
+#X text 24 259 Outlet 1: <float> playlist position;
+#X text 24 280 Outlet 2: <float> playlist length \, updated when loading
 ;
-#X text 24 187 Inlet 1: "read" & "write" - load or save a playlist
-\; "clear" - clear the current list \; "print" - print the current
-list \; "open" & "close" - open or close the playlist editor \;;
+#X text 24 187 Inlet 1: "read" - ead a playlist \; "clear" - clear
+the current list \; "print" - print the current list \;;
+#X text 24 327 Description: The playlist format is very simple: a text
+file with each item on a separate line \, empty lines are ignored.
+Use this in conjunction with [u_openclose] to automatically open/close
+the current playlist item.;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -33,43 +32,39 @@ list \; "open" & "close" - open or close the playlist editor \;;
 #X text 129 21 - manages a playlist from a text file;
 #X obj 537 229 c_playlist;
 #X obj 716 431 declare -path .;
-#X msg 671 118 print;
-#X floatatom 585 31 5 0 0 0 - - -, f 5;
-#X msg 495 86 next;
-#X msg 537 86 prev;
+#X msg 701 188 print;
+#X floatatom 564 25 5 0 0 0 - - -, f 5;
+#X msg 475 86 next;
+#X msg 517 86 prev;
 #X msg 495 370 next;
 #X symbolatom 495 431 20 0 0 0 - - -, f 20;
 #X symbolatom 537 337 40 0 0 0 - - -, f 40;
 #X obj 594 259 bng 15 250 50 0 empty empty end_of_list 17 7 0 10 -262144
 -1 -1;
 #X text 536 370 load file via creation arg;
-#X msg 466 182 reset;
-#X msg 652 91 clear;
-#X msg 633 62 read media/playlist.txt;
-#X obj 495 58 metro 500;
-#X obj 495 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 619 88 reset;
+#X msg 682 166 clear;
+#X msg 663 139 read media/playlist.txt;
+#X obj 475 58 metro 500;
+#X obj 475 25 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 456 160 back to 0;
-#X text 582 8 choose via index;
-#X text 630 39 load a playlist file;
+#X text 663 87 back to 0;
+#X text 603 22 choose via index;
+#X text 660 118 load a playlist file;
 #X floatatom 575 285 5 0 0 1 length - -, f 5;
 #X text 494 458 make sure to add paths when using relative filenames
 ;
 #X floatatom 556 311 5 0 0 1 pos - -, f 5;
-#X msg 789 90 read \$1;
-#X obj 789 65 openpanel;
-#X obj 789 43 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 734 152 open;
-#X msg 734 172 close;
-#X text 773 153 open editor;
-#X msg 690 226 write media/playlist.txt;
-#X msg 734 197 write;
-#X text 773 198 save changes;
-#X text 701 246 write to a playlist file;
+#X msg 761 213 read \$1;
+#X obj 761 188 openpanel;
+#X obj 761 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 591 52 set 2;
+#X text 636 52 set index on next bang;
+#X obj 474 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X obj 8 20 c_playlist;
 #X obj 495 400 c_playlist media/playlist.txt;
-#X text 775 172 close editor;
 #X connect 4 0 12 0;
 #X connect 4 1 25 0;
 #X connect 4 2 23 0;
@@ -78,7 +73,7 @@ list \; "open" & "close" - open or close the playlist editor \;;
 #X connect 7 0 4 0;
 #X connect 8 0 4 0;
 #X connect 9 0 4 0;
-#X connect 10 0 37 0;
+#X connect 10 0 33 0;
 #X connect 15 0 4 0;
 #X connect 16 0 4 1;
 #X connect 17 0 4 1;
@@ -87,8 +82,6 @@ list \; "open" & "close" - open or close the playlist editor \;;
 #X connect 26 0 4 1;
 #X connect 27 0 26 0;
 #X connect 28 0 27 0;
-#X connect 29 0 4 1;
-#X connect 30 0 4 1;
-#X connect 32 0 4 1;
-#X connect 33 0 4 1;
-#X connect 37 0 11 0;
+#X connect 29 0 4 0;
+#X connect 31 0 4 0;
+#X connect 33 0 11 0;

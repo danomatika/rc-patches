@@ -3,12 +3,12 @@ rc-patches
 
 Pure Data abstractions for the [robotcowboy](http://robotcowboy.com) project
 
-Copyright (c) [Dan Wilcox](danomatika.com) 2007, 2011-2014
+Copyright (c) [Dan Wilcox](danomatika.com) 2007, 2011-present
 
 LAYOUT
 ------
 
-The rc lib is focused on pd-vanilla / rjlib in order for the majority of patches to work in libpd.
+The rc lib is focused on pd-vanilla / rjlib in order for the majority of patches to work in [libpd](https://github.com/libpd/libpd).
 
 You will need to have the [rjlib](https://github.com/rjdj/rjlib) installed and added to your path. Get it from here: <https://github.com/rjdj/rjlib>
 
