@@ -1,0 +1,29 @@
+#N canvas 235 127 414 530 10;
+#X obj 132 195 g_tgl on;
+#X obj 132 164 g_tgl mute;
+#X obj 132 133 g_hsl gain 0 120;
+#X obj 69 414 soundoutput;
+#X text 164 376 outlets: stereo signal out;
+#X text 215 171 right inlet: controls;
+#X text 31 477 optionally create with a name argument for state saving
+;
+#X obj 69 235 g_chan2;
+#X obj 69 64 osc~ 440;
+#X obj 100 100 osc~ 880;
+#X text 131 66 first 2 inlets: stereo signal in;
+#X text 21 21 g_chan2: a stereo channel strip;
+#X obj 221 321 s RC_VU;
+#X msg 221 296 on \$1;
+#X obj 221 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 189 247 global VU control;
+#X text 213 201 turn off VU to save cpu time;
+#X connect 0 0 7 2;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 7 0 3 0;
+#X connect 7 1 3 1;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;

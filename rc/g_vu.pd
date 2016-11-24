@@ -1,7 +1,7 @@
-#N canvas 12 46 322 164 10;
+#N canvas 12 46 382 164 10;
 #X obj 70 37 inlet~;
 #X obj 70 99 outlet~;
-#N canvas 953 549 288 167 vu_meter 0;
+#N canvas 171 126 288 167 vu_meter 0;
 #X obj 23 20 inlet~;
 #X obj 23 52 env~ 8192;
 #X obj 23 137 s \$0-vu;
@@ -29,9 +29,11 @@
 #X obj 229 49 route on;
 #X obj 229 75 route float;
 #X obj 229 101 s \$0-switch;
+#X obj 284 23 r RC_VU;
 #X connect 0 0 2 0;
 #X connect 0 0 1 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
+#X connect 9 0 6 0;
 #X coords 0 -1 1 1 40 134 1 0 0;
