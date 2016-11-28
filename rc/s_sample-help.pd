@@ -9,12 +9,11 @@
 #X text 24 405 See also: [s_playsample] [u_samplebank] [u_samplekit]
 ;
 #X text 24 434 Tags: sample playback \, audio;
-#X text 24 314 Description: This is a convenience wrapper around [s_samplebank]
+#X text 24 316 Description: This is a convenience wrapper around [s_samplebank]
 & [s_playsample] that works with midi. Make sure to use [declare] when
 working with relative paths. The filename and right inlet values are
 state savable. Note: playback via midi pairs does not change the internal
 speed setting.;
-#X text 24 286 Outlet 2: bang when sample finishes playing;
 #X text 23 199 Inlet 1: "amp" <float> - amplitude 0-1 \, "speed" <float>
 - playback speed (> 0) \, "reverse" <float> - playback direction;
 #X text 24 147 Inlet 0: bang - play sample \, "open" <symbol> - file
@@ -25,6 +24,7 @@ speed and playback direction control \, built to handle midi note and
 velocities;
 #X text 24 117 Argument 1: <symbol> optional file to open on creation
 ;
+#X text 24 286 Outlet 2: setting changes for GUI;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -66,6 +66,7 @@ velocities;
 #X msg 463 123 open \$1;
 #X obj 463 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 671 395 print FOR GUI;
 #X obj 8 20 s_sample;
 #X connect 7 0 6 0;
 #X connect 8 0 29 0;
@@ -84,6 +85,7 @@ velocities;
 #X connect 25 0 29 0;
 #X connect 29 0 3 0;
 #X connect 29 1 3 1;
+#X connect 29 2 36 0;
 #X connect 30 0 29 0;
 #X connect 31 0 29 0;
 #X connect 32 0 7 0;

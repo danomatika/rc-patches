@@ -1,0 +1,46 @@
+#N canvas 195 23 672 355 10;
+#X obj 61 321 print uzi;
+#X obj 61 89 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X floatatom 100 179 5 0 0 0 - - -, f 5;
+#X text 146 179 set number of bangs;
+#X msg 90 88 pause;
+#X text 187 88 pause sending bangs;
+#X msg 133 88 break;
+#X msg 153 112 resume;
+#X msg 89 112 continue;
+#X text 210 113 resume sending;
+#X floatatom 100 234 5 0 0 0 - - -, f 5;
+#X obj 80 289 print lastbang;
+#X text 32 48 clone of Max's Uzi object;
+#X obj 100 258 print num;
+#X obj 61 203 c_uzi 4;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-rand 100 float 2;
+#X coords 0 127 100 0 100 70 1 0 0;
+#X restore 521 143 graph;
+#X obj 386 144 c_uzi 100;
+#X obj 437 169 - 1;
+#X obj 386 201 random 127;
+#X obj 386 230 tabwrite \$0-rand;
+#X obj 386 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 371 46 Example: fill table with 100 random midi values;
+#X text 30 21 c_zui: send a specified number of bangs as fast as possible
+;
+#X text 145 232 number of current bang \, starts at 1;
+#X connect 1 0 14 0;
+#X connect 2 0 14 1;
+#X connect 4 0 14 0;
+#X connect 6 0 14 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 10 0 13 0;
+#X connect 14 0 0 0;
+#X connect 14 1 11 0;
+#X connect 14 2 10 0;
+#X connect 16 0 18 0;
+#X connect 16 2 17 0;
+#X connect 17 0 19 1;
+#X connect 18 0 19 0;
+#X connect 20 0 16 0;

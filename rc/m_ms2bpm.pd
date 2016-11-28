@@ -1,0 +1,10 @@
+#N canvas 500 102 282 246 10;
+#X obj 93 50 inlet;
+#X obj 93 102 swap 60000;
+#X obj 93 131 /;
+#X obj 93 182 outlet;
+#X text 17 12 the same as m_bpm2ms \, just for completion;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;

@@ -1,0 +1,9 @@
+#N canvas 380 239 264 164 10;
+#X floatatom 50 122 5 0 0 0 - - -, f 5;
+#X floatatom 50 53 5 0 0 0 - - -, f 5;
+#X obj 50 86 m_noteflip;
+#X text 93 52 midi notes in (0-127);
+#X text 93 119 flipped out (127-0);
+#X text 16 12 m_noteflip: invert midi notes;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;

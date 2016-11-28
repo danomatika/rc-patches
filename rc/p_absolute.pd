@@ -1,9 +1,19 @@
-#N canvas 577 77 460 147 10;
-#X obj 35 22 inlet;
-#X obj 35 50 route set;
-#X obj 35 82 symbol;
-#X text 203 51 based on : zexy [tabset];
-#X text 132 20 usage: c_tabset <table name>;
+#N canvas 172 38 340 325 10;
+#X obj 59 104 list fromsymbol;
+#X obj 59 152 list split 1;
+#X obj 59 205 sel 47;
+#X obj 93 180 sel 58;
+#X text 139 180 : as in C: on windows;
+#X text 133 205 unixy /;
+#X obj 40 284 outlet;
+#X obj 40 21 inlet;
+#X obj 59 74 symbol;
+#X msg 93 230 1;
+#X msg 59 229 1;
+#X obj 59 128 list split 2;
+#X obj 40 256 f 0;
+#X obj 40 48 t b a b;
+#X msg 172 104 0;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
 and/or modify it under the terms of the GNU General Public License
@@ -20,9 +30,20 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 ;
 #X text 56 54 Copyright (C) 2012 \, Dan Wilcox <danomatika@gmail.com>
 ;
-#X restore 300 86 pd LICENSE-GPL;
-#X obj 86 113 array set;
-#X connect 0 0 1 0;
+#X restore 183 284 pd LICENSE-GPL;
+#X text 90 21 check if a path is absolute or relative;
+#X connect 0 0 11 0;
 #X connect 1 0 2 0;
-#X connect 1 1 6 0;
-#X connect 2 0 6 2;
+#X connect 1 1 3 0;
+#X connect 2 0 10 0;
+#X connect 3 0 9 0;
+#X connect 7 0 13 0;
+#X connect 8 0 0 0;
+#X connect 9 0 12 1;
+#X connect 10 0 12 1;
+#X connect 11 0 1 0;
+#X connect 12 0 6 0;
+#X connect 13 0 12 0;
+#X connect 13 1 8 0;
+#X connect 13 2 14 0;
+#X connect 14 0 12 1;

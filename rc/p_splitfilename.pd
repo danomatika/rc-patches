@@ -1,0 +1,72 @@
+#N canvas 152 25 398 469 10;
+#X obj 62 21 inlet;
+#X obj 62 80 u_symbol2list /;
+#X obj 81 133 list length;
+#X obj 62 270 list split;
+#X obj 81 190 moses 0;
+#X obj 81 161 - 1;
+#X obj 62 107 t a a b;
+#X msg 161 132 0;
+#X obj 62 49 t a a;
+#X obj 62 362 u_list2symbol /;
+#X obj 246 131 sel 0 1;
+#X obj 62 399 makefilename %s;
+#X msg 300 161 set /%s;
+#X msg 246 162 set %s;
+#X obj 246 351 t a;
+#N canvas 172 83 586 377 LICENSE-GPL 0;
+#X text 57 88 This program is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation \, either version 3 of
+the License \, or (at your option) any later version.;
+#X text 58 168 This program is distributed in the hope that it will
+be useful \, but WITHOUT ANY WARRANTY \; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License for more details.;
+#X text 57 261 You should have received a copy of the GNU General Public
+License along with this program. If not \, see <http://www.gnu.org/licenses/>.
+;
+#X text 60 325 See the file LICENSE.txt for the full license text.
+;
+#X text 56 54 Copyright (C) 2016 \, Dan Wilcox <danomatika@gmail.com>
+;
+#X restore 222 48 pd LICENSE-GPL;
+#X text 113 20 split a filename into dir & base names;
+#X obj 62 431 outlet dirname;
+#X obj 90 298 outlet basename;
+#X obj 62 326 route list symbol;
+#X text 165 401 add back the leading / for abs paths;
+#X obj 246 81 p_absolute;
+#X msg 35 298 symbol;
+#X obj 35 190 t a a;
+#X obj 35 217 list length;
+#X obj 35 242 moses 2;
+#X connect 0 0 8 0;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 19 0;
+#X connect 3 1 18 0;
+#X connect 4 1 3 1;
+#X connect 5 0 4 0;
+#X connect 6 0 23 0;
+#X connect 6 1 2 0;
+#X connect 6 2 7 0;
+#X connect 7 0 3 1;
+#X connect 8 0 1 0;
+#X connect 8 1 21 0;
+#X connect 9 0 11 0;
+#X connect 10 0 13 0;
+#X connect 10 1 12 0;
+#X connect 11 0 17 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 0;
+#X connect 19 0 9 0;
+#X connect 19 1 9 0;
+#X connect 19 2 17 0;
+#X connect 21 0 10 0;
+#X connect 22 0 17 0;
+#X connect 23 0 24 0;
+#X connect 23 1 3 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 0;

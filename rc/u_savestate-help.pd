@@ -1,17 +1,14 @@
-#N canvas 149 56 929 513 10;
+#N canvas 246 153 929 513 10;
+#X declare .;
 #N canvas 439 73 582 570 REFERENCE 0;
 #X text 24 31 Name: [u_savestate];
-#X text 24 105 Argument 0: optional text file name \, must be in path
-(use [declare -path] to add paths);
 #X text 24 51 Summary: saves & loads state settings for all open objects
 which use [u_loader] & [u_dispatch] internally to either a messagebox
 or texfile;
 #X text 24 152 Inlet 0: messagebox commands: save \, load \, clear
 ;
-#X text 24 220 Inlet 1: incoming state messages (for use with a messagebox)
-;
-#X text 23 238 Outlet 0: bang when a given command is done;
-#X text 24 260 Outlet 1: outgoing state message (for use with a messagebox)
+#X text 23 232 Outlet 0: bang when a given command is done;
+#X text 24 254 Outlet 1: outgoing state message (for use with a messagebox)
 ;
 #X text 24 407 See also: [u_loader] [u_dispatch];
 #X text 24 291 Description: [u_savestate] is a wrapper around the RJ_SCENE
@@ -22,53 +19,39 @@ the parent patch or optionally saved to/loaded from a textfile. Make
 sure to *save* the patch when using a messagebox. Be careful with the
 *clear* command ...;
 #X text 24 434 Tags: Message \, Preset \, State-Saving;
-#X text 78 171 textfile commands: savefile \, loadfile \, clearfile
+#X text 71 171 textfile commands: savefile \, loadfile \, clearfile
 \, setfile \; setfile sets the current filename \, all others will
 use the existing filename or take an optional filename to change it
 ;
+#X text 24 105 Argument 0: optional text file name \, must be in path
+(use [declare -path] to add paths);
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#X text 468 51 Example:;
-#X text 485 484 rc-patches (https://github.com/danomatika/rc-patches)
-- 2013;
-#X msg 489 90 save;
-#X msg 507 117 load;
-#X msg 527 142 clear;
-#X msg 579 253 loadfile;
-#X msg 585 280 clearfile;
+#X text 468 21 Example:;
+#X msg 509 52 save;
+#X msg 527 79 load;
+#X msg 547 104 clear;
+#X msg 599 200 loadfile;
 #N canvas 632 217 450 300 state 0;
 #X obj 26 18 inlet;
-#X msg 26 49 s_fmbass-bass123 R 0.629 \, s_fmbass-bass123 S 0.291 \,
-s_fmbass-bass123 D 0.37 \, s_fmbass-bass123 A 0.346457 \, s_fmbass-bass123
-index2 0.542 \, s_fmbass-bass123 index1 0.446 \, e_3bandeq-eq123 high
-1 \, e_3bandeq-eq123 med 1 \, e_3bandeq-eq123 dry 0 \, e_3bandeq-eq123
-low 1.62205 \,;
-#X obj 26 274 outlet;
+#X msg 26 49;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X restore 697 355 pd state in a messagebox;
-#X obj 507 384 bng 15 250 50 0 empty empty done 17 7 0 10 -262144 -1
+#X restore 527 310 pd state in a messagebox;
+#X obj 686 311 bng 15 250 50 0 empty empty done 17 7 0 10 -262144 -1
 -1;
-#X text 556 108 save/load to a messagebox;
-#X text 724 202 save/load to a textfile;
-#X text 768 309 just set the file;
-#X obj 507 355 u_savestate media/state.txt;
-#X msg 556 191 savefile media/state.txt;
-#X msg 607 307 setfile media/state2.txt;
+#X text 576 70 save/load to a messagebox;
+#X text 744 149 save/load to a textfile;
+#X text 771 240 just set the file;
+#X msg 576 138 savefile media/state.txt;
+#X msg 610 238 setfile media/state2.txt;
 #X text 129 21 - save & load scene state settings;
-#X text 658 280 empties and saves the file;
-#X msg 569 222 loadfile media/state.txt;
-#X text 574 142 clears the messagebox;
-#X text 645 253 omit file to use currently set textfile;
-#X obj 8 20 u_savestate;
-#X obj 519 457 e_3bandeq eq123;
-#X obj 669 457 s_fmbass bass123;
-#X obj 606 419 g_hsl low 0 2;
-#X obj 762 419 g_hsl A 0 1;
-#X text 465 423 state-savable objects:;
-#N canvas 0 22 229 138 prints 0;
+#X msg 589 169 loadfile media/state.txt;
+#X text 594 104 clears the messagebox;
+#X text 665 200 omit file to use currently set textfile;
+#X text 480 342 state-savable objects:;
+#N canvas 0 23 229 138 prints 0;
 #X obj 108 53 r RJ_SCENE_LOAD;
 #X obj 108 82 print LOAD;
 #X obj 18 81 print SAVE;
@@ -77,17 +60,34 @@ low 1.62205 \,;
 #X connect 0 0 1 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
-#X restore 799 110 pd prints;
-#X connect 4 0 14 0;
-#X connect 5 0 14 0;
-#X connect 6 0 14 0;
-#X connect 7 0 14 0;
-#X connect 8 0 14 0;
-#X connect 9 0 14 1;
-#X connect 14 0 10 0;
-#X connect 14 1 9 0;
-#X connect 15 0 14 0;
-#X connect 16 0 14 0;
-#X connect 19 0 14 0;
-#X connect 25 0 23 1;
-#X connect 26 0 24 1;
+#X restore 786 456 pd prints;
+#X obj 527 279 u_savestate media/state.txt;
+#X text 485 484 rc-patches (https://github.com/danomatika/rc-patches)
+- 2016;
+#X obj 823 26 declare .;
+#X obj 8 20 u_savestate;
+#X obj 483 374 r \$0-hello;
+#X obj 482 424 r \$0-foo;
+#X obj 621 366 g_hsl hello 0 127;
+#X obj 621 399 g_hsl foo 0 1;
+#X obj 621 456 u_dispatch \$0 foo;
+#X obj 621 432 u_dispatch \$0 hello;
+#X obj 785 430 u_loader state \$0;
+#X obj 486 397 hsl 64 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 485 447 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X connect 3 0 20 0;
+#X connect 4 0 20 0;
+#X connect 5 0 20 0;
+#X connect 6 0 20 0;
+#X connect 12 0 20 0;
+#X connect 13 0 20 0;
+#X connect 15 0 20 0;
+#X connect 20 0 7 0;
+#X connect 20 1 8 0;
+#X connect 24 0 31 0;
+#X connect 25 0 32 0;
+#X connect 26 0 27 0;
+#X connect 27 0 29 0;
+#X connect 29 0 28 0;

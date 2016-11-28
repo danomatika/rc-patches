@@ -1,0 +1,4 @@
+p_absolute - checks if a path is absolute or relative
+p_basename - get the last component of the path aka "basename"
+p_makeabsolute - make sure paths are absolute
+p_splitfilename - split a filename into dir and base names

@@ -1,0 +1,13 @@
+#N canvas 0 23 311 216 10;
+#X obj 106 138 m_atodb;
+#X floatatom 106 167 5 0 0 1 dB - -, f 5;
+#X text 16 22 convert linear amplitude value to decibels;
+#X msg 65 66 1;
+#X msg 106 66 0.5;
+#X msg 145 66 1.5;
+#X msg 186 66 2;
+#X connect 0 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;

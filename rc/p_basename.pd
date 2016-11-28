@@ -1,9 +1,13 @@
-#N canvas 577 77 460 147 10;
-#X obj 35 22 inlet;
-#X obj 35 50 route set;
-#X obj 35 82 symbol;
-#X text 203 51 based on : zexy [tabset];
-#X text 132 20 usage: c_tabset <table name>;
+#N canvas 319 138 246 303 10;
+#X obj 33 37 inlet;
+#X obj 61 236 outlet;
+#X obj 33 66 u_symbol2list /;
+#X obj 52 119 list length;
+#X obj 33 206 list split;
+#X obj 52 176 moses 0;
+#X obj 52 147 - 1;
+#X obj 33 93 t a a b;
+#X msg 132 118 0;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
 and/or modify it under the terms of the GNU General Public License
@@ -18,11 +22,17 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 ;
 #X text 60 325 See the file LICENSE.txt for the full license text.
 ;
-#X text 56 54 Copyright (C) 2012 \, Dan Wilcox <danomatika@gmail.com>
+#X text 56 54 Copyright (C) 2016 \, Dan Wilcox <danomatika@gmail.com>
 ;
-#X restore 300 86 pd LICENSE-GPL;
-#X obj 86 113 array set;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 6 0;
-#X connect 2 0 6 2;
+#X restore 118 266 pd LICENSE-GPL;
+#X text 16 9 get the last component in a path;
+#X connect 0 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 6 0;
+#X connect 4 1 1 0;
+#X connect 5 1 4 1;
+#X connect 6 0 5 0;
+#X connect 7 0 4 0;
+#X connect 7 1 3 0;
+#X connect 7 2 8 0;
+#X connect 8 0 4 1;

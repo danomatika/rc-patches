@@ -1,0 +1,11 @@
+#N canvas 635 219 335 242 10;
+#X obj 122 164 p_basename;
+#X msg 80 48 /hello/world/foo.pd;
+#X msg 131 79 /bar/baz;
+#X msg 179 110 test.pd;
+#X symbolatom 122 194 0 0 0 0 - - -;
+#X text 13 15 get the last component of the path aka "basename";
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;

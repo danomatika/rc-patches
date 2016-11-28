@@ -1,0 +1,19 @@
+#N canvas 0 23 405 227 10;
+#X floatatom 125 89 5 0 0 1 ms - -, f 5;
+#X floatatom 125 153 5 0 0 1 bpm - -, f 5;
+#X text 27 23 m_ms2bpm: convert from milliseconds to beats per minute
+;
+#X text 196 127 complements m_bpm2ms;
+#X obj 125 128 m_ms2bpm;
+#X msg 125 63 500;
+#X obj 73 151 metro;
+#X obj 73 174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 73 127 t b a;
+#X connect 0 0 4 0;
+#X connect 0 0 8 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 8 1 6 1;

@@ -1,0 +1,17 @@
+#N canvas 477 171 286 282 10;
+#X msg 66 89 test.pd;
+#X text 26 242 requires ggee [getdir] external;
+#X symbolatom 51 177 36 0 0 0 - - -, f 36;
+#X obj 51 203 print;
+#X msg 84 113 relative/path/bar;
+#X obj 51 148 p_makerelative;
+#X text 11 11 make sure paths are relative to the parent patch;
+#X obj 51 66 openpanel;
+#X obj 51 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;

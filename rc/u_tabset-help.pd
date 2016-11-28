@@ -13,7 +13,7 @@ indexes \, from 0 - [list length].;
 floats. Non floats are dropped.;
 #X text 24 51 Summary: set the contents of a table via a list \, equivalent
 to [tabset] in the zexy external;
-#X text 24 334 See also: []u_tabdump [tabwrite] [tabread] [tabset]
+#X text 24 334 See also: [u_tabdump] [tabwrite] [tabread] [tabset]
 (requires zexy);
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
@@ -23,7 +23,7 @@ to [tabset] in the zexy external;
 #X text 129 21 - set the contents of a table via a list;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0_array1 9 float 1;
-#A 0 0.1 0.2 0.3 0.6 0.7 0.1 0.05 0.25 0.1;
+#A 0 0.1 0.2 0.3 0 0 0.6 0.7 -1 -0.5;
 #X array \$0_array2 9 float 1;
 #A 0 -1 -0.7 -0.5 -0.3 -0.2 -0.1 -0.05 -1 -0.25;
 #X coords 0 1 8 -1 200 140 1;
@@ -40,20 +40,21 @@ to [tabset] in the zexy external;
 #X msg 556 66 -1 -0.7 -0.5 -0.3 -0.2 -0.1 -0.05 -1 -0.5 -1 -0.25;
 #X text 626 126 float is a single length list ...;
 #X text 626 151 change target table;
-#X text 708 237 symbols are dropped;
 #X msg 679 266 0.1 0.2 0.3 four five 0.6 0.7;
-#X obj 8 20 u_tabset;
 #X obj 572 306 u_tabset \$0_array1;
 #X text 487 482 rc-patches (https://github.com/danomatika/rc-patches)
 - 2012;
-#X connect 5 0 20 0;
-#X connect 6 0 20 0;
+#X text 708 237 symbols generate errors;
+#X text 689 287 symbols in lists are ignored;
+#X obj 8 20 u_tabset;
+#X connect 5 0 18 0;
+#X connect 6 0 18 0;
 #X connect 7 0 5 0;
 #X connect 8 0 7 0;
 #X connect 9 0 10 0;
 #X connect 10 0 5 0;
-#X connect 11 0 20 0;
-#X connect 12 0 20 0;
-#X connect 13 0 20 0;
-#X connect 14 0 20 0;
-#X connect 18 0 20 0;
+#X connect 11 0 18 0;
+#X connect 12 0 18 0;
+#X connect 13 0 18 0;
+#X connect 14 0 18 0;
+#X connect 17 0 18 0;

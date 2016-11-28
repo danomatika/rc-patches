@@ -1,0 +1,14 @@
+#N canvas 283 50 286 282 10;
+#X msg 51 85 /absolute/path/foo;
+#X msg 25 51 test.pd;
+#X text 21 11 make sure paths are absolute;
+#X text 26 242 requires ggee [getdir] external;
+#X symbolatom 51 177 36 0 0 0 - - -, f 36;
+#X obj 51 203 print;
+#X msg 84 113 relative/path/bar;
+#X obj 51 148 p_makeabsolute;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;

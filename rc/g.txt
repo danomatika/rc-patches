@@ -1,4 +1,13 @@
+g_chan - a mono to stereo channel strip gui
+g_chan2 - a stereo channel strip gui
+g_drumseq16 - a 16 step drum sequencer with save state
+g_drumseq16_8 - an 8 track 16 step drum sequencer with save state
+g_drumseq32 - a 32 step drum sequencer with save state
+g_drumseq32_8 - an 8 track 32 step drum sequencer with save state
+g_sample - a gui one shot stereo sample player
+g_savestate - gui wrapper for u_savestate
 g_scope - simple oscilloscope gui
+g_seqtable - record and play back a sequence of midi notes
 g_spectroscope - frequency spectrum gui
 g_vu - mono vu meter
 g_vu2 - stereo vu meter

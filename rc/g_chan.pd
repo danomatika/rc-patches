@@ -38,7 +38,7 @@
 0;
 #X obj 4 23 vsl 30 119 0 120 0 0 \$0-gain \$0-gain empty 0 -9 0 10
 -128992 -4034 -4034 8260 1;
-#X obj 7 6 hsl 43 15 0 1 0 0 \$0-hsl-out \$0-hsl-in hello 0 8 0 10
+#X obj 7 6 hsl 43 15 0 1 0 0 \$0-hsl-out \$0-hsl-in empty 0 8 0 10
 -261234 -1 -1 2100 1;
 #X obj 35 23 vu 30 120 \$0-vu empty -1 -8 0 10 -66577 -1 0 0;
 #X obj 51 6 tgl 15 0 \$0-mute \$0-mute m 5 7 0 10 -258113 -262144 -1
