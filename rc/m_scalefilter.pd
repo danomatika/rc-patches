@@ -1,4 +1,4 @@
-#N canvas 222 113 384 384 10;
+#N canvas 588 240 384 384 10;
 #X obj 185 190 / 12;
 #X obj 185 215 int;
 #X obj 185 240 * 12;
@@ -37,7 +37,11 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 202 351 outlet didn't pass;
 #X msg 202 317 bang;
 #X obj 26 64 route float;
-#X obj 83 214 sel 1;
+#X obj 83 214 sel 0;
+#X msg 38 263 bang;
+#X obj 207 141 print;
+#X floatatom 44 219 5 0 0 0 - - -, f 5;
+#X msg 112 146 0 1 2 3;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
@@ -51,11 +55,15 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 8 0 5 0;
 #X connect 11 0 13 1;
 #X connect 13 1 21 0;
+#X connect 13 1 24 0;
 #X connect 15 0 11 0;
 #X connect 15 1 13 1;
+#X connect 15 1 23 0;
 #X connect 16 0 15 0;
 #X connect 17 0 11 0;
 #X connect 19 0 18 0;
 #X connect 20 0 6 0;
-#X connect 21 0 4 0;
-#X connect 21 1 19 0;
+#X connect 21 0 19 0;
+#X connect 21 1 22 0;
+#X connect 22 0 4 0;
+#X connect 25 0 13 1;
