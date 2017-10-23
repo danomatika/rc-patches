@@ -1,0 +1,32 @@
+#N canvas 245 23 467 315 10;
+#X text 24 19 convenience wrapper for oscformat;
+#X obj 126 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 249 116 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
+#X msg 126 140 /lights/on \$1;
+#X msg 246 140 /lights/brightness \$1;
+#X text 63 74 address *must* be first argument and use slashes /;
+#X msg 23 140 /lights/hello;
+#X msg 244 186 /lights/color -f iii 100 60 80;
+#X text 243 216 message format can be specified with optional -f &
+format string, f 32;
+#X obj 126 230 n_oscformat;
+#N canvas 0 23 260 237 print 0;
+#X obj 90 63 inlet;
+#X obj 90 101 oscparse;
+#X obj 90 162 print;
+#X obj 90 131 list trim;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X restore 126 275 pd print;
+#X text 61 49 send message as list: address & arg1 \, arg2 \, arg3
+\, ...;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X connect 9 0 10 0;
