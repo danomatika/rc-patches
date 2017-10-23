@@ -99,6 +99,7 @@ in a list.;
 #X connect 9 0 15 0;
 #X connect 10 0 0 1;
 #X connect 11 0 6 0;
+#X connect 11 1 19 1;
 #X connect 11 2 10 1;
 #X connect 11 3 16 0;
 #X connect 11 3 17 0;
