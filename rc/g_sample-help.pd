@@ -1,4 +1,4 @@
-#N canvas 1054 68 414 679 10;
+#N canvas 1054 68 385 679 10;
 #X declare -path .;
 #X obj 53 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -32,7 +32,7 @@
 #X msg 207 296 72 127;
 #X obj 107 336 t a;
 #X obj 105 248 t a;
-#X obj 286 82 declare -path .;
+#X obj 257 101 declare -path .;
 #X text 35 81 set local path when using relative filenames;
 #X connect 0 0 5 0;
 #X connect 4 0 11 0;

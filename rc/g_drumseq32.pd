@@ -1,7 +1,7 @@
-#N canvas 376 266 904 508 10;
-#X obj 18 309 inlet;
-#X obj 122 444 outlet;
-#X obj 369 324 inlet;
+#N canvas 132 70 826 421 10;
+#X obj 18 238 inlet;
+#X obj 122 373 outlet;
+#X obj 369 253 inlet;
 #N canvas 732 90 548 565 load_seq 0;
 #X obj 28 44 inlet;
 #X obj 28 84 list split 1;
@@ -69,7 +69,7 @@ the indexed sequence;
 #X connect 28 0 22 1;
 #X connect 29 0 14 0;
 #X connect 29 0 26 1;
-#X restore 369 443 pd load_seq;
+#X restore 369 372 pd load_seq;
 #N canvas 610 176 319 446 save 0;
 #X text 53 16 save the sequences using sssad;
 #X obj 26 43 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
@@ -109,13 +109,13 @@ the indexed sequence;
 #X connect 16 0 11 0;
 #X connect 17 0 18 0;
 #X connect 18 0 15 0;
-#X restore 431 371 pd save;
-#X text 12 281 left inlet: bangs \, ticks \, dump message in to seqs
+#X restore 431 300 pd save;
+#X text 12 210 left inlet: bangs \, ticks \, dump message in to seqs
 ;
-#X text 167 447 left outlet: indexed bangs out;
-#X text 153 387 right outlet: indexed seqs out;
-#X text 634 298 sequence tables;
-#X obj 111 388 outlet;
+#X text 167 376 left outlet: indexed bangs out;
+#X text 153 316 right outlet: indexed seqs out;
+#X text 634 227 sequence tables;
+#X obj 111 317 outlet;
 #N canvas 543 120 414 515 pos_bangs 0;
 #X obj 15 16 inlet;
 #X obj 54 469 outlet;
@@ -171,7 +171,7 @@ the indexed sequence;
 #X connect 24 0 10 1;
 #X connect 25 0 5 0;
 #X connect 25 0 12 0;
-#X restore 111 363 pd pos_bangs;
+#X restore 111 292 pd pos_bangs;
 #N canvas 4 51 335 397 dump_table 0;
 #X obj 20 34 inlet;
 #X obj 20 351 outlet;
@@ -204,8 +204,8 @@ the indexed sequence;
 #X connect 14 0 5 0;
 #X connect 14 1 15 0;
 #X connect 15 0 12 0;
-#X restore 64 413 pd dump_table;
-#X obj 18 336 route clear dump;
+#X restore 64 342 pd dump_table;
+#X obj 18 265 route clear dump;
 #N canvas 534 75 1016 625 gui_connections 0;
 #X obj 106 46 t b f;
 #X obj 199 73 \$0;
@@ -847,7 +847,7 @@ the indexed sequence;
 #X connect 316 0 38 0;
 #X connect 317 0 315 0;
 #X connect 318 0 314 0;
-#X restore 625 428 pd gui_connections;
+#X restore 625 357 pd gui_connections;
 #X text 25 144 fixed length pattern sequencer with gui;
 #N canvas 627 228 388 507 clear 0;
 #X obj 30 45 inlet;
@@ -891,7 +891,7 @@ the indexed sequence;
 #X connect 17 0 5 0;
 #X connect 20 0 18 0;
 #X connect 21 0 14 0;
-#X restore 18 445 pd clear;
+#X restore 18 374 pd clear;
 #N canvas 4 51 1541 621 gui_connections2 0;
 #X obj 11 73 \$0;
 #X obj 11 98 pack f f;
@@ -1533,528 +1533,528 @@ the indexed sequence;
 #X connect 314 0 75 0;
 #X connect 316 0 123 0;
 #X connect 318 0 171 0;
-#X restore 620 452 pd gui_connections2;
-#X obj 637 321 table \$0data0 32;
-#X obj 637 346 table \$0data1 32;
-#X obj 637 371 table \$0data2 32;
-#X obj 637 395 table \$0data3 32;
-#X obj 1 15 cnv 15 813 96 empty empty empty 20 12 0 14 -233017 -66577
+#X restore 620 381 pd gui_connections2;
+#X obj 637 250 table \$0data0 32;
+#X obj 637 275 table \$0data1 32;
+#X obj 637 300 table \$0data2 32;
+#X obj 637 324 table \$0data3 32;
+#X obj 3 17 cnv 15 813 96 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 16 20 tgl 15 0 \$0vel0-0 \$0tgl0-0 1 -10 10 0 10 -256490 -1
+#X obj 18 22 tgl 15 0 \$0vel0-0 \$0tgl0-0 1 -10 10 0 10 -256490 -1
 -1 0 127;
-#X obj 62 20 tgl 15 0 \$0vel2-0 \$0tgl2-0 empty 0 -6 0 10 -178920 -1
+#X obj 64 22 tgl 15 0 \$0vel2-0 \$0tgl2-0 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 85 20 tgl 15 0 \$0vel3-0 \$0tgl3-0 empty 0 -6 0 10 -178920 -1
+#X obj 87 22 tgl 15 0 \$0vel3-0 \$0tgl3-0 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 39 20 tgl 15 0 \$0vel1-0 \$0tgl1-0 empty 0 -6 0 10 -178920 -1
+#X obj 41 22 tgl 15 0 \$0vel1-0 \$0tgl1-0 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 77 22 vsl 8 10 0 127 0 0 \$0vel2-0 \$0vel2-0 empty 0 -9 0 10
+#X obj 79 24 vsl 8 10 0 127 0 0 \$0vel2-0 \$0vel2-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 100 22 vsl 8 10 0 127 0 0 \$0vel3-0 \$0vel3-0 empty 0 -9 0 10
+#X obj 102 24 vsl 8 10 0 127 0 0 \$0vel3-0 \$0vel3-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 31 22 vsl 8 10 0 127 0 0 \$0vel0-0 \$0vel0-0 empty 0 -9 0 10
+#X obj 33 24 vsl 8 10 0 127 0 0 \$0vel0-0 \$0vel0-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 54 22 vsl 8 10 0 127 0 0 \$0vel1-0 \$0vel1-0 empty 0 -9 0 10
+#X obj 56 24 vsl 8 10 0 127 0 0 \$0vel1-0 \$0vel1-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 116 20 tgl 15 0 \$0vel4-0 \$0tgl4-0 empty -10 10 0 10 -256490
+#X obj 118 22 tgl 15 0 \$0vel4-0 \$0tgl4-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 162 20 tgl 15 0 \$0vel6-0 \$0tgl6-0 empty 0 -6 0 10 -178920
+#X obj 164 22 tgl 15 0 \$0vel6-0 \$0tgl6-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 185 20 tgl 15 0 \$0vel7-0 \$0tgl7-0 empty 0 -6 0 10 -178920
+#X obj 187 22 tgl 15 0 \$0vel7-0 \$0tgl7-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 139 20 tgl 15 0 \$0vel5-0 \$0tgl5-0 empty 0 -6 0 10 -178920
+#X obj 141 22 tgl 15 0 \$0vel5-0 \$0tgl5-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 177 22 vsl 8 10 0 127 0 0 \$0vel6-0 \$0vel6-0 empty 0 -9 0 10
+#X obj 179 24 vsl 8 10 0 127 0 0 \$0vel6-0 \$0vel6-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 200 22 vsl 8 10 0 127 0 0 \$0vel7-0 \$0vel7-0 empty 0 -9 0 10
+#X obj 202 24 vsl 8 10 0 127 0 0 \$0vel7-0 \$0vel7-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 131 22 vsl 8 10 0 127 0 0 \$0vel4-0 \$0vel4-0 empty 0 -9 0 10
+#X obj 133 24 vsl 8 10 0 127 0 0 \$0vel4-0 \$0vel4-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 154 22 vsl 8 10 0 127 0 0 \$0vel5-0 \$0vel5-0 empty 0 -9 0 10
+#X obj 156 24 vsl 8 10 0 127 0 0 \$0vel5-0 \$0vel5-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 216 20 tgl 15 0 \$0vel8-0 \$0tgl8-0 empty -10 10 0 10 -256490
+#X obj 218 22 tgl 15 0 \$0vel8-0 \$0tgl8-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 262 20 tgl 15 0 \$0vel10-0 \$0tgl10-0 empty 0 -6 0 10 -178920
+#X obj 264 22 tgl 15 0 \$0vel10-0 \$0tgl10-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 285 20 tgl 15 0 \$0vel11-0 \$0tgl11-0 empty 0 -6 0 10 -178920
+#X obj 287 22 tgl 15 0 \$0vel11-0 \$0tgl11-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 239 20 tgl 15 0 \$0vel9-0 \$0tgl9-0 empty 0 -6 0 10 -178920
+#X obj 241 22 tgl 15 0 \$0vel9-0 \$0tgl9-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 277 22 vsl 8 10 0 127 0 0 \$0vel10-0 \$0vel10-0 empty 0 -9 0
+#X obj 279 24 vsl 8 10 0 127 0 0 \$0vel10-0 \$0vel10-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 300 22 vsl 8 10 0 127 0 0 \$0vel11-0 \$0vel11-0 empty 0 -9 0
+#X obj 302 24 vsl 8 10 0 127 0 0 \$0vel11-0 \$0vel11-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 231 22 vsl 8 10 0 127 0 0 \$0vel8-0 \$0vel8-0 empty 0 -9 0 10
+#X obj 233 24 vsl 8 10 0 127 0 0 \$0vel8-0 \$0vel8-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 254 22 vsl 8 10 0 127 0 0 \$0vel9-0 \$0vel9-0 empty 0 -9 0 10
+#X obj 256 24 vsl 8 10 0 127 0 0 \$0vel9-0 \$0vel9-0 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 315 20 tgl 15 0 \$0vel12-0 \$0tgl12-0 empty -10 10 0 10 -256490
+#X obj 317 22 tgl 15 0 \$0vel12-0 \$0tgl12-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 361 20 tgl 15 0 \$0vel14-0 \$0tgl14-0 empty 0 -6 0 10 -178920
+#X obj 363 22 tgl 15 0 \$0vel14-0 \$0tgl14-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 384 20 tgl 15 0 \$0vel15-0 \$0tgl15-0 empty 0 -6 0 10 -178920
+#X obj 386 22 tgl 15 0 \$0vel15-0 \$0tgl15-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 338 20 tgl 15 0 \$0vel13-0 \$0tgl13-0 empty 0 -6 0 10 -178920
+#X obj 340 22 tgl 15 0 \$0vel13-0 \$0tgl13-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 376 22 vsl 8 10 0 127 0 0 \$0vel14-0 \$0vel14-0 empty 0 -9 0
+#X obj 378 24 vsl 8 10 0 127 0 0 \$0vel14-0 \$0vel14-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 399 22 vsl 8 10 0 127 0 0 \$0vel15-0 \$0vel15-0 empty 0 -9 0
+#X obj 401 24 vsl 8 10 0 127 0 0 \$0vel15-0 \$0vel15-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 330 22 vsl 8 10 0 127 0 0 \$0vel12-0 \$0vel12-0 empty 0 -9 0
+#X obj 332 24 vsl 8 10 0 127 0 0 \$0vel12-0 \$0vel12-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 353 22 vsl 8 10 0 127 0 0 \$0vel13-0 \$0vel13-0 empty 0 -9 0
+#X obj 355 24 vsl 8 10 0 127 0 0 \$0vel13-0 \$0vel13-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 16 45 tgl 15 0 \$0vel0-1 \$0tgl0-1 2 -10 10 0 10 -256490 -1
+#X obj 18 47 tgl 15 0 \$0vel0-1 \$0tgl0-1 2 -10 10 0 10 -256490 -1
 -1 0 127;
-#X obj 62 45 tgl 15 0 \$0vel2-1 \$0tgl2-1 empty 0 -6 0 10 -178920 -1
+#X obj 64 47 tgl 15 0 \$0vel2-1 \$0tgl2-1 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 85 45 tgl 15 0 \$0vel3-1 \$0tgl3-1 empty 0 -6 0 10 -178920 -1
+#X obj 87 47 tgl 15 0 \$0vel3-1 \$0tgl3-1 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 39 45 tgl 15 0 \$0vel1-1 \$0tgl1-1 empty 0 -6 0 10 -178920 -1
+#X obj 41 47 tgl 15 0 \$0vel1-1 \$0tgl1-1 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 77 47 vsl 8 10 0 127 0 0 \$0vel2-1 \$0vel2-1 empty 0 -9 0 10
+#X obj 79 49 vsl 8 10 0 127 0 0 \$0vel2-1 \$0vel2-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 100 47 vsl 8 10 0 127 0 0 \$0vel3-1 \$0vel3-1 empty 0 -9 0 10
+#X obj 102 49 vsl 8 10 0 127 0 0 \$0vel3-1 \$0vel3-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 31 47 vsl 8 10 0 127 0 0 \$0vel0-1 \$0vel0-1 empty 0 -9 0 10
+#X obj 33 49 vsl 8 10 0 127 0 0 \$0vel0-1 \$0vel0-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 54 47 vsl 8 10 0 127 0 0 \$0vel1-1 \$0vel1-1 empty 0 -9 0 10
+#X obj 56 49 vsl 8 10 0 127 0 0 \$0vel1-1 \$0vel1-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 116 45 tgl 15 0 \$0vel4-1 \$0tgl4-1 empty -10 10 0 10 -256490
+#X obj 118 47 tgl 15 0 \$0vel4-1 \$0tgl4-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 162 45 tgl 15 0 \$0vel6-1 \$0tgl6-1 empty 0 -6 0 10 -178920
+#X obj 164 47 tgl 15 0 \$0vel6-1 \$0tgl6-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 185 45 tgl 15 0 \$0vel7-1 \$0tgl7-1 empty 0 -6 0 10 -178920
+#X obj 187 47 tgl 15 0 \$0vel7-1 \$0tgl7-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 139 45 tgl 15 0 \$0vel5-1 \$0tgl5-1 empty 0 -6 0 10 -178920
+#X obj 141 47 tgl 15 0 \$0vel5-1 \$0tgl5-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 177 47 vsl 8 10 0 127 0 0 \$0vel6-1 \$0vel6-1 empty 0 -9 0 10
+#X obj 179 49 vsl 8 10 0 127 0 0 \$0vel6-1 \$0vel6-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 200 47 vsl 8 10 0 127 0 0 \$0vel7-1 \$0vel7-1 empty 0 -9 0 10
+#X obj 202 49 vsl 8 10 0 127 0 0 \$0vel7-1 \$0vel7-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 131 47 vsl 8 10 0 127 0 0 \$0vel4-1 \$0vel4-1 empty 0 -9 0 10
+#X obj 133 49 vsl 8 10 0 127 0 0 \$0vel4-1 \$0vel4-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 154 47 vsl 8 10 0 127 0 0 \$0vel5-1 \$0vel5-1 empty 0 -9 0 10
+#X obj 156 49 vsl 8 10 0 127 0 0 \$0vel5-1 \$0vel5-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 216 45 tgl 15 0 \$0vel8-1 \$0tgl8-1 empty -10 10 0 10 -256490
+#X obj 218 47 tgl 15 0 \$0vel8-1 \$0tgl8-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 262 45 tgl 15 0 \$0vel10-1 \$0tgl10-1 empty 0 -6 0 10 -178920
+#X obj 264 47 tgl 15 0 \$0vel10-1 \$0tgl10-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 285 45 tgl 15 0 \$0vel11-1 \$0tgl11-1 empty 0 -6 0 10 -178920
+#X obj 287 47 tgl 15 0 \$0vel11-1 \$0tgl11-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 239 45 tgl 15 0 \$0vel9-1 \$0tgl9-1 empty 0 -6 0 10 -178920
+#X obj 241 47 tgl 15 0 \$0vel9-1 \$0tgl9-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 277 47 vsl 8 10 0 127 0 0 \$0vel10-1 \$0vel10-1 empty 0 -9 0
+#X obj 279 49 vsl 8 10 0 127 0 0 \$0vel10-1 \$0vel10-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 300 47 vsl 8 10 0 127 0 0 \$0vel11-1 \$0vel11-1 empty 0 -9 0
+#X obj 302 49 vsl 8 10 0 127 0 0 \$0vel11-1 \$0vel11-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 231 47 vsl 8 10 0 127 0 0 \$0vel8-1 \$0vel8-1 empty 0 -9 0 10
+#X obj 233 49 vsl 8 10 0 127 0 0 \$0vel8-1 \$0vel8-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 254 47 vsl 8 10 0 127 0 0 \$0vel9-1 \$0vel9-1 empty 0 -9 0 10
+#X obj 256 49 vsl 8 10 0 127 0 0 \$0vel9-1 \$0vel9-1 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 315 45 tgl 15 0 \$0vel12-1 \$0tgl12-1 empty -10 10 0 10 -256490
+#X obj 317 47 tgl 15 0 \$0vel12-1 \$0tgl12-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 361 45 tgl 15 0 \$0vel14-1 \$0tgl14-1 empty 0 -6 0 10 -178920
+#X obj 363 47 tgl 15 0 \$0vel14-1 \$0tgl14-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 384 45 tgl 15 0 \$0vel15-1 \$0tgl15-1 empty 0 -6 0 10 -178920
+#X obj 386 47 tgl 15 0 \$0vel15-1 \$0tgl15-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 338 45 tgl 15 0 \$0vel13-1 \$0tgl13-1 empty 0 -6 0 10 -178920
+#X obj 340 47 tgl 15 0 \$0vel13-1 \$0tgl13-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 376 47 vsl 8 10 0 127 0 0 \$0vel14-1 \$0vel14-1 empty 0 -9 0
+#X obj 378 49 vsl 8 10 0 127 0 0 \$0vel14-1 \$0vel14-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 399 47 vsl 8 10 0 127 0 0 \$0vel15-1 \$0vel15-1 empty 0 -9 0
+#X obj 401 49 vsl 8 10 0 127 0 0 \$0vel15-1 \$0vel15-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 330 47 vsl 8 10 0 127 0 0 \$0vel12-1 \$0vel12-1 empty 0 -9 0
+#X obj 332 49 vsl 8 10 0 127 0 0 \$0vel12-1 \$0vel12-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 353 47 vsl 8 10 0 127 0 0 \$0vel13-1 \$0vel13-1 empty 0 -9 0
+#X obj 355 49 vsl 8 10 0 127 0 0 \$0vel13-1 \$0vel13-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 16 69 tgl 15 0 \$0vel0-2 \$0tgl0-2 3 -10 10 0 10 -256490 -1
+#X obj 18 71 tgl 15 0 \$0vel0-2 \$0tgl0-2 3 -10 10 0 10 -256490 -1
 -1 0 127;
-#X obj 62 69 tgl 15 0 \$0vel2-2 \$0tgl2-2 empty 0 -6 0 10 -178920 -1
+#X obj 64 71 tgl 15 0 \$0vel2-2 \$0tgl2-2 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 85 69 tgl 15 0 \$0vel3-2 \$0tgl3-2 empty 0 -6 0 10 -178920 -1
+#X obj 87 71 tgl 15 0 \$0vel3-2 \$0tgl3-2 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 39 69 tgl 15 0 \$0vel1-2 \$0tgl1-2 empty 0 -6 0 10 -178920 -1
+#X obj 41 71 tgl 15 0 \$0vel1-2 \$0tgl1-2 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 77 71 vsl 8 10 0 127 0 0 \$0vel2-2 \$0vel2-2 empty 0 -9 0 10
+#X obj 79 73 vsl 8 10 0 127 0 0 \$0vel2-2 \$0vel2-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 100 71 vsl 8 10 0 127 0 0 \$0vel3-2 \$0vel3-2 empty 0 -9 0 10
+#X obj 102 73 vsl 8 10 0 127 0 0 \$0vel3-2 \$0vel3-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 31 71 vsl 8 10 0 127 0 0 \$0vel0-2 \$0vel0-2 empty 0 -9 0 10
+#X obj 33 73 vsl 8 10 0 127 0 0 \$0vel0-2 \$0vel0-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 54 71 vsl 8 10 0 127 0 0 \$0vel1-2 \$0vel1-2 empty 0 -9 0 10
+#X obj 56 73 vsl 8 10 0 127 0 0 \$0vel1-2 \$0vel1-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 116 69 tgl 15 0 \$0vel4-2 \$0tgl4-2 empty -10 10 0 10 -256490
+#X obj 118 71 tgl 15 0 \$0vel4-2 \$0tgl4-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 162 69 tgl 15 0 \$0vel6-2 \$0tgl6-2 empty 0 -6 0 10 -178920
+#X obj 164 71 tgl 15 0 \$0vel6-2 \$0tgl6-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 185 69 tgl 15 0 \$0vel7-2 \$0tgl7-2 empty 0 -6 0 10 -178920
+#X obj 187 71 tgl 15 0 \$0vel7-2 \$0tgl7-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 139 69 tgl 15 0 \$0vel5-2 \$0tgl5-2 empty 0 -6 0 10 -178920
+#X obj 141 71 tgl 15 0 \$0vel5-2 \$0tgl5-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 177 71 vsl 8 10 0 127 0 0 \$0vel6-2 \$0vel6-2 empty 0 -9 0 10
+#X obj 179 73 vsl 8 10 0 127 0 0 \$0vel6-2 \$0vel6-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 200 71 vsl 8 10 0 127 0 0 \$0vel7-2 \$0vel7-2 empty 0 -9 0 10
+#X obj 202 73 vsl 8 10 0 127 0 0 \$0vel7-2 \$0vel7-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 131 71 vsl 8 10 0 127 0 0 \$0vel4-2 \$0vel4-2 empty 0 -9 0 10
+#X obj 133 73 vsl 8 10 0 127 0 0 \$0vel4-2 \$0vel4-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 154 71 vsl 8 10 0 127 0 0 \$0vel5-2 \$0vel5-2 empty 0 -9 0 10
+#X obj 156 73 vsl 8 10 0 127 0 0 \$0vel5-2 \$0vel5-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 216 69 tgl 15 0 \$0vel8-2 \$0tgl8-2 empty -10 10 0 10 -256490
+#X obj 218 71 tgl 15 0 \$0vel8-2 \$0tgl8-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 262 69 tgl 15 0 \$0vel10-2 \$0tgl10-2 empty 0 -6 0 10 -178920
+#X obj 264 71 tgl 15 0 \$0vel10-2 \$0tgl10-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 285 69 tgl 15 0 \$0vel11-2 \$0tgl11-2 empty 0 -6 0 10 -178920
+#X obj 287 71 tgl 15 0 \$0vel11-2 \$0tgl11-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 239 69 tgl 15 0 \$0vel9-2 \$0tgl9-2 empty 0 -6 0 10 -178920
+#X obj 241 71 tgl 15 0 \$0vel9-2 \$0tgl9-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 277 71 vsl 8 10 0 127 0 0 \$0vel10-2 \$0vel10-2 empty 0 -9 0
+#X obj 279 73 vsl 8 10 0 127 0 0 \$0vel10-2 \$0vel10-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 300 71 vsl 8 10 0 127 0 0 \$0vel11-2 \$0vel11-2 empty 0 -9 0
+#X obj 302 73 vsl 8 10 0 127 0 0 \$0vel11-2 \$0vel11-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 231 71 vsl 8 10 0 127 0 0 \$0vel8-2 \$0vel8-2 empty 0 -9 0 10
+#X obj 233 73 vsl 8 10 0 127 0 0 \$0vel8-2 \$0vel8-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 254 71 vsl 8 10 0 127 0 0 \$0vel9-2 \$0vel9-2 empty 0 -9 0 10
+#X obj 256 73 vsl 8 10 0 127 0 0 \$0vel9-2 \$0vel9-2 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 315 69 tgl 15 0 \$0vel12-2 \$0tgl12-2 empty -10 10 0 10 -256490
+#X obj 317 71 tgl 15 0 \$0vel12-2 \$0tgl12-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 361 69 tgl 15 0 \$0vel14-2 \$0tgl14-2 empty 0 -6 0 10 -178920
+#X obj 363 71 tgl 15 0 \$0vel14-2 \$0tgl14-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 384 69 tgl 15 0 \$0vel15-2 \$0tgl15-2 empty 0 -6 0 10 -178920
+#X obj 386 71 tgl 15 0 \$0vel15-2 \$0tgl15-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 338 69 tgl 15 0 \$0vel13-2 \$0tgl13-2 empty 0 -6 0 10 -178920
+#X obj 340 71 tgl 15 0 \$0vel13-2 \$0tgl13-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 376 71 vsl 8 10 0 127 0 0 \$0vel14-2 \$0vel14-2 empty 0 -9 0
+#X obj 378 73 vsl 8 10 0 127 0 0 \$0vel14-2 \$0vel14-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 399 71 vsl 8 10 0 127 0 0 \$0vel15-2 \$0vel15-2 empty 0 -9 0
+#X obj 401 73 vsl 8 10 0 127 0 0 \$0vel15-2 \$0vel15-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 330 71 vsl 8 10 0 127 0 0 \$0vel12-2 \$0vel12-2 empty 0 -9 0
+#X obj 332 73 vsl 8 10 0 127 0 0 \$0vel12-2 \$0vel12-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 353 71 vsl 8 10 0 127 0 0 \$0vel13-2 \$0vel13-2 empty 0 -9 0
+#X obj 355 73 vsl 8 10 0 127 0 0 \$0vel13-2 \$0vel13-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 16 93 tgl 15 0 \$0vel0-3 \$0tgl0-3 4 -10 10 0 10 -256490 -1
+#X obj 18 95 tgl 15 0 \$0vel0-3 \$0tgl0-3 4 -10 10 0 10 -256490 -1
 -1 0 127;
-#X obj 62 93 tgl 15 0 \$0vel2-3 \$0tgl2-3 empty 0 -6 0 10 -178920 -1
+#X obj 64 95 tgl 15 0 \$0vel2-3 \$0tgl2-3 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 85 93 tgl 15 0 \$0vel3-3 \$0tgl3-3 empty 0 -6 0 10 -178920 -1
+#X obj 87 95 tgl 15 0 \$0vel3-3 \$0tgl3-3 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 39 93 tgl 15 0 \$0vel1-3 \$0tgl1-3 empty 0 -6 0 10 -178920 -1
+#X obj 41 95 tgl 15 0 \$0vel1-3 \$0tgl1-3 empty 0 -6 0 10 -178920 -1
 -1 0 127;
-#X obj 77 95 vsl 8 10 0 127 0 0 \$0vel2-3 \$0vel2-3 empty 0 -9 0 10
+#X obj 79 97 vsl 8 10 0 127 0 0 \$0vel2-3 \$0vel2-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 100 95 vsl 8 10 0 127 0 0 \$0vel3-3 \$0vel3-3 empty 0 -9 0 10
+#X obj 102 97 vsl 8 10 0 127 0 0 \$0vel3-3 \$0vel3-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 31 95 vsl 8 10 0 127 0 0 \$0vel0-3 \$0vel0-3 empty 0 -9 0 10
+#X obj 33 97 vsl 8 10 0 127 0 0 \$0vel0-3 \$0vel0-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 54 95 vsl 8 10 0 127 0 0 \$0vel1-3 \$0vel1-3 empty 0 -9 0 10
+#X obj 56 97 vsl 8 10 0 127 0 0 \$0vel1-3 \$0vel1-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 116 93 tgl 15 0 \$0vel4-3 \$0tgl4-3 empty -10 10 0 10 -256490
+#X obj 118 95 tgl 15 0 \$0vel4-3 \$0tgl4-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 162 93 tgl 15 0 \$0vel6-3 \$0tgl6-3 empty 0 -6 0 10 -178920
+#X obj 164 95 tgl 15 0 \$0vel6-3 \$0tgl6-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 185 93 tgl 15 0 \$0vel7-3 \$0tgl7-3 empty 0 -6 0 10 -178920
+#X obj 187 95 tgl 15 0 \$0vel7-3 \$0tgl7-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 139 93 tgl 15 0 \$0vel5-3 \$0tgl5-3 empty 0 -6 0 10 -178920
+#X obj 141 95 tgl 15 0 \$0vel5-3 \$0tgl5-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 177 95 vsl 8 10 0 127 0 0 \$0vel6-3 \$0vel6-3 empty 0 -9 0 10
+#X obj 179 97 vsl 8 10 0 127 0 0 \$0vel6-3 \$0vel6-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 200 95 vsl 8 10 0 127 0 0 \$0vel7-3 \$0vel7-3 empty 0 -9 0 10
+#X obj 202 97 vsl 8 10 0 127 0 0 \$0vel7-3 \$0vel7-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 131 95 vsl 8 10 0 127 0 0 \$0vel4-3 \$0vel4-3 empty 0 -9 0 10
+#X obj 133 97 vsl 8 10 0 127 0 0 \$0vel4-3 \$0vel4-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 154 95 vsl 8 10 0 127 0 0 \$0vel5-3 \$0vel5-3 empty 0 -9 0 10
+#X obj 156 97 vsl 8 10 0 127 0 0 \$0vel5-3 \$0vel5-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 216 93 tgl 15 0 \$0vel8-3 \$0tgl8-3 empty -10 10 0 10 -256490
+#X obj 218 95 tgl 15 0 \$0vel8-3 \$0tgl8-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 262 93 tgl 15 0 \$0vel10-3 \$0tgl10-3 empty 0 -6 0 10 -178920
+#X obj 264 95 tgl 15 0 \$0vel10-3 \$0tgl10-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 285 93 tgl 15 0 \$0vel11-3 \$0tgl11-3 empty 0 -6 0 10 -178920
+#X obj 287 95 tgl 15 0 \$0vel11-3 \$0tgl11-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 239 93 tgl 15 0 \$0vel9-3 \$0tgl9-3 empty 0 -6 0 10 -178920
+#X obj 241 95 tgl 15 0 \$0vel9-3 \$0tgl9-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 277 95 vsl 8 10 0 127 0 0 \$0vel10-3 \$0vel10-3 empty 0 -9 0
+#X obj 279 97 vsl 8 10 0 127 0 0 \$0vel10-3 \$0vel10-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 300 95 vsl 8 10 0 127 0 0 \$0vel11-3 \$0vel11-3 empty 0 -9 0
+#X obj 302 97 vsl 8 10 0 127 0 0 \$0vel11-3 \$0vel11-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 231 95 vsl 8 10 0 127 0 0 \$0vel8-3 \$0vel8-3 empty 0 -9 0 10
+#X obj 233 97 vsl 8 10 0 127 0 0 \$0vel8-3 \$0vel8-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 254 95 vsl 8 10 0 127 0 0 \$0vel9-3 \$0vel9-3 empty 0 -9 0 10
+#X obj 256 97 vsl 8 10 0 127 0 0 \$0vel9-3 \$0vel9-3 empty 0 -9 0 10
 -262144 -191407 -1 0 1;
-#X obj 315 93 tgl 15 0 \$0vel12-3 \$0tgl12-3 empty -10 10 0 10 -256490
+#X obj 317 95 tgl 15 0 \$0vel12-3 \$0tgl12-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 361 93 tgl 15 0 \$0vel14-3 \$0tgl14-3 empty 0 -6 0 10 -178920
+#X obj 363 95 tgl 15 0 \$0vel14-3 \$0tgl14-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 384 93 tgl 15 0 \$0vel15-3 \$0tgl15-3 empty 0 -6 0 10 -178920
+#X obj 386 95 tgl 15 0 \$0vel15-3 \$0tgl15-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 338 93 tgl 15 0 \$0vel13-3 \$0tgl13-3 empty 0 -6 0 10 -178920
+#X obj 340 95 tgl 15 0 \$0vel13-3 \$0tgl13-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 376 95 vsl 8 10 0 127 0 0 \$0vel14-3 \$0vel14-3 empty 0 -9 0
+#X obj 378 97 vsl 8 10 0 127 0 0 \$0vel14-3 \$0vel14-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 399 95 vsl 8 10 0 127 0 0 \$0vel15-3 \$0vel15-3 empty 0 -9 0
+#X obj 401 97 vsl 8 10 0 127 0 0 \$0vel15-3 \$0vel15-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 330 95 vsl 8 10 0 127 0 0 \$0vel12-3 \$0vel12-3 empty 0 -9 0
+#X obj 332 97 vsl 8 10 0 127 0 0 \$0vel12-3 \$0vel12-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 353 95 vsl 8 10 0 127 0 0 \$0vel13-3 \$0vel13-3 empty 0 -9 0
+#X obj 355 97 vsl 8 10 0 127 0 0 \$0vel13-3 \$0vel13-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 415 20 tgl 15 0 \$0vel16-0 \$0tgl16-0 empty -10 10 0 10 -256490
+#X obj 417 22 tgl 15 0 \$0vel16-0 \$0tgl16-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 461 20 tgl 15 0 \$0vel18-0 \$0tgl18-0 empty 0 -6 0 10 -178920
+#X obj 463 22 tgl 15 0 \$0vel18-0 \$0tgl18-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 484 20 tgl 15 0 \$0vel19-0 \$0tgl19-0 empty 0 -6 0 10 -178920
+#X obj 486 22 tgl 15 0 \$0vel19-0 \$0tgl19-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 438 20 tgl 15 0 \$0vel17-0 \$0tgl17-0 empty 0 -6 0 10 -178920
+#X obj 440 22 tgl 15 0 \$0vel17-0 \$0tgl17-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 476 22 vsl 8 10 0 127 0 0 \$0vel18-0 \$0vel18-0 empty 0 -9 0
+#X obj 478 24 vsl 8 10 0 127 0 0 \$0vel18-0 \$0vel18-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 499 22 vsl 8 10 0 127 0 0 \$0vel19-0 \$0vel19-0 empty 0 -9 0
+#X obj 501 24 vsl 8 10 0 127 0 0 \$0vel19-0 \$0vel19-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 430 22 vsl 8 10 0 127 0 0 \$0vel16-0 \$0vel16-0 empty 0 -9 0
+#X obj 432 24 vsl 8 10 0 127 0 0 \$0vel16-0 \$0vel16-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 453 22 vsl 8 10 0 127 0 0 \$0vel17-0 \$0vel17-0 empty 0 -9 0
+#X obj 455 24 vsl 8 10 0 127 0 0 \$0vel17-0 \$0vel17-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 515 20 tgl 15 0 \$0vel20-0 \$0tgl20-0 empty -10 10 0 10 -256490
+#X obj 517 22 tgl 15 0 \$0vel20-0 \$0tgl20-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 561 20 tgl 15 0 \$0vel22-0 \$0tgl22-0 empty 0 -6 0 10 -178920
+#X obj 563 22 tgl 15 0 \$0vel22-0 \$0tgl22-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 584 20 tgl 15 0 \$0vel23-0 \$0tgl23-0 empty 0 -6 0 10 -178920
+#X obj 586 22 tgl 15 0 \$0vel23-0 \$0tgl23-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 538 20 tgl 15 0 \$0vel21-0 \$0tgl21-0 empty 0 -6 0 10 -178920
+#X obj 540 22 tgl 15 0 \$0vel21-0 \$0tgl21-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 576 22 vsl 8 10 0 127 0 0 \$0vel22-0 \$0vel22-0 empty 0 -9 0
+#X obj 578 24 vsl 8 10 0 127 0 0 \$0vel22-0 \$0vel22-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 599 22 vsl 8 10 0 127 0 0 \$0vel23-0 \$0vel23-0 empty 0 -9 0
+#X obj 601 24 vsl 8 10 0 127 0 0 \$0vel23-0 \$0vel23-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 530 22 vsl 8 10 0 127 0 0 \$0vel20-0 \$0vel20-0 empty 0 -9 0
+#X obj 532 24 vsl 8 10 0 127 0 0 \$0vel20-0 \$0vel20-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 553 22 vsl 8 10 0 127 0 0 \$0vel21-0 \$0vel21-0 empty 0 -9 0
+#X obj 555 24 vsl 8 10 0 127 0 0 \$0vel21-0 \$0vel21-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 615 20 tgl 15 0 \$0vel24-0 \$0tgl24-0 empty -10 10 0 10 -256490
+#X obj 617 22 tgl 15 0 \$0vel24-0 \$0tgl24-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 661 20 tgl 15 0 \$0vel26-0 \$0tgl26-0 empty 0 -6 0 10 -178920
+#X obj 663 22 tgl 15 0 \$0vel26-0 \$0tgl26-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 684 20 tgl 15 0 \$0vel27-0 \$0tgl27-0 empty 0 -6 0 10 -178920
+#X obj 686 22 tgl 15 0 \$0vel27-0 \$0tgl27-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 638 20 tgl 15 0 \$0vel25-0 \$0tgl25-0 empty 0 -6 0 10 -178920
+#X obj 640 22 tgl 15 0 \$0vel25-0 \$0tgl25-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 676 22 vsl 8 10 0 127 0 0 \$0vel26-0 \$0vel26-0 empty 0 -9 0
+#X obj 678 24 vsl 8 10 0 127 0 0 \$0vel26-0 \$0vel26-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 699 22 vsl 8 10 0 127 0 0 \$0vel27-0 \$0vel27-0 empty 0 -9 0
+#X obj 701 24 vsl 8 10 0 127 0 0 \$0vel27-0 \$0vel27-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 630 22 vsl 8 10 0 127 0 0 \$0vel24-0 \$0vel24-0 empty 0 -9 0
+#X obj 632 24 vsl 8 10 0 127 0 0 \$0vel24-0 \$0vel24-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 653 22 vsl 8 10 0 127 0 0 \$0vel25-0 \$0vel25-0 empty 0 -9 0
+#X obj 655 24 vsl 8 10 0 127 0 0 \$0vel25-0 \$0vel25-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 714 20 tgl 15 0 \$0vel28-0 \$0tgl28-0 empty -10 10 0 10 -256490
+#X obj 716 22 tgl 15 0 \$0vel28-0 \$0tgl28-0 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 760 20 tgl 15 0 \$0vel30-0 \$0tgl30-0 empty 0 -6 0 10 -178920
+#X obj 762 22 tgl 15 0 \$0vel30-0 \$0tgl30-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 783 20 tgl 15 0 \$0vel31-0 \$0tgl31-0 empty 0 -6 0 10 -178920
+#X obj 785 22 tgl 15 0 \$0vel31-0 \$0tgl31-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 737 20 tgl 15 0 \$0vel29-0 \$0tgl29-0 empty 0 -6 0 10 -178920
+#X obj 739 22 tgl 15 0 \$0vel29-0 \$0tgl29-0 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 775 22 vsl 8 10 0 127 0 0 \$0vel30-0 \$0vel30-0 empty 0 -9 0
+#X obj 777 24 vsl 8 10 0 127 0 0 \$0vel30-0 \$0vel30-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 798 22 vsl 8 10 0 127 0 0 \$0vel31-0 \$0vel31-0 empty 0 -9 0
+#X obj 800 24 vsl 8 10 0 127 0 0 \$0vel31-0 \$0vel31-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 729 22 vsl 8 10 0 127 0 0 \$0vel28-0 \$0vel28-0 empty 0 -9 0
+#X obj 731 24 vsl 8 10 0 127 0 0 \$0vel28-0 \$0vel28-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 752 22 vsl 8 10 0 127 0 0 \$0vel29-0 \$0vel29-0 empty 0 -9 0
+#X obj 754 24 vsl 8 10 0 127 0 0 \$0vel29-0 \$0vel29-0 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 415 45 tgl 15 0 \$0vel16-1 \$0tgl16-1 empty -10 10 0 10 -256490
+#X obj 417 47 tgl 15 0 \$0vel16-1 \$0tgl16-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 461 45 tgl 15 0 \$0vel18-1 \$0tgl18-1 empty 0 -6 0 10 -178920
+#X obj 463 47 tgl 15 0 \$0vel18-1 \$0tgl18-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 484 45 tgl 15 0 \$0vel19-1 \$0tgl19-1 empty 0 -6 0 10 -178920
+#X obj 486 47 tgl 15 0 \$0vel19-1 \$0tgl19-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 438 45 tgl 15 0 \$0vel17-1 \$0tgl17-1 empty 0 -6 0 10 -178920
+#X obj 440 47 tgl 15 0 \$0vel17-1 \$0tgl17-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 476 47 vsl 8 10 0 127 0 0 \$0vel18-1 \$0vel18-1 empty 0 -9 0
+#X obj 478 49 vsl 8 10 0 127 0 0 \$0vel18-1 \$0vel18-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 499 47 vsl 8 10 0 127 0 0 \$0vel19-1 \$0vel19-1 empty 0 -9 0
+#X obj 501 49 vsl 8 10 0 127 0 0 \$0vel19-1 \$0vel19-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 430 47 vsl 8 10 0 127 0 0 \$0vel16-1 \$0vel16-1 empty 0 -9 0
+#X obj 432 49 vsl 8 10 0 127 0 0 \$0vel16-1 \$0vel16-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 453 47 vsl 8 10 0 127 0 0 \$0vel17-1 \$0vel17-1 empty 0 -9 0
+#X obj 455 49 vsl 8 10 0 127 0 0 \$0vel17-1 \$0vel17-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 515 45 tgl 15 0 \$0vel20-1 \$0tgl20-1 empty -10 10 0 10 -256490
+#X obj 517 47 tgl 15 0 \$0vel20-1 \$0tgl20-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 561 45 tgl 15 0 \$0vel22-1 \$0tgl22-1 empty 0 -6 0 10 -178920
+#X obj 563 47 tgl 15 0 \$0vel22-1 \$0tgl22-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 584 45 tgl 15 0 \$0vel23-1 \$0tgl23-1 empty 0 -6 0 10 -178920
+#X obj 586 47 tgl 15 0 \$0vel23-1 \$0tgl23-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 538 45 tgl 15 0 \$0vel21-1 \$0tgl21-1 empty 0 -6 0 10 -178920
+#X obj 540 47 tgl 15 0 \$0vel21-1 \$0tgl21-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 576 47 vsl 8 10 0 127 0 0 \$0vel22-1 \$0vel22-1 empty 0 -9 0
+#X obj 578 49 vsl 8 10 0 127 0 0 \$0vel22-1 \$0vel22-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 599 47 vsl 8 10 0 127 0 0 \$0vel23-1 \$0vel23-1 empty 0 -9 0
+#X obj 601 49 vsl 8 10 0 127 0 0 \$0vel23-1 \$0vel23-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 530 47 vsl 8 10 0 127 0 0 \$0vel20-1 \$0vel20-1 empty 0 -9 0
+#X obj 532 49 vsl 8 10 0 127 0 0 \$0vel20-1 \$0vel20-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 553 47 vsl 8 10 0 127 0 0 \$0vel21-1 \$0vel21-1 empty 0 -9 0
+#X obj 555 49 vsl 8 10 0 127 0 0 \$0vel21-1 \$0vel21-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 615 45 tgl 15 0 \$0vel24-1 \$0tgl24-1 empty -10 10 0 10 -256490
+#X obj 617 47 tgl 15 0 \$0vel24-1 \$0tgl24-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 661 45 tgl 15 0 \$0vel26-1 \$0tgl26-1 empty 0 -6 0 10 -178920
+#X obj 663 47 tgl 15 0 \$0vel26-1 \$0tgl26-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 684 45 tgl 15 0 \$0vel27-1 \$0tgl27-1 empty 0 -6 0 10 -178920
+#X obj 686 47 tgl 15 0 \$0vel27-1 \$0tgl27-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 638 45 tgl 15 0 \$0vel25-1 \$0tgl25-1 empty 0 -6 0 10 -178920
+#X obj 640 47 tgl 15 0 \$0vel25-1 \$0tgl25-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 676 47 vsl 8 10 0 127 0 0 \$0vel26-1 \$0vel26-1 empty 0 -9 0
+#X obj 678 49 vsl 8 10 0 127 0 0 \$0vel26-1 \$0vel26-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 699 47 vsl 8 10 0 127 0 0 \$0vel27-1 \$0vel27-1 empty 0 -9 0
+#X obj 701 49 vsl 8 10 0 127 0 0 \$0vel27-1 \$0vel27-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 630 47 vsl 8 10 0 127 0 0 \$0vel24-1 \$0vel24-1 empty 0 -9 0
+#X obj 632 49 vsl 8 10 0 127 0 0 \$0vel24-1 \$0vel24-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 653 47 vsl 8 10 0 127 0 0 \$0vel25-1 \$0vel25-1 empty 0 -9 0
+#X obj 655 49 vsl 8 10 0 127 0 0 \$0vel25-1 \$0vel25-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 714 45 tgl 15 0 \$0vel28-1 \$0tgl28-1 empty -10 10 0 10 -256490
+#X obj 716 47 tgl 15 0 \$0vel28-1 \$0tgl28-1 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 760 45 tgl 15 0 \$0vel30-1 \$0tgl30-1 empty 0 -6 0 10 -178920
+#X obj 762 47 tgl 15 0 \$0vel30-1 \$0tgl30-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 783 45 tgl 15 0 \$0vel31-1 \$0tgl31-1 empty 0 -6 0 10 -178920
+#X obj 785 47 tgl 15 0 \$0vel31-1 \$0tgl31-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 737 45 tgl 15 0 \$0vel29-1 \$0tgl29-1 empty 0 -6 0 10 -178920
+#X obj 739 47 tgl 15 0 \$0vel29-1 \$0tgl29-1 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 775 47 vsl 8 10 0 127 0 0 \$0vel30-1 \$0vel30-1 empty 0 -9 0
+#X obj 777 49 vsl 8 10 0 127 0 0 \$0vel30-1 \$0vel30-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 798 47 vsl 8 10 0 127 0 0 \$0vel31-1 \$0vel31-1 empty 0 -9 0
+#X obj 800 49 vsl 8 10 0 127 0 0 \$0vel31-1 \$0vel31-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 729 47 vsl 8 10 0 127 0 0 \$0vel28-1 \$0vel28-1 empty 0 -9 0
+#X obj 731 49 vsl 8 10 0 127 0 0 \$0vel28-1 \$0vel28-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 752 47 vsl 8 10 0 127 0 0 \$0vel29-1 \$0vel29-1 empty 0 -9 0
+#X obj 754 49 vsl 8 10 0 127 0 0 \$0vel29-1 \$0vel29-1 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 415 69 tgl 15 0 \$0vel16-2 \$0tgl16-2 empty -10 10 0 10 -256490
+#X obj 417 71 tgl 15 0 \$0vel16-2 \$0tgl16-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 461 69 tgl 15 0 \$0vel18-2 \$0tgl18-2 empty 0 -6 0 10 -178920
+#X obj 463 71 tgl 15 0 \$0vel18-2 \$0tgl18-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 484 69 tgl 15 0 \$0vel19-2 \$0tgl19-2 empty 0 -6 0 10 -178920
+#X obj 486 71 tgl 15 0 \$0vel19-2 \$0tgl19-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 438 69 tgl 15 0 \$0vel17-2 \$0tgl17-2 empty 0 -6 0 10 -178920
+#X obj 440 71 tgl 15 0 \$0vel17-2 \$0tgl17-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 476 71 vsl 8 10 0 127 0 0 \$0vel18-2 \$0vel18-2 empty 0 -9 0
+#X obj 478 73 vsl 8 10 0 127 0 0 \$0vel18-2 \$0vel18-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 499 71 vsl 8 10 0 127 0 0 \$0vel19-2 \$0vel19-2 empty 0 -9 0
+#X obj 501 73 vsl 8 10 0 127 0 0 \$0vel19-2 \$0vel19-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 430 71 vsl 8 10 0 127 0 0 \$0vel16-2 \$0vel16-2 empty 0 -9 0
+#X obj 432 73 vsl 8 10 0 127 0 0 \$0vel16-2 \$0vel16-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 453 71 vsl 8 10 0 127 0 0 \$0vel17-2 \$0vel17-2 empty 0 -9 0
+#X obj 455 73 vsl 8 10 0 127 0 0 \$0vel17-2 \$0vel17-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 515 69 tgl 15 0 \$0vel20-2 \$0tgl20-2 empty -10 10 0 10 -256490
+#X obj 517 71 tgl 15 0 \$0vel20-2 \$0tgl20-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 561 69 tgl 15 0 \$0vel22-2 \$0tgl22-2 empty 0 -6 0 10 -178920
+#X obj 563 71 tgl 15 0 \$0vel22-2 \$0tgl22-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 584 69 tgl 15 0 \$0vel23-2 \$0tgl23-2 empty 0 -6 0 10 -178920
+#X obj 586 71 tgl 15 0 \$0vel23-2 \$0tgl23-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 538 69 tgl 15 0 \$0vel21-2 \$0tgl21-2 empty 0 -6 0 10 -178920
+#X obj 540 71 tgl 15 0 \$0vel21-2 \$0tgl21-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 576 71 vsl 8 10 0 127 0 0 \$0vel22-2 \$0vel22-2 empty 0 -9 0
+#X obj 578 73 vsl 8 10 0 127 0 0 \$0vel22-2 \$0vel22-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 599 71 vsl 8 10 0 127 0 0 \$0vel23-2 \$0vel23-2 empty 0 -9 0
+#X obj 601 73 vsl 8 10 0 127 0 0 \$0vel23-2 \$0vel23-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 530 71 vsl 8 10 0 127 0 0 \$0vel20-2 \$0vel20-2 empty 0 -9 0
+#X obj 532 73 vsl 8 10 0 127 0 0 \$0vel20-2 \$0vel20-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 553 71 vsl 8 10 0 127 0 0 \$0vel21-2 \$0vel21-2 empty 0 -9 0
+#X obj 555 73 vsl 8 10 0 127 0 0 \$0vel21-2 \$0vel21-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 615 69 tgl 15 0 \$0vel24-2 \$0tgl24-2 empty -10 10 0 10 -256490
+#X obj 617 71 tgl 15 0 \$0vel24-2 \$0tgl24-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 661 69 tgl 15 0 \$0vel26-2 \$0tgl26-2 empty 0 -6 0 10 -178920
+#X obj 663 71 tgl 15 0 \$0vel26-2 \$0tgl26-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 684 69 tgl 15 0 \$0vel27-2 \$0tgl27-2 empty 0 -6 0 10 -178920
+#X obj 686 71 tgl 15 0 \$0vel27-2 \$0tgl27-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 638 69 tgl 15 0 \$0vel25-2 \$0tgl25-2 empty 0 -6 0 10 -178920
+#X obj 640 71 tgl 15 0 \$0vel25-2 \$0tgl25-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 676 71 vsl 8 10 0 127 0 0 \$0vel26-2 \$0vel26-2 empty 0 -9 0
+#X obj 678 73 vsl 8 10 0 127 0 0 \$0vel26-2 \$0vel26-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 699 71 vsl 8 10 0 127 0 0 \$0vel27-2 \$0vel27-2 empty 0 -9 0
+#X obj 701 73 vsl 8 10 0 127 0 0 \$0vel27-2 \$0vel27-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 630 71 vsl 8 10 0 127 0 0 \$0vel24-2 \$0vel24-2 empty 0 -9 0
+#X obj 632 73 vsl 8 10 0 127 0 0 \$0vel24-2 \$0vel24-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 653 71 vsl 8 10 0 127 0 0 \$0vel25-2 \$0vel25-2 empty 0 -9 0
+#X obj 655 73 vsl 8 10 0 127 0 0 \$0vel25-2 \$0vel25-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 714 69 tgl 15 0 \$0vel28-2 \$0tgl28-2 empty -10 10 0 10 -256490
+#X obj 716 71 tgl 15 0 \$0vel28-2 \$0tgl28-2 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 760 69 tgl 15 0 \$0vel30-2 \$0tgl30-2 empty 0 -6 0 10 -178920
+#X obj 762 71 tgl 15 0 \$0vel30-2 \$0tgl30-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 783 69 tgl 15 0 \$0vel31-2 \$0tgl31-2 empty 0 -6 0 10 -178920
+#X obj 785 71 tgl 15 0 \$0vel31-2 \$0tgl31-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 737 69 tgl 15 0 \$0vel29-2 \$0tgl29-2 empty 0 -6 0 10 -178920
+#X obj 739 71 tgl 15 0 \$0vel29-2 \$0tgl29-2 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 775 71 vsl 8 10 0 127 0 0 \$0vel30-2 \$0vel30-2 empty 0 -9 0
+#X obj 777 73 vsl 8 10 0 127 0 0 \$0vel30-2 \$0vel30-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 798 71 vsl 8 10 0 127 0 0 \$0vel31-2 \$0vel31-2 empty 0 -9 0
+#X obj 800 73 vsl 8 10 0 127 0 0 \$0vel31-2 \$0vel31-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 729 71 vsl 8 10 0 127 0 0 \$0vel28-2 \$0vel28-2 empty 0 -9 0
+#X obj 731 73 vsl 8 10 0 127 0 0 \$0vel28-2 \$0vel28-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 752 71 vsl 8 10 0 127 0 0 \$0vel29-2 \$0vel29-2 empty 0 -9 0
+#X obj 754 73 vsl 8 10 0 127 0 0 \$0vel29-2 \$0vel29-2 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 415 93 tgl 15 0 \$0vel16-3 \$0tgl16-3 empty -10 10 0 10 -256490
+#X obj 417 95 tgl 15 0 \$0vel16-3 \$0tgl16-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 461 93 tgl 15 0 \$0vel18-3 \$0tgl18-3 empty 0 -6 0 10 -178920
+#X obj 463 95 tgl 15 0 \$0vel18-3 \$0tgl18-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 484 93 tgl 15 0 \$0vel19-3 \$0tgl19-3 empty 0 -6 0 10 -178920
+#X obj 486 95 tgl 15 0 \$0vel19-3 \$0tgl19-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 438 93 tgl 15 0 \$0vel17-3 \$0tgl17-3 empty 0 -6 0 10 -178920
+#X obj 440 95 tgl 15 0 \$0vel17-3 \$0tgl17-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 476 95 vsl 8 10 0 127 0 0 \$0vel18-3 \$0vel18-3 empty 0 -9 0
+#X obj 478 97 vsl 8 10 0 127 0 0 \$0vel18-3 \$0vel18-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 499 95 vsl 8 10 0 127 0 0 \$0vel19-3 \$0vel19-3 empty 0 -9 0
+#X obj 501 97 vsl 8 10 0 127 0 0 \$0vel19-3 \$0vel19-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 430 95 vsl 8 10 0 127 0 0 \$0vel16-3 \$0vel16-3 empty 0 -9 0
+#X obj 432 97 vsl 8 10 0 127 0 0 \$0vel16-3 \$0vel16-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 453 95 vsl 8 10 0 127 0 0 \$0vel17-3 \$0vel17-3 empty 0 -9 0
+#X obj 455 97 vsl 8 10 0 127 0 0 \$0vel17-3 \$0vel17-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 515 93 tgl 15 0 \$0vel20-3 \$0tgl20-3 empty -10 10 0 10 -256490
+#X obj 517 95 tgl 15 0 \$0vel20-3 \$0tgl20-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 561 93 tgl 15 0 \$0vel22-3 \$0tgl22-3 empty 0 -6 0 10 -178920
+#X obj 563 95 tgl 15 0 \$0vel22-3 \$0tgl22-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 584 93 tgl 15 0 \$0vel23-3 \$0tgl23-3 empty 0 -6 0 10 -178920
+#X obj 586 95 tgl 15 0 \$0vel23-3 \$0tgl23-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 538 93 tgl 15 0 \$0vel21-3 \$0tgl21-3 empty 0 -6 0 10 -178920
+#X obj 540 95 tgl 15 0 \$0vel21-3 \$0tgl21-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 576 95 vsl 8 10 0 127 0 0 \$0vel22-3 \$0vel22-3 empty 0 -9 0
+#X obj 578 97 vsl 8 10 0 127 0 0 \$0vel22-3 \$0vel22-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 599 95 vsl 8 10 0 127 0 0 \$0vel23-3 \$0vel23-3 empty 0 -9 0
+#X obj 601 97 vsl 8 10 0 127 0 0 \$0vel23-3 \$0vel23-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 530 95 vsl 8 10 0 127 0 0 \$0vel20-3 \$0vel20-3 empty 0 -9 0
+#X obj 532 97 vsl 8 10 0 127 0 0 \$0vel20-3 \$0vel20-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 553 95 vsl 8 10 0 127 0 0 \$0vel21-3 \$0vel21-3 empty 0 -9 0
+#X obj 555 97 vsl 8 10 0 127 0 0 \$0vel21-3 \$0vel21-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 615 93 tgl 15 0 \$0vel24-3 \$0tgl24-3 empty -10 10 0 10 -256490
+#X obj 617 95 tgl 15 0 \$0vel24-3 \$0tgl24-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 661 93 tgl 15 0 \$0vel26-3 \$0tgl26-3 empty 0 -6 0 10 -178920
+#X obj 663 95 tgl 15 0 \$0vel26-3 \$0tgl26-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 684 93 tgl 15 0 \$0vel27-3 \$0tgl27-3 empty 0 -6 0 10 -178920
+#X obj 686 95 tgl 15 0 \$0vel27-3 \$0tgl27-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 638 93 tgl 15 0 \$0vel25-3 \$0tgl25-3 empty 0 -6 0 10 -178920
+#X obj 640 95 tgl 15 0 \$0vel25-3 \$0tgl25-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 676 95 vsl 8 10 0 127 0 0 \$0vel26-3 \$0vel26-3 empty 0 -9 0
+#X obj 678 97 vsl 8 10 0 127 0 0 \$0vel26-3 \$0vel26-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 699 95 vsl 8 10 0 127 0 0 \$0vel27-3 \$0vel27-3 empty 0 -9 0
+#X obj 701 97 vsl 8 10 0 127 0 0 \$0vel27-3 \$0vel27-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 630 95 vsl 8 10 0 127 0 0 \$0vel24-3 \$0vel24-3 empty 0 -9 0
+#X obj 632 97 vsl 8 10 0 127 0 0 \$0vel24-3 \$0vel24-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 653 95 vsl 8 10 0 127 0 0 \$0vel25-3 \$0vel25-3 empty 0 -9 0
+#X obj 655 97 vsl 8 10 0 127 0 0 \$0vel25-3 \$0vel25-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 714 93 tgl 15 0 \$0vel28-3 \$0tgl28-3 empty -10 10 0 10 -256490
+#X obj 716 95 tgl 15 0 \$0vel28-3 \$0tgl28-3 empty -10 10 0 10 -256490
 -1 -1 0 127;
-#X obj 760 93 tgl 15 0 \$0vel30-3 \$0tgl30-3 empty 0 -6 0 10 -178920
+#X obj 762 95 tgl 15 0 \$0vel30-3 \$0tgl30-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 783 93 tgl 15 0 \$0vel31-3 \$0tgl31-3 empty 0 -6 0 10 -178920
+#X obj 785 95 tgl 15 0 \$0vel31-3 \$0tgl31-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 737 93 tgl 15 0 \$0vel29-3 \$0tgl29-3 empty 0 -6 0 10 -178920
+#X obj 739 95 tgl 15 0 \$0vel29-3 \$0tgl29-3 empty 0 -6 0 10 -178920
 -1 -1 0 127;
-#X obj 775 95 vsl 8 10 0 127 0 0 \$0vel30-3 \$0vel30-3 empty 0 -9 0
+#X obj 777 97 vsl 8 10 0 127 0 0 \$0vel30-3 \$0vel30-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 798 95 vsl 8 10 0 127 0 0 \$0vel31-3 \$0vel31-3 empty 0 -9 0
+#X obj 800 97 vsl 8 10 0 127 0 0 \$0vel31-3 \$0vel31-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 729 95 vsl 8 10 0 127 0 0 \$0vel28-3 \$0vel28-3 empty 0 -9 0
+#X obj 731 97 vsl 8 10 0 127 0 0 \$0vel28-3 \$0vel28-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X obj 752 95 vsl 8 10 0 127 0 0 \$0vel29-3 \$0vel29-3 empty 0 -9 0
+#X obj 754 97 vsl 8 10 0 127 0 0 \$0vel29-3 \$0vel29-3 empty 0 -9 0
 10 -262144 -191407 -1 0 1;
-#X text 25 192 2007 Dan Wilcox built following s-tracker in s-abstractions
+#X text 338 145 2007 Dan Wilcox built following s-tracker in s-abstractions
 by Chris McCormick \, updated in 2016 for pd vanilla;
-#X text 368 299 right inlet: indexed sequence loads;
+#X text 368 228 right inlet: indexed sequence loads;
 #N canvas 718 294 353 307 savestate 0;
 #X obj 185 259 outlet;
 #X obj 42 37 inlet;
@@ -2085,7 +2085,7 @@ by Chris McCormick \, updated in 2016 for pd vanilla;
 #X connect 13 0 0 0;
 #X connect 14 0 0 0;
 #X connect 15 0 0 0;
-#X restore 431 399 pd savestate;
+#X restore 431 328 pd savestate;
 #X text 26 167 Creation args: name (optional);
 #X connect 0 0 12 0;
 #X connect 2 0 3 0;
@@ -2096,4 +2096,4 @@ by Chris McCormick \, updated in 2016 for pd vanilla;
 #X connect 12 1 11 0;
 #X connect 12 2 10 0;
 #X connect 280 0 3 0;
-#X coords 0 -1 1 0 815 115 1 0 0;
+#X coords 0 -1 1 0 815 115 1 2 2;

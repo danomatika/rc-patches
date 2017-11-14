@@ -1,17 +1,17 @@
-#N canvas 532 288 374 262 10;
+#N canvas 532 288 347 243 10;
 #X obj 64 182 s \$0-load;
 #X obj 23 210 s \$0-save;
 #X msg 23 181 bang;
 #X msg 64 157 bang;
-#X obj 1 17 cnv 15 83 30 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 11 27 cnv 15 83 30 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 5 29 bng 15 250 50 0 \$0-save \$0-save save -3 -6 0 10 -204786
+#X obj 15 39 bng 15 250 50 0 \$0-save \$0-save save -3 -6 0 10 -204786
 -66577 -1;
-#X obj 35 29 bng 15 250 50 0 \$0-load \$0-load load -4 -6 0 10 -203904
+#X obj 45 39 bng 15 250 50 0 \$0-load \$0-load load -4 -6 0 10 -203904
 -1 -1;
 #X obj 23 79 inlet control;
 #X obj 105 156 s \$0-clear;
-#X obj 64 33 bng 10 250 50 0 \$0-clear \$0-clear clear -5 -6 0 8 -261234
+#X obj 74 43 bng 10 250 50 0 \$0-clear \$0-clear clear -5 -6 0 8 -261234
 -1 -1;
 #N canvas 0 22 339 199 recvs 0;
 #X obj 28 34 r \$0-save;
@@ -32,13 +32,13 @@
 #X connect 7 0 3 0;
 #X connect 8 0 7 0;
 #X restore 190 130 pd recvs;
-#X text 100 13 gui wrapper for u_savestate;
+#X text 111 13 gui wrapper for u_savestate;
 #X obj 190 157 u_savestate;
 #X obj 190 210 outlet msgbox state;
 #X obj 253 185 outlet done;
 #X obj 23 104 route save load clear;
 #X msg 105 132 bang;
-#X text 136 48 2008 \, 2016 Dan Wilcox;
+#X text 147 48 2008 \, 2016 Dan Wilcox;
 #X connect 2 0 1 0;
 #X connect 3 0 0 0;
 #X connect 7 0 15 0;
@@ -50,4 +50,4 @@
 #X connect 15 2 16 0;
 #X connect 15 3 12 0;
 #X connect 16 0 8 0;
-#X coords 0 -1 1 1 85 50 1 0 0;
+#X coords 0 -1 1 1 85 50 1 10 10;

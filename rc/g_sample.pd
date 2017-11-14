@@ -1,26 +1,26 @@
-#N canvas 328 131 548 326 10;
-#X obj 84 259 outlet~;
-#X obj 115 233 outlet~;
-#X obj 84 118 inlet;
-#X text 150 257 left and right out;
-#X text 214 46 Creation args: name;
-#X obj 1 15 cnv 15 128 77 \$0-play empty play 22 12 0 10 -228856 -66577
+#N canvas 362 131 526 300 10;
+#X obj 34 269 outlet~;
+#X obj 65 243 outlet~;
+#X obj 34 128 inlet;
+#X text 100 267 left and right out;
+#X text 221 46 Creation args: name;
+#X obj 31 25 cnv 15 128 77 \$0-play empty play 22 12 0 10 -228856 -66577
 0;
-#X obj 5 20 bng 15 250 50 0 \$0-play \$0-play1 empty -25 6 0 10 -204786
+#X obj 35 30 bng 15 250 50 0 \$0-play \$0-play1 empty -25 6 0 10 -204786
 -1 -1;
-#X symbolatom 5 71 20 0 0 0 - #0-filename-in -, f 20;
-#X obj 110 21 tgl 15 0 \$0-reverse \$0-reverse-in reverse -44 6 0 10
+#X symbolatom 35 81 20 0 0 0 - #0-filename-in -, f 20;
+#X obj 140 31 tgl 15 0 \$0-reverse \$0-reverse-in reverse -44 6 0 10
 -261234 -1 -1 0 1;
-#X obj 53 40 hsl 70 15 0 1 0 1 \$0-amp \$0-amp-in amp 0 8 0 10 -191407
+#X obj 83 50 hsl 70 15 0 1 0 1 \$0-amp \$0-amp-in amp 0 8 0 10 -191407
 -1 -1 6900 1;
-#X obj 5 41 nbx 4 14 0 1 0 1 \$0-amp \$0-amp-in empty -20 6 0 10 -261234
+#X obj 35 51 nbx 4 14 0 1 0 1 \$0-amp \$0-amp-in empty -20 6 0 10 -261234
 -1 -1 1 256;
-#X obj 53 55 hsl 70 15 0 2 0 1 \$0-speed \$0-speed-in speed 0 8 0 10
+#X obj 83 65 hsl 70 15 0 2 0 1 \$0-speed \$0-speed-in speed 0 8 0 10
 -191407 -1 -1 3450 1;
-#X obj 5 56 nbx 4 14 0 2 0 1 \$0-speed \$0-speed-in empty -20 6 0 10
--261234 -1 -1 1 256;
-#X obj 84 167 s_sample \$1;
-#X text 296 258 Dan Wilcox 2008 \, updated 2016;
+#X obj 35 66 nbx 4 14 0 2 0 1 \$0-speed \$0-speed-in empty -20 6 0
+10 -261234 -1 -1 1 256;
+#X obj 34 177 s_sample \$1;
+#X text 246 268 Dan Wilcox 2008 \, updated 2016;
 #N canvas 742 191 376 228 to 0;
 #X obj 40 51 route amp speed reverse filename;
 #X obj 181 81 p_basename;
@@ -48,7 +48,7 @@
 #X connect 11 0 10 0;
 #X connect 11 0 12 0;
 #X connect 12 0 9 0;
-#X restore 147 195 pd to gui;
+#X restore 97 205 pd to gui;
 #N canvas 451 247 450 246 from 0;
 #X obj 55 46 inlet;
 #X obj 55 168 outlet;
@@ -65,10 +65,10 @@
 #X connect 5 0 6 0;
 #X connect 6 0 1 0;
 #X connect 7 0 1 0;
-#X restore 225 151 pd from gui;
-#X obj 136 118 r \$0-play;
-#X obj 225 119 inlet;
-#X text 162 12 a gui wrapper around g_sample \, a one shot sample player
+#X restore 175 161 pd from gui;
+#X obj 86 128 r \$0-play;
+#X obj 175 129 inlet;
+#X text 177 12 a gui wrapper around g_sample \, a one shot sample player
 ;
 #X connect 2 0 13 0;
 #X connect 13 0 0 0;
@@ -77,4 +77,4 @@
 #X connect 16 0 13 1;
 #X connect 17 0 13 0;
 #X connect 18 0 16 0;
-#X coords 0 -1 1 1 130 95 1 0 0;
+#X coords 0 -1 1 1 130 95 1 30 10;
