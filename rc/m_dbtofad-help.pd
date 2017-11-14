@@ -1,0 +1,36 @@
+#N canvas 380 460 868 521 10;
+#N canvas 377 58 582 570 REFERENCE 0;
+#X text 24 31 Name: [m_fadtodb];
+#X text 24 434 Tags: conversion \, scale \, slider \, fader \, db;
+#X text 24 51 Summary: convert midi dB tp linear slider midi 0-127
+;
+#X text 24 124 Inlet 0: <float> - vu dB in (0 - 122);
+#X text 24 164 Outlet 0: <float> - slider midi value out (0 - 127)
+;
+#X text 23 379 See also: [fadtodb] [dbtorms] [rmstodb];
+#X text 24 221 Description: This is a clone of iem [dbtofad] by literally
+dumping it's contents into a lookup table because I wanted to keep
+my nice faders in pd-vanilla/libpd.;
+#X coords 0 -1 1 1 450 450 1 10 10;
+#X restore 5 48 pd REFERENCE;
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X text 468 51 Example:;
+#X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
+- 2013;
+#X obj 596 271 vsl 30 119 0 120 0 0 empty empty empty 0 -9 0 10 -128992
+-4034 -4034 8260 1;
+#X obj 627 271 vu 30 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 683 195 - 100;
+#X floatatom 596 225 5 0 0 1 0-127 - -, f 5;
+#X floatatom 596 154 5 0 0 1 midi_dB - -, f 5;
+#X floatatom 683 221 5 0 0 1 dB - -, f 5;
+#X text 129 21 - convert vu dB to fader scale;
+#X obj 596 192 m_dbtofad;
+#X obj 8 20 m_dbtofad;
+#X connect 6 0 9 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
+#X connect 8 0 11 0;
+#X connect 9 0 5 1;
+#X connect 11 0 7 0;

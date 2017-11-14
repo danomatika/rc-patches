@@ -1,7 +1,8 @@
 m_atodb - convert linear amplitude value to decibels
 m_ctlin - ctlin that can learn it's ctl num & channel
 m_dbtoa - convert decibel value to linear amplitude
-m_fadtodb - convert fader scale to vu db
+m_dbtofad - convert vu dB to fader scale
+m_fadtodb - convert fader scale to vu dB
 m_gmcontrol - general midi control mapping look up table
 m_gminstrument - general midi instrument mapping look up table
 m_gmpercussion - general midi percussion mapping look up table
