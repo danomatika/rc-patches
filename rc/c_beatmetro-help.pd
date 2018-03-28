@@ -1,0 +1,40 @@
+#N canvas 461 470 522 277 10;
+#X obj 43 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 43 201 5 0 0 1 beats - -, f 5;
+#X obj 145 52 hsl 128 15 80 200 0 0 empty empty beats_per_minute 8
+8 0 10 -262144 -1 -1 0 1;
+#X obj 142 79 int;
+#X floatatom 142 106 5 0 0 0 - - -, f 5;
+#X obj 43 228 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 201 106 1;
+#X msg 295 106 4;
+#X msg 328 106 8;
+#X msg 362 106 16;
+#X msg 264 106 3;
+#X obj 43 167 c_beatmetro 120 4;
+#X msg 233 106 2;
+#X text 200 83 4 -> 1/4 quarter note \, 8 -> 1/8 \, etc;
+#X text 181 166 default: 120 bpm w/ beat length of 4 (quarter note)
+;
+#X msg 201 132 length \$1;
+#X text 268 133 beat length;
+#X msg 71 127 set 10;
+#X msg 62 88 set 0;
+#X text 14 16 bpm metro with built-in counter;
+#X connect 0 0 11 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 11 1;
+#X connect 6 0 15 0;
+#X connect 7 0 15 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 1 0;
+#X connect 12 0 15 0;
+#X connect 15 0 11 1;
+#X connect 17 0 11 0;
+#X connect 18 0 11 0;

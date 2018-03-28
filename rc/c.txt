@@ -1,11 +1,14 @@
 c_autospigot - pass a signal only if it's above an amplitude threshold
+c_beatmetro - bpm metro with built-in counter
 c_bus2 - create a named stereo audio bus
+c_dust - random impulse generator
 c_frombus2 - receive from a named stereo audio bus
 c_taptempo - tap tempo calculator
 c_tobus2 - send to a named stereo audio bus
 c_midiplay - midifile player (requires mrpeach [midifile])
 c_nstep - arbitrary length bang sequence player
 c_playlist - manage a playlist from a text file
+c_portamento - portamento (glide) wrapper for line
 c_qseq - sequencer interface to qlist
 c_spigot - toggle a signal without clicking
 c_uzi - send a specified number of bangs as fast as possible

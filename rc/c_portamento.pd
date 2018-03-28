@@ -1,0 +1,17 @@
+#N canvas 416 269 340 228 10;
+#X obj 20 66 inlet;
+#X obj 71 99 inlet;
+#X text 12 10 portamento \, generates a glide between notes;
+#X text 61 67 note in;
+#X obj 20 187 outlet;
+#X text 114 99 glide speed in;
+#X obj 20 158 line;
+#X text 40 35 creation args: glide speed (ms);
+#X obj 20 129 pack 0 \$1;
+#X text 78 189 2007 \, 2017 Dan Wilcox;
+#X text 78 168 based off of the pd portamento example;
+#X connect 0 0 8 0;
+#X connect 1 0 8 1;
+#X connect 6 0 4 0;
+#X connect 8 0 6 0;
+#X coords 0 0 1 1 160 45 0;

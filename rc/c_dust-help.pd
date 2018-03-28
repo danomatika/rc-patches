@@ -1,0 +1,41 @@
+#N canvas 275 266 450 256 10;
+#X obj 22 45 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 79 68 5 0 0 0 - - -, f 5;
+#X obj 22 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 113 164 kind of like a random metro for crackle triggering
+;
+#X text 47 42 run;
+#X text 53 130 bangs out;
+#X text 118 69 density \, low numbers yield more crackle per second
+;
+#X obj 22 97 c_dust 300;
+#X text 192 130 adapted from example in delay-help.pd;
+#X text 193 39 creation args: density;
+#X obj 22 196 soundoutput;
+#N canvas 0 23 266 223 beep 0;
+#X obj 35 16 inlet;
+#X obj 116 131 c_adsr 1 2 20 50 40;
+#X obj 35 161 *~;
+#X obj 35 192 outlet~;
+#X obj 35 77 makenote 64 50;
+#X obj 35 105 mtof;
+#X obj 35 132 osc~;
+#X msg 35 49 68;
+#X connect 0 0 7 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 4 1 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 4 0;
+#X restore 22 162 pd beep;
+#X text 18 11 random impulse generator ala Supercollider;
+#X connect 0 0 7 0;
+#X connect 1 0 7 1;
+#X connect 2 0 11 0;
+#X connect 7 0 2 0;
+#X connect 11 0 10 1;
+#X connect 11 0 10 0;
