@@ -1,0 +1,57 @@
+#N canvas 371 106 401 252 10;
+#X obj 45 178 soundoutput;
+#X obj 45 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
+;
+#X obj 173 99 m_allnotesoff;
+#X obj 173 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#N canvas 521 281 232 258 random 0;
+#X obj 24 27 inlet;
+#X obj 24 120 t b b;
+#X obj 24 91 until;
+#X obj 24 187 pack f f;
+#X obj 24 220 outlet;
+#X obj 24 151 m_random 32 80;
+#X obj 115 151 m_random 64 100;
+#X msg 24 59 6;
+#X connect 0 0 7 0;
+#X connect 1 0 5 0;
+#X connect 1 1 6 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 1;
+#X connect 7 0 2 0;
+#X restore 45 99 pd random noteons;
+#N canvas 0 23 404 250 poly 0;
+#X obj 51 48 inlet;
+#X obj 51 148 outlet~;
+#X obj 228 150 outlet~;
+#X obj 51 97 u_makepoly 6 1 s_spad \$0-synth;
+#N canvas 612 200 429 232 synth 0;
+#X obj 28 24 loadbang;
+#X msg 28 65 mod3d 0 \, mod3c 0 \, mod3b 0.520079 \, mod3a 0 \, mod2d
+0 \, mod2c 0 \, mod2b 0 \, mod2a 0 \, mod1d 0 \, mod1c 0.465512 \,
+mod1b 0.166614 \, mod1a 0.654016 \, osc3d 0 \, osc3c 0 \, osc3b 0 \,
+osc3a 0 \, osc2d 0 \, osc2c 0 \, osc2b 0 \, osc2a 0.779528 \, osc1d
+0.669764 \, osc1c 0.596929 \, osc1b 0.699528 \, osc1a 0.228346 \, env3r
+0 \, env3s 0 \, env3d 0 \, env3a 0 \, env2r 0.0323622 \, env2s 0.567795
+\, env2d 0.0708661 \, env2a 0.630394 \, env1r 0.0410236 \, env1s 0.322835
+\, env1d 0.111024 \, env1a 0.080315 \,;
+#X obj 28 187 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 228 69 pd synth settings;
+#X connect 0 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 4 0 3 1;
+#X restore 45 141 pd poly synth;
+#X text 21 28 m_allnotesoff: send noteoff (vel 0) to all midi notes
+0-127;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 0 0 1;

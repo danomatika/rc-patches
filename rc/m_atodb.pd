@@ -1,6 +1,8 @@
-#N canvas 451 370 197 152 10;
+#N canvas 451 370 197 182 10;
 #X obj 40 33 inlet;
-#X obj 40 99 outlet;
-#X obj 40 68 expr 20*log10($f1);
+#X obj 40 139 outlet;
+#X obj 40 68 rmstodb;
+#X obj 40 103 - 100;
 #X connect 0 0 2 0;
-#X connect 2 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;

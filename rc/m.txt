@@ -1,3 +1,4 @@
+m_allnotesoff - send noteoff (vel 0) to all midi notes 0-127
 m_atodb - convert linear amplitude value to decibels
 m_ctlin - ctlin that can learn it's ctl num & channel
 m_dbtoa - convert decibel value to linear amplitude
