@@ -1,0 +1,68 @@
+#N canvas 46 46 1081 358 10;
+#X msg 524 74 save;
+#N canvas 0 303 450 300 datastore 0;
+#X obj 10 10 inlet;
+#X msg 10 30 \; RJ_SCENE_LOAD g_seqstore-seqstore pat3 127 0 127 0
+127 0 0 0 0 0 0 0 0 0 0 0 \\\; 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \\\;
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \\\; 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 \\\; \, g_seqstore-seqstore pat2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+\\\; 127 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \\\; 0 127 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 \\\; 0 0 127 0 0 0 0 0 0 0 0 0 0 0 0 0 \\\; \, g_seqstore-seqstore
+pat1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \\\; 0 0 0 0 127 0 127 0 0 0 0
+0 0 0 0 0 \\\; 0 0 0 0 0 127 127 0 0 0 0 0 0 0 0 0 \\\; 0 0 0 0 0 127
+0 0 0 0 0 0 0 0 0 0 \\\; \,;
+#X connect 0 0 1 0;
+#X restore 272 151 pd datastore;
+#X msg 529 100 clear;
+#X floatatom 597 292 5 0 0 1 pattern - -, f 5;
+#X floatatom 501 45 5 0 0 0 - - -, f 5;
+#X text 270 64 sssad state saving;
+#X text 719 199 right inlet: manually load a pattern via a message
+... pattern index first \, then a list of sequences;
+#X text 495 11 left inlet: messages and floats;
+#X text 535 39 change pattern via index num \, pat 0 is always empty
+and cannot be saved to (acts as a "no play" pattern);
+#X msg 694 157 3 \, 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 \, 2 0 0 1 1
+0 0 1 1 0 0 1 1 0 0 1 1 \, 3 1 1 0 0 1 1 0 0 1 1 0 0 1 1 0 0 \, 4 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X obj 694 290 print seqstore;
+#X msg 774 236 dump;
+#X msg 774 259 clear;
+#X obj 272 88 g_savestate;
+#X obj 501 214 g_seqstore seqstore;
+#X msg 429 153 clear;
+#X text 22 154 this is the target sequence object;
+#X text 691 309 right outlet: dumps each stored pattern with a float
+index is sent first \, then the seqs as lists;
+#X text 404 312 left outlet: seq control;
+#X text 575 71 messages in \, same as gui \, note: "clear" does not
+clear the pattern in the seqstores's memory \, it just sends the clear
+message to the target so you can enter a new pattern without having
+to remove the old one;
+#X obj 542 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 542 154 strip \$1;
+#X text 815 258 clear *all* patterns;
+#X text 814 234 dump the seqstore's patterns;
+#X msg 559 181 print;
+#X text 560 131 strip seq list index prefix for targets with only 1
+sequence;
+#X obj 21 187 g_drumseq16;
+#X text 8 10 g_seqstore: a pattern memory object \, manages the pattern
+of a target sequence object;
+#X text 28 54 Creation args: unique name;
+#X connect 0 0 14 0;
+#X connect 2 0 14 0;
+#X connect 4 0 14 0;
+#X connect 9 0 14 1;
+#X connect 11 0 14 1;
+#X connect 12 0 14 1;
+#X connect 13 0 1 0;
+#X connect 14 0 26 1;
+#X connect 14 1 3 0;
+#X connect 14 2 10 0;
+#X connect 15 0 26 1;
+#X connect 20 0 21 0;
+#X connect 21 0 14 0;
+#X connect 24 0 14 0;
+#X connect 26 1 14 0;

@@ -1,12 +1,16 @@
+g_adsr - envelope generator, wrapper for c_adsr
 g_chan - a mono to stereo channel strip gui
 g_chan2 - a stereo channel strip gui
 g_drumseq16 - a 16 step drum sequencer with save state
 g_drumseq16_8 - an 8 track 16 step drum sequencer with save state
 g_drumseq32 - a 32 step drum sequencer with save state
 g_drumseq32_8 - an 8 track 32 step drum sequencer with save state
+g_fbdelay - gui wrapper for e_fbdelay
+g_midimetro - gui wrapper for c_midiplay
 g_sample - a gui one shot stereo sample player
 g_savestate - gui wrapper for u_savestate
 g_scope - simple oscilloscope gui
+g_seqstore - manages the pattern of a target sequence object
 g_seqtable - record and play back a sequence of midi notes
 g_spectroscope - frequency spectrum gui
 g_vu - mono vu meter
