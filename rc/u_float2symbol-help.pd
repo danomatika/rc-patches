@@ -1,0 +1,9 @@
+#N canvas 745 153 336 217 10;
+#X obj 129 156 print;
+#X floatatom 129 77 10 0 0 0 float - -, f 10;
+#X symbolatom 129 130 10 0 0 0 symbol - -, f 10;
+#X text 31 28 u_float2symbol : convert a float into symbol;
+#X obj 129 104 u_float2symbol;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 4 0 2 0;
