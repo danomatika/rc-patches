@@ -21,9 +21,11 @@
 #X obj 315 365 t a b;
 #X msg 119 159 1;
 #X obj 315 392 list trim;
-#X obj 37 57 t a a b;
+#X obj 37 77 t a a b;
 #X text 380 153 detect format;
-#X connect 0 0 22 0;
+#X obj 37 50 route send;
+#X text 108 51 strip "send" from mrpeach style messages;
+#X connect 0 0 24 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
 #X connect 3 1 1 0;
@@ -50,3 +52,5 @@
 #X connect 22 0 16 0;
 #X connect 22 1 9 0;
 #X connect 22 2 18 0;
+#X connect 24 0 22 0;
+#X connect 24 1 22 0;

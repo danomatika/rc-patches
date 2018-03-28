@@ -1,4 +1,4 @@
-#N canvas 415 24 851 515 10;
+#N canvas 332 24 886 518 10;
 #N canvas 698 230 582 570 REFERENCE 0;
 #X text 24 51 Summary: toggle a signal on/off without clicking.;
 #X text 24 104 Inlet 0: audio signal to toggle;
@@ -11,20 +11,22 @@ floats are treated as a 1 aka on.;
 #X text 24 435 Tags: Control \, Audio;
 #X text 24 31 Name: [c_spigot];
 #X coords 0 -1 1 1 450 450 1 10 10;
-#X restore -55 49 pd REFERENCE;
-#X obj -55 19 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+#X restore 5 49 pd REFERENCE;
+#X obj 5 19 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#X text 408 52 Example:;
-#X obj 510 304 soundoutput;
-#X obj 555 207 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+#X text 468 52 Example:;
+#X obj 570 304 soundoutput;
+#X obj 615 207 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
 1;
-#X obj 510 127 osc~ 440;
-#X obj 510 161 *~ 0.1;
-#X text 69 22 - toggle a signal without clicking;
-#X obj 510 233 c_spigot;
-#X obj -52 21 c_spigot;
-#X text 419 479 rc-patches (https://github.com/danomatika/rc-patches)
+#X obj 570 127 osc~ 440;
+#X obj 570 161 *~ 0.1;
+#X text 129 22 - toggle a signal without clicking;
+#X obj 570 233 c_spigot;
+#X obj 8 21 c_spigot;
+#X text 479 479 rc-patches (https://github.com/danomatika/rc-patches)
 - 2012;
+#X obj 591 413 c_spigot 1;
+#X text 534 384 creation arg: set state like [spigot];
 #X connect 4 0 8 1;
 #X connect 5 0 6 0;
 #X connect 6 0 8 0;

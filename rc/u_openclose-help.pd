@@ -7,6 +7,8 @@ previosuly opened patch is automatically closed;
 #X text 24 185 Outlet 1: <symbol> - the last closed patch path;
 #X text 24 434 Tags: opening patches \, utilities;
 #X text 24 377 See also: [c_playlist] \, [getdir];
+#X text 24 109 Inlet 0: <symbol> - relative path to a patch to open
+\; "close" - close the currently open patch;
 #X text 24 234 Description: This is basically a wrapper around the
 2.open_close.pd example in pd-msg. You give it a relative path to a
 .pd file and it opens it for you. Send another patch and it closes
@@ -14,9 +16,7 @@ the previously opened patch before opening the new one. Closes current
 patch when the [u_openclose] abstraction is closed. This is useful
 in conjunction with [c_playlist] to open and close individual songs
 which are encapsulated as separate patch files. NOTE: this requires
-the ggee [getdir] external \, so it won't work in pd-vanilla.;
-#X text 24 109 Inlet 0: <symbol> - relative path to a patch to open
-\; "close" - close the currently open patch;
+the ggee [getdir] external.;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -34,13 +34,13 @@ the ggee [getdir] external \, so it won't work in pd-vanilla.;
 #X text 542 154 closes prev patch before opening new one;
 #X text 556 192 handles spaces too;
 #X msg 556 214 media/abstraction with spaces.pd;
-#X msg 523 132 media/file2.pd;
 #X msg 500 102 media/file1.pd;
 #X text 497 75 open patch using a relative path;
+#X msg 523 132 media/file2.pd;
 #X obj 8 20 u_openclose;
 #X connect 4 0 9 0;
 #X connect 9 0 7 0;
 #X connect 9 1 6 0;
 #X connect 13 0 9 0;
 #X connect 14 0 9 0;
-#X connect 15 0 9 0;
+#X connect 16 0 9 0;

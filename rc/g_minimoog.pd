@@ -1,23 +1,23 @@
-#N canvas 553 212 800 379 10;
+#N canvas 480 212 800 379 10;
 #N canvas 418 66 515 392 e3 0;
 #X obj 100 100 cnv 15 150 140 empty empty Mixer 8 12 0 14 -99865 -262144
 0;
 #X obj 105 356 outlet;
 #X obj 104 21 inlet;
 #X obj 107 162 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
--228856 1 1;
+-228856 0 1;
 #X obj 125 147 hsl 113 15 0 1 0 0 empty empty osc2 8 8 0 10 -99865
--262144 -228856 11200 1;
+-262144 -228856 0 1;
 #X obj 125 162 hsl 113 15 0 1 0 0 empty empty osc3 8 8 0 10 -99865
--262144 -228856 11200 1;
+-262144 -228856 0 1;
 #X obj 125 177 hsl 113 15 0 1 0 0 empty empty external 8 8 0 10 -99865
 -262144 -228856 0 1;
 #X obj 125 192 hsl 113 15 0 1 0 0 empty empty noise 8 8 0 10 -99865
 -262144 -228856 0 1;
 #X obj 107 147 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
--228856 1 1;
+-228856 0 1;
 #X obj 107 132 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
--228856 1 1;
+-228856 0 1;
 #X obj 107 177 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
 -228856 0 1;
 #X obj 107 192 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
@@ -25,11 +25,11 @@
 #X obj 107 207 hradio 15 1 0 2 empty empty noisetype 32 8 0 10 -128992
 -228856 -228856 0;
 #X obj 125 132 hsl 113 15 0 1 0 0 empty empty osc1 8 8 0 10 -99865
--262144 -228856 11200 1;
+-262144 -228856 0 1;
 #X obj 100 241 cnv 15 149 49 empty empty Output 8 6 0 14 -99865 -262144
 0;
 #X obj 111 268 hsl 128 15 0 1 0 0 empty empty vol 8 8 0 10 -99865 -262144
--228856 12700 1;
+-228856 0 1;
 #X obj 198 244 tgl 15 0 empty empty A440 17 7 0 10 -128992 -228856
 -228856 0 1;
 #X obj 104 43 route osc1on osc1vol osc2on osc2vol osc3on osc3vol externalon
@@ -95,23 +95,23 @@ externalvol noiseon noisevol noisetype A440on vol;
 #X obj 105 397 outlet;
 #X obj 108 26 inlet;
 #X obj 111 132 hsl 128 15 0 1 0 0 empty empty filter_cutoff 8 8 0 10
--99865 -262144 -228856 8890 1;
+-99865 -262144 -228856 0 1;
 #X obj 111 147 hsl 128 15 0 1 0 0 empty empty filter_emphasis 8 8 0
-10 -99865 -262144 -228856 8890 1;
+10 -99865 -262144 -228856 0 1;
 #X obj 111 162 hsl 128 15 0 1 0 0 empty empty filter_amount 8 8 0 10
--99865 -262144 -228856 8890 1;
+-99865 -262144 -228856 0 1;
 #X obj 111 176 hsl 128 15 0 1 0 0 empty empty filter_A 8 8 0 10 -99865
--262144 -228856 127 1;
+-262144 -228856 0 1;
 #X obj 111 191 hsl 128 15 0 1 0 0 empty empty filter_D 8 8 0 10 -99865
--262144 -228856 1270 1;
+-262144 -228856 0 1;
 #X obj 111 206 hsl 128 15 0 1 0 0 empty empty filter_S 8 8 0 10 -99865
--262144 -228856 6350 1;
+-262144 -228856 0 1;
 #X obj 111 238 hsl 128 15 0 1 0 0 empty empty loudness_contour_A 8
-8 0 10 -99865 -262144 -228856 127 1;
+8 0 10 -99865 -262144 -228856 0 1;
 #X obj 111 253 hsl 128 15 0 1 0 0 empty empty loudness_contour_D 8
-8 0 10 -99865 -262144 -228856 635 1;
+8 0 10 -99865 -262144 -228856 0 1;
 #X obj 111 268 hsl 128 15 0 1 0 0 empty empty loudness_contour_S 8
-8 0 10 -99865 -262144 -228856 6350 1;
+8 0 10 -99865 -262144 -228856 0 1;
 #X obj 108 54 route filtercutoff filteremph filteramt filterA filterD
 filterS contourA contourD contourS;
 #X msg 285 165 filteremph \$1;
@@ -162,9 +162,9 @@ filterS contourA contourD contourS;
 #X obj 142 132 hradio 15 1 0 6 empty empty range 8 8 0 10 -128992 -228856
 -33289 3;
 #X obj 128 268 tgl 15 0 empty empty Ctl -18 8 0 10 -128992 -228856
--228856 1 1;
+-228856 0 1;
 #X obj 146 268 hsl 85 15 0 1 0 0 empty empty detune 8 8 0 10 -99865
--262144 -228856 4200 1;
+-262144 -228856 0 1;
 #X obj 142 147 hradio 15 1 0 6 empty empty wave 8 8 0 10 -128992 -228856
 -33289 0;
 #X obj 142 175 hradio 15 1 0 6 empty empty range 8 8 0 10 -128992 -228856
@@ -176,7 +176,7 @@ filterS contourA contourD contourS;
 #X obj 143 253 hradio 15 1 0 6 empty empty wave 8 8 0 10 -128992 -228856
 -33289 3;
 #X obj 145 205 hsl 85 15 0 1 0 0 empty empty detune 8 8 0 10 -99865
--262144 -228856 4200 1;
+-262144 -228856 0 1;
 #X text 135 222 -7 ---- | ---- 7;
 #X text 115 132 1;
 #X text 114 175 2;
@@ -228,7 +228,7 @@ osc3range osc3wave osc3detune osc3ctl;
 #X obj 112 436 outlet;
 #X obj 108 26 inlet;
 #X obj 111 147 hsl 128 15 0 1 0 0 empty empty tune 8 8 0 10 -99865
--262144 -228856 6350 1;
+-262144 -228856 0 1;
 #X obj 126 175 hsl 113 15 0 1 0 0 empty empty glide 8 8 0 10 -99865
 -262144 -228856 0 1;
 #X text 105 132 -2.5 ----- | ----- 2.5;
@@ -237,9 +237,9 @@ osc3range osc3wave osc3detune osc3ctl;
 #X obj 111 237 hsl 128 15 0 1 0 0 empty empty modmix 8 8 0 10 -99865
 -262144 -228856 0 1;
 #X obj 109 268 tgl 15 0 empty empty decay 17 7 0 10 -128992 -228856
--228856 1 1;
+-228856 0 1;
 #X obj 177 268 tgl 15 0 empty empty keytrack 17 7 0 10 -128992 -228856
--228856 1 1;
+-228856 0 1;
 #X obj 126 190 hsl 113 15 0 1 0 0 empty empty mod 8 8 0 10 -99865 -262144
 -228856 0 1;
 #X obj 108 190 tgl 15 0 empty empty empty 17 7 0 10 -128992 -228856
@@ -325,4 +325,4 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 5 2 1 0;
 #X connect 5 3 0 0;
 #X connect 6 0 5 0;
-#X coords 0 -1 1 1 602 192 1 100 100;
+#X coords 0 -1 1 1 602 196 1 100 98;

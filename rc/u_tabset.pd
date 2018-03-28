@@ -21,7 +21,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 56 54 Copyright (C) 2012 \, Dan Wilcox <danomatika@gmail.com>
 ;
 #X restore 300 86 pd LICENSE-GPL;
-#X obj 86 113 array set;
+#X obj 86 113 array set \$1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 6 0;

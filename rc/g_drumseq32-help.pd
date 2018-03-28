@@ -18,16 +18,16 @@
 #X obj 129 129 metro 200;
 #X obj 129 103 t f f;
 #X msg 193 165 reset;
-#X msg 233 205 dump;
-#X text 757 187 first seq;
-#X text 773 224 sec seq;
+#X msg 874 246 dump;
+#X text 757 157 first seq;
+#X text 773 194 sec seq;
 #X text 439 84 sssad state saving;
 #X text 234 162 reset msg resets beat pos;
-#X text 744 154 load seqs via lists \, first element is the sequence
+#X text 744 124 load seqs via lists \, first element is the sequence
 index;
-#X msg 233 232 clear;
-#X text 274 231 the seqs;
-#X text 264 203 seqs to right outlet;
+#X msg 874 273 clear;
+#X text 915 272 the seqs;
+#X text 905 244 seqs to right outlet;
 #X text 244 42 Creation args: name;
 #X obj 34 455 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
 -1;
@@ -40,9 +40,9 @@ index;
 #X text 75 445 left outlet: drum beats out as indexed velocities;
 #X floatatom 84 484 5 0 0 0 - - -, f 5;
 #X text 121 485 vel vals;
-#X msg 823 189 1 1 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1
+#X msg 823 159 1 1 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1
 0 0 1 1 1 1 1;
-#X msg 842 236 2 0 0 60 0 0 0 65 0 0 70 0 0 127 120 127 100 20 25 33
+#X msg 842 206 2 0 0 60 0 0 0 65 0 0 70 0 0 127 120 127 100 20 25 33
 32 45 58 39 22 67 90 88 99 127 127 127 127;
 #N canvas 0 23 446 337 datastore 0;
 #X obj 35 18 inlet;
@@ -72,8 +72,8 @@ index;
 #X connect 14 0 13 0;
 #X connect 14 1 9 0;
 #X connect 15 0 39 0;
-#X connect 16 0 39 0;
-#X connect 22 0 39 0;
+#X connect 16 0 39 1;
+#X connect 22 0 39 1;
 #X connect 30 0 26 0;
 #X connect 30 1 27 0;
 #X connect 30 1 32 0;

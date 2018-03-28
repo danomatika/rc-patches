@@ -39,7 +39,6 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X obj 26 64 route float;
 #X obj 83 214 sel 0;
 #X msg 38 263 bang;
-#X floatatom 44 219 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
@@ -53,7 +52,6 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 8 0 5 0;
 #X connect 11 0 13 1;
 #X connect 13 1 21 0;
-#X connect 13 1 23 0;
 #X connect 15 0 11 0;
 #X connect 15 1 13 1;
 #X connect 16 0 15 0;

@@ -5,8 +5,6 @@
 objects \, settable the bpm and pos;
 #X text 24 434 Tags: midi \, playback \, sequencing;
 #X text 24 400 See also: [midifile] [c_seqplay] [c_nstep];
-#X text 24 171 Inlet 1: "bpm" <float> - beats per minute \, "loop"
-<float> - loop the midi file (0-1);
 #X text 24 301 Description: This is a convenience wrapper around mrpeach
 [midifile] and thus requires the mrpeach external. It sends to the
 internal pd midi input objects ([notein] [ctlin] etc) for you. The
@@ -21,6 +19,9 @@ from the # of midi ticks per quarter note;
 - open a midi file \, "reopen" - reopen the current file \, "rewind"
 - rewind to file start \, "pos" <float> - set & output tick pos \,
 "set" <float> - set the tick pos;
+#X text 24 171 Inlet 1: "bpm" <float> - beats per minute \, "loop"
+<float> - loop the midi file (0-1) \, "eof" <float> - bang/loop at
+end of file (0-1 \, default 1);
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
