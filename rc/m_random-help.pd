@@ -1,0 +1,24 @@
+#N canvas 113 189 361 250 10;
+#X floatatom 37 177 5 0 0 0 - - -, f 5;
+#X obj 37 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 106 121 5 0 0 0 max - -, f 5;
+#X text 16 16 output a random int between a range of numbers;
+#X floatatom 203 177 5 0 0 0 - - -, f 5;
+#X obj 203 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 252 105 5 0 0 0 min - -, f 5;
+#X floatatom 302 123 5 0 0 0 max - -, f 5;
+#X text 62 82 1 arg: min of 0;
+#X text 233 82 2 args: min & max;
+#X text 16 44 handles negative ranges & swapped order as well;
+#X obj 37 146 m_random 100;
+#X obj 203 146 m_random -100 200;
+#X text 108 215 Dan Wilcox 2016 \, 2018;
+#X connect 1 0 11 0;
+#X connect 2 0 11 2;
+#X connect 5 0 12 0;
+#X connect 6 0 12 1;
+#X connect 7 0 12 2;
+#X connect 11 0 0 0;
+#X connect 12 0 4 0;
