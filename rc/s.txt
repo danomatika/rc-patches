@@ -13,4 +13,5 @@ s_crosspm - cross phase modulation synth
 s_looptable - low level but flexible table sample looper
 s_playsf - a simple stereo soundfile player
 s_sample - one shot sample player
+s_sampnoise - simple sample and hold noise for that crunchy 8-bit sound
 s_scrubtable - scrib the contents of a table
