@@ -30,7 +30,7 @@ end of file (0-1 \, default 1);
 #X obj 502 440 soundoutput;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2013;
-#X obj 507 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 0 1
+#X obj 507 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X msg 559 155 reopen;
 #X floatatom 545 304 5 0 0 1 ticks - -, f 5;
@@ -155,6 +155,7 @@ end of file (0-1 \, default 1);
 #X text 12 8 notes on what values are used to parse raw midi bytes
 inside c_midiplay;
 #X restore 441 345 pd raw midi vals;
+#X obj 11 212 stripnote;
 #X connect 0 0 3 0;
 #X connect 0 1 2 0;
 #X connect 0 2 1 0;
@@ -192,10 +193,11 @@ inside c_midiplay;
 #X connect 32 1 30 0;
 #X connect 32 2 29 0;
 #X connect 33 0 22 0;
-#X connect 34 0 18 0;
-#X connect 34 1 18 0;
+#X connect 34 0 41 0;
+#X connect 34 1 41 0;
 #X connect 34 2 21 0;
 #X connect 36 0 20 0;
+#X connect 41 0 18 0;
 #X restore 502 405 pd simple gm player;
 #X text 129 21 - midifile player (requires mrpeach [midifile]);
 #X text 651 127 ^ test \, has no tempo or time sig;
