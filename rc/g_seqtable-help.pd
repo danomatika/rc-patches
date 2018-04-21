@@ -57,7 +57,7 @@
 #X text 311 477 note list dump;
 #X msg 526 438 timeout 500;
 #X text 236 281 dump note list to right outlet;
-#X obj 72 300 r \$0-control;
+#X obj 77 310 r \$0-control;
 #X obj 470 504 s \$0-control;
 #X text 521 356 listen control;
 #X obj 470 232 t a;
@@ -82,7 +82,7 @@ notes;
 #X text 163 230 note sequence as a list;
 #X text 79 479 non-zero note;
 #X obj 24 340 g_seqtable 16;
-#X floatatom 50 138 5 0 0 1 pos - -, f 5;
+#X floatatom 50 130 5 0 0 1 pos - -, f 5;
 #X text 522 470 will drop a partial list of incoming notes if the list
 is not completed within this time \, default: 1000;
 #X text 522 457 how long to listen to an incoming stream in ms;
@@ -94,9 +94,11 @@ is not completed within this time \, default: 1000;
 #X obj 136 149 metro 100;
 #X text 462 70 performs serial operations on incoming note streams:
 ;
-#X msg 58 231 length \$1;
-#X msg 58 203 4;
-#X msg 93 203 16;
+#X msg 58 278 length \$1;
+#X msg 58 250 4;
+#X msg 93 250 16;
+#X msg 62 177 set \$1;
+#X floatatom 62 157 5 0 0 0 - - -, f 5;
 #X connect 0 0 37 0;
 #X connect 1 0 37 0;
 #X connect 2 0 37 0;
@@ -130,3 +132,5 @@ is not completed within this time \, default: 1000;
 #X connect 54 0 45 0;
 #X connect 55 0 54 0;
 #X connect 56 0 54 0;
+#X connect 57 0 45 0;
+#X connect 58 0 57 0;

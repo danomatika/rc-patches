@@ -1,4 +1,4 @@
-#N canvas 171 218 868 521 10;
+#N canvas 176 55 868 521 10;
 #N canvas 66 140 582 570 REFERENCE 0;
 #X text 24 31 Name: [u_count];
 #X text 24 91 Argument 0: <float> upper limit \, leaving this empty
@@ -16,7 +16,7 @@ as well as anything that requires an [f ]x[+ 1].;
 #X text 23 212 Inlet 1: <float> - set upper limit \, <= 0 clears the
 limit so the counter is unlimited;
 #X text 24 130 Inlet 0: "bang" - send count \, <float> - change current
-pos \, "set" <float> - set next pos \, "reset" - reset pos to 0 \,
+pos \, "set" <float> - set next pos \, "reset" - reset to start \,
 "up" - set mode to count upwards \, "down" - set mode to count downwards
 \, "next" - go forward one \, "prev" - go back one;
 #X coords 0 -1 1 1 450 450 1 10 10;
@@ -55,30 +55,30 @@ pos \, "set" <float> - set next pos \, "reset" - reset pos to 0 \,
 #X msg 483 312 next;
 #X msg 503 244 2;
 #X msg 533 120 3;
-#X text 643 145 reset count to 0;
 #X obj 593 443 print;
 #X text 484 96 change pos;
 #X text 726 324 turn off limit (+/-);
 #X obj 593 358 u_count 16;
+#X text 643 145 reset to start;
 #X obj 8 20 u_count;
-#X text 467 200 set next pos;
-#X connect 4 0 34 0;
+#X text 474 200 next pos;
+#X connect 4 0 33 0;
 #X connect 5 0 7 0;
-#X connect 6 0 31 0;
+#X connect 6 0 30 0;
 #X connect 7 0 4 0;
-#X connect 8 0 34 1;
-#X connect 9 0 34 0;
-#X connect 10 0 34 1;
-#X connect 16 0 34 0;
-#X connect 17 0 34 0;
-#X connect 18 0 34 1;
+#X connect 8 0 33 1;
+#X connect 9 0 33 0;
+#X connect 10 0 33 1;
+#X connect 16 0 33 0;
+#X connect 17 0 33 0;
+#X connect 18 0 33 1;
 #X connect 20 0 24 0;
-#X connect 21 0 34 0;
+#X connect 21 0 33 0;
 #X connect 23 0 21 0;
-#X connect 24 0 34 0;
-#X connect 26 0 34 0;
-#X connect 27 0 34 0;
+#X connect 24 0 33 0;
+#X connect 26 0 33 0;
+#X connect 27 0 33 0;
 #X connect 28 0 21 0;
 #X connect 29 0 24 0;
-#X connect 34 0 6 0;
-#X connect 34 1 13 0;
+#X connect 33 0 6 0;
+#X connect 33 1 13 0;

@@ -1,8 +1,6 @@
-#N canvas 382 258 898 520 10;
+#N canvas 382 164 898 520 10;
 #N canvas 112 97 487 481 REFERENCE 0;
 #X text 24 31 Name: [c_midiplay];
-#X text 24 51 Summary: plays back a midi file to the internal midi
-objects \, settable the bpm and pos;
 #X text 24 434 Tags: midi \, playback \, sequencing;
 #X text 24 400 See also: [midifile] [c_seqplay] [c_nstep];
 #X text 24 301 Description: This is a convenience wrapper around mrpeach
@@ -13,15 +11,17 @@ and/or time sig \, then 120 & 4/4 are used as per the MIDI file specification.
 ;
 #X text 24 273 Outlet 1: bangs on end of file \, time signature info
 \, and bpm;
-#X text 24 222 Outlet 0: current tick \, 4 ticks per beat calculated
-from the # of midi ticks per quarter note;
-#X text 24 102 Inlet 0: <float> - start stop playback \, "open" <symbol>
-- open a midi file \, "reopen" - reopen the current file \, "rewind"
-- rewind to file start \, "pos" <float> - set & output tick pos \,
-"set" <float> - set the tick pos;
 #X text 24 171 Inlet 1: "bpm" <float> - beats per minute \, "loop"
 <float> - loop the midi file (0-1) \, "eof" <float> - bang/loop at
 end of file (0-1 \, default 1);
+#X text 24 222 Outlet 0: current tick \, 4 ticks per beat calculated
+from the # of midi ticks per quarter note ie. 1/16 notes;
+#X text 24 51 Summary: plays back a midi file to the internal midi
+objects with settable bpm and pos;
+#X text 24 102 Inlet 0: <float> - start stop playback \, "open" <symbol>
+- open a midi file \, "reopen" - reopen the current file \, "rewind"
+- rewind to file start \, "pos" <float> - set & output tick pos \,
+"set" <float> - set the next tick pos;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -30,7 +30,7 @@ end of file (0-1 \, default 1);
 #X obj 502 440 soundoutput;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2013;
-#X obj 507 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 1 1
+#X obj 507 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X msg 559 155 reopen;
 #X floatatom 545 304 5 0 0 1 ticks - -, f 5;
@@ -40,7 +40,7 @@ end of file (0-1 \, default 1);
 #X msg 613 155 rewind;
 #X text 662 155 rewind to start;
 #X obj 698 242 g_tgl loop;
-#X floatatom 618 229 5 0 0 1 cur_pos - -, f 5;
+#X floatatom 618 229 5 0 0 1 - - -, f 5;
 #X msg 481 211 bang;
 #X obj 545 46 openpanel;
 #X msg 545 127 open \$1;
@@ -201,7 +201,7 @@ inside c_midiplay;
 #X restore 502 405 pd simple gm player;
 #X text 129 21 - midifile player (requires mrpeach [midifile]);
 #X text 651 127 ^ test \, has no tempo or time sig;
-#X floatatom 617 184 5 0 0 1 tick_pos - -, f 5;
+#X floatatom 617 184 5 0 0 1 - - -, f 5;
 #X msg 617 203 pos \$1;
 #X obj 545 277 c_midiplay;
 #X obj 8 20 c_midiplay;
