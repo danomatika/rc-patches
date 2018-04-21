@@ -9,20 +9,21 @@ playlist file's folder is added to your path using [declare];
 #X text 24 127 Inlet 0: "next" & "prev" - next or previous in the list
 \; <float> - choose item in list by index \, numbers are clipped between
 0 & list len \; "reset" - set current index to 0 \, doesn't send;
-#X text 24 239 Outlet 0: <symbol> list item;
+#X text 24 249 Outlet 0: <symbol> list item;
 #X text 24 400 See also: [u_dumpfile] \, [u_symbolarray] \, [u_openclose]
 ;
 #X text 24 434 Tags: playlist \, text file \, lists;
-#X text 24 300 Outlet 3: bangs on end of list;
-#X text 24 259 Outlet 1: <float> playlist position;
-#X text 24 280 Outlet 2: <float> playlist length \, updated when loading
+#X text 24 310 Outlet 3: bangs on end of list;
+#X text 24 269 Outlet 1: <float> playlist position;
+#X text 24 290 Outlet 2: <float> playlist length \, updated when loading
 ;
-#X text 24 327 Description: The playlist format is very simple: a text
+#X text 24 337 Description: The playlist format is very simple: a text
 file with each item on a separate line \, empty lines are ignored.
 Use this in conjunction with [u_openclose] to automatically open/close
 the current playlist item.;
 #X text 24 187 Inlet 1: "read" - read a playlist file \; "clear" -
-clear the current list \; "print" - print the current list \;;
+clear the list \; "print" - print the list \; "open" - open the list
+in an editor;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -65,6 +66,7 @@ clear the current list \; "print" - print the current list \;;
 #X obj 8 20 c_playlist;
 #X obj 495 400 c_playlist media/playlist.txt;
 #X obj 537 229 c_playlist;
+#X msg 714 209 open;
 #X connect 5 0 33 1;
 #X connect 6 0 33 0;
 #X connect 7 0 33 0;
@@ -85,3 +87,4 @@ clear the current list \; "print" - print the current list \;;
 #X connect 33 1 24 0;
 #X connect 33 2 22 0;
 #X connect 33 3 12 0;
+#X connect 34 0 33 1;
