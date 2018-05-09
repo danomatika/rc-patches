@@ -1,4 +1,4 @@
-#N canvas 416 147 868 521 10;
+#N canvas 412 147 868 521 10;
 #N canvas 129 180 582 570 REFERENCE 0;
 #X text 24 30 Name: [s_303];
 #X text 24 51 Summary: a Roland TB-303 style bass synth;
@@ -6,17 +6,19 @@
 #X text 24 91 Argument 0: <float or symbol> unique id (don't use \$0)
 ;
 #X text 24 124 Inlet 0: midi note & velocity pairs;
-#X text 24 144 Inlet 1: "waveform" <float> - 0 saw 1 sqaure \, "cutoff"
-<float> - filter cutoff freq (0-1) \, "q" <float> - filter resonance
-(0-1) \, "mod" <float> - filter envelope modulation (0-1) \, ""A" "D"
-"S" "R" <float> - ADSR control (0-1);
 #X text 24 216 Outlet 0: audio out;
-#X text 24 266 Description: Simple controls for simple magic. See https://en.wikipedia.org/wiki/Roland_TB-303
+#X text 24 276 Description: Simple controls for simple magic. See https://en.wikipedia.org/wiki/Roland_TB-303
 for inspiration. Ok ok \, this isn't a *real* emulation of a 303 \,
 but it has the same spirit. Originally adapted from Damian Stewart's
 [d-303] in 2008 frey.co.nz.;
-#X text 24 366 See also: [s_minimoog] [s_fmbass] [s_fm4] [s_ejun] [s_rhodey]
+#X text 24 376 See also: [s_minimoog] [s_fmbass] [s_fm4] [s_ejun] [s_rhodey]
 ;
+#X text 24 144 Inlet 1: "waveform" <float> - 0 saw 1 sqaure \, "cutoff"
+<float> - filter cutoff freq (0-1) \, "q" <float> - filter resonance
+(0-1) \, "mod" <float> - filter envelope modulation (0-1) \, "A" "D"
+"S" or "R" <float> - ADSR control (0-1) \, "save" - output current
+settings to Outlet 1;
+#X text 24 236 Outlet 1: settings output from "save" message;
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
 #X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
@@ -112,10 +114,12 @@ but it has the same spirit. Originally adapted from Damian Stewart's
 #X text 130 21 - roland tb 303 style bass synth;
 #X obj 559 364 s_303 my303;
 #X obj 683 104 g_hradio waveform 2;
-#X msg 683 79 reset;
+#X msg 657 80 reset;
 #X obj 573 298 notein;
 #X text 745 80 saw | square;
 #X obj 8 20 s_303;
+#X obj 653 380 print;
+#X msg 702 80 save;
 #X connect 5 0 6 0;
 #X connect 6 0 21 0;
 #X connect 7 0 8 0;
@@ -134,7 +138,9 @@ but it has the same spirit. Originally adapted from Damian Stewart's
 #X connect 19 0 12 0;
 #X connect 21 0 4 0;
 #X connect 21 0 4 1;
+#X connect 21 1 27 0;
 #X connect 22 0 13 0;
 #X connect 23 0 22 0;
 #X connect 24 0 11 0;
 #X connect 24 1 11 1;
+#X connect 28 0 22 0;
