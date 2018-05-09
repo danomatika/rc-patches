@@ -64,6 +64,7 @@
 #X obj 28 521 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 343 20 declare -path .;
+#X text 175 284 optional args: 1 to load on creation;
 #X connect 0 0 12 0;
 #X connect 0 1 13 0;
 #X connect 1 0 0 0;
