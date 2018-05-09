@@ -1,4 +1,4 @@
-#N canvas 52 158 892 514 10;
+#N canvas 52 158 905 509 10;
 #N canvas 119 153 582 570 REFERENCE 0;
 #X text 24 51 Summary: a sequencer wrapper abstraction for qlist;
 #X text 25 242 Description: You can record a sequence of any list.
@@ -21,44 +21,44 @@ a unique id \, instead of \$0.;
 #X text 25 209 Outlet 1: bangs when sequence is finished;
 #X text 24 31 Name: c_qseq;
 #X coords 0 -1 1 1 450 450 1 10 10;
-#X restore -55 49 pd REFERENCE;
-#X obj -55 19 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+#X restore 5 49 pd REFERENCE;
+#X obj 5 19 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#X text 408 52 Example:;
-#X obj 564 345 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+#X text 468 52 Example:;
+#X obj 624 345 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X msg 619 208 record;
-#X msg 619 230 stop;
-#X msg 619 187 play;
-#X msg 619 274 print;
-#X msg 618 164 tempo \$1;
-#X floatatom 618 147 5 0 0 0 - - -;
-#X msg 618 126 loop \$1;
-#X obj 618 108 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X msg 679 208 record;
+#X msg 679 230 stop;
+#X msg 679 187 play;
+#X msg 679 274 print;
+#X msg 678 164 tempo \$1;
+#X floatatom 678 147 5 0 0 0 - - -, f 5;
+#X msg 678 126 loop \$1;
+#X obj 678 108 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
 1;
-#X floatatom 475 127 5 0 0 0 - - -;
-#X msg 475 144 a \$1;
-#X floatatom 513 128 5 0 0 0 - - -;
-#X floatatom 496 389 5 0 0 0 - - -;
-#X floatatom 454 388 5 0 0 0 - - -;
-#X msg 513 145 b \$1;
-#X text 680 188 1 is the original speed;
-#X obj 423 108 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+#X floatatom 535 127 5 0 0 0 - - -, f 5;
+#X msg 535 144 a \$1;
+#X floatatom 573 128 5 0 0 0 - - -, f 5;
+#X floatatom 556 389 5 0 0 0 - - -, f 5;
+#X floatatom 514 388 5 0 0 0 - - -, f 5;
+#X msg 573 145 b \$1;
+#X text 740 164 1 is the original speed;
+#X obj 483 108 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
 -1 -1 0 1;
-#X obj 543 399 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
+#X obj 603 399 hsl 128 15 0 127 0 0 empty empty empty -2 -6 0 8 -262144
 -1 -1 0 1;
-#X text 418 91 Messages to be recorded;
-#X msg 420 127 foo \$1;
-#X obj 454 359 route a b foo;
-#X obj 513 250 c_qseq id;
-#X obj -52 21 c_qseq;
-#X msg 619 294 write sequence.txt;
-#X msg 620 314 read sequence.txt;
-#X msg 619 252 clear;
-#X text 586 345 banged when done;
-#X text 419 479 rc-patches (https://github.com/danomatika/rc-patches)
+#X text 478 91 Messages to be recorded;
+#X msg 480 127 foo \$1;
+#X obj 514 359 route a b foo;
+#X obj 573 250 c_qseq id;
+#X obj 8 21 c_qseq;
+#X msg 679 294 write sequence.txt;
+#X msg 680 314 read sequence.txt;
+#X msg 679 252 clear;
+#X text 646 345 banged when done;
+#X text 479 479 rc-patches (https://github.com/danomatika/rc-patches)
 - 2012;
-#X text 69 22 - sequencer interface to qlist;
+#X text 129 22 - sequencer interface to qlist;
 #X connect 4 0 24 1;
 #X connect 5 0 24 1;
 #X connect 6 0 24 1;
