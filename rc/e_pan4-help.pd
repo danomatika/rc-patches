@@ -1,0 +1,33 @@
+#N canvas 113 23 376 332 10;
+#X obj 55 127 *~ 0.2;
+#X obj 79 156 hsl 64 15 0 1 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 600 1;
+#X obj 55 180 *~ 0;
+#X obj 55 96 s_pinknoise;
+#X obj 55 296 dac~ 1 2 3 4, f 25;
+#X text 200 94 1;
+#X text 323 94 2;
+#X text 201 195 3;
+#X text 322 192 4;
+#X obj 218 140 hsl 64 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 3150 1;
+#X obj 284 114 vsl 15 64 1 0 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6300 1;
+#X text 16 15 constant power quadraphonic panner (cosine law(;
+#X text 35 51 optional arguments: left/right 0-1 \, front/back 0-1
+;
+#X floatatom 148 235 5 0 0 0 - - -, f 5;
+#X floatatom 101 234 5 0 0 0 - - -, f 5;
+#X obj 55 261 e_pan4 0.5 0, f 16;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 15 0;
+#X connect 3 0 0 0;
+#X connect 9 0 14 0;
+#X connect 10 0 13 0;
+#X connect 13 0 15 2;
+#X connect 14 0 15 1;
+#X connect 15 0 4 0;
+#X connect 15 1 4 1;
+#X connect 15 2 4 2;
+#X connect 15 3 4 3;
