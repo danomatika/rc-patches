@@ -1,0 +1,19 @@
+#N canvas 632 23 302 328 10;
+#X obj 135 121 / 127;
+#X floatatom 135 148 5 0 0 0 - - -;
+#X obj 138 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1600 1;
+#X obj 66 224 soundoutput;
+#X text 43 285 2018 Dan Wilcox danomatika.com;
+#X text 156 175 creation arg: gain;
+#X obj 66 177 e_gain2 0.25;
+#X obj 66 56 s_pinknoise;
+#X obj 84 92 noise~;
+#X text 49 18 e_gain2: stereo rms gain effect 0-1;
+#X connect 0 0 1 0;
+#X connect 1 0 6 2;
+#X connect 2 0 0 0;
+#X connect 6 0 3 0;
+#X connect 6 1 3 1;
+#X connect 7 0 6 0;
+#X connect 8 0 6 1;
