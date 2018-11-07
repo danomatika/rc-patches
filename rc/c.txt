@@ -10,5 +10,6 @@ c_nstep - arbitrary length bang sequence player
 c_playlist - manage a playlist from a text file
 c_portamento - portamento (glide) wrapper for line
 c_qseq - sequencer interface to qlist
+c_rsfcontrol - convenience wrapper for controlling readsf~
 c_spigot - toggle a signal without clicking
 c_uzi - send a specified number of bangs as fast as possible

@@ -1,0 +1,46 @@
+#N canvas 397 65 403 414 10;
+#X obj 111 271 readsf~;
+#X obj 150 295 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 111 348 soundoutput;
+#X obj 141 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 175 177 play media/bang.wav;
+#X obj 111 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 65 49 open media/aw.wav;
+#X text 185 50 set file to open;
+#X text 165 79 play triggers;
+#X text 304 176 open and play;
+#X text 232 144 start pos in samples;
+#X msg 165 114 0;
+#X msg 165 144 pos \$1;
+#X obj 185 271 print;
+#X obj 17 202 spigot;
+#X obj 50 179 tgl 15 0 empty empty loop? 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 17 154 r \$0-done;
+#X obj 150 318 s \$0-done;
+#X floatatom 287 115 5 0 0 0 - - -;
+#X msg 240 114 12000;
+#X msg 199 114 5000;
+#X text 9 15 c_rsfcontrol: convenience wrapper for controlling readsf~
+;
+#X obj 111 237 c_rsfcontrol;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 1 0 17 0;
+#X connect 3 0 22 0;
+#X connect 4 0 22 0;
+#X connect 5 0 22 0;
+#X connect 6 0 22 0;
+#X connect 11 0 12 0;
+#X connect 12 0 22 0;
+#X connect 14 0 22 0;
+#X connect 15 0 14 1;
+#X connect 16 0 14 0;
+#X connect 18 0 12 0;
+#X connect 19 0 12 0;
+#X connect 20 0 12 0;
+#X connect 22 0 0 0;
+#X connect 22 0 13 0;
