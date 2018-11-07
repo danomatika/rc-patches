@@ -12,6 +12,7 @@ u_listunique - remove duplicates from a list
 u_mux2 - multiplex between 2 inlets to 1 outlet
 u_openclose - open and close patches via filename (requires ggee)
 u_remote - send remote messages to state saving objects
+u_routemap - apply function on a matching message name
 u_savestate - save & load scene state settings
 u_symbol2float - convert a symbol into a float
 u_symbol2list - convert a symbol into a list
