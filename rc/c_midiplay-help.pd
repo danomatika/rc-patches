@@ -1,6 +1,8 @@
-#N canvas 382 164 898 520 10;
+#N canvas 179 113 898 520 10;
 #N canvas 112 97 487 481 REFERENCE 0;
 #X text 24 31 Name: [c_midiplay];
+#X text 24 51 Summary: plays back a midi file to the internal midi
+objects \, settable the bpm and pos;
 #X text 24 434 Tags: midi \, playback \, sequencing;
 #X text 24 400 See also: [midifile] [c_seqplay] [c_nstep];
 #X text 24 301 Description: This is a convenience wrapper around mrpeach
@@ -11,45 +13,43 @@ and/or time sig \, then 120 & 4/4 are used as per the MIDI file specification.
 ;
 #X text 24 273 Outlet 1: bangs on end of file \, time signature info
 \, and bpm;
-#X text 24 171 Inlet 1: "bpm" <float> - beats per minute \, "loop"
-<float> - loop the midi file (0-1) \, "eof" <float> - bang/loop at
-end of file (0-1 \, default 1);
 #X text 24 222 Outlet 0: current tick \, 4 ticks per beat calculated
-from the # of midi ticks per quarter note ie. 1/16 notes;
-#X text 24 51 Summary: plays back a midi file to the internal midi
-objects with settable bpm and pos;
+from the # of midi ticks per quarter note;
 #X text 24 102 Inlet 0: <float> - start stop playback \, "open" <symbol>
 - open a midi file \, "reopen" - reopen the current file \, "rewind"
 - rewind to file start \, "pos" <float> - set & output tick pos \,
-"set" <float> - set the next tick pos;
+"set" <float> - set the tick pos;
+#X text 24 171 Inlet 1: "bpm" <float> - beats per minute \, "loop"
+<float> - loop the midi file (0-1) \, "eof" <float> - bang/loop at
+end of file (0-1 \, default 1);
 #X coords 0 -1 1 1 450 450 1 10 10;
 #X restore 5 48 pd REFERENCE;
-#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 -261234 -66577
+#X obj 5 18 cnv 15 450 20 empty empty empty 20 12 0 14 #fcc4c4 #404040
 0;
 #X text 467 51 Example:;
 #X obj 502 440 soundoutput;
 #X text 495 488 rc-patches (https://github.com/danomatika/rc-patches)
 - 2013;
-#X obj 507 79 tgl 15 0 empty empty run 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 507 79 tgl 15 0 empty empty run 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
 #X msg 559 155 reopen;
-#X floatatom 545 304 5 0 0 1 ticks - -, f 5;
-#X obj 698 336 bng 15 250 50 0 empty empty end 17 7 0 10 -262144 -1
--1;
+#X floatatom 545 304 5 0 0 1 ticks - - 0;
+#X obj 698 336 bng 15 250 50 0 empty empty end 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 698 207 g_hsl bpm 80 200;
 #X msg 613 155 rewind;
 #X text 662 155 rewind to start;
 #X obj 698 242 g_tgl loop;
-#X floatatom 618 229 5 0 0 1 - - -, f 5;
+#X floatatom 618 229 5 0 0 1 cur_pos - - 0;
 #X msg 481 211 bang;
 #X obj 545 46 openpanel;
 #X msg 545 127 open \$1;
 #X msg 618 247 set \$1;
 #X obj 743 365 unpack 0 0 0 0;
-#X floatatom 743 398 3 0 0 1 / - -, f 3;
-#X floatatom 772 398 3 0 0 1 - - -, f 3;
+#X floatatom 743 398 3 0 0 1 / - - 0;
+#X floatatom 772 398 3 0 0 1 - - - 0;
 #X obj 698 306 route bang time_sig bpm;
-#X floatatom 788 337 5 0 0 1 bpm - -, f 5;
+#X floatatom 788 337 5 0 0 1 bpm - - 0;
 #N canvas 770 363 414 357 show 0;
 #X obj 88 82 unpack f f;
 #X obj 34 328 outlet;
@@ -71,8 +71,8 @@ objects with settable bpm and pos;
 #X text 193 53 convert from 4 beats per measure;
 #X obj 61 244 mod 3;
 #X obj 34 184 mod 6;
-#X floatatom 88 216 5 0 0 0 - - -, f 5;
-#X floatatom 61 163 5 0 0 0 - - -, f 5;
+#X floatatom 88 216 5 0 0 0 - - - 0;
+#X floatatom 61 163 5 0 0 0 - - - 0;
 #X connect 0 0 5 0;
 #X connect 0 1 16 0;
 #X connect 3 0 2 0;
@@ -89,12 +89,12 @@ objects with settable bpm and pos;
 #X connect 21 0 19 1;
 #X restore 545 330 pd show beat;
 #X obj 743 424 pack f f;
-#X obj 545 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 614 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 545 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 545 359 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 614 359 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 545 23 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 631 75 symbol media/Fugue.mid;
 #X text 799 398 time signature;
 #X text 713 278 outputs bpm & [midifile] info;
@@ -103,16 +103,16 @@ objects with settable bpm and pos;
 #X msg 645 102 symbol media/test_midi.mid;
 #N canvas 115 155 586 377 simple 0;
 #X obj 11 33 notein;
-#X floatatom 44 59 5 0 0 0 - - -, f 5;
-#X floatatom 27 81 5 0 0 0 - - -, f 5;
-#X floatatom 11 103 5 0 0 0 - - -, f 5;
+#X floatatom 44 59 5 0 0 0 - - - 0;
+#X floatatom 27 81 5 0 0 0 - - - 0;
+#X floatatom 11 103 5 0 0 0 - - - 0;
 #X obj 105 34 ctlin;
-#X floatatom 132 62 5 0 0 0 - - -, f 5;
-#X floatatom 118 86 5 0 0 0 - - -, f 5;
-#X floatatom 105 110 5 0 0 0 - - -, f 5;
+#X floatatom 132 62 5 0 0 0 - - - 0;
+#X floatatom 118 86 5 0 0 0 - - - 0;
+#X floatatom 105 110 5 0 0 0 - - - 0;
 #X obj 196 34 pgmin;
-#X floatatom 223 62 5 0 0 0 - - -, f 5;
-#X floatatom 196 87 5 0 0 0 - - -, f 5;
+#X floatatom 223 62 5 0 0 0 - - - 0;
+#X floatatom 196 87 5 0 0 0 - - - 0;
 #X obj 11 128 pack f f;
 #X obj 11 152 list prepend;
 #X obj 11 346 outlet~;
@@ -126,14 +126,14 @@ objects with settable bpm and pos;
 #X obj 196 236 list split 1;
 #X obj 230 295 *~ 0.45;
 #X obj 289 34 bendin;
-#X floatatom 322 62 5 0 0 0 - - -, f 5;
-#X floatatom 289 85 5 0 0 0 - - -, f 5;
-#X floatatom 419 61 5 0 0 0 - - -, f 5;
-#X floatatom 380 84 5 0 0 0 - - -, f 5;
+#X floatatom 322 62 5 0 0 0 - - - 0;
+#X floatatom 289 85 5 0 0 0 - - - 0;
+#X floatatom 419 61 5 0 0 0 - - - 0;
+#X floatatom 380 84 5 0 0 0 - - - 0;
 #X obj 380 33 touchin;
-#X floatatom 542 60 5 0 0 0 - - -, f 5;
-#X floatatom 510 84 5 0 0 0 - - -, f 5;
-#X floatatom 479 108 5 0 0 0 - - -, f 5;
+#X floatatom 542 60 5 0 0 0 - - - 0;
+#X floatatom 510 84 5 0 0 0 - - - 0;
+#X floatatom 479 108 5 0 0 0 - - - 0;
 #X obj 479 32 polytouchin;
 #X obj 230 267 u_makepolymono 14 1 s_rhodey \$0-rhodeys;
 #X obj 11 189 route 10 11;
@@ -148,12 +148,12 @@ objects with settable bpm and pos;
 #X text 18 96 160 - 175: poly aftertouch;
 #X text 18 114 176 - 191: control change;
 #X text 18 132 192 - 207: program change;
-#X text 18 149 208 - 223: pitch bend;
-#X text 19 165 224 - 239: aftertouch;
 #X text 19 185 255 127 len data: Midi File Proprietary Event;
 #X text 16 64 128 - 143: noteoff;
 #X text 12 8 notes on what values are used to parse raw midi bytes
 inside c_midiplay;
+#X text 18 149 208 - 223: aftertouch;
+#X text 19 165 224 - 239: pitch bend;
 #X restore 441 345 pd raw midi vals;
 #X obj 11 212 stripnote;
 #X connect 0 0 3 0;
@@ -201,7 +201,7 @@ inside c_midiplay;
 #X restore 502 405 pd simple gm player;
 #X text 129 21 - midifile player (requires mrpeach [midifile]);
 #X text 651 127 ^ test \, has no tempo or time sig;
-#X floatatom 617 184 5 0 0 1 - - -, f 5;
+#X floatatom 617 184 5 0 0 1 tick_pos - - 0;
 #X msg 617 203 pos \$1;
 #X obj 545 277 c_midiplay;
 #X obj 8 20 c_midiplay;
