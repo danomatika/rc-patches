@@ -5,6 +5,7 @@ c_dust - random impulse generator
 c_frombus2 - receive from a named stereo audio bus
 c_taptempo - tap tempo calculator
 c_tobus2 - send to a named stereo audio bus
+c_midiclkin - midi clock to beat receiver
 c_midiplay - midifile player (requires mrpeach [midifile])
 c_nstep - arbitrary length bang sequence player
 c_playlist - manage a playlist from a text file
